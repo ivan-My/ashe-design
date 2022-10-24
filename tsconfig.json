@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "target": "esnext",
+    "module": "esnext",
+    "downlevelIteration": true,
+    "allowJs": false,
+    "strict": true,
+    "esModuleInterop": false,
+    "removeComments": true,
+    "declaration": false,
+    "declarationMap": false,
+    "rootDir": ".",
+    "types": ["node"],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "compileOnSave": false,
+  "exclude": [
+    "node_modules/*",
+    // "packages/vite/*",
+    // "packages/demo/*",
+    // "packages/ui/src/**/demo/*"
+  ],
+}

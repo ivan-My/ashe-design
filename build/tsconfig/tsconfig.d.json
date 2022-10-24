@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "../../dist/types",
+    "declarationMap": false,
+    "baseUrl": ".",
+    "outDir": "../../lib",
+    "rootDir": "../../src/components",
+    "types": ["node"],
+    "typeRoots": [
+      "../../node_modules/@types"
+    ]
+  },
+  "compileOnSave": false,
+  "exclude": [
+    "../../node_modules/*",
+    "../../src/components/**/demo/*"
+  ],
+  "include": [
+    "../../src/components"
+  ]
+}
