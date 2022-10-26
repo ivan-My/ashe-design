@@ -1,5 +1,6 @@
 import React,{lazy,Suspense} from 'react'
 import { useRoutes } from 'react-router-dom';
+// @ts-ignore
 const modulesPage = import.meta.glob('/src/components/**/demo.tsx')
 
 const routes:any =[]

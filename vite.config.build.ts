@@ -13,7 +13,6 @@ const banner = `/*!
 * Released under the MIT License.
 */`
 
-
  const { resolve } = path
 // https://vitejs.dev/config/
 export default defineConfig({

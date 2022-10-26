@@ -3,7 +3,7 @@ import {Button} from './button'
 
 const ButtonDemo = () =>{
     return <div>
-        <Button />
+      <Button>按钮</Button>
     </div>
 }
 

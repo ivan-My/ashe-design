@@ -2,7 +2,7 @@
     "name": "ashe-design3",
     "version": "1.0.0",
     "description": "",
-    "main": "dist/ashe/ahse.react.umd.js",
+    "main": "dist/ahse.react.umd.js",
     "module": "dist/esm/ashe-react.es.js",
     "typings": "dist/types/index.d.ts",
     "files": [
@@ -10,6 +10,7 @@
         "package.json"
     ],
     "scripts": {
+        "add": "node scripts/create-component.js",
         "dev": "npm run checked && vite serve --mode development --config build/vite/vite.config.ts",
         "generate:file": "node scripts/generate-ashe.js",
         "generate:themes": "node scripts/generate-themes.js",
@@ -17,9 +18,11 @@
         "build:loader-style": "node scripts/generate-loader-style.js",
         "build": "npm run checked && npm run build:vite && npm run build:es && npm run build:css && npm run build:loader-style && npm run build:dts",
         "build:vite": "vite build --config vite.config.build.ts",
-        "build:es": "  NODE_ENV=production rollup -c ./rollup.config.base.js",
-        "build:dts": "tsc --project build/tsconfig/tsconfig.d.json && npx rollup -c rollup.config.dts.js",
-        "build:css": "npm run generate:themes && vite build --config vite.config.build.css.ts"
+        "build:es": "  NODE_ENV=production rollup -c build/rollup/rollup.config.base.js",
+        "build:dts2": "tsc --project build/tsconfig/tsconfig.d.json && npx rollup -c rollup.config.dts.js",
+        "build:dts": "tsc  && npx rollup -c rollup.config.dts.js",
+        "build:css": "npm run generate:themes && vite build --config vite.config.build.css.ts",
+        "prepare": "husky install"
     },
     "keywords": [],
     "author": "",
@@ -35,7 +38,6 @@
         "@rollup/plugin-json": "^5.0.1",
         "@rollup/plugin-node-resolve": "13.1.3",
         "@rollup/plugin-typescript": "^9.0.2",
-        "@types/lodash-es": "^4.17.6",
         "@types/node": "^18.11.3",
         "@types/react": "^18.0.21",
         "@types/react-dom": "^18.0.6",
@@ -55,6 +57,7 @@
         "fs-extra": "10.0.1",
         "glob": "^8.0.3",
         "globby": "^11.0.4",
+        "inquirer": "^8.0.0",
         "lodash-es": "^4.17.21",
         "map-stream": "^0.0.7",
         "node-watch": "^0.7.3",
@@ -70,10 +73,10 @@
         "rollup-plugin-copy": "^3.4.0",
         "rollup-plugin-delete": "^2.0.0",
         "rollup-plugin-dts": "^5.0.0",
+        "rollup-plugin-typescript2": "^0.34.1",
         "rollup-plugin-uglify": "^6.0.4",
         "rollup-plugin-watch": "^1.0.1",
         "sass": "^1.55.0",
-        "tslib": "^2.4.0",
         "typescript": "^4.8.4",
         "vinyl-fs": "^3.0.3",
         "vite": "^3.1.8"

@@ -2,14 +2,16 @@
 ### 介绍
 按钮用于传递用户触摸时会触发的操作
 ### 引入
-```js
+```
 import { Button } from 'tard'
 ```
 
 ## 使用指南
+
 ### 按钮类型
-按钮默认支持 `default`、`primary`、`success`、`warning`、`danger` `info`六种类型，默认为default
-```js
+  按钮默认支持 default、primary、success、warning、danger、info六种类型，
+
+```
 <Button type="primary">主要按钮</Button>
 <Button type="info">信息按钮</Button>
 <Button type="default">默认按钮</Button>

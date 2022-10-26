@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react'
+import {  ReactNode } from 'react'
 
 export interface IComponent {
   clasName?: string

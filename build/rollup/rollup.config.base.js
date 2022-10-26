@@ -5,9 +5,9 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from "@rollup/plugin-typescript"
 import { uglify as RollupUglify } from 'rollup-plugin-uglify'
 import RollupCopy from 'rollup-plugin-copy'
-import RollupPluginStyle from './build/rollup/rollup-plugin-style.js'
+import RollupPluginStyle from './rollup-plugin-style.js'
 import { getBabelOutputPlugin } from '@rollup/plugin-babel'
-const config = require('./src/config.json')
+const config = require('../../src/config.json')
 
 const cwd = process.cwd()
 const resolveFile = filePath => path.join(cwd, filePath)
@@ -46,19 +46,20 @@ export default {
     external: externalPackages,
     extensions: ['json', 'js', 'ts'],
     plugins: [
-        // RollupNodeResolve({
-        //     customResolveOptions: {
-        //         moduleDirectory: 'node_modules'
-        //     }
-        // }),
+
+        RollupNodeResolve({
+            customResolveOptions: {
+                moduleDirectory: 'node_modules'
+            }
+        }),
         RollupCommonjs({
             extensions: ['.esm.js', '.mjs', '.js', '.ts'],
             include: /\/node_modules\//,
         }),
-        RollupTypescript(),
-        // RollupTypescript({
-        //     tsconfig: path.join(cwd, 'build/tsconfig/tsconfig.rollup.json')
-        // }),
+      RollupTypescript(),
+    //     RollupTypescript({
+    //         tsconfig: path.join(cwd, 'build/tsconfig/tsconfig.rollup.json')
+    //     }),
         getBabelOutputPlugin({
             presets: ['@babel/preset-env'],
             plugins: [

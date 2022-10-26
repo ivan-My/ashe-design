@@ -5,8 +5,7 @@
     "declarationDir": "../../dist/types",
     "declarationMap": false,
     "baseUrl": ".",
-    "outDir": "../../lib",
-    "rootDir": "../../src/components",
+    "rootDir": "../../src",
     "types": ["node"],
     "typeRoots": [
       "../../node_modules/@types"
@@ -14,10 +13,11 @@
   },
   "compileOnSave": false,
   "exclude": [
-    "../../node_modules/*",
-    "../../src/components/**/demo/*"
+    "../../src/sites/*",
+    "../../src/styles/*"
   ],
   "include": [
-    "../../src/components"
+    "../../src",
+//    "../../src/utils"
   ]
 }

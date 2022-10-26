@@ -4,6 +4,7 @@ import App from './App'
 
 const rootElement = document.querySelector('#doc')
 
+
 if (rootElement != null) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(<App />)

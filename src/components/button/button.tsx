@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import Input from '../input'
+
 
 export interface ButtonProps {
   className: string
@@ -27,11 +27,18 @@ export type ButtonType =
 export type ButtonSize = 'large' | 'normal' | 'small'
 export type ButtonShape = 'square' | 'round'
 
+const defaultProps ={
+  children: undefined,
+  onClick: () => {},
+}
 
 
-export const Button: FunctionComponent<Partial<ButtonProps>> = () => {
-  return <div className='nut-button'>
-    按钮
-    <Input />
+export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
+  const {children} = {
+    ...defaultProps,
+    ...props
+  }
+  return <div className='nut-button' >
+    {children}
   </div>
 }
