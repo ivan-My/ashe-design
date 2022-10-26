@@ -24,7 +24,7 @@ export default defineConfig({
         charset: false,
         // example : additionalData: `@import "./src/design/styles/variables";`
         // dont need include file extend .scss
-      //  additionalData: `@import "@/styles/variables.scss";`,
+        //  additionalData: `@import "@/styles/variables.scss";`,
       },
       postcss: {
         plugins: [atImport({ path: path.join(__dirname, 'src`') })],
@@ -40,7 +40,8 @@ export default defineConfig({
       },
     },
     lib: {
-      entry: './src/components/index.scss',
+      //entry: './src/components/index.scss',
+      entry: './dist/styles/themes/default.scss',
       formats: ['es'],
       name: 'style',
       fileName: 'style',

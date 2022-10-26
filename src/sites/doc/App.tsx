@@ -5,7 +5,7 @@ import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
 import remarkDirective from 'remark-directive'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { routes, raws } from './doc'
+import { routers, raws } from './docs'
 import DemoPreview from './components/demo-preview/demo-preview'
 
 
@@ -16,9 +16,10 @@ const App = () => {
       <HashRouter>
         <Link to={'/button'}>button</Link>
         <Link to={'/input'}>input</Link>
+        <Link to={'/mask'}>mask</Link>
         <DemoPreview />
         <Routes>
-          {routes.map((ru, index) => {
+          {routers.map((ru, index) => {
             return (
               <Route
                 key={index}
@@ -51,7 +52,7 @@ const App = () => {
           })}
         </Routes>
       </HashRouter>
- 
+
     </div>
   )
 }

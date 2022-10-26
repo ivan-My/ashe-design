@@ -1,0 +1,32 @@
+{
+    "doc": {},
+    "nav": [{
+        "name": "基础组件",
+        "enName": "base",
+        "packages": [{
+                "version": "0.1.1",
+                "name": "Button",
+                "type": "component",
+                "cName": "按钮",
+                "desc": "按钮",
+                "show": "true"
+            },
+            {
+                "version": "0.1.1",
+                "name": "Input",
+                "type": "component",
+                "cName": "输入框",
+                "desc": "输入框",
+                "show": "true"
+            }, {
+                "version": "0.1.1",
+                "name": "Mask",
+                "type": "component",
+                "cName": "遮罩",
+                "desc": "遮罩",
+                "show": "true"
+            }
+        ]
+
+    }]
+}

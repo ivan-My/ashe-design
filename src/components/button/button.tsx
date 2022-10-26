@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import Input from '../input'
 
 export interface ButtonProps {
   className: string
@@ -29,5 +30,8 @@ export type ButtonShape = 'square' | 'round'
 
 
 export const Button: FunctionComponent<Partial<ButtonProps>> = () => {
-  return <div className='nut-button'>button22222888333</div>
+  return <div className='nut-button'>
+    按钮
+    <Input />
+  </div>
 }

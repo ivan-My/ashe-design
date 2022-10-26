@@ -60,9 +60,10 @@ export default defineConfig({
       },
     },
     lib: {
-      entry: 'src/components/index.ts',
-      name: 'nutui.react',
-      fileName: 'nutui.react',
+     // entry: 'src/components/index.ts',
+     entry: 'src/components/ashe.react.build.ts',
+      name: 'ashe.react',
+      fileName: 'ashe.react',
       formats: ['es', 'umd'],
     },
   },
