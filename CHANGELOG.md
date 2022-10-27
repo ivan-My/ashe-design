@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/ivan-My/ashe-design/compare/v1.0.1...v1.0.2) (2022-10-27)
+
+
+### Features
+
+* tag v1.0.2 ([e43dad7](https://github.com/ivan-My/ashe-design/commit/e43dad7e150eba3014ffd4fdfd74abf4236d4a62))
+
+
+
 ## [1.0.1](https://github.com/ivan-My/ashe-design/compare/6c44a266495c7db6febb0ad20f1ef28582a4a044...v1.0.1) (2022-10-27)
 
 
