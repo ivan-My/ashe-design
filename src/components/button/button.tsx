@@ -38,6 +38,7 @@ export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
   }
   return (
     <div className="nut-button" color={color}>
+      222
       {children}
     </div>
   )
