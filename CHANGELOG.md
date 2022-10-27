@@ -1,4 +1,4 @@
-## 1.0.1 (2022-10-27)
+## [1.0.1](https://github.com/ivan-My/ashe-design/compare/6c44a266495c7db6febb0ad20f1ef28582a4a044...v1.0.1) (2022-10-27)
 
 
 ### Bug Fixes
