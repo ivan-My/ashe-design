@@ -22,7 +22,6 @@ config.nav.map((item) => {
             packages.push(name)
         }
         if (show) {
-
             glob
                 .sync(
                     path.join(__dirname, `../src/components/${name.toLowerCase()}/`) +
@@ -30,9 +29,9 @@ config.nav.map((item) => {
                 )
                 .map((f) => {
                     onlineEditScss.push(name)
-                    importOnlineEditScssStr += `import ${name}Scss from '../../components/${name.toLowerCase()}/demo.scss?raw';\n`
+                    importOnlineEditScssStr += `import ${name}Scss from '@/components/${name.toLowerCase()}/demo.scss?raw';\n`
                 })
-            importMarkdownStr += `import ${name} from '../../components/${name.toLowerCase()}/doc.md?raw';\n`
+            importMarkdownStr += `import ${name} from '@/components/${name.toLowerCase()}/doc.md?raw';\n`
             mds.push(name)
             raws.push(name)
         }

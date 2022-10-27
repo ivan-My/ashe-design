@@ -4,7 +4,6 @@ import autoprefixer from 'autoprefixer'
 
 import * as path from 'path'
 
-//const path = require('path')
 const config = require('./package.json')
 
 const banner = `/*!
@@ -14,7 +13,7 @@ const banner = `/*!
 */`
 
  const { resolve } = path
-// https://vitejs.dev/config/
+
 export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
@@ -59,7 +58,6 @@ export default defineConfig({
       },
     },
     lib: {
-     // entry: 'src/components/index.ts',
      entry: 'src/components/ashe.react.build.ts',
       name: 'ashe.react',
       fileName: 'ashe.react',
