@@ -19,10 +19,6 @@
     "strict": true,
     "esModuleInterop": false,
     "removeComments": true,
-//    "declaration": false,
-//    "declarationMap": false,
-//    "rootDir": ".",
-//    "types": ["node"],
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -32,7 +28,7 @@
     "declarationMap": false,
     "baseUrl": ".",
     "rootDir": "./src",
-    "types": ["node"]
+    "types": ["vite/client","jest"]
   },
   "compileOnSave": false,
   "exclude": [

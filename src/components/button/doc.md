@@ -104,6 +104,7 @@ import { Button } from 'tard'
 
 
 ### 样式变量
+
 |  属性   | 默认值 |
 |  ----  | ---- |
 | --button-height | 76px |
@@ -122,4 +123,5 @@ import { Button } from 'tard'
 | --button-large-text-size | 32px |
 | --button-large-v-padding | 48px |
 | --button-radius-size | 38px |
+
 

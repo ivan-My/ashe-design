@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react'
 
-
 export interface ButtonProps {
   className: string
   color: string
@@ -27,18 +26,19 @@ export type ButtonType =
 export type ButtonSize = 'large' | 'normal' | 'small'
 export type ButtonShape = 'square' | 'round'
 
-const defaultProps ={
+const defaultProps = {
   children: undefined,
   onClick: () => {},
 }
 
-
 export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
-  const {children} = {
+  const { children, color } = {
     ...defaultProps,
-    ...props
+    ...props,
   }
-  return <div className='nut-button' >
-    {children}
-  </div>
+  return (
+    <div className="nut-button" color={color}>
+      {children}
+    </div>
+  )
 }
