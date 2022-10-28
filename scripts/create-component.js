@@ -1,6 +1,6 @@
 // 创建模板
- const inquirer = require('inquirer')
-//import inquirer from 'inquirer'
+const inquirer = require('inquirer')
+
 const path = require('path')
 const fs = require('fs')
 
@@ -20,8 +20,8 @@ var newCpt = {
   author: '',
 }
 function init() {
-
-  inquirer.prompt([
+  inquirer
+    .prompt([
       {
         type: 'input',
         name: 'name',
@@ -148,8 +148,6 @@ function createReact() {
   })
 }
 
-
-
 function createDemo() {
   return new Promise((resolve, reject) => {
     const name = newCpt.name
@@ -166,7 +164,6 @@ function createDemo() {
     })
   })
 }
-
 
 function addToPackageJson() {
   return new Promise((resolve, reject) => {

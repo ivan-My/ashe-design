@@ -26,11 +26,11 @@
           "name": "Input",
           "type": "component",
           "cName": "输入框",
-          "desc": "输入框",
+          "desc": "",
           "sort": 3,
           "show": true,
           "taro": true,
-          "author": "mingyang"
+          "author": "ivan"
         }
       ]
     }

@@ -2,20 +2,13 @@
 
 ### 介绍
 
-  通过键盘输入内容，是最基础的表单域包装。  
+基于 xxxxxxx
+
+### 安装
 
 
-### 安装 
-
-```
-import { Button } from '@nutui/nutui-react';
-```
 
 ## 代码演示
-
-```
-import { Button } from '@nutui/nutui-react';
-```
 
 ### 基础用法1
 

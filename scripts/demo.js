@@ -26,7 +26,7 @@ export default ${name}
 export default ${name}
 `,
     react: `import React, { FunctionComponent } from 'react'
-import './${name.toLowerCase()}.scss'
+
 
 
 export interface ${name}Props {

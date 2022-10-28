@@ -44,5 +44,3 @@ Promise.all(tasks).then((res) => {
     }
   )
 })
-
-console.log(fileStr)
