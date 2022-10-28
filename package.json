@@ -1,26 +1,28 @@
 {
-  "name": "ashe-design3",
+  "name": "ashe-design",
   "version": "1.0.2",
   "description": "",
+  "style": "dist/style.css",
   "main": "dist/ahse.react.umd.js",
   "module": "dist/esm/ashe-react.es.js",
   "typings": "dist/types/index.d.ts",
   "files": [
     "dist",
-    "package.json"
+    "package.json",
+    "CHANGELOG.md",
+    "README.md"
   ],
   "scripts": {
     "add": "node scripts/create-component.js",
     "dev": "npm run checked && vite --open --force",
     "generate:file": "node scripts/generate-ashe.js",
     "generate:themes": "node scripts/generate-themes.js",
-    "checked": "npm run generate:file ",
+    "checked": "npm run generate:file && tsc",
     "build:loader-style": "node scripts/generate-loader-style.js",
     "build": "npm run checked && npm run build:vite && npm run build:es && npm run build:css && npm run build:loader-style && npm run build:dts",
     "build:vite": "vite build --config vite.config.build.ts",
-    "build:es": "  NODE_ENV=production rollup -c rollup.config.es.js",
-    "build:dts2": "tsc --project build/tsconfig/tsconfig.d.json && npx rollup -c rollup.config.dts.js",
-    "build:dts": "tsc  && npx rollup -c rollup.config.dts.js",
+    "build:es": "NODE_ENV=production rollup -c rollup.config.es.js",
+    "build:dts": " npx rollup -c rollup.config.dts.js",
     "build:css": "npm run generate:themes && vite build --config vite.config.build.css.ts",
     "prepare": "husky install",
     "commit": "git-cz && npm run changelog",
@@ -47,6 +49,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.2.0",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.11.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
@@ -110,6 +113,9 @@
   "lint-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,scss}": "prettier --write"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
   },
   "config": {
     "commitizen": {
