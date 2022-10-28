@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           # 设置发包 npm 地址仓库
           registry-url: https://registry.npmjs.org
-        - name: Install dependencies 📦️
+      - name: Install dependencies 📦️
         run: npm install pnpm
       # 安装依赖，相当于 npm ci
       - name: Install dependencies 📦️
