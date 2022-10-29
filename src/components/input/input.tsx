@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
 export interface InputProps {}
+
 const defaultProps = {} as InputProps
 export const Input: FunctionComponent<
   Partial<InputProps> & React.HTMLAttributes<HTMLDivElement>
