@@ -27,7 +27,7 @@
     "build:css": "npm run gen:themes && vite build --config vite.config.build.css.ts",
     "prepare": "husky install",
     "commit": "git-cz && npm run changelog",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s ",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "jest"
   },
   "keywords": [],
@@ -52,6 +52,7 @@
     "@types/jest": "^29.2.0",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.11.3",
+    "@types/postcss-import": "^14.0.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
