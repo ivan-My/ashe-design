@@ -22,9 +22,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         charset: false,
-        // example : additionalData: `@import "./src/design/styles/variables";`
-        // dont need include file extend .scss
-        //  additionalData: `@import "@/styles/variables.scss";`,
+        additionalData: `@import "@/styles/variables.scss";`,
       },
       postcss: {
         plugins: [atImport({ path: path.join(__dirname, 'src`') })],
