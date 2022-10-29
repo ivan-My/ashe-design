@@ -93,7 +93,6 @@ config.nav.map((item) => {
       }
       fse.outputFileSync(
         file,
-        // `${rewrite}${'\n'}require('../../../packages/${nameLowerCase}/${nameLowerCase}.scss')`
         `${rewrite}${'\n'}import '../../../components/${nameLowerCase}/${nameLowerCase}.scss'`
       )
     }

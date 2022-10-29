@@ -20,7 +20,7 @@ const SetRouter = (list: any[]) => {
     mRouteTable.push({
       path: route.path,
       element: (
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div />}>
           <route.element />
         </Suspense>
       ),
