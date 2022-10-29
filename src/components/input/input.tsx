@@ -6,7 +6,7 @@ export const Input: FunctionComponent<
   Partial<InputProps> & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
   const { children } = { ...defaultProps, ...props }
-  return <div className="nut-input">Input</div>
+  return <div className="nut-input">Input2222</div>
 }
 
 Input.defaultProps = defaultProps
