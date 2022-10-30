@@ -35,11 +35,11 @@ export interface ${name}Props {
 const defaultProps = {} as ${name}Props
 export const ${name}: FunctionComponent<Partial<${name}Props> & React.HTMLAttributes<HTMLDivElement>> = (props) => {
   const { children } = { ...defaultProps, ...props }
-  return <div className="nut-${name.toLowerCase()}">${name}</div>
+  return <div className="ashe-${name.toLowerCase()}">${name}</div>
 }
 
 ${name}.defaultProps = defaultProps
-${name}.displayName = 'Nut${name}'
+${name}.displayName = 'Ashe${name}'
 `,
     doc: `#  ${name}组件
 

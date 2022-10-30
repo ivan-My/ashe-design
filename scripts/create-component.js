@@ -168,6 +168,9 @@ function createDemo() {
 function addToPackageJson() {
   return new Promise((resolve, reject) => {
     let sort = newCpt.sort
+
+    console.log(newCpt)
+
     newCpt.sort = nav[sort - 1].packages.length + 1
     nav[sort - 1].packages.push(newCpt)
     config.nav = nav
@@ -184,7 +187,7 @@ function addToPackageJson() {
 function createScss() {
   return new Promise((resolve, reject) => {
     const nameLc = newCpt.name.toLowerCase()
-    let content = `.nut-${nameLc} {}`
+    let content = `.ashe-${nameLc} {}`
     const dirPath = path.join(__dirname, '../src/components/' + nameLc)
     const filePath = path.join(dirPath, `${nameLc}.scss`)
     if (!fs.existsSync(dirPath)) {

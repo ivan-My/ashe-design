@@ -33,6 +33,43 @@
           "author": "ivan"
         }
       ]
+    },
+    {
+      "name": "基础组件",
+      "enName": "base",
+      "packages": []
+    },
+    {
+      "name": "基础组件",
+      "enName": "base",
+      "packages": []
+    },
+    {
+      "name": "基础组件",
+      "enName": "base",
+      "packages": []
+    },
+    {
+      "name": "反馈组件",
+      "enName": "base",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Toast",
+          "type": "component",
+          "cName": "轻提示",
+          "desc": "",
+          "sort": 1,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
+        }
+      ]
+    },
+    {
+      "name": "操作反馈",
+      "enName": "feedback",
+      "packages": []
     }
   ]
 }

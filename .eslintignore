@@ -4,7 +4,8 @@ site_docs
 coverage
 node_modules
 dist
-.idea
+.ideasud
 .husky
+.github
 iconfont.js
 .vscode

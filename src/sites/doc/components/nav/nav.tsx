@@ -20,17 +20,19 @@ const Nav = () => {
   return (
     <div className={`doc-nav ${fixed ? 'fixed' : ''}`}>
       <ol>
-        {cNav.map((cn: any,index:number) => {
+        {cNav.map((cn: any, index: number) => {
+          if (cn.packages.length === 0) return null
           return (
             <div key={index}>
-              <li >{cn.name}</li>
+              <li>{cn.name}</li>
               <ul>
                 {cn.packages.map((cp: any) => {
                   if (!cp.show) return null
+
                   return (
                     <NavLink
                       key={Math.random()}
-                       // activeClassName="selected"
+                      // activeClassName="selected"
                       to={`${cp.name}`}
                     >
                       <li>
