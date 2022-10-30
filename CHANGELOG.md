@@ -1,4 +1,4 @@
-## [1.0.3](https://github.com/ivan-My/ashe-design/compare/v1.0.2...v1.0.3) (2022-10-30)
+## [1.0.4](https://github.com/ivan-My/ashe-design/compare/v1.0.2...v1.0.4) (2022-10-30)
 
 
 ### Bug Fixes
@@ -19,9 +19,12 @@
 * 修复了css样式结构 ([10b900e](https://github.com/ivan-My/ashe-design/commit/10b900eebf13a0caae68cfbf4bf04ea88633f039))
 * 修复了git actions ([3ef7f98](https://github.com/ivan-My/ashe-design/commit/3ef7f988fd5e9abb2ed34ba9bac3102b793564b1))
 * 修复了github acions ([c984d3c](https://github.com/ivan-My/ashe-design/commit/c984d3c6753f168d483b943ca86eba94da564e49))
+* 修复了input.tsx ([cd258c5](https://github.com/ivan-My/ashe-design/commit/cd258c55f460ddae9e5800e1410095080486c9b3))
 * 修复了variables.scss ([217815a](https://github.com/ivan-My/ashe-design/commit/217815a64c44efb6cc70806889503de4a15f3f1e))
 * 修复了主config.json ([a33b4b1](https://github.com/ivan-My/ashe-design/commit/a33b4b18ce19731b0ebcef76c9b2ddd46558e7c5))
+* 修订了版本号 ([587f667](https://github.com/ivan-My/ashe-design/commit/587f6676779be0fd6cdceabe662c8460ec7bb754))
 * 测试branch ([2e70640](https://github.com/ivan-My/ashe-design/commit/2e706401f720cfc37328022921f030ca33fffc5a))
+* 测试theme ([d7cc38d](https://github.com/ivan-My/ashe-design/commit/d7cc38d0cf8cea4c864d551e3ce0daea5a1d0bfb))
 
 
 ### Features
@@ -29,6 +32,7 @@
 * 增加了 ([1a3bfb1](https://github.com/ivan-My/ashe-design/commit/1a3bfb1991ddf9d9216579a8eada1697b134944e))
 * 增加了github actions ([2b3e2c2](https://github.com/ivan-My/ashe-design/commit/2b3e2c29ac6c666b92de39cd88bcee7a5f1e26d9))
 * 增加了scripts删除组件 ([75397d2](https://github.com/ivan-My/ashe-design/commit/75397d2f5fc16fe4feef2a677bf8a163103270f3))
+* 增加了theme ([fcad7bb](https://github.com/ivan-My/ashe-design/commit/fcad7bbd6f4f2755909ff2473e525129d6de2a4d))
 * 测试 changelog ([a73a304](https://github.com/ivan-My/ashe-design/commit/a73a30480d742f6fbe09221afb9ec8ae512d9508))
 * 测试git actions ([1bc9078](https://github.com/ivan-My/ashe-design/commit/1bc907848eea55243c2b4c6af48e6a36753e39c7))
 * 添加了git actions ([2f81ad1](https://github.com/ivan-My/ashe-design/commit/2f81ad16185e0e01f5eb2ea6f77ed88ef64cc967))

@@ -1,11 +1,12 @@
 {
   "name": "ashe-design",
   "version": "1.0.4",
-  "description": "",
   "style": "dist/style.css",
   "main": "dist/ahse.react.umd.js",
   "module": "dist/esm/ashe-react.es.js",
   "typings": "dist/types/index.d.ts",
+  "description": "轻量级移动端 React 组件库",
+  "author": "ivan",
   "files": [
     "dist",
     "package.json",
@@ -17,26 +18,30 @@
     "access": "public"
   },
   "scripts": {
-    "add": "node scripts/create-component.js && npm run gen:file ",
-    "rm": "node scripts/remove-component.js && npm run gen:file",
-    "dev": "npm run checked && vite --open --force",
+    "add": "node scripts/create-component.js && pnpm run gen:file ",
+    "rm": "node scripts/remove-component.js && pnpm run gen:file",
+    "dev": "pnpm run checked && vite --open --force",
     "gen:file": "node scripts/gen-ashe.js",
     "gen:themes": "node scripts/gen-themes.js",
-    "checked": "npm run gen:file && tsc",
+    "checked": "pnpm run gen:file && tsc",
     "build:loader-style": "node scripts/gen-loader-style.js",
-    "build": "npm run checked && npm run build:vite && npm run build:es && npm run build:css && npm run build:loader-style && npm run build:dts",
+    "build": "pnpm run checked && pnpm run build:vite && pnpm run build:es && pnpm run build:css && pnpm run build:loader-style && pnpm run build:dts",
     "build:vite": "vite build --config vite.config.build.ts",
     "build:es": "NODE_ENV=production rollup -c rollup.config.es.js",
     "build:dts": " npx rollup -c rollup.config.dts.js",
-    "build:css": "npm run gen:themes && vite build --config vite.config.build.css.ts",
-    "build:site": "npm run checked && vite build --config vite.config.build.site.ts",
+    "build:css": "pnpm run gen:themes && vite build --config vite.config.build.css.ts",
+    "build:site": "pnpm run checked && vite build --config vite.config.build.site.ts",
     "prepare": "husky install",
     "commit": "git-cz ",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "webpack",
+    "react component",
+    "vite"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
@@ -117,6 +122,7 @@
     "classnames": "^2.3.2",
     "react-router-dom": "^6.4.2"
   },
+  "repository": "https://github.com/ivan-My/ashe-design",
   "lint-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,scss}": "prettier --write"
