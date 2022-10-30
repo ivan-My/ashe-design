@@ -17,8 +17,7 @@ componentsScss.map((cs) => {
   )
 })
 
-//let fileStr = `@import '../variables.scss';\n`
-let fileStr = ''
+let fileStr = `@import '../variables.scss';\n`
 
 config.nav.map((item) => {
   item.packages.forEach((element) => {

@@ -6,7 +6,6 @@ const modulesPage = import.meta.glob('/src/components/**/demo.tsx')
 const routes: any = []
 for (const path in modulesPage) {
   let name = (/components\/(.*)\/demo.tsx/.exec(path) as any[])[1]
-
   routes.push({
     path: '/' + name.toLowerCase(),
     // @ts-ignore
