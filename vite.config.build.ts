@@ -12,7 +12,7 @@ const banner = `/*!
 * Released under the MIT License.
 */`
 
- const { resolve } = path
+const { resolve } = path
 
 export default defineConfig({
   resolve: {
@@ -24,7 +24,7 @@ export default defineConfig({
         charset: false,
         // example : additionalData: `@import "./src/design/styles/variables";`
         // dont need include file extend .scss
-      //  additionalData: `@import "@/styles/variables.scss";`,
+        additionalData: `@import "@/styles/variables.scss";`,
       },
       postcss: {
         plugins: [
@@ -58,7 +58,7 @@ export default defineConfig({
       },
     },
     lib: {
-     entry: 'src/components/ashe.react.build.ts',
+      entry: 'src/components/ashe.react.build.ts',
       name: 'ashe.react',
       fileName: 'ashe.react',
       formats: ['es', 'umd'],
