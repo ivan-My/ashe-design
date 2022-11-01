@@ -31,7 +31,7 @@ export type ButtonShape = 'square' | 'round'
 const defaultProps = {
   className: '',
   disabled: false,
-  children: '',
+  children: undefined,
   style: {},
   onClick: (e: MouseEvent) => {},
 } as ButtonProps

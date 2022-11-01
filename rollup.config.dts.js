@@ -7,7 +7,14 @@ const config = [
     input: './dist/esm/types/src/components/ashe.react.build.d.ts',
     output: [{ file: 'dist/types/index.d.ts', format: 'es' }],
     plugins: [
-      dts(),
+      dts({
+        compilerOptions: {
+          baseUrl: '.',
+          paths: {
+            '@/*': ['src/*'],
+          },
+        },
+      }),
       del({
         hook: 'buildEnd',
         targets: ['./dist/esm/types'],
