@@ -1,7 +1,7 @@
-import {  ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 export interface IComponent {
   clasName?: string
-  style?: string
-  children?: ReactNode
+  style?: React.CSSProperties
+  children?: ReactNode | string
 }

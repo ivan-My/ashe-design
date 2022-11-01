@@ -4,11 +4,10 @@ import ReactMarkdown from 'react-markdown'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
 import remarkDirective from 'remark-directive'
-//import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { routers, raws } from './docs'
+
 import Header from './components/header'
 import Nav from './components/nav'
-
 import DemoPreview from './components/demo-preview/demo-preview'
 
 const App = () => {

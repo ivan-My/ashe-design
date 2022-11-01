@@ -1,10 +1,26 @@
 import React from 'react'
-import {Button} from './button'
+import { Button } from './button'
 
-const ButtonDemo = () =>{
-    return <div>
-      <Button>按钮</Button>
+const ButtonDemo = () => {
+  return (
+    <div>
+      <Button
+        style={{
+          color: 'blue',
+        }}
+        onClick={(e) => {
+          console.log(e)
+          console.log(2222)
+        }}
+      >
+        按钮
+      </Button>
+      <h3>禁用状态</h3>
+      <Button disabled={true}>按钮</Button>
+      <h3>自定义颜色</h3>
+      <Button color={'green'}>按钮</Button>
     </div>
+  )
 }
 
 export default ButtonDemo
