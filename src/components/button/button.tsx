@@ -14,6 +14,7 @@ export interface ButtonProps extends IComponent {
   block: boolean
   icon: string
   style: CSSProperties
+  children: any
   onClick: (e: MouseEvent) => void
 }
 
