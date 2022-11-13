@@ -3,9 +3,7 @@ $title-color: #1a1a1a !default;
 $doc-header-height: 64px;
 $doc-default-nav-bg: $white;
 $doc-default-nav-color: $title-color;
-$doc-default-color: #fa2c19;
-
-
+$doc-default-color: #160403;
 $theme-black-content-bg: #060506;
 .doc {
   &-nav {
@@ -44,7 +42,6 @@ $theme-black-content-bg: #060506;
         font-weight: bold;
         position: relative;
         list-style-type: none;
-
         &.active {
           &::before {
             position: absolute;
@@ -56,7 +53,7 @@ $theme-black-content-bg: #060506;
             height: 10px;
             transform: rotate(90deg);
             background: url(https://img10.360buyimg.com/imagetools/jfs/t1/136135/19/14659/946/5fa20aa8E33a9aa26/d329fbe669171208.png)
-            no-repeat;
+              no-repeat;
             background-size: 100% 100%;
           }
         }
@@ -65,7 +62,6 @@ $theme-black-content-bg: #060506;
         li {
           padding-left: 29px;
           cursor: pointer;
-
           &:hover {
             a {
               color: $doc-default-color;
@@ -76,19 +72,16 @@ $theme-black-content-bg: #060506;
             &.active {
               color: $doc-default-color !important;
             }
-
             &:link,
             &:visited {
               color: $title-color;
             }
-
             &:hover {
               color: $doc-default-color;
               &:visited {
                 color: $doc-default-color;
               }
             }
-
             height: 100%;
             b {
               font-weight: normal;
@@ -99,9 +92,9 @@ $theme-black-content-bg: #060506;
       }
     }
     .selected {
-      color: #fa2c19 !important;
+      color: #100504 !important;
       li {
-        color: #fa2c19 !important;
+        color: #220806 !important;
       }
     }
   }

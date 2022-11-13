@@ -7,10 +7,9 @@ $doc-default-primary-bg: linear-gradient(
   rgba(250, 56, 31, 1) 83%,
   rgba(250, 63, 25, 1) 100%
 );
-
-$white: white;
-$title-color: red;
-
+$white: #fff;
+// 标题常规文字
+$title-color: #1a1a1a !default;
 // clolr
 // 红色
 $theme-red: #fa2c19;
@@ -56,7 +55,6 @@ $theme-white-theme-border: #f5f6f7;
 $theme-white-circle: #fff;
 $theme-white-circle-border: #e5e5e5;
 $theme-white-index-desc: #959fb1;
-
 // 黑色
 $theme-black-word: #ccc;
 $theme-black-input: #ccc;
@@ -88,7 +86,6 @@ $doc-default-nav-color: $title-color;
 // $doc-footer-height: 73px;
 // home
 $theme-black-content-bg: #060506;
-
 //markdown-add-style
 $nutui-doc-black: #323233;
 $nutui-doc-blue: #1989fa;

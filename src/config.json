@@ -1,75 +1,123 @@
 {
-  "doc": {},
-  "nav": [
-    {
-      "name": "基础组件",
-      "enName": "base",
-      "packages": [
-        {
-          "version": "0.1.1",
-          "name": "Button",
-          "type": "component",
-          "cName": "按钮",
-          "desc": "按钮",
-          "show": "true"
+    "docs": {
+        "name": "指南",
+        "packages": [{
+                "name": "intro-react",
+                "cName": "介绍",
+                "show": true
+            },
+            {
+                "name": "start-react",
+                "cName": "H5快速上手",
+                "show": true
+            },
+            {
+                "name": "starttaro-react",
+                "cName": "小程序开发",
+                "eName": "WeChat",
+                "show": true
+            },
+            {
+                "name": "theme-react",
+                "cName": "主题定制",
+                "show": true
+            },
+            {
+                "name": "international-react",
+                "cName": "国际化",
+                "show": true
+            },
+            {
+                "name": "resource",
+                "cName": "资源",
+                "show": true
+            },
+            {
+                "name": "https://github.com/jdf2e/nutui-react/releases",
+                "cName": "更新日志",
+                "show": true,
+                "isLink": true
+            }
+        ]
+    },
+    "nav": [{
+            "name": "基础组件",
+            "enName": "base",
+            "packages": [{
+                    "version": "0.1.1",
+                    "name": "Button",
+                    "type": "component",
+                    "cName": "按钮",
+                    "desc": "按钮",
+                    "show": "true"
+                },
+                {
+                    "version": "0.1.1",
+                    "name": "Mask",
+                    "type": "component",
+                    "cName": "遮罩",
+                    "desc": "遮罩",
+                    "show": "true"
+                },
+                {
+                    "version": "1.0.0",
+                    "name": "Input",
+                    "type": "component",
+                    "cName": "输入框",
+                    "desc": "",
+                    "sort": 3,
+                    "show": true,
+                    "taro": true,
+                    "author": "ivan"
+                }
+            ]
         },
         {
-          "version": "0.1.1",
-          "name": "Mask",
-          "type": "component",
-          "cName": "遮罩",
-          "desc": "遮罩",
-          "show": "true"
+            "name": "基础组件",
+            "enName": "base",
+            "packages": []
         },
         {
-          "version": "1.0.0",
-          "name": "Input",
-          "type": "component",
-          "cName": "输入框",
-          "desc": "",
-          "sort": 3,
-          "show": true,
-          "taro": true,
-          "author": "ivan"
-        }
-      ]
-    },
-    {
-      "name": "基础组件",
-      "enName": "base",
-      "packages": []
-    },
-    {
-      "name": "基础组件",
-      "enName": "base",
-      "packages": []
-    },
-    {
-      "name": "基础组件",
-      "enName": "base",
-      "packages": []
-    },
-    {
-      "name": "反馈组件",
-      "enName": "base",
-      "packages": [
+            "name": "基础组件",
+            "enName": "base",
+            "packages": []
+        },
         {
-          "version": "1.0.0",
-          "name": "Toast",
-          "type": "component",
-          "cName": "轻提示",
-          "desc": "",
-          "sort": 1,
-          "show": true,
-          "taro": true,
-          "author": "ivan"
+            "name": "基础组件",
+            "enName": "base",
+            "packages": []
+        },
+        {
+            "name": "反馈组件",
+            "enName": "base",
+            "packages": [{
+                    "version": "1.0.0",
+                    "name": "Toast",
+                    "type": "component",
+                    "cName": "轻提示",
+                    "desc": "",
+                    "sort": 1,
+                    "show": true,
+                    "taro": true,
+                    "author": "ivan"
+                },
+                {
+                    "version": "1.0.0",
+                    "name": "Infiniteloading",
+                    "type": "component",
+                    "cName": "滚动加载",
+                    "desc": "",
+                    "sort": 2,
+                    "show": true,
+                    "taro": true,
+                    "author": "ivan"
+                }
+            ]
+        },
+        {
+            "name": "操作反馈",
+            "enName": "feedback",
+            "packages": []
         }
-      ]
-    },
-    {
-      "name": "操作反馈",
-      "enName": "feedback",
-      "packages": []
-    }
-  ]
+    ]
 }

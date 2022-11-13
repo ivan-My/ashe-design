@@ -16,7 +16,9 @@ const ButtonDemo = () => {
         按钮
       </Button>
       <h3>禁用状态</h3>
-      <Button disabled={true}>按钮</Button>
+      <Button disabled={true} color="cyan" className="test">
+        按钮
+      </Button>
       <h3>自定义颜色</h3>
       <Button color={'green'}>按钮</Button>
     </div>

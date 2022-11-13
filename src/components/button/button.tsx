@@ -1,6 +1,7 @@
 import React, { FunctionComponent, CSSProperties } from 'react'
 import classNames from 'classnames'
 import { IComponent } from '@/utils/typeing'
+import bem from '@/utils/bem'
 
 export interface ButtonProps extends IComponent {
   className: string
@@ -36,30 +37,26 @@ const defaultProps = {
   onClick: (e: MouseEvent) => {},
 } as ButtonProps
 
-const prefixCls = 'ashe-button'
+const b = bem('button')
 
 export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
   const { children, onClick, disabled, style, color, className, ...rest } = {
     ...defaultProps,
     ...props,
   }
-  const cls = classNames(
-    prefixCls,
-    className,
-    disabled && `${prefixCls}--disabled`
-  )
+
+  const cls = classNames(b(), className, disabled && `${b()}--disabled`)
   const btnStyle = { color }
-  const onHandleClick = (e: any) => {
+  const handleClick = (e: any) => {
     if (!disabled && onClick) {
       onClick(e)
     }
   }
-
   return (
     <div
       className={cls}
       style={{ ...btnStyle, ...style }}
-      onClick={(e) => onHandleClick(e)}
+      onClick={(e) => handleClick(e)}
       {...rest}
     >
       {children}

@@ -24,7 +24,7 @@ const Nav = () => {
           if (cn.packages.length === 0) return null
           return (
             <div key={index}>
-              <li>{cn.name}</li>
+              <ol>{cn.name}</ol>
               <ul>
                 {cn.packages.map((cp: any) => {
                   if (!cp.show) return null

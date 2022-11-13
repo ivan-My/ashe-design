@@ -1,19 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState, useMemo } from 'react'
 import { Input } from './input'
 
 const InputDemo = () => {
   const [value, setValue] = useState('111')
+
+  let myRef = useRef<any>(null)
+
   useEffect(() => {
-    console.log(value)
-  }, [value])
+    //  console.log(myRef.current)
+  })
 
   return (
     <>
       <div className="demo">
         <h2>基础用法</h2>
-        <Input defaultValue={value} onChange={(e) => setValue(e)} />
+        <Input
+          defaultValue={value}
+          ref={myRef}
+          onChange={(e) => setValue(e)}
+          onFocus={(e) => {
+            console.log(e)
+          }}
+        />
         <Input />
         <Input />
+        <button onClick={() => myRef.current.focus()}>获取焦点</button>
+        <button onClick={() => myRef.current.blur()}>失去焦点</button>
+        <button onClick={() => myRef.current.clear()}> 清空value</button>
       </div>
     </>
   )

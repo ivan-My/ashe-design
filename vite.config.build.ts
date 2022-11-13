@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import autoprefixer from 'autoprefixer'
-
 import * as path from 'path'
 
 const config = require('./package.json')

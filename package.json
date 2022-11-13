@@ -1,6 +1,6 @@
 {
     "name": "ashe-design",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "style": "dist/style.css",
     "main": "dist/ahse.react.umd.js",
     "module": "dist/esm/ashe-react.es.js",
@@ -25,10 +25,10 @@
         "gen:themes": "node scripts/gen-themes.js",
         "checked": "npm run gen:file && tsc",
         "build:loader-style": "node scripts/gen-loader-style.js",
-        "build": "npm run checked && npm run build:vite && npm run build:es && npm run build:css && npm run build:loader-style && npm run build:dts",
+        "build": "rimraf dist  && npm run checked && npm run build:vite && npm run build:es && npm run build:css && npm run build:loader-style && npm run build:dts",
         "build:vite": "vite build --config vite.config.build.ts",
         "build:es": "NODE_ENV=production rollup -c rollup.config.es.js",
-        "build:dts": " npx rollup -c rollup.config.dts.js",
+        "build:dts": "rollup -c rollup.config.dts.js",
         "build:css": "npm run gen:themes && vite build --config vite.config.build.css.ts",
         "build:site": "npm run checked && vite build --config vite.config.build.site.ts",
         "prepare": "husky install",
@@ -120,7 +120,8 @@
     "dependencies": {
         "@babel/runtime": "^7.19.4",
         "classnames": "^2.3.2",
-        "react-router-dom": "^6.4.2"
+        "react-router-dom": "^6.4.2",
+        "@bem-react/classname": "^1.5.12"
     },
     "repository": "https://github.com/ivan-My/ashe-design",
     "lint-staged": {

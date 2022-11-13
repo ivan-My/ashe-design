@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <HashRouter>
-        <Header />
+        {/* <Header /> */}
         <Nav />
         <div className="doc-content">
           <Routes>

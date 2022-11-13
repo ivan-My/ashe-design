@@ -1,3 +1,11 @@
+/**
+ * 读取配置文件生成:
+ * /src/components//ashe.react.build.ts
+ * /src/components//ashe.react.ts
+ * /src/components/ashe.react.scss.ts
+ * /src/sites/doc/docs.ts
+ */
+
 const config = require('../src/config.json')
 var glob = require('glob')
 const path = require('path')
