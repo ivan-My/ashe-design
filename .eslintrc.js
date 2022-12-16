@@ -78,6 +78,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 0,
     '@typescript-eslint/no-var-requires': 0,
     'react/prop-types': 0,
+    'react/no-unused-prop-types': 0,
     'react/no-array-index-key': 0,
     'react/static-property-placement': 0,
     'react/destructuring-assignment': 0,

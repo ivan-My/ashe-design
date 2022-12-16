@@ -52,6 +52,7 @@ export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
       onClick(e)
     }
   }
+
   return (
     <div
       className={cls}

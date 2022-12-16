@@ -1,6 +1,6 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
-import { IComponent } from '@/utils/typeing'
 import className from 'classnames'
+import { IComponent } from '@/utils/typeing'
 import bem from '@/utils/bem'
 
 export interface InputProps extends IComponent {

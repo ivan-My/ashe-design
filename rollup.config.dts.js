@@ -1,4 +1,4 @@
-//合并.d.ts
+// 合并.d.ts
 import dts from 'rollup-plugin-dts'
 import del from 'rollup-plugin-delete'
 

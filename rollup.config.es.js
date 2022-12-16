@@ -15,6 +15,7 @@ const entries = {
   'ashe-react.es': path.join(cwd, '/src/components/ashe.react.build.ts'),
 }
 
+// eslint-disable-next-line array-callback-return
 config.nav.map((item) => {
   item.packages.forEach((ele) => {
     const { name } = ele

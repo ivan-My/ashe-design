@@ -1,5 +1,5 @@
-import './app.scss'
 import React from 'react'
+import './app.scss'
 import ReactMarkdown from 'react-markdown'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
