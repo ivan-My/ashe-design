@@ -1,9 +1,9 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
 import className from 'classnames'
-import { IComponent } from '@/utils/typeing'
+import { BasicComponent } from '@/utils/typeing'
 import bem from '@/utils/bem'
 
-export interface InputProps extends IComponent {
+export interface InputProps extends BasicComponent {
   ref?: any
   defaultValue?: string
   disabled?: boolean

@@ -3,6 +3,23 @@ $primary-color: #fa2c19 !default;
 $primary-color-end: #fa6419 !default;
 $input-disabled-color: gray;
 $input-border-bottom: lightgray;
+
+$white: #fff;
+$black: #000;
+
 .ashe-overflow-hidden {
   overflow: hidden;
 }
+
+// toast
+$toast-title-font-size: 16px !default;
+$toast-text-font-size: 14px !default;
+$toast-font-color: $white !default;
+$toast-inner-padding: 24px 30px !default;
+$toast-inner-bg-color: rgba(0, 0, 0, 0.8) !default;
+$toast-inner-border-radius: 12px !default;
+$toast-cover-bg-color: rgba(0, 0, 0, 0) !default;
+
+// mask
+$mask-z-index: 999 !default;
+$mask-background-color: rgba($black, 0.7) !default;

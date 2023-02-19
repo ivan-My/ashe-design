@@ -18,7 +18,6 @@ export const show: FunctionComponent<Partial<ToastProps | string>> = (
     ...defaultProps,
     ...textObj,
   }
-
   console.log(text, duration)
   return <div>124</div>
 }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, FunctionComponent } from 'react'
 import classNames from 'classnames'
 import bem from '@/utils/bem'
-import { IComponent } from '@/utils/typeing'
+import { BasicComponent } from '@/utils/typeing'
 
-export interface InfiniteloadingProps extends IComponent {
+export interface InfiniteloadingProps extends BasicComponent {
   hasMore: boolean
   threshold: number
   containerId: string

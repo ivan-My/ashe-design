@@ -8,9 +8,7 @@ import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 const config = require('./src/config.json')
 
 const cwd = process.cwd()
-
 const externalPackages = ['classnames', 'react', 'react-dom']
-
 const entries = {
   'ashe-react.es': path.join(cwd, '/src/components/ashe.react.build.ts'),
 }

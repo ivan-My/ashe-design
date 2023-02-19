@@ -1,7 +1,3 @@
-import { show, clear, config } from './methods'
+import Toast from './toast'
 
-export default {
-  show,
-  clear,
-  config,
-}
+export default Toast

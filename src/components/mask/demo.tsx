@@ -1,14 +1,16 @@
-import React,{useState}from 'react'
-import {Mask} from './mask'
+import React, { useState } from 'react'
+import { Mask } from './mask'
 import Button from '../button'
 
-const MaskMemo = () =>{
+const MaskMemo = () => {
   const [visible, setVisible] = useState(false)
-    return <div>
+  return (
+    <div>
       <Button />
-      <div onClick={() =>setVisible(true)} >点击</div>
-     <Mask visible={visible} />
+      <div onClick={() => setVisible(true)}>点击</div>
+      <Mask />
     </div>
+  )
 }
 
 export default MaskMemo

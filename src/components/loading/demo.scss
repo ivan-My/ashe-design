@@ -1,0 +1,19 @@
+.content > div {
+  display: flex;
+  margin: 30px 0;
+  flex-direction: column;
+  background: var(--nutui-gray-6, #ffffff);
+}
+.custom-img {
+  width: 164.5px;
+  height: 123.5px;
+}
+
+.loading-img {
+  height: 150px;
+  width: 270px;
+}
+
+.l-container {
+  background: #f1f1f1 !important;
+}

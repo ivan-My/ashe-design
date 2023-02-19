@@ -1,0 +1,27 @@
+#demo {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#demo .content {
+  height: 100%;
+  background: #f7f8fa;
+  overflow-x: hidden;
+  overflow-y: auto;
+  //padding: 57px 17px 0;
+}
+#demo .content > h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #909ca4;
+  padding: 0 10px;
+  font-weight: 400;
+}

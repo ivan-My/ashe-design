@@ -1,5 +1,5 @@
-import { useTouch } from './use-touch'
 import { useEffect, RefObject } from 'react'
+import { useTouch } from './use-touch'
 import { getScrollParent } from './get-scroll-parent'
 import { supportsPassive } from './supports-passive'
 

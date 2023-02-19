@@ -1,5 +1,8 @@
 import './button/button.scss'
 import './mask/mask.scss'
 import './input/input.scss'
+import './form/form.scss'
 import './toast/toast.scss'
 import './infiniteloading/infiniteloading.scss'
+import './dialog/dialog.scss'
+import './loading/loading.scss'

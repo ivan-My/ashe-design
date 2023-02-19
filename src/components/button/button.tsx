@@ -1,9 +1,9 @@
 import React, { FunctionComponent, CSSProperties } from 'react'
 import classNames from 'classnames'
-import { IComponent } from '@/utils/typeing'
+import { BasicComponent } from '@/utils/typeing'
 import bem from '@/utils/bem'
 
-export interface ButtonProps extends IComponent {
+export interface ButtonProps extends BasicComponent {
   className: string
   color: string
   shape: ButtonShape

@@ -4,6 +4,7 @@ import { useRoutes } from 'react-router-dom'
 const modulesPage = import.meta.glob('/src/components/**/demo.tsx')
 
 const routes: any = []
+
 for (const path in modulesPage) {
   let name = (/components\/(.*)\/demo.tsx/.exec(path) as any[])[1]
   routes.push({
@@ -12,7 +13,6 @@ for (const path in modulesPage) {
     element: lazy(modulesPage[path]),
   })
 }
-
 const SetRouter = (list: any[]) => {
   let mRouteTable: any = []
   list.forEach((route) => {
