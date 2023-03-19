@@ -1,0 +1,20 @@
+.ashe-form-item {
+  display: flex;
+  &__label {
+    font-size: 14px;
+    font-weight: normal;
+    width: 10px;
+    margin-right: 10px;
+    flex: none !important;
+    display: inline-block !important;
+    word-wrap: break-word;
+    text-align: left;
+    .required {
+      &::before {
+        content: '*';
+        color: red;
+        margin-right: 4px;
+      }
+    }
+  }
+}

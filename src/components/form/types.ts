@@ -1,10 +1,4 @@
-import { BasicComponent } from '@/utils/typeing'
-
-export interface FormProps extends BasicComponent {
-  /**
-   * 经 Form.useForm() 创建的 form 控制实例，不提供时会自动创建
-   */
-  from: any
+export interface BaseForm {
   /**
    * 经 Form.useForm() 创建的 form 控制实例，不提供时会自动创建
    */
@@ -28,4 +22,65 @@ export interface FormProps extends BasicComponent {
    * 表单校验失败回调
    */
   onFinishFailed: (value: []) => void
+  /**
+   * 清空表单数据回调
+   */
+  onRest: () => void
+}
+
+export interface FormItemRuleWithoutValidator {
+  [key: string]: any
+  regex?: RegExp
+  required?: boolean
+  message?: string
+}
+export interface FormItemRule extends FormItemRuleWithoutValidator {
+  validator?: (
+    value: any,
+    ruleCfg: FormItemRuleWithoutValidator
+  ) => boolean | string | Promise<boolean | string>
+}
+export interface BaseFormField {
+  /**
+   * 字段名
+   */
+  name: string
+  /**
+   * label 标签的文本
+   */
+  label: string
+  /**
+   * 校验规则，设置字段的校验逻辑
+   */
+  rules: FormItemRule[]
+  /**
+   * 是否禁用表单项
+   */
+  disabled: boolean
+}
+export interface FormInstance<Values = any> {
+  registerField: () => () => void
+}
+export type StoreValue = string | number
+export type NamePath = string | number
+
+export interface Callbacks<Values = any> {
+  onValuesChange?: (values: Values) => void
+  onFinish?: (values: Values) => void
+  onFinishFailed?: (Values: Values) => void
+}
+
+export interface Store {
+  [name: string]: StoreValue
+}
+
+export interface FieldEntity {
+  onStoreChange: () => void
+  getNamePath: () => NamePath
+  props: {
+    name: NamePath
+    rules?: any[]
+    dependencies?: NamePath[]
+    initialValue?: any
+  }
 }

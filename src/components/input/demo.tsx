@@ -3,8 +3,7 @@ import { Input } from './input'
 
 const InputDemo = () => {
   const [value, setValue] = useState('111')
-
-  let myRef = useRef<any>(null)
+  const myRef = useRef<any>(null)
 
   useEffect(() => {
     //  console.log(myRef.current)
@@ -15,9 +14,12 @@ const InputDemo = () => {
       <div className="demo">
         <h2>基础用法</h2>
         <Input
-          defaultValue={value}
+          defaultValue={'asdf'}
           ref={myRef}
-          onChange={(e) => setValue(e)}
+          onChange={(e) => {
+            console.log(e)
+            setValue(e)
+          }}
           onFocus={(e) => {
             console.log(e)
           }}

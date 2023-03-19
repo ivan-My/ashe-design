@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 
 export interface BasicComponent {
-  clasName?: string
+  className?: string
   style?: React.CSSProperties
   children?: ReactNode
 }

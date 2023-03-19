@@ -1,9 +1,20 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
+import React, {
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+  HTMLInputTypeAttribute,
+} from 'react'
 import className from 'classnames'
 import { BasicComponent } from '@/utils/typeing'
 import bem from '@/utils/bem'
 
+export type InputType = HTMLInputTypeAttribute
+
 export interface InputProps extends BasicComponent {
+  name?: string
+  type: InputType
+  placeholder?: string
   ref?: any
   defaultValue?: string
   disabled?: boolean
@@ -14,6 +25,9 @@ export interface InputProps extends BasicComponent {
   onFocus?: (value: any) => void
 }
 const defaultProps = {
+  name: '',
+  type: 'text',
+  placeholder: '',
   defaultValue: '',
   disabled: false,
   border: true,
@@ -29,7 +43,7 @@ const b = bem('input')
 
 export const Input = React.forwardRef<InputInstance, InputProps>(
   (props, ref) => {
-    const { defaultValue, disabled, border, center } = {
+    const { defaultValue, disabled, border, center, placeholder } = {
       ...defaultProps,
       ...props,
     }
@@ -41,6 +55,10 @@ export const Input = React.forwardRef<InputInstance, InputProps>(
       border && `${b()}-border`,
       center && 'center'
     )
+
+    useEffect(() => {
+      setValue(defaultValue)
+    }, [defaultValue])
 
     useImperativeHandle(ref, () => ({
       focus: () => {
@@ -55,6 +73,7 @@ export const Input = React.forwardRef<InputInstance, InputProps>(
     }))
 
     useEffect(() => {}, [props.defaultValue])
+
     return (
       <div className={cls}>
         <input
@@ -62,6 +81,7 @@ export const Input = React.forwardRef<InputInstance, InputProps>(
           value={value}
           ref={inputRef}
           disabled={disabled}
+          placeholder={placeholder}
           onChange={(e) => {
             const value = e.target.value
             setValue(value)
