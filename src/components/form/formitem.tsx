@@ -59,10 +59,7 @@ export class FormItem extends React.Component<FieldProps> {
   getControlled = (children: React.ReactElement) => {
     const { getFieldValue, setFieldsValue } = this.context
     const { name } = this.props
-
-    // const type = (children as any).type.NAME
     const type = (children as any).type
-
     const defaultvalue =
       this.props.initialValue || (children as any).props?.defaultValue
     if (defaultvalue && !this.isInitialValue) {
