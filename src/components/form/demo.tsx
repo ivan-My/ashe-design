@@ -21,7 +21,10 @@ const FormDemo = () => {
           <Form.Item
             label="姓名"
             name="username"
-            rules={[{ required: true, message: '请输入姓名' }]}
+            rules={[
+              { required: true, message: '请输入姓名' },
+              { validator: customValidator, message: '必须输入数字' },
+            ]}
           >
             <Input placeholder="请输入姓名" type="text" />
           </Form.Item>
