@@ -6,7 +6,7 @@ import React, {
   useImperativeHandle,
 } from 'react'
 import bem from '@/utils/bem'
-import { CountDownProps } from './PropsType'
+import { CountDownProps } from './type'
 import { formatRemainTime, getTimeStamp } from './utils'
 
 const defaultProps = {
@@ -44,10 +44,11 @@ const InternalCountDown: ForwardRefRenderFunction<
   } = { ...defaultProps, ...props }
 
   const [restTimeStamp, setRestTime] = useState(0)
+
   const stateRef = useRef({
-    pauseTime: 0,
-    curr: 0,
-    isPaused: paused,
+    // pauseTime: 0,
+    // curr: 0,
+    // isPaused: paused,
     isIninted: false,
     timer: 0,
     restTime: 0, // 倒计时剩余时间时间
@@ -86,12 +87,13 @@ const InternalCountDown: ForwardRefRenderFunction<
     })
   }
 
-  // 暂定
+  // 暂停
   const pause = () => {
     cancelAnimationFrame(stateRef.current.timer)
     stateRef.current.counting = false
     onPaused && onPaused(stateRef.current.restTime)
   }
+
   useImperativeHandle(ref, () => ({
     start: () => {
       if (!stateRef.current.counting && !autoStart) {
@@ -150,21 +152,14 @@ const InternalCountDown: ForwardRefRenderFunction<
   const componentWillUnmount = () => {
     clearInterval(stateRef.current.timer)
   }
+
   const renderTime = (() => {
     return formatRemainTime(stateRef.current.restTime, '', format)
   })()
 
   return (
     <div className={`${b()} ${className || ''}`} style={{ ...style }} {...rest}>
-      {children || (
-        <div
-          className={b('block')}
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `${renderTime}`,
-          }}
-        />
-      )}
+      {children || <div className={b('block')}>{renderTime}</div>}
     </div>
   )
 }

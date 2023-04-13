@@ -1,4 +1,4 @@
-import React, { FunctionComponent, CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import classNames from 'classnames'
 import { BasicComponent } from '@/utils/typeing'
 import bem from '@/utils/bem'
@@ -39,7 +39,7 @@ const defaultProps = {
 
 const b = bem('button')
 
-export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
+export const Button: FC<Partial<ButtonProps>> = (props) => {
   const { children, onClick, disabled, style, color, className, ...rest } = {
     ...defaultProps,
     ...props,

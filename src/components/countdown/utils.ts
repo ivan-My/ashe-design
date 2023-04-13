@@ -4,7 +4,7 @@ export const getTimeStamp = (timeStr?: string | number) => {
   t = t > 0 ? +t : t.toString().replace(/-/g, '/')
   return new Date(t).getTime()
 }
-// 将倒计时剩余时间格式化   参数： t  时间戳  type custom 自定义类型
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // 将倒计时剩余时间格式化   参数： t  时间戳  type custom 自定义类型
