@@ -7,9 +7,10 @@
  */
 
 const config = require('../src/config.json')
-var glob = require('glob')
+const glob = require('glob')
 const path = require('path')
 const fs = require('fs-extra')
+
 let importStr = ``
 let importMarkdownStr = ``
 let importOnlineEditScssStr = ``

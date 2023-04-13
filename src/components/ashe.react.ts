@@ -5,6 +5,7 @@ import Form from './form'
 import Toast from './toast'
 import Infiniteloading from './infiniteloading'
 import Dialog from './dialog'
+import CountDown from './countdown'
 import Loading from './loading'
 
 import './button/button.scss'
@@ -14,6 +15,17 @@ import './form/form.scss'
 import './toast/toast.scss'
 import './infiniteloading/infiniteloading.scss'
 import './dialog/dialog.scss'
+import './countdown/countdown.scss'
 import './loading/loading.scss'
 
-export { Button, Mask, Input, Form, Toast, Infiniteloading, Dialog, Loading }
+export {
+  Button,
+  Mask,
+  Input,
+  Form,
+  Toast,
+  Infiniteloading,
+  Dialog,
+  CountDown,
+  Loading,
+}

@@ -1,3 +1,4 @@
+
 {
   "docs": {
     "name": "指南",
@@ -76,18 +77,18 @@
       ]
     },
     {
-      "name": "基础组件",
-      "enName": "base",
+      "name": "布局组件",
+      "enName": "layout",
       "packages": []
     },
     {
-      "name": "基础组件",
-      "enName": "base",
+      "name": "导航组件",
+      "enName": "nav",
       "packages": []
     },
     {
-      "name": "基础组件",
-      "enName": "base",
+      "name": "数据录入",
+      "enName": "dentry",
       "packages": [
         {
           "version": "1.0.0",
@@ -103,8 +104,8 @@
       ]
     },
     {
-      "name": "反馈组件",
-      "enName": "base",
+      "name": "操作反馈",
+      "enName": "feedback",
       "packages": [
         {
           "version": "1.0.0",
@@ -142,9 +143,20 @@
       ]
     },
     {
-      "name": "操作反馈",
-      "enName": "feedback",
+      "name": "展示组件",
+      "enName": "exhibition",
       "packages": [
+        {
+          "version": "1.0.0",
+          "name": "CountDown",
+          "type": "component",
+          "cName": "倒计时",
+          "desc": "",
+          "sort": 1,
+          "show": true,
+          "taro": true,
+          "author": ""
+        },
         {
           "version": "1.0.0",
           "name": "Loading",
