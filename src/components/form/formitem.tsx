@@ -32,7 +32,8 @@ const defaultProps = {
 } as FormItemProps
 
 export type FieldProps = typeof defaultProps & Partial<BaseFormField>
-export class FormItem extends React.Component<FieldProps> {
+
+class FormItem extends React.Component<FieldProps> {
   static defaultProps = defaultProps
 
   static contextType: any = FormItemContext
@@ -172,3 +173,5 @@ export class FormItem extends React.Component<FieldProps> {
     return this.renderLayout(returnChildNode)
   }
 }
+
+export default FormItem
