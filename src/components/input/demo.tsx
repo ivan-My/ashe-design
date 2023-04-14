@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-
+import { Input } from './input'
 import './demo.scss'
 
 const InputDemo = () => {
@@ -15,7 +15,7 @@ const InputDemo = () => {
       <>
         <div className="demo">
           <h2>基础用法</h2>
-
+          <Input />
           <div onClick={() => myRef.current.focus()}>获取焦点</div>
           <div onClick={() => myRef.current.blur()}>失去焦点</div>
           <div onClick={() => myRef.current.clear()}> 清空value</div>

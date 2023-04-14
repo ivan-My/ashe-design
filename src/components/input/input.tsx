@@ -41,7 +41,7 @@ export type InputInstance = {
 
 const b = bem('input')
 
-export const Input = React.forwardRef<InputInstance, InputProps>(
+export const Input = React.forwardRef<InputInstance, Partial<InputProps>>(
   (props, ref) => {
     const { defaultValue, disabled, border, center, placeholder } = {
       ...defaultProps,
