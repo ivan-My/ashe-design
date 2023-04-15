@@ -75,7 +75,7 @@ export interface Store {
 }
 
 export interface FieldEntity {
-  onStoreChange: () => void
+  onStoreChange: any
   getNamePath: () => NamePath
   props: {
     name: NamePath

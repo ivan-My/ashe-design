@@ -46,12 +46,11 @@ class FormStore {
       ...this.store,
       ...newStore,
     }
-
     this.fieldEntities.forEach((enetity: FieldEntity) => {
       const { name } = enetity.props
       Object.keys(newStore).forEach((key) => {
         if (key === name) {
-          enetity.onStoreChange()
+          enetity.onStoreChange.changeValue()
         }
       })
     })
@@ -94,7 +93,7 @@ class FormStore {
           this.errList.push(...errors)
           // 表单项更新
         }
-        entity.onStoreChange()
+        entity.onStoreChange.changeValue()
       })
     })
     return err
