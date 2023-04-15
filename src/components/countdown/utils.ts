@@ -1,3 +1,5 @@
+import { CurrentTime } from '@/components/countdown/types'
+
 const padZero = (num: number | string, length = 2) => {
   num += ''
   while ((num as string).length < length) {
@@ -13,7 +15,7 @@ export const getTimeStamp = (timeStr?: string | number) => {
   return new Date(t).getTime()
 }
 
-export function parseTime(time: number) {
+export function parseTime(time: number): CurrentTime {
   const SECOND = 1000
   const MINUTE = 60 * SECOND
   const HOUR = 60 * MINUTE
@@ -35,7 +37,7 @@ export function parseTime(time: number) {
   }
 }
 
-export function parseFormat(format: string, currentTime: any): string {
+export function parseFormat(format: string, currentTime: CurrentTime): string {
   const { days } = currentTime
   let { hours, minutes, seconds, milliseconds } = currentTime
 

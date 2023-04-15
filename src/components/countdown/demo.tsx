@@ -54,37 +54,37 @@ const CountDownDemo = () => {
     <>
       <div className="demo">
         <h2>基础用法</h2>
-        {/* <CountDown */}
-        {/*  endTime={Date.now() + 30 * 60 * 60 * 1000} */}
-        {/*  format="DD:HH:mm:ss:SS" */}
-        {/* /> */}
+        <CountDown
+          endTime={Date.now() + 30 * 60 * 60 * 1000}
+          format="DD:HH:mm:ss:SS"
+        />
 
-        {/* <div>毫秒级渲染</div> */}
-        {/* <CountDown */}
-        {/*  endTime={Date.now() + 60 * 1000} */}
-        {/*  millisecond */}
-        {/*  format="HH:mm:ss:SS" */}
-        {/* /> */}
+        <div>毫秒级渲染</div>
+        <CountDown
+          endTime={Date.now() + 60 * 1000}
+          millisecond
+          format="HH:mm:ss:SS"
+        />
 
-        {/* <div>自定义格式</div> */}
-        {/* <CountDown */}
-        {/*  endTime={Date.now() + 60 * 1000 * 60 * 60} */}
-        {/*  format="DD 天 HH 时 mm 分 ss 秒" */}
-        {/* /> */}
+        <div>自定义格式</div>
+        <CountDown
+          endTime={Date.now() + 60 * 1000 * 60 * 60}
+          format="DD 天 HH 时 mm 分 ss 秒"
+        />
 
-        {/* <div>自定义样式</div> */}
-        {/* <CountDown endTime={Date.now() + 60 * 1000 * 60} onChange={onChange}> */}
-        {/*  <div */}
-        {/*    className="countdown-part-box" */}
-        {/*    style={{ display: 'flex', alignItems: 'center' }} */}
-        {/*  > */}
-        {/*    <span className="block">{timeData.hours}</span> */}
-        {/*    <span className="colon">:</span> */}
-        {/*    <span className="block">{timeData.minutes}</span> */}
-        {/*    <span className="colon">:</span> */}
-        {/*    <span className="block">{timeData.seconds}</span> */}
-        {/*  </div> */}
-        {/* </CountDown> */}
+        <div>自定义样式</div>
+        <CountDown endTime={Date.now() + 60 * 1000 * 60} onChange={onChange}>
+          <div
+            className="countdown-part-box"
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <span className="block">{timeData.hours}</span>
+            <span className="colon">:</span>
+            <span className="block">{timeData.minutes}</span>
+            <span className="colon">:</span>
+            <span className="block">{timeData.seconds}</span>
+          </div>
+        </CountDown>
 
         <div>手动控制</div>
         <CountDown ref={countDownRef} time={80000} autoStart={false} />
