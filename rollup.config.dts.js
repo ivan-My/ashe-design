@@ -11,7 +11,7 @@ const config = [
         compilerOptions: {
           baseUrl: '.',
           paths: {
-            '@/*': ['src/*'],
+            '@/*': ['dist/esm/types/src/*'],
           },
         },
       }),

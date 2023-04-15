@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 
 import { useForm } from '@/components/form/useForm'
 import { FormItemContext } from '@/components/form/formitemcontext'
-import { FormItem } from '@/components/form/formitem'
+import FormItem from '@/components/form/formitem'
 import { BaseForm } from '@/components/form/types'
 import { BasicComponent } from '@/utils/typeing'
 

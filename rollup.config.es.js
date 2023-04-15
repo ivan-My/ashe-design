@@ -12,11 +12,12 @@ const externalPackages = ['classnames', 'react', 'react-dom']
 const entries = {
   'ashe-react.es': path.join(cwd, '/src/components/ashe.react.build.ts'),
 }
-
+const outputEntries = {}
 // eslint-disable-next-line array-callback-return
 config.nav.map((item) => {
   item.packages.forEach((ele) => {
     const { name } = ele
+    outputEntries[`./${name.toLowerCase()}`] = `./${name}`
     entries[name] = path.join(
       cwd,
       `/src/components/${name.toLowerCase()}/index.ts`
@@ -29,23 +30,28 @@ export default {
   output: [
     {
       format: 'esm',
-      dir: path.join(cwd, '/dist/esm'),
+      dir: './dist/esm',
       name: '[entryName].js',
+      paths: (id) => {
+        return /@\/components/.test(id)
+          ? `${outputEntries[id.replace('@/components/', './')]}.js`
+          : id
+      },
     },
   ],
   external: externalPackages,
   extensions: ['json', 'js', 'ts'],
   plugins: [
-    RollupNodeResolve({
-      customResolveOptions: {
-        moduleDirectory: ['node_modules'],
-      },
-    }),
     RollupCommonjs({
       extensions: ['.esm.js', '.mjs', '.js', '.ts'],
       include: /\/node_modules\//,
     }),
     RollupTypescript(),
+    RollupNodeResolve({
+      customResolveOptions: {
+        moduleDirectory: ['node_modules'],
+      },
+    }),
     getBabelOutputPlugin({
       presets: ['@babel/preset-env'],
       plugins: [
