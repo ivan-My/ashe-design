@@ -6,8 +6,12 @@ import React, {
   useImperativeHandle,
 } from 'react'
 import bem from '@/utils/bem'
-import { CountDownProps } from './type'
-import { formatRemainTime, getTimeStamp } from './utils'
+import { CountDownProps } from './types'
+import {
+  parseFormat,
+  parseTime,
+  getTimeStamp,
+} from '@/components/countdown/utils'
 
 const defaultProps = {
   paused: false,
@@ -120,12 +124,8 @@ const InternalCountDown: ForwardRefRenderFunction<
 
   // 监听值变化
   useEffect(() => {
-    const tranTime = formatRemainTime(
-      stateRef.current.restTime,
-      'custom',
-      format
-    )
-    onChange && onChange(tranTime)
+    const time = parseTime(stateRef.current.restTime)
+    onChange && onChange(time)
   }, [restTimeStamp])
 
   // 监听开始结束时间变更
@@ -154,7 +154,8 @@ const InternalCountDown: ForwardRefRenderFunction<
   }
 
   const renderTime = (() => {
-    return formatRemainTime(stateRef.current.restTime, '', format)
+    const time = parseTime(stateRef.current.restTime)
+    return parseFormat(format, time)
   })()
 
   return (
