@@ -8,19 +8,7 @@ import Dialog from '@/components/dialog/doc.md?raw'
 import CountDown from '@/components/countdown/doc.md?raw'
 import Loading from '@/components/loading/doc.md?raw'
 
-import ButtonScss from '@/components/button/demo.scss?raw'
-import InputScss from '@/components/input/demo.scss?raw'
-import ToastScss from '@/components/toast/demo.scss?raw'
-import InfiniteloadingScss from '@/components/infiniteloading/demo.scss?raw'
-import LoadingScss from '@/components/loading/demo.scss?raw'
-
-export const scssRaws = {
-  ButtonScss,
-  InputScss,
-  ToastScss,
-  InfiniteloadingScss,
-  LoadingScss,
-}
+export const scssRaws = {}
 export const routers = [
   'Button',
   'Mask',
