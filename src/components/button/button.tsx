@@ -61,7 +61,6 @@ export const Button: FC<Partial<ButtonProps>> = (props) => {
       {...rest}
     >
       {children}
-      MINGYANG
     </div>
   )
 }
