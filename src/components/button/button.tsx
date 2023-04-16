@@ -61,6 +61,7 @@ export const Button: FunctionComponent<Partial<ButtonProps>> = (props) => {
       {...rest}
     >
       {children}
+      MINGYANG
     </div>
   )
 }
