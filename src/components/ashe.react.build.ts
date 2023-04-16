@@ -7,6 +7,7 @@ import Infiniteloading from './infiniteloading'
 import Dialog from './dialog'
 import CountDown from './countdown'
 import Loading from './loading'
+import VirtualList from './virtuallist'
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   Dialog,
   CountDown,
   Loading,
+  VirtualList,
 }

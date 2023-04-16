@@ -7,6 +7,7 @@ import Infiniteloading from './infiniteloading'
 import Dialog from './dialog'
 import CountDown from './countdown'
 import Loading from './loading'
+import VirtualList from './virtuallist'
 
 import './button/button.scss'
 import './mask/mask.scss'
@@ -17,6 +18,7 @@ import './infiniteloading/infiniteloading.scss'
 import './dialog/dialog.scss'
 import './countdown/countdown.scss'
 import './loading/loading.scss'
+import './virtuallist/virtuallist.scss'
 
 export {
   Button,
@@ -28,4 +30,5 @@ export {
   Dialog,
   CountDown,
   Loading,
+  VirtualList,
 }

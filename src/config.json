@@ -1,4 +1,3 @@
-
 {
   "docs": {
     "name": "指南",
@@ -164,6 +163,17 @@
           "cName": "加载中",
           "desc": "",
           "sort": 1,
+          "show": true,
+          "taro": true,
+          "author": ""
+        },
+        {
+          "version": "1.0.0",
+          "name": "VirtualList",
+          "type": "component",
+          "cName": "虚拟滚动列表",
+          "desc": "",
+          "sort": 3,
           "show": true,
           "taro": true,
           "author": ""
