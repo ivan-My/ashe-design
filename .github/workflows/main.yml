@@ -2,20 +2,28 @@ name: Publish Package to npmjs
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        # 设置 pnpm。指定版本7.0，不然会报错
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: ^7.0
+
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
+          cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install --legacy-peer-deps
-      - run: npm run build
-      - run: npm publish
+
+      - run: pnpm install --legacy-peer-deps
+      - run: pnpm run build
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
