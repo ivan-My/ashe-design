@@ -1,6 +1,10 @@
 import { useRef } from 'react'
 import Schema from 'async-validator'
 import { Store, Callbacks, FormInstance, FieldEntity } from './types'
+
+interface initValueType {
+  name: string
+}
 /**
  * 用于存储表单的数据
  */
@@ -121,6 +125,10 @@ class FormStore {
     })
   }
 
+  innerSetInitialValues = (values: any) => {
+    this.store = values
+  }
+
   getForm = () => {
     return {
       setCallback: this.setCallback,
@@ -132,6 +140,7 @@ class FormStore {
       store: this.store,
       errList: this.errList,
       fieldEntities: this.fieldEntities,
+      innerSetInitialValues: this.innerSetInitialValues,
     }
   }
 }

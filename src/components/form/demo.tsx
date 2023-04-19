@@ -5,6 +5,10 @@ import Input from '../input'
 const customValidator = (rule: any, value: string) => {
   return /^\d+$/.test(value)
 }
+const initValue = {
+  username: '11333',
+  age: '22qwer',
+}
 const FormDemo = () => {
   const [form] = Form.useForm()
 
@@ -16,12 +20,20 @@ const FormDemo = () => {
           onFinish={(obj: object) => {
             return console.log(obj)
           }}
+          initValue={initValue}
           form={form}
         >
           <Form.Item label="姓名" name="username">
             <Input
               className="nut-input-text"
               placeholder="请输入姓名"
+              type="text"
+            />
+          </Form.Item>
+          <Form.Item label="姓名" name="age">
+            <Input
+              className="nut-input-text"
+              placeholder="请输入年龄"
               type="text"
             />
           </Form.Item>
