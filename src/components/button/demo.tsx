@@ -5,9 +5,6 @@ const ButtonDemo = () => {
   return (
     <div>
       <Button
-        style={{
-          color: 'blue',
-        }}
         onClick={(e) => {
           console.log(e)
           console.log(2222)
@@ -15,6 +12,7 @@ const ButtonDemo = () => {
       >
         按钮
       </Button>
+
       <h3>禁用状态</h3>
       <Button disabled color="cyan" className="test">
         按钮

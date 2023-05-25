@@ -72,6 +72,17 @@
           "show": true,
           "taro": true,
           "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "ConfigProvider",
+          "type": "component",
+          "cName": "全局配置",
+          "desc": "",
+          "sort": 4,
+          "show": true,
+          "taro": true,
+          "author": ""
         }
       ]
     },
