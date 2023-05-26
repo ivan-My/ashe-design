@@ -6,11 +6,12 @@ const customValidator = (rule: any, value: string) => {
   return /^\d+$/.test(value)
 }
 const initValue = {
-  username: '11333',
-  age: '22qwer',
+  username: 'aaa',
+  age: 'bbbb',
 }
 const FormDemo = () => {
   const [form] = Form.useForm()
+  console.log(form)
 
   return (
     <>
@@ -20,7 +21,7 @@ const FormDemo = () => {
           onFinish={(obj: object) => {
             return console.log(obj)
           }}
-          initValue={initValue}
+          initialValues={initValue}
           form={form}
         >
           <Form.Item label="姓名" name="username">

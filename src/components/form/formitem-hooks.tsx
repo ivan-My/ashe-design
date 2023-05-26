@@ -9,6 +9,10 @@ import { BasicComponent } from '@/utils/typeing'
 import { BaseFormField } from './types'
 import { FormItemContext } from './formitemcontext'
 
+const pxCheck = (value: string | number): string => {
+  return Number.isNaN(Number(value)) ? String(value) : `${value}px`
+}
+
 type TextAlign =
   | 'start'
   | 'end'
@@ -37,7 +41,7 @@ const defaultProps = {
   initialValue: '',
 } as FormItemProps
 
-export type FieldProps = typeof defaultProps & Partial<BaseFormField>
+export type FieldProps = FormItemProps & BaseFormField
 
 export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
   const {
@@ -57,6 +61,7 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
   let isInitialValue = false
   const context = useContext(FormItemContext)
   const [, forceUpdate] = useState({})
+
   const onStoreChange = useMemo(() => {
     /* 管理层改变 => 通知表单项 */
     const onStoreChange = {
@@ -66,9 +71,7 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
     }
     return onStoreChange
   }, [context])
-  const pxCheck = (value: string | number): string => {
-    return Number.isNaN(Number(value)) ? String(value) : `${value}px`
-  }
+
   const getControlled = (children: React.ReactElement) => {
     const { getFieldValue, setFieldsValue } = context
     const type = (children as any).type
