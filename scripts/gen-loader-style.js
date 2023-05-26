@@ -82,8 +82,8 @@ config.nav.map((item) => {
             return im
               .toLowerCase()
               .replace('@import ', `import`)
-              .replace('../', '../../../packages/')
-              .replace("'./", `'../../../packages/${nameLowerCase}/`)
+              .replace('../', '../../../components/')
+              .replace("'./", `'../../../components/${nameLowerCase}/`)
           }
         })
         rewrite = rewrite.join('\r\n')
