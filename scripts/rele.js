@@ -56,7 +56,7 @@ const createGitCommitAndTag = (version) => {
   console.log(`Git提交和标签已创建：v${version}`)
 
   if (!isMasterBranch()) {
-    console.error('只能在 master 分支上提交标签。')
+    console.error('只能在 master 分支上提交tag。')
     return
   }
 
