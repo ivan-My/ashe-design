@@ -1,6 +1,8 @@
 const fs = require('fs')
+const { execSync } = require('child_process')
 const inquirer = require('inquirer')
-const { version } = require('../package.json')
+const package = require('../package.json')
+const { version } = package
 const semverInc = require('semver/functions/inc')
 
 const getNextVersion = (currentVersion) => {
@@ -13,6 +15,27 @@ const getNextVersion = (currentVersion) => {
     prepatch: semverInc(currentVersion, 'prepatch'),
     prerelease: semverInc(currentVersion, 'prerelease'),
   }
+}
+
+const updateVersion = (version) => {
+  const obj = JSON.parse(JSON.stringify(package))
+  obj.version = version
+  fs.writeFileSync(
+    '/Users/mingyang/Desktop/头脑风暴/ashe-design/package.json',
+    JSON.stringify(obj, null, 2)
+  )
+}
+
+const createGitCommitAndTag = (version) => {
+  // 创建Git提交
+  execSync('git add .')
+  execSync(`git commit -m "release: version ${version}"`)
+
+  // 创建Git标签
+  //execSync(`git tag v${version}`)
+
+  // 输出提示信息
+  console.log(`Git提交和标签已创建：v${version}`)
 }
 
 const nextVersion = getNextVersion(version)
@@ -32,7 +55,6 @@ inquirer
   ])
   .then(function (answers) {
     console.log(answers)
-    // if (answers.name === 3) {
-    //   console.log(222)
-    // }
+    updateVersion(answers.name)
+    createGitCommitAndTag(answers.name)
   })
