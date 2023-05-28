@@ -16,6 +16,21 @@ const getNextVersion = (currentVersion) => {
     prerelease: semverInc(currentVersion, 'prerelease'),
   }
 }
+// 检查工作目录状态
+function checkWorkingDirectoryStatus() {
+  try {
+    // 执行 Git 命令检查工作目录状态
+    execSync('git diff-index --quiet HEAD --')
+
+    // 工作目录干净，没有未提交的更改
+    console.log('工作目录是干净的，没有未提交的更改。')
+    return true
+  } catch (error) {
+    // 工作目录有未提交的更改
+    console.error('工作目录有未提交的更改，请先提交或丢弃这些更改。')
+    return false
+  }
+}
 
 const updateVersion = (version) => {
   const obj = JSON.parse(JSON.stringify(package))
@@ -54,6 +69,7 @@ inquirer
     },
   ])
   .then(function (answers) {
+    checkWorkingDirectoryStatus()
     updateVersion(answers.name)
     createGitCommitAndTag(answers.name)
   })
