@@ -1,3 +1,7 @@
+# Changelog
+
+## [1.1.7](https://github.com/ivan-My/ashe-design/compare/v1.1.6...v1.1.7) (2023-05-28)
+
 # [1.1.0](https://github.com/ivan-My/ashe-design/compare/v1.1.1...v1.1.0) (2022-11-13)
 
 
@@ -76,6 +80,3 @@
 ### Features
 
 * 增加了commit验证 ([60a02bb](https://github.com/ivan-My/ashe-design/commit/60a02bbc79778a4d5108ed5815d7923857466d5e))
-
-
-
