@@ -39,6 +39,11 @@ const updateVersion = (version) => {
   )
 }
 
+// 检查当前分支是否为 master 分支
+function isMasterBranch() {
+  const branchName = execSync('git symbolic-ref --short HEAD').toString().trim()
+  return branchName === 'main'
+}
 const createGitCommitAndTag = (version) => {
   // 创建Git提交
   execSync('git add .')
@@ -50,6 +55,7 @@ const createGitCommitAndTag = (version) => {
   // 输出提示信息
   console.log(`Git提交和标签已创建：v${version}`)
 
+  isMasterBranch()
   execSync('git push')
   execSync(`git push origin v${version}`)
 
@@ -59,7 +65,7 @@ const createGitCommitAndTag = (version) => {
 function pushToRemoteRepository() {}
 
 const nextVersion = getNextVersion(version)
-checkWorkingDirectoryStatus()
+//checkWorkingDirectoryStatus()
 inquirer
   .prompt([
     {
