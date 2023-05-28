@@ -1,6 +1,76 @@
+## [3.0.13](https://github.com/ivan-My/ashe-design/compare/v3.0.12...v3.0.13) (2023-05-28)
+
+
+### Bug Fixes
+
+* update rele.j ([161fe5a](https://github.com/ivan-My/ashe-design/commit/161fe5a9679ba0c69d303f5439654c44eabd205c))
+
+
+
+## [3.0.12](https://github.com/ivan-My/ashe-design/compare/v3.0.11...v3.0.12) (2023-05-28)
+
+
+### Bug Fixes
+
+* add 0000 ([28b136e](https://github.com/ivan-My/ashe-design/commit/28b136e2d0e1d22989d0f29ea4640339501227ad))
+
+
+### Features
+
+* 000111 ([8060382](https://github.com/ivan-My/ashe-design/commit/806038264142ced7f3f76b79de11fbf98be335b4))
+
+
+
+## [3.0.11](https://github.com/ivan-My/ashe-design/compare/v3.0.10...v3.0.11) (2023-05-28)
+
+
+
+## [3.0.10](https://github.com/ivan-My/ashe-design/compare/v3.0.9...v3.0.10) (2023-05-28)
+
+
+
+## [3.0.9](https://github.com/ivan-My/ashe-design/compare/v3.0.8...v3.0.9) (2023-05-28)
+
+
+
+## [3.0.8](https://github.com/ivan-My/ashe-design/compare/v3.0.5...v3.0.8) (2023-05-28)
+
+
+
+## [3.0.5](https://github.com/ivan-My/ashe-design/compare/v3.0.3...v3.0.5) (2023-05-28)
+
+
+
+## [3.0.3](https://github.com/ivan-My/ashe-design/compare/v3.0.0...v3.0.3) (2023-05-28)
+
+
+
+# [3.0.0](https://github.com/ivan-My/ashe-design/compare/v2.0.2...v3.0.0) (2023-05-28)
+
+
+
+## [2.0.2](https://github.com/ivan-My/ashe-design/compare/v2.0.1...v2.0.2) (2023-05-28)
+
+
+
+## [2.0.1](https://github.com/ivan-My/ashe-design/compare/v1.2.1...v2.0.1) (2023-05-28)
+
+
+### Bug Fixes
+
+* 444 ([9f06615](https://github.com/ivan-My/ashe-design/commit/9f06615eefed0df4323eec38d9aea283c623f972))
+
+
+### Features
+
+* version 1.2.2 ([35b4525](https://github.com/ivan-My/ashe-design/commit/35b45259fb38df17edbabbdd806bb6545359b313))
+* version 1.2.3 ([84c733e](https://github.com/ivan-My/ashe-design/commit/84c733e1ff40b79c3738d3428bd538830502993e))
+
 
 
 ## [1.2.1](https://github.com/ivan-My/ashe-design/compare/v1.2.0...v1.2.1) (2023-05-28)
+
+
 
 # [1.2.0](https://github.com/ivan-My/ashe-design/compare/v1.1.8...v1.2.0) (2023-05-28)
 
@@ -9,17 +79,79 @@
 
 * 10 ([2771e3e](https://github.com/ivan-My/ashe-design/commit/2771e3e827edf029c110f979c1d8e4ef8f867eda))
 
-# Changelog
+
 
 ## [1.1.8](https://github.com/ivan-My/ashe-design/compare/v1.1.7...v1.1.8) (2023-05-28)
 
+
+
 ## [1.1.7](https://github.com/ivan-My/ashe-design/compare/v1.1.6...v1.1.7) (2023-05-28)
 
-# [1.1.0](https://github.com/ivan-My/ashe-design/compare/v1.1.1...v1.1.0) (2022-11-13)
+
+
+## [1.1.6](https://github.com/ivan-My/ashe-design/compare/v1.1.5...v1.1.6) (2023-05-28)
 
 
 
-## [1.1.1](https://github.com/ivan-My/ashe-design/compare/v1.0.2...v1.1.1) (2022-11-13)
+## [1.1.5](https://github.com/ivan-My/ashe-design/compare/v2.0.0...v1.1.5) (2023-05-28)
+
+
+
+# [2.0.0](https://github.com/ivan-My/ashe-design/compare/v1.1.4...v2.0.0) (2023-05-28)
+
+
+
+## [1.1.4](https://github.com/ivan-My/ashe-design/compare/1.1.0...v1.1.4) (2023-05-26)
+
+
+### Bug Fixes
+
+* 修复 npm publish ([72694f0](https://github.com/ivan-My/ashe-design/commit/72694f08ff48a8460a4eda85f9a4ca0bf7a35be0))
+* 修复git actions ([642ba98](https://github.com/ivan-My/ashe-design/commit/642ba985f0c026fe823261862ce795b38179508b))
+* 修复了button ([0a873aa](https://github.com/ivan-My/ashe-design/commit/0a873aa9f7b5b825edc2bd94fd1501c63229108e))
+* 修复了打包样式路径 ([482d1c4](https://github.com/ivan-My/ashe-design/commit/482d1c45b4ed2d83e3cdb88cbba591717ab9ca88))
+* 修复倒计时 ([252f457](https://github.com/ivan-My/ashe-design/commit/252f457517ec930c2b39e405507de18402afbc37))
+* 修复倒计时 ([bce16af](https://github.com/ivan-My/ashe-design/commit/bce16af9010c72ba0a7e956660d4e0a34127ade5))
+* 删除了测试button ([a7aa370](https://github.com/ivan-My/ashe-design/commit/a7aa370e779c1dd36cb4c4f552dc9ebdbeac631a))
+
+
+### Features
+
+* add configprovider ([1ce78ec](https://github.com/ivan-My/ashe-design/commit/1ce78ec29d5c2bf6629ff05e9a6fcdd2a3a0f83e))
+* 修改了type.ts ([7b67747](https://github.com/ivan-My/ashe-design/commit/7b67747b9d690e13f00024347cea96bc7449823f))
+* 创建了VirtualList组件 ([c9a5b75](https://github.com/ivan-My/ashe-design/commit/c9a5b755588f72c2d86648c4b6abfcc19cc6f937))
+
+
+
+# [1.1.0](https://github.com/ivan-My/ashe-design/compare/v1.1.1...1.1.0) (2023-04-14)
+
+
+### Bug Fixes
+
+* 修复了input type ([1cbcf29](https://github.com/ivan-My/ashe-design/commit/1cbcf29ed4d459afac92c3a740becc8ce2d736f3))
+* 修复了打包错误 ([399a0a0](https://github.com/ivan-My/ashe-design/commit/399a0a04cad509339980456016fa0fe930e39657))
+
+
+### Features
+
+* form开发完成 ([a90d07e](https://github.com/ivan-My/ashe-design/commit/a90d07e363bf8f79b9723c55aadfb2f5a94cf96f))
+* **form:** 提交了form ([c0fca57](https://github.com/ivan-My/ashe-design/commit/c0fca574565e508dcaf93042684d7ed4c157c75e))
+* 升级了vite4.0 ([510a13c](https://github.com/ivan-My/ashe-design/commit/510a13c33a9e3ec84b1ff105e138021f02c86016))
+* 添加from表单 ([9d4a3da](https://github.com/ivan-My/ashe-design/commit/9d4a3da83a0e671fb62181d8a91adefd6e6fcb36))
+* 添加了倒计时组件 ([d9676ff](https://github.com/ivan-My/ashe-design/commit/d9676fff0bcc96950f656d06c29573d89bb6b957))
+
+
+
+## [1.1.1](https://github.com/ivan-My/ashe-design/compare/v1.0.9...v1.1.1) (2022-11-13)
+
+
+### Features
+
+* 修改了1.1.0 ([30d51b4](https://github.com/ivan-My/ashe-design/commit/30d51b4cb0ca7a469807b65a1205e473ae1524aa))
+
+
+
+## [1.0.9](https://github.com/ivan-My/ashe-design/compare/v1.0.2...v1.0.9) (2022-11-13)
 
 
 ### Bug Fixes
@@ -57,7 +189,6 @@
 
 ### Features
 
-* 修改了1.1.0 ([30d51b4](https://github.com/ivan-My/ashe-design/commit/30d51b4cb0ca7a469807b65a1205e473ae1524aa))
 * 增加了 ([1a3bfb1](https://github.com/ivan-My/ashe-design/commit/1a3bfb1991ddf9d9216579a8eada1697b134944e))
 * 增加了bem/react ([d61a56e](https://github.com/ivan-My/ashe-design/commit/d61a56ef0dace2204fdff28c9e15cac46cf88598))
 * 增加了button组件 ([615279e](https://github.com/ivan-My/ashe-design/commit/615279ec172eb41880ca1251ebaea93f156830e3))
@@ -93,3 +224,6 @@
 ### Features
 
 * 增加了commit验证 ([60a02bb](https://github.com/ivan-My/ashe-design/commit/60a02bbc79778a4d5108ed5815d7923857466d5e))
+
+
+
