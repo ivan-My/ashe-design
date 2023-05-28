@@ -47,3 +47,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     npm publish
   fi
 fi
+
+# 测试发布流程
