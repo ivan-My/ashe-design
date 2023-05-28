@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.8](https://github.com/ivan-My/ashe-design/compare/v1.1.7...v1.1.8) (2023-05-28)
+
 ## [1.1.7](https://github.com/ivan-My/ashe-design/compare/v1.1.6...v1.1.7) (2023-05-28)
 
 # [1.1.0](https://github.com/ivan-My/ashe-design/compare/v1.1.1...v1.1.0) (2022-11-13)
