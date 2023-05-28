@@ -1,3 +1,12 @@
+## [4.0.2](https://github.com/ivan-My/ashe-design/compare/v4.0.1...v4.0.2) (2023-05-28)
+
+
+### Bug Fixes
+
+* 222 ([9b00cc3](https://github.com/ivan-My/ashe-design/commit/9b00cc314ab00973eb7c4a31ea3dde825b4de6ae))
+
+
+
 ## [4.0.1](https://github.com/ivan-My/ashe-design/compare/v3.0.13...v4.0.1) (2023-05-28)
 
 
