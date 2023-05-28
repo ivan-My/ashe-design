@@ -1,6 +1,6 @@
 {
   "name": "ashe-design",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "style": "dist/style.css",
   "main": "dist/ahse.react.umd.js",
   "module": "dist/esm/ashe-react.es.js",
