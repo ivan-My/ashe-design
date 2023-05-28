@@ -35,7 +35,7 @@ const updateVersion = (version) => {
   const obj = { ...package, version }
   try {
     fs.writeFileSync(
-      '/Users/mingyang/Desktop/头脑风暴/ashe-design/package.jsons',
+      '/Ussers/mingyang/Desktop/头脑风暴/ashe-design/package.json',
       JSON.stringify(obj, null, 2)
     )
   } catch (e) {
