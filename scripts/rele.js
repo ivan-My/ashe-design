@@ -55,7 +55,11 @@ const createGitCommitAndTag = (version) => {
   // 输出提示信息
   console.log(`Git提交和标签已创建：v${version}`)
 
-  isMasterBranch()
+  if (!isMasterBranch()) {
+    console.error('只能在 master 分支上提交标签。')
+    return
+  }
+
   execSync('git push')
   execSync(`git push origin v${version}`)
 
