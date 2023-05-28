@@ -49,7 +49,14 @@ const createGitCommitAndTag = (version) => {
 
   // 输出提示信息
   console.log(`Git提交和标签已创建：v${version}`)
+
+  execSync('git push')
+  execSync(`git push origin v${version}`)
+
+  console.log('已推送到远程仓库')
 }
+// 推送到远程仓库
+function pushToRemoteRepository() {}
 
 const nextVersion = getNextVersion(version)
 checkWorkingDirectoryStatus()
