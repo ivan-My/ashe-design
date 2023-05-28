@@ -1,3 +1,13 @@
+## [3.0.14](https://github.com/ivan-My/ashe-design/compare/v3.0.13...v3.0.14) (2023-05-28)
+
+
+### Bug Fixes
+
+* 修改了rele.js ([32b8f7f](https://github.com/ivan-My/ashe-design/commit/32b8f7f8d5b4a19c33dbca74fbeed7f072954ae3))
+* 测试it ([244cc8b](https://github.com/ivan-My/ashe-design/commit/244cc8b9f3fbe38e1b564d39b195accf9459ca45))
+
+
+
 ## [3.0.13](https://github.com/ivan-My/ashe-design/compare/v3.0.12...v3.0.13) (2023-05-28)
 
 
