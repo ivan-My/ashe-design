@@ -1,3 +1,12 @@
+
+
+# [1.2.0](https://github.com/ivan-My/ashe-design/compare/v1.1.8...v1.2.0) (2023-05-28)
+
+
+### Features
+
+* 10 ([2771e3e](https://github.com/ivan-My/ashe-design/commit/2771e3e827edf029c110f979c1d8e4ef8f867eda))
+
 # Changelog
 
 ## [1.1.8](https://github.com/ivan-My/ashe-design/compare/v1.1.7...v1.1.8) (2023-05-28)
