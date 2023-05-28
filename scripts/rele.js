@@ -33,7 +33,10 @@ function checkWorkingDirectoryStatus() {
 
 const updateVersion = (version) => {
   const obj = { ...package, version }
-  fs.writeFileSync('path/to/package.json', JSON.stringify(obj, null, 2))
+  fs.writeFileSync(
+    '/Users/mingyang/Desktop/头脑风暴/ashe-design/package.json',
+    JSON.stringify(obj, null, 2)
+  )
 }
 
 // 检查当前分支是否为 master 分支
