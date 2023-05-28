@@ -120,6 +120,7 @@
     "rollup-plugin-uglify": "^6.0.4",
     "rollup-plugin-watch": "^1.0.1",
     "sass": "^1.55.0",
+    "semver": "^7.5.1",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4",
     "vinyl-fs": "^3.0.3",
