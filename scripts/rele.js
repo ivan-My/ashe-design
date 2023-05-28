@@ -54,7 +54,6 @@ inquirer
     },
   ])
   .then(function (answers) {
-    console.log(answers)
     updateVersion(answers.name)
     createGitCommitAndTag(answers.name)
   })
