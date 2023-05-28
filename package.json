@@ -34,7 +34,8 @@
         "prepare": "husky install",
         "commit": "git-cz ",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-        "test": "jest"
+        "test": "jest",
+        "release": "release-it"
     },
     "keywords": [
         "react",
@@ -105,6 +106,7 @@
         "react-dom": "^18.2.0",
         "react-markdown": "^8.0.3",
         "react-syntax-highlighter": "^15.5.0",
+        "release-it": "^15.10.3",
         "remark-directive": "^2.0.1",
         "remark-gfm": "^3.0.1",
         "rimraf": "^3.0.2",
