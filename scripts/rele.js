@@ -64,7 +64,7 @@ const createGitCommitAndTag = (version) => {
   execSync('git push')
   execSync(`git push origin v${version}`)
 
-  console.log('已推送到远程仓库')
+  console.log('已推送到远程仓库2')
 }
 // 推送到远程仓库
 // 生成发布日志
