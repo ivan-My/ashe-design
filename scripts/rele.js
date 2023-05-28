@@ -66,7 +66,20 @@ const createGitCommitAndTag = (version) => {
   console.log('已推送到远程仓库')
 }
 // 推送到远程仓库
-function pushToRemoteRepository() {}
+// 生成发布日志
+function generateReleaseNotes() {
+  // 获取最近的两个标签之间的提交历史，包含提交作者和消息
+  const gitLog = execSync(
+    'git log --pretty=format:"- %s (%an)" $(git describe --tags --abbrev=0 @^)..@'
+  )
+    .toString()
+    .trim()
+
+  // 将提交历史写入文件
+  fs.writeFileSync('RELEASE_NOTES.md', gitLog)
+
+  console.log('发布日志已生成：RELEASE_NOTES.md')
+}
 
 const nextVersion = getNextVersion(version)
 //checkWorkingDirectoryStatus()
@@ -87,4 +100,5 @@ inquirer
   .then(function (answers) {
     updateVersion(answers.name)
     createGitCommitAndTag(answers.name)
+    generateReleaseNotes()
   })
