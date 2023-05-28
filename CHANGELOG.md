@@ -1,5 +1,7 @@
 
 
+## [1.2.1](https://github.com/ivan-My/ashe-design/compare/v1.2.0...v1.2.1) (2023-05-28)
+
 # [1.2.0](https://github.com/ivan-My/ashe-design/compare/v1.1.8...v1.2.0) (2023-05-28)
 
 
