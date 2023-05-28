@@ -21,14 +21,12 @@ function checkWorkingDirectoryStatus() {
   try {
     // 执行 Git 命令检查工作目录状态
     execSync('git diff-index --quiet HEAD --')
-
     // 工作目录干净，没有未提交的更改
     console.log('工作目录是干净的，没有未提交的更改。')
-    return true
   } catch (error) {
     // 工作目录有未提交的更改
     console.error('工作目录有未提交的更改，请先提交或丢弃这些更改。')
-    return false
+    process.exit(-1)
   }
 }
 
@@ -47,13 +45,14 @@ const createGitCommitAndTag = (version) => {
   execSync(`git commit -m "release: version ${version}"`)
 
   // 创建Git标签
-  //execSync(`git tag v${version}`)
+  execSync(`git tag v${version}`)
 
   // 输出提示信息
   console.log(`Git提交和标签已创建：v${version}`)
 }
 
 const nextVersion = getNextVersion(version)
+checkWorkingDirectoryStatus()
 inquirer
   .prompt([
     {
@@ -69,7 +68,6 @@ inquirer
     },
   ])
   .then(function (answers) {
-    checkWorkingDirectoryStatus()
     updateVersion(answers.name)
     createGitCommitAndTag(answers.name)
   })
