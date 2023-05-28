@@ -28,6 +28,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 node_modules
-package.json
-scripts/rele.js
+./package.json
+./scripts/rele.js
 
