@@ -33,10 +33,15 @@ function checkWorkingDirectoryStatus() {
 
 const updateVersion = (version) => {
   const obj = { ...package, version }
-  fs.writeFileSync(
-    '/Users/mingyang/Desktop/头脑风暴/ashe-design/package.json',
-    JSON.stringify(obj, null, 2)
-  )
+  try {
+    fs.writeFileSync(
+      '/Users/mingyang/Desktop/头脑风暴/ashe-design/package.jsons',
+      JSON.stringify(obj, null, 2)
+    )
+  } catch (e) {
+    console.log('更改version失败：', e)
+    process.exit(-1)
+  }
 }
 
 // 检查当前分支是否为 master 分支
@@ -77,12 +82,7 @@ const createGitCommitAndTag = (version) => {
 
 const generateReleaseNotes = () => {
   try {
-    const gitLog = execSync(
-      'git log --pretty=format:"- %s (%an)" $(git describe --tags --abbrev=0 @^)..@'
-    )
-      .toString()
-      .trim()
-    fs.writeFileSync('RELEASE_NOTES.md', gitLog)
+    execSync('npm run changelog')
     console.log('发布日志已生成：RELEASE_NOTES.md')
   } catch (error) {
     console.error('生成发布日志时发生错误:', error)
@@ -90,31 +90,33 @@ const generateReleaseNotes = () => {
   }
 }
 
-const nextVersion = getNextVersion(version)
+function init() {
+  // checkWorkingDirectoryStatus()
+  const nextVersion = getNextVersion(version)
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        name: 'name',
+        message: `请选择要发布的版本，当前版本为:${version}`,
+        choices: Object.keys(nextVersion).map((item) => ({
+          name: `${item}  => ${nextVersion[item]}`,
+          value: nextVersion[item],
+        })),
+      },
+    ])
+    .then((answers) => {
+      const { name } = answers
+      updateVersion(name)
+      createGitCommitAndTag(name)
+      generateReleaseNotes()
 
-checkWorkingDirectoryStatus()
+      console.log('发布流程完成')
+    })
+    .catch((error) => {
+      console.error('发布流程出现错误:', error)
+      process.exit(-1)
+    })
+}
 
-inquirer
-  .prompt([
-    {
-      type: 'list',
-      name: 'name',
-      message: `请选择要发布的版本，当前版本为:${version}`,
-      choices: Object.keys(nextVersion).map((item) => ({
-        name: `${item}  => ${nextVersion[item]}`,
-        value: nextVersion[item],
-      })),
-    },
-  ])
-  .then((answers) => {
-    const { name } = answers
-    updateVersion(name)
-    createGitCommitAndTag(name)
-    generateReleaseNotes()
-
-    console.log('发布流程完成')
-  })
-  .catch((error) => {
-    console.error('发布流程出现错误:', error)
-    process.exit(-1)
-  })
+init()
