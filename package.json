@@ -1,6 +1,6 @@
 {
   "name": "ashe-design",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "style": "dist/style.css",
   "main": "dist/ahse.react.umd.js",
   "module": "dist/esm/ashe-react.es.js",
@@ -33,7 +33,6 @@
     "build:site": "npm run checked && vite build --config vite.config.build.site.ts",
     "prepare": "husky install",
     "commit": "git-cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "jest",
     "release": "release-it"
   },
@@ -79,7 +78,6 @@
     "commitizen": "4.2.4",
     "commitlint": "^17.1.2",
     "commitlint-config-cz": "^0.13.3",
-    "conventional-changelog-cli": "^2.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",

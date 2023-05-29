@@ -1,9 +1,10 @@
 const fs = require('fs')
-const { execSync } = require('child_process')
+const path = require('path')
 const inquirer = require('inquirer')
+const { execSync } = require('child_process')
+const semverInc = require('semver/functions/inc')
 const package = require('../package.json')
 const { version } = package
-const semverInc = require('semver/functions/inc')
 
 const getNextVersion = (currentVersion) => {
   return {
@@ -35,7 +36,7 @@ const updateVersion = (version) => {
   const obj = { ...package, version }
   try {
     fs.writeFileSync(
-      '/Ussers/mingyang/Desktop/头脑风暴/ashe-design/package.json',
+      '/Users/mingyang/Desktop/头脑风暴/ashe-design/package.json',
       JSON.stringify(obj, null, 2)
     )
   } catch (e) {
@@ -80,16 +81,6 @@ const createGitCommitAndTag = (version) => {
   }
 }
 
-const generateReleaseNotes = () => {
-  try {
-    execSync('npm run changelog')
-    console.log('发布日志已生成：RELEASE_NOTES.md')
-  } catch (error) {
-    console.error('生成发布日志时发生错误:', error)
-    process.exit(-1)
-  }
-}
-
 function init() {
   // checkWorkingDirectoryStatus()
   const nextVersion = getNextVersion(version)
@@ -109,8 +100,6 @@ function init() {
       const { name } = answers
       updateVersion(name)
       createGitCommitAndTag(name)
-      generateReleaseNotes()
-
       console.log('发布流程完成')
     })
     .catch((error) => {
@@ -118,5 +107,13 @@ function init() {
       process.exit(-1)
     })
 }
+
+/***
+ * 1，检查工作目录状态
+ * 2,获取即将发布的版本号
+ * 3,  写入package.json中的版本号,生成changelog,
+ * 是否发布到npm
+ * 4, 创建git提交， 创建Git标签，代码推动远程仓库，tag版本推送远程仓库
+ */
 
 init()

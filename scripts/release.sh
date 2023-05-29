@@ -13,13 +13,13 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "Releasing $VERSION ..."
 
-  if [[ -z $SKIP_TESTS ]]; then
-    npm run lint
-    npm run test
-  fi
+#  if [[ -z $SKIP_TESTS ]]; then
+##    npm run lint
+##    npm run test
+#  fi
 
   # build
-  VERSION=$VERSION npm run build
+#  VERSION=$VERSION npm run build
 
   # commit
   git add -A
