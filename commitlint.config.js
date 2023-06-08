@@ -1,9 +1,9 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'type-empty': [2, 'never'], //类型不能为空
+    'type-empty': [2, 'never'], // 类型不能为空
     'type-case': [2, 'always', 'lower-case'],
-    'subject-empty': [2, 'never'], //主题不能为空
+    'subject-empty': [2, 'never'], // 主题不能为空
     'type-enum': [
       2,
       'always',
@@ -20,9 +20,19 @@ module.exports = {
       ],
     ],
   },
+  types: [
+    { type: 'feat', section: 'Features' },
+    { type: 'fix', section: '2222 Fixes' },
+    { type: 'chore', hidden: true },
+    { type: 'docs', hidden: true },
+    { type: 'style', hidden: true },
+    { type: 'refactor', hidden: true },
+    { type: 'perf', hidden: true },
+    { type: 'test', hidden: true },
+  ],
 }
 
-//git commit -m "yolo!" --no-verify // 绕过钩子
+// git commit -m "yolo!" --no-verify // 绕过钩子
 /*
 * build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
 ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle等)的提交
