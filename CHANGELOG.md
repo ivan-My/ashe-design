@@ -1,3 +1,12 @@
+
+
+## [4.0.4](https://github.com/ivan-My/ashe-design/compare/v4.0.3...v4.0.4) (2023-06-08)
+
+
+### Bug Fixes
+
+* 22 ([e4931ef](https://github.com/ivan-My/ashe-design/commit/e4931efaa2d44f83bff75505e8dc38cecb4f8460))
+
 ## [4.0.2](https://github.com/ivan-My/ashe-design/compare/v4.0.3...v4.0.2) (2023-05-28)
 
 
@@ -252,6 +261,3 @@
 ### Features
 
 * 增加了commit验证 ([60a02bb](https://github.com/ivan-My/ashe-design/commit/60a02bbc79778a4d5108ed5815d7923857466d5e))
-
-
-
