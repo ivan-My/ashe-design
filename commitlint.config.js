@@ -20,16 +20,6 @@ module.exports = {
       ],
     ],
   },
-  types: [
-    { type: 'feat', section: 'Features' },
-    { type: 'fix', section: '2222 Fixes' },
-    { type: 'chore', hidden: true },
-    { type: 'docs', hidden: true },
-    { type: 'style', hidden: true },
-    { type: 'refactor', hidden: true },
-    { type: 'perf', hidden: true },
-    { type: 'test', hidden: true },
-  ],
 }
 
 // git commit -m "yolo!" --no-verify // 绕过钩子
