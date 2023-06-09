@@ -13,28 +13,19 @@
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-
+      "preset": "angular",
       "infile": "CHANGELOG.md",
       "ignoreRecommendedBump": true,
-         "preset": {
-        "name": "conventionalcommits",
-        "types": [{
-          "type": "feat",
-          "section": "✨新功能"
-        },
-          {
-            "type": "fix",
-                     "section": "🐛问题修复"
-          },
-          {
-            "type": "chore",
-                     "section": "213423"
-          }
-        ]
-
-
-
-      }
+      "types": [
+        {"type": "feat", "section": "Features"},
+        {"type": "fix", "section": " Fixes"},
+        {"type": "chore", "hidden": false},
+        {"type": "docs", "hidden": true},
+        {"type": "style", "hidden": true},
+        {"type": "refactor", "hidden": true},
+        {"type": "perf", "hidden": true},
+        {"type": "test", "hidden": true}
+    ]
     }
   }
 }
