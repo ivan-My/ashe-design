@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import autoprefixer from 'autoprefixer'
 import * as path from 'path'
+import dts from 'vite-plugin-dts'
+import fse from 'fs-extra'
 
 const config = require('./package.json')
 
@@ -17,30 +17,29 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        charset: false,
-        // example : additionalData: `@import "./src/design/styles/variables";`
-        // dont need include file extend .scss
-        additionalData: `@import "@/styles/variables.scss";`,
+  plugins: [
+    dts({
+      outputDir: 'dist/types',
+      clearPureImport: false,
+      exclude: [
+        'node_modules/**',
+        'src/sites/**',
+        'src/**/demo.tsx',
+        'src/**/*.spec.tsx',
+      ],
+      afterBuild: () => {
+        fse
+          .readFile('./dist/types/components/ashe.react.build.d.ts', 'utf-8')
+          .then((data: string) => {
+            fse.remove('./dist/types/components/ashe.react.build.d.ts')
+            fse.outputFile(
+              './dist/types/index.d.ts',
+              data.replace(/\.\.\//g, './')
+            )
+          })
       },
-      postcss: {
-        plugins: [
-          autoprefixer({
-            overrideBrowserslist: [
-              '> 0.5%',
-              'last 2 versions',
-              'ie > 11',
-              'iOS >= 10',
-              'Android >= 5',
-            ],
-          }),
-        ],
-      },
-    },
-  },
-  plugins: [reactRefresh()],
+    }),
+  ],
   build: {
     minify: false,
     emptyOutDir: true,

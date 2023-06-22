@@ -1,13 +1,21 @@
-import Button from './button';
-import Mask from './mask';
-import Input from './input';
-import ConfigProvider from './configprovider';
-import Form from './form';
-import Toast from './toast';
-import Infiniteloading from './infiniteloading';
-import Dialog from './dialog';
-import CountDown from './countdown';
-import Loading from './loading';
-import VirtualList from './virtuallist';
+import Button from '@/components/button'
+import Mask from '@/components/mask'
+import Input from '@/components/input'
+import Form from '@/components/form'
+import Toast from '@/components/toast'
+import Infiniteloading from '@/components/infiniteloading'
+import Dialog from '@/components/dialog'
+import CountDown from '@/components/countdown'
+import Loading from '@/components/loading'
 
-export { Button,Mask,Input,ConfigProvider,Form,Toast,Infiniteloading,Dialog,CountDown,Loading,VirtualList };
+export {
+  Button,
+  Mask,
+  Input,
+  Form,
+  Toast,
+  Infiniteloading,
+  Dialog,
+  CountDown,
+  Loading,
+}

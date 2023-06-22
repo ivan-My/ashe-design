@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from 'react'
-
 import { useForm } from '@/components/form/useForm'
 import { FormItemContext } from '@/components/form/formitemcontext'
-import FormItem from '@/components/form/formitem'
+import FormItem from '@/components/form/formitem-hooks'
 import { BaseForm } from '@/components/form/types'
 import { BasicComponent } from '@/utils/typeing'
 
 type FormProps = BaseForm & BasicComponent //
 
 const defaultProps = {
+  initialValues: {},
   className: '',
   style: undefined,
   form: {},
@@ -30,6 +30,7 @@ export const Form: FunctionComponent<
   Partial<FormProps> & React.HTMLAttributes<HTMLFormElement>
 > & { Item: typeof FormItem } & { useForm: typeof useForm } = (props) => {
   const {
+    initialValues,
     children,
     onFinish,
     onFinishFailed,
@@ -44,11 +45,13 @@ export const Form: FunctionComponent<
     formInstance = form
   } else {
     /* eslint-disable react-hooks/rules-of-hooks */
-    ;[formInstance] = useForm()
+    ;[formInstance] = useForm(formInstance)
   }
 
   formInstance.starPositon = starPositon
-  const { setCallback, submit, resetFields } = formInstance
+  const { setCallback, submit, resetFields, innerSetInitialValues } =
+    formInstance
+  innerSetInitialValues(initialValues)
   setCallback({
     onFinish,
     onFinishFailed,

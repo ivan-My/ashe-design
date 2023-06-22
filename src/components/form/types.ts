@@ -1,4 +1,5 @@
 export interface BaseForm {
+  initialValues: Store
   /**
    * 经 Form.useForm() 创建的 form 控制实例，不提供时会自动创建
    */
@@ -75,7 +76,7 @@ export interface Store {
 }
 
 export interface FieldEntity {
-  onStoreChange: () => void
+  onStoreChange: any
   getNamePath: () => NamePath
   props: {
     name: NamePath

@@ -1,6 +1,10 @@
 import { useRef } from 'react'
 import Schema from 'async-validator'
 import { Store, Callbacks, FormInstance, FieldEntity } from './types'
+
+interface initValueType {
+  name: string
+}
 /**
  * 用于存储表单的数据
  */
@@ -46,12 +50,11 @@ class FormStore {
       ...this.store,
       ...newStore,
     }
-
     this.fieldEntities.forEach((enetity: FieldEntity) => {
       const { name } = enetity.props
       Object.keys(newStore).forEach((key) => {
         if (key === name) {
-          enetity.onStoreChange()
+          enetity.onStoreChange.changeValue()
         }
       })
     })
@@ -94,7 +97,7 @@ class FormStore {
           this.errList.push(...errors)
           // 表单项更新
         }
-        entity.onStoreChange()
+        entity.onStoreChange.changeValue()
       })
     })
     return err
@@ -122,6 +125,10 @@ class FormStore {
     })
   }
 
+  innerSetInitialValues = (values: any) => {
+    this.store = values
+  }
+
   getForm = () => {
     return {
       setCallback: this.setCallback,
@@ -133,6 +140,7 @@ class FormStore {
       store: this.store,
       errList: this.errList,
       fieldEntities: this.fieldEntities,
+      innerSetInitialValues: this.innerSetInitialValues,
     }
   }
 }
