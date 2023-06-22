@@ -14,7 +14,7 @@
         "README.md"
     ],
     "publishConfig": {
-        "registry": "https://registry.pnpmjs.org",
+        "registry": "https://registry.npmjs.org",
         "access": "public"
     },
     "scripts": {
