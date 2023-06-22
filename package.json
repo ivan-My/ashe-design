@@ -24,11 +24,10 @@
         "gen:file": "node scripts/gen-ashe.js",
         "gen:themes": "node scripts/gen-themes.js",
         "checked": "pnpm run gen:file &&  tsc",
+        "build": "rimraf dist  && pnpm run checked && pnpm run build:vite && pnpm run build:es && pnpm run build:css && pnpm run build:loader-style ",
         "build:loader-style": "node scripts/gen-loader-style.js",
-        "build": "rimraf dist  && pnpm run checked && pnpm run build:vite && pnpm run build:es && pnpm run build:css && pnpm run build:loader-style && pnpm run build:dts",
+        "build:es": "vite build --config vite.config.build.disperse.ts",
         "build:vite": "vite build --config vite.config.build.ts",
-        "build:es": "NODE_ENV=production rollup -c rollup.config.es.js",
-        "build:dts": "rollup -c rollup.config.dts.js",
         "build:css": "pnpm run gen:themes && vite build --config vite.config.build.css.ts",
         "build:site": "pnpm run checked && vite build --config vite.config.build.site.ts",
         "prepare": "husky install",
@@ -119,7 +118,8 @@
         "ts-jest": "^29.0.3",
         "typescript": "^4.8.4",
         "vinyl-fs": "^3.0.3",
-        "vite": "^4.0.1"
+        "vite": "^4.0.1",
+        "vite-plugin-dts": "^2.3.0"
     },
     "dependencies": {
         "@babel/runtime": "^7.19.4",

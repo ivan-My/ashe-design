@@ -24,7 +24,7 @@ config.nav.map((item) => {
   item.packages.forEach((element) => {
     let { name, show, type, exportEmpty } = element
     if (show || exportEmpty) {
-      importStr += `import ${name} from './${name.toLowerCase()}';\n`
+      importStr += `import ${name} from '@/components/${name.toLowerCase()}';\n`
       importScssStr += `import './${name.toLowerCase()}/${name.toLowerCase()}.scss';\n`
 
       packages.push(name)

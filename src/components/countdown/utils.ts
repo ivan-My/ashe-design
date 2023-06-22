@@ -1,6 +1,6 @@
 export const getTimeStamp = (timeStr?: string | number) => {
   if (!timeStr) return Date.now()
-  let t = timeStr
+  let t: any = timeStr
   t = t > 0 ? +t : t.toString().replace(/-/g, '/')
   return new Date(t).getTime()
 }
