@@ -7,10 +7,7 @@ import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 import config from './src/config.json'
 
 const entries: any = {
-  'nutui-react.es': path.join(
-    __dirname,
-    `./src/components/ashe.react.build.ts`
-  ),
+  'ashe-react.es': path.join(__dirname, `./src/components/ashe.react.build.ts`),
 }
 const outputEntries: any = {}
 
