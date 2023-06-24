@@ -9,7 +9,6 @@ const { resolve } = path
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/react/',
   base: './',
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
@@ -18,8 +17,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         charset: false,
-        // example : additionalData: `@import "./src/design/styles/variables";`
-        // dont need include file extend .scss
+
         additionalData: `@import "@/styles/variables.scss";@import "@/sites/assets/styles/variables.scss";`,
       },
     },
@@ -41,16 +39,16 @@ export default defineConfig({
   plugins: [reactRefresh()],
   build: {
     target: 'es2015',
-    outDir: './demo/',
+    outDir: './doc/',
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        demo: resolve(__dirname, 'demo.html'),
+        demo: resolve(__dirname, 'index.html'),
       },
       output: {
-        entryFileNames: `demo-${config.version}/[name].js`,
-        chunkFileNames: `demo-${config.version}/[name].js`,
-        assetFileNames: `demo-${config.version}/[name].[ext]`,
+        entryFileNames: `doc-${config.version}/[name].js`,
+        chunkFileNames: `doc-${config.version}/[name].js`,
+        assetFileNames: `doc-${config.version}/[name].[ext]`,
       },
     },
   },

@@ -16,11 +16,12 @@ const App = () => {
   return (
     <>
       <HashRouter>
-        {/*<Header />*/}
+        <Header />
         <Nav />
         <div className="doc-content">
           <Routes>
             {routers.map((ru, index) => {
+              // @ts-ignore
               return (
                 <Route
                   key={index}
@@ -33,6 +34,7 @@ const App = () => {
                           const match = /language-(\w+)/.exec(className || '')
                           return !inline && match ? (
                             <SyntaxHighlighter
+                              // @ts-ignore
                               style={prism}
                               language={match[1]}
                               PreTag="div"
@@ -48,7 +50,10 @@ const App = () => {
                         },
                       }}
                     >
-                      {raws[ru]}
+                      {
+                        // @ts-ignore
+                        raws[ru]
+                      }
                     </ReactMarkdown>
                   }
                 />

@@ -14,7 +14,17 @@ for (const path in modulesPage) {
   })
 }
 const SetRouter = (list: any[]) => {
-  let mRouteTable: any = []
+  const ELe = list[0].element
+  let mRouteTable: any = [
+    {
+      path: '/',
+      element: (
+        <Suspense fallback={<div />}>
+          <ELe />
+        </Suspense>
+      ),
+    },
+  ]
   list.forEach((route) => {
     mRouteTable.push({
       path: route.path,
