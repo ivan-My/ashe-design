@@ -9,7 +9,6 @@ const cn = withNaming({ n: 'ashe-', e: '__', m: '--', v: '-' })
 // console.log(b({ Modifier: 'value' })) // nut-icon__Element nut-icon__Element--Modifier-value
 // console.log(b({ disable: true })) // nut-icon__Element nut-icon__Element--disable
 // console.log(b({ disable: false })) // nut-icon__Element
-//
 // console.log(b('Element', ['mixin'])) // nut-icon__Element mixin
 // console.log(b({ disable: false }, ['mixin'])) // nut-icon__Element mixin
 // console.log(b({ disable: true }, ['mixin'])) // nut-icon__Element nut-icon__Element--disable mixin
