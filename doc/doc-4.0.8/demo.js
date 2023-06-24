@@ -40628,11 +40628,15 @@ const sH = () => {
   )
 }
 const uH = () => {
-    const { pathname: e } = $r()
-    return Y.createElement(
-      'div',
-      { className: 'doc-demo-preview' },
-      Y.createElement('iframe', { src: `/demo.html#${e}`, frameBorder: '0' })
+    const { pathname: e } = $r(),
+      t = `https://ivan-my.github.io/ashe-design/demo/demo.html#${e}`
+    return (
+      console.log(t),
+      Y.createElement(
+        'div',
+        { className: 'doc-demo-preview' },
+        Y.createElement('iframe', { src: t, frameBorder: '0' })
+      )
     )
   },
   cH = () =>

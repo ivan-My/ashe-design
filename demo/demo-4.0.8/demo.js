@@ -9696,7 +9696,7 @@ const cs = Object.assign({
     '/src/components/infiniteloading/demo.tsx': () =>
       ze(
         () => import('./demo7.js'),
-        ['./demo7.js', './index.js', './bem.js', './demo4.css'],
+        ['./demo7.js', './index.js', './bem.js', './demo3.css'],
         import.meta.url
       ),
     '/src/components/input/demo.tsx': () =>
@@ -9708,7 +9708,7 @@ const cs = Object.assign({
     '/src/components/loading/demo.tsx': () =>
       ze(
         () => import('./demo9.js'),
-        ['./demo9.js', './loading.js', './index.js', './bem.js', './demo3.css'],
+        ['./demo9.js', './loading.js', './index.js', './bem.js', './demo4.css'],
         import.meta.url
       ),
     '/src/components/mask/demo.tsx': () =>
