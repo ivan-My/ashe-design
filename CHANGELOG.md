@@ -1,5 +1,20 @@
 
 
+## [4.0.7](https://github.com/ivan-My/ashe-design/compare/v4.0.5...v4.0.7) (2023-06-24)
+
+
+### Bug Fixes
+
+* asdfasdf ([09c69a2](https://github.com/ivan-My/ashe-design/commit/09c69a287c7d543db7e8ff810a3b0e2fac33cc12))
+* asdfsa ([0b1b8d2](https://github.com/ivan-My/ashe-design/commit/0b1b8d2c459ababe4702c50c5d03511182a0c713))
+* 修复了jest引入@路径问题 ([5136a31](https://github.com/ivan-My/ashe-design/commit/5136a310c385cf6252702bf71a49ce1b939be871))
+
+
+### Features
+
+* form组件增加了initialValues ([6aebe60](https://github.com/ivan-My/ashe-design/commit/6aebe604928cca121f321315cc5018375d164580))
+* 修改了formitem-hooks ([405e9c5](https://github.com/ivan-My/ashe-design/commit/405e9c54e7af3b7679eab861261823335cb3f906))
+
 ## [4.0.5](https://github.com/ivan-My/ashe-design/compare/v4.0.4...v4.0.5) (2023-06-08)
 
 
