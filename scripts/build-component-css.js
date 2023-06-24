@@ -38,7 +38,7 @@ function viteConfig(file) {
         output: [
           {
             format: 'es',
-            entryFileNames: 'build-component-css.js',
+            entryFileNames: 'css.js',
           },
         ],
       },
@@ -55,10 +55,7 @@ function run() {
   Promise.all(files.map((file) => vite.build(viteConfig(file)))).then(() => {
     const fileList = glob.sync('./dist/esm/**/style.css')
     fileList.forEach((file) => {
-      fse.writeFile(
-        file.replace('style.css', 'build-component-css.js'),
-        `import './style.css'`
-      )
+      fse.writeFile(file.replace('style.css', 'css.js'), `import './style.css'`)
     })
   })
 }
