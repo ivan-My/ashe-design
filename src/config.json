@@ -89,7 +89,19 @@
     {
       "name": "布局组件",
       "enName": "layout",
-      "packages": []
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Space",
+          "type": "component",
+          "cName": "间距",
+          "desc": "元素排列中保持相同的宽度。",
+          "sort": 1,
+          "show": true,
+          "taro": true,
+          "author": ""
+        }
+      ]
     },
     {
       "name": "导航组件",

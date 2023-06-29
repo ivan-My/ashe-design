@@ -1,7 +1,7 @@
 # Button 按钮
 ### 介绍
 按钮用于传递用户触摸时会触发的操作
-### 引入
+### 安装
 ```
 import { Button } from 'tard'
 ```

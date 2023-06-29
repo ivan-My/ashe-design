@@ -28,3 +28,8 @@ $toast-cover-bg-color: rgba(0, 0, 0, 0) !default;
 $mask-z-index: 999 !default;
 $mask-background-color: rgba($black, 0.7) !default;
 // form
+
+// space
+$space-gap: var(--ashe-space-gap, 8px) !default;
+$space-vertical: var(--ashe-space-vertical, $space-gap) !default;
+$space-horizontal: var(--ashe-space-horizontal, $space-gap) !default;

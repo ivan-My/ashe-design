@@ -2,6 +2,7 @@ import Button from '@/components/button'
 import Mask from '@/components/mask'
 import Input from '@/components/input'
 import ConfigProvider from '@/components/configprovider'
+import Space from '@/components/space'
 import Form from '@/components/form'
 import Toast from '@/components/toast'
 import Infiniteloading from '@/components/infiniteloading'
@@ -14,6 +15,7 @@ import './button/button.scss'
 import './mask/mask.scss'
 import './input/input.scss'
 import './configprovider/configprovider.scss'
+import './space/space.scss'
 import './form/form.scss'
 import './toast/toast.scss'
 import './infiniteloading/infiniteloading.scss'
@@ -27,6 +29,7 @@ export {
   Mask,
   Input,
   ConfigProvider,
+  Space,
   Form,
   Toast,
   Infiniteloading,
