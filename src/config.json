@@ -106,7 +106,19 @@
     {
       "name": "导航组件",
       "enName": "nav",
-      "packages": []
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Elevator",
+          "type": "component",
+          "cName": "电梯楼层",
+          "desc": "",
+          "sort": 1,
+          "show": true,
+          "taro": true,
+          "author": ""
+        }
+      ]
     },
     {
       "name": "数据录入",
@@ -200,6 +212,17 @@
           "show": true,
           "taro": true,
           "author": ""
+        },
+        {
+          "version": "1.0.0",
+          "name": "Collapse",
+          "type": "component",
+          "cName": "折叠面板",
+          "desc": "可以折叠/展开的内容区域。",
+          "sort": 4,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
         }
       ]
     }

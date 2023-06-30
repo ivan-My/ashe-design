@@ -1,0 +1,54 @@
+.ashe-elevator {
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &_list {
+    display: block;
+    position: relative;
+    top: 1px;
+    overflow: hidden;
+    &_inner {
+      height: 100%;
+      width: 100%;
+      display: block;
+      background-color: lightgray;
+      overflow: auto;
+    }
+    &_item {
+      display: block;
+      font-size: 16px;
+      color: black;
+      &_code {
+        display: flex;
+        position: relative;
+      }
+    }
+    &_fixed {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: lightgray;
+    }
+  }
+
+  &_bars {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #eeeff2;
+    &_inner {
+      &_item {
+        display: block;
+        font-size: 10px;
+        &--active {
+          color: red;
+        }
+      }
+    }
+  }
+}
