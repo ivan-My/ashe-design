@@ -1,8 +1,7 @@
-import React, { CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import classNames from 'classnames'
 import { BasicComponent } from '@/utils/typeing'
-import { withNativeProps } from '@/utils/native-props'
-import Loading from '@/components/loading'
+import bem from '@/utils/bem'
 
 export interface ButtonProps extends BasicComponent {
   className: string
@@ -17,7 +16,6 @@ export interface ButtonProps extends BasicComponent {
   icon: string
   style: CSSProperties
   children: any
-  nativeType: 'submit' | 'reset' | 'button'
   onClick: (e: MouseEvent) => void
 }
 
@@ -36,63 +34,33 @@ const defaultProps = {
   disabled: false,
   children: undefined,
   style: {},
-  loading: false,
-  type: 'default',
-  nativeType: 'button',
   onClick: (e: MouseEvent) => {},
 } as ButtonProps
 
-const prefixCls = 'ashe-button'
+const b = bem('button')
 
-export const Button = React.forwardRef<HTMLButtonElement, Partial<ButtonProps>>(
-  (props, ref) => {
-    const {
-      type,
-      children,
-      onClick,
-      disabled,
-      style,
-      color,
-      className,
-      loading,
-      nativeType,
-      ...rest
-    } = {
-      ...defaultProps,
-      ...props,
-    }
-
-    const cls = classNames(
-      prefixCls,
-      disabled && `${prefixCls}--disabled`,
-      type ? `${prefixCls}--${type}` : null
-    )
-    const btnStyle = { color }
-    const handleClick = (e: any) => {
-      if (!disabled && onClick) {
-        onClick(e)
-      }
-    }
-
-    return withNativeProps(
-      props,
-      <button
-        {...rest}
-        /* eslint-disable-next-line react/button-has-type */
-        type={nativeType}
-        style={btnStyle}
-        className={cls}
-        onClick={(e) => handleClick(e)}
-      >
-        <div className={`${prefixCls}_warp`}>
-          {loading && <Loading type="change" show />}
-          {children && (
-            <div className={loading ? 'ashe-button-text' : ''}>{children}</div>
-          )}
-        </div>
-      </button>
-    )
+export const Button: FC<Partial<ButtonProps>> = (props) => {
+  const { children, onClick, disabled, style, color, className, ...rest } = {
+    ...defaultProps,
+    ...props,
   }
-)
 
-Button.displayName = 'AsheButton'
+  const cls = classNames(b(), className, disabled && `${b()}--disabled`)
+  const btnStyle = { color }
+  const handleClick = (e: any) => {
+    if (!disabled && onClick) {
+      onClick(e)
+    }
+  }
+
+  return (
+    <div
+      className={cls}
+      style={{ ...btnStyle, ...style }}
+      onClick={(e) => handleClick(e)}
+      {...rest}
+    >
+      {children}
+    </div>
+  )
+}
