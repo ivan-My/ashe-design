@@ -3,7 +3,7 @@ import className from 'classnames'
 import { BasicComponent } from '@/utils/typeing'
 import { withNativeProps } from '@/utils/native-props'
 
-const classPrefix = 'ashe-space'
+const prefixCls = 'ashe-space'
 
 export interface SpaceProps extends BasicComponent {
   direction: 'horizontal' | 'vertical'
@@ -32,11 +32,11 @@ export const Space: FunctionComponent<
     ...props,
   }
   const cls = className(
-    classPrefix,
-    wrap && `${classPrefix}-wrap`,
-    direction && `${classPrefix}-${direction}`,
-    align && `${classPrefix}-align-${align}`,
-    justify && `${classPrefix}-justify-${justify}`
+    prefixCls,
+    wrap && `${prefixCls}-wrap`,
+    direction && `${prefixCls}-${direction}`,
+    align && `${prefixCls}-align-${align}`,
+    justify && `${prefixCls}-justify-${justify}`
   )
   return withNativeProps(
     props,
@@ -45,7 +45,7 @@ export const Space: FunctionComponent<
         return (
           child !== null &&
           child !== undefined && (
-            <div className={`${classPrefix}-item`}>{child}</div>
+            <div className={`${prefixCls}-item`}>{child}</div>
           )
         )
       })}
