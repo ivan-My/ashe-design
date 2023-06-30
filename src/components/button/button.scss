@@ -1,14 +1,23 @@
 .ashe-button {
+  --font-size: 16px;
+  --border-radius: 2px;
+  --text-color: #{$gray1};
+  --background: #{$gray6};
+  --padding: 7px 12px;
+
   position: relative;
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  flex-shrink: 0;
-  color: $button-default-color;
-  background: $button-default-bg-color;
-  font-size: 24px;
   text-align: center;
+  flex-shrink: 0;
+  border: 1px solid black;
+  padding: var(--padding);
+  color: var(--text-color);
+  background: var(--background);
+  font-size: var(--font-size);
+  border-radius: var(--border-radius);
+
   &--disabled {
     cursor: not-allowed;
     opacity: 0.8;

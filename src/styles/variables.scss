@@ -6,14 +6,18 @@ $input-disabled-color: gray;
 $input-border-bottom: lightgray;
 $white: #fff;
 $black: #000;
+
+// 主要内容用色，常用语常规标题内容、细文浏览、常规按钮文字以及图表引导。
 $gray1: var(--ashe-gray-1, #1a1a1a) !default;
+// 卡片背景色
+$gray6: var(--ashe-gray-6, #ffffff) !default;
 
 .ashe-overflow-hidden {
   overflow: hidden;
 }
 
 //button
-$button-default-color: var(--ashe-button-default-color, $gray1) !default;
+
 $button-default-bg-color: var(--ashe-button-default-bg-color, $white) !default;
 
 // toast
