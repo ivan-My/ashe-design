@@ -18,83 +18,33 @@ $theme-black-content-bg: #060506;
     border-right: 1px solid #eee;
     overflow: auto;
     padding-left: 35px;
-    &.fixed {
-      position: fixed;
-      top: 0;
-    }
-    ol {
-      list-style-type: none;
-      &.introduce {
-        padding-left: 5px;
-        li {
-          list-style-type: none;
-          cursor: pointer;
-          &:hover {
-            color: $doc-default-color;
-          }
-        }
-      }
+    > ol {
+      list-style: none;
+
       li {
         height: 48px;
         line-height: 48px;
         font-size: 14px;
-        color: $doc-default-nav-color;
-        font-weight: bold;
+        color: #1a1a1a;
         position: relative;
-        list-style-type: none;
-        &.active {
-          &::before {
-            position: absolute;
-            content: '';
-            left: 0;
-            top: 50%;
-            width: 22px;
-            margin-top: -5px;
-            height: 10px;
-            transform: rotate(90deg);
-            background: url(https://img10.360buyimg.com/imagetools/jfs/t1/136135/19/14659/946/5fa20aa8E33a9aa26/d329fbe669171208.png)
-              no-repeat;
-            background-size: 100% 100%;
-          }
-        }
+        font-weight: 700;
       }
-      > ul {
-        li {
-          padding-left: 29px;
-          cursor: pointer;
+
+      > ul li {
+        padding-left: 29px;
+        cursor: pointer;
+        height: 100%;
+        font-weight: 700;
+
+        > a {
+          color: #1a1a1a;
           &:hover {
-            a {
-              color: $doc-default-color;
-            }
-          }
-          a {
-            &.router-link-active,
-            &.active {
-              color: $doc-default-color !important;
-            }
-            &:link,
-            &:visited {
-              color: $title-color;
-            }
-            &:hover {
-              color: $doc-default-color;
-              &:visited {
-                color: $doc-default-color;
-              }
-            }
-            height: 100%;
-            b {
-              font-weight: normal;
-              font-size: 12px;
-            }
+            color: red;
           }
         }
-      }
-    }
-    .selected {
-      color: #100504 !important;
-      li {
-        color: #220806 !important;
+        .selected {
+          color: red;
+        }
       }
     }
   }

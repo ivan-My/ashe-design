@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { nav } from '../../../../config.json'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useMatch } from 'react-router-dom'
 import './nav.scss'
 
 const Nav = () => {
@@ -19,33 +19,29 @@ const Nav = () => {
   }, [])
   return (
     <div className={`doc-nav ${fixed ? 'fixed' : ''}`}>
-      <ol>
-        {cNav.map((cn: any, index: number) => {
-          if (cn.packages.length === 0) return null
-          return (
-            <div key={index}>
-              <ol>{cn.name}</ol>
-              <ul>
-                {cn.packages.map((cp: any) => {
-                  if (!cp.show) return null
-
-                  return (
+      {cNav.map((cn: any, index: number) => {
+        if (cn.packages.length === 0) return null
+        return (
+          <ol key={index} className={'doc-nav-item'}>
+            <li>{cn.name}</li>
+            <ul>
+              {cn.packages.map((cp: any) => {
+                if (!cp.show) return null
+                return (
+                  <li key={Math.random()}>
                     <NavLink
-                      key={Math.random()}
-                      // activeClassName="selected"
+                      className={useMatch(`${cp.name}`) ? 'selected' : ''}
                       to={`${cp.name}`}
                     >
-                      <li>
-                        {cp.name}&nbsp;&nbsp;<b>{cp.cName}</b>
-                      </li>
+                      {cp.name}&nbsp;&nbsp;<b>{cp.cName}</b>
                     </NavLink>
-                  )
-                })}
-              </ul>
-            </div>
-          )
-        })}
-      </ol>
+                  </li>
+                )
+              })}
+            </ul>
+          </ol>
+        )
+      })}
     </div>
   )
 }
