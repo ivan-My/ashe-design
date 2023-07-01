@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { nav } from '../../../../config.json'
+import { nav } from '@/config.json'
 import { NavLink, useMatch } from 'react-router-dom'
+import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
 import './nav.scss'
 
 const Nav = () => {
+  if (useCheckLocation()) return null
   const [cNav] = useState<any>(nav)
   const [fixed, setFixed] = useState(false)
   const scrollNav = () => {
@@ -31,7 +33,7 @@ const Nav = () => {
                   <li key={Math.random()}>
                     <NavLink
                       className={useMatch(`${cp.name}`) ? 'selected' : ''}
-                      to={`${cp.name}`}
+                      to={`/component/${cp.name}`}
                     >
                       {cp.name}&nbsp;&nbsp;<b>{cp.cName}</b>
                     </NavLink>

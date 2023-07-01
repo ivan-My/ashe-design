@@ -26,7 +26,7 @@ module.exports = {
 /*
 * build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
 ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle等)的提交
-docs：文档更新
+guide：文档更新
 feat：新增功能
 merge：分支合并 Merge branch ? of ?
 fix：bug 修复

@@ -1,0 +1,33 @@
+$white: #fff;
+$title-color: #1a1a1a !default;
+$doc-header-height: 64px;
+$doc-default-nav-bg: $white;
+$doc-default-nav-color: $title-color;
+$doc-default-color: #160403;
+$theme-black-content-bg: #060506;
+.guide-nav {
+  width: 290px;
+  height: 100vh;
+  z-index: 1;
+  background: $white;
+  border-right: 1px solid #eee;
+  overflow: auto;
+
+  position: absolute;
+  left: 35px;
+  top: 100px;
+  &-item {
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    color: #1a1a1a;
+    position: relative;
+    font-weight: 700;
+    > a {
+      color: #1a1a1a;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}

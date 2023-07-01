@@ -11,20 +11,41 @@ import { routers, raws } from './docs'
 import Header from './components/header'
 import Nav from './components/nav'
 import DemoPreview from './components/demo-preview/demo-preview'
+import GuideNav from '@/sites/doc/components/guide-nav'
+import { guideRoutes } from '@/sites/doc/router'
 
 const App = () => {
   return (
     <>
+      <div></div>
       <HashRouter>
-        {/*<Header />*/}
+        <Header />
         <Nav />
+        <GuideNav />
         <div className="doc-content">
+          <Routes>
+            <Route path={'/guide'} element={<div>guide</div>} />
+            {guideRoutes.map((item, key) => {
+              return (
+                <Route
+                  key={key}
+                  path={`/${item.path}`}
+                  element={
+                    <ReactMarkdown remarkPlugins={[remarkGfm, remarkDirective]}>
+                      {item.component}
+                    </ReactMarkdown>
+                  }
+                />
+              )
+            })}
+          </Routes>
+
           <Routes>
             {routers.map((ru, index) => {
               return (
                 <Route
                   key={index}
-                  path={`/${ru}`}
+                  path={`/component/${ru}`}
                   element={
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm, remarkDirective]}

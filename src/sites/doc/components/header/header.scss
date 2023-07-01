@@ -1,8 +1,41 @@
-.doc {
-  &-header {
-    width: 100%;
-    height: 50px;
-    background: #fff;
-    box-shadow:  0 2px 8px #f0f1f2;
+.doc-header {
+  $m-r: 50px;
+
+  height: 64px;
+  color: rgb(77, 81, 100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+
+  .header-logo {
+    position: relative;
+    display: inline-block;
+    width: 240px;
+    height: 64px;
+    margin-left: $m-r;
+    font-size: 20px;
+    color: #080e29;
+    font-weight: 500;
+    line-height: 64px;
+  }
+
+  .header-nav {
+    > ul {
+      display: flex;
+      font-size: 16px;
+      margin-right: $m-r;
+
+      > li {
+        padding: 0 20px;
+        > a {
+          color: rgb(77, 81, 100);
+        }
+        .active {
+          color: red;
+        }
+      }
+    }
   }
 }

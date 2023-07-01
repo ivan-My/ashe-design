@@ -3,7 +3,7 @@
  * /src/components//ashe.react.build.ts
  * /src/components//ashe.react.ts
  * /src/components/ashe.react.scss.ts
- * /src/sites/doc/docs.ts
+ * /src/sites/doc/guide.ts
  */
 
 const config = require('../src/config.json')
@@ -85,7 +85,7 @@ export const routers = [${mds.map((m) => `'${m}'`)}]
 export const raws = {${raws.join(',')}}
 `
 fs.outputFile(
-  path.resolve(__dirname, '../src/sites/doc/docs.ts'),
+  path.resolve(__dirname, '../src/sites/doc/guide.ts'),
   mdFileStr,
   'utf8',
   (error) => {
