@@ -30,7 +30,7 @@ const defaultProps = {
 export const Elevator: FunctionComponent<
   Partial<ElevatorProps> & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
-  const { height, list, sticky, floorKey, showKeys, onClickIndex, child } = {
+  const { height, list, sticky, floorKey, showKeys, onClickIndex } = {
     ...defaultProps,
     ...props,
   }
@@ -96,7 +96,7 @@ export const Elevator: FunctionComponent<
     console.log('22222')
     // setCurrentIndex(listHeight.length - 2)
   }
-  const handleClickIndex = (key: string, index) => {
+  const handleClickIndex = (key: string, index: number) => {
     setCurrentIndex(index)
     onClickIndex && onClickIndex(key)
   }
