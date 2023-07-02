@@ -12,7 +12,16 @@ import { Space } from 'ashe-design'
 
 ## 代码演示
 
-### 基础用法1
+
+### 基础用法
+
+```javascript
+      <Space justify="center">
+          <Button>按钮1</Button>
+          <Button>按钮2</Button>
+          <Button>按钮3</Button>
+        </Space>
+```
 
 
 

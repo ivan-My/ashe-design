@@ -1,73 +1,90 @@
-.ashe-space {
+@import '../../styles/bem//mixins.scss';
+
+@include b(space) {
   display: flex;
 
-  &-item {
+  @include e(item) {
     flex: none;
   }
 
-  &-vertical {
+  @include m(vertical) {
     flex-direction: column;
-    > .ashe-space-item {
-      margin-bottom: $space-gap;
+
+    @include e(item) {
+      margin-bottom: 18px;
+
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
 
-  &-horizontal {
+  @include m(horizontal) {
     flex-direction: row;
-    > .ashe-space-item {
-      margin-right: $space-horizontal;
+
+    @include e(item) {
+      margin-right: 18px;
+
       &:last-child {
         margin-right: 0;
       }
     }
-    &.ashe-space-wrap {
-      flex-wrap: wrap;
-      margin-bottom: calc(#{$space-horizontal} * -1);
-      > .ashe-space-item {
-        padding-bottom: $space-horizontal;
-      }
+  }
+
+  @include m(wrap) {
+    flex-wrap: wrap;
+    margin-bottom: calc(18px * -1);
+
+    @include e(item) {
+      padding-bottom: 18px;
     }
   }
 
-  &-align {
-    &-center {
+  @include m(align) {
+    @include m(center) {
       align-items: center;
     }
-    &-start {
+
+    @include m(start) {
       align-items: flex-start;
     }
-    &-end {
+
+    @include m(end) {
       align-items: flex-end;
     }
-    &-baseline {
+
+    @include m(baseline) {
       align-items: baseline;
     }
   }
 
-  &-justify {
-    &-center {
+  @include m(justify) {
+    @include m(center) {
       justify-content: center;
     }
-    &-start {
+
+    @include m(start) {
       justify-content: flex-start;
     }
-    &-end {
+
+    @include m(end) {
       justify-content: flex-end;
     }
-    &-between {
+
+    @include m(between) {
       justify-content: space-between;
     }
-    &-around {
+
+    @include m(around) {
       justify-content: space-around;
-    }
-    &-evenly {
-      justify-content: space-evenly;
-    }
-    &-stretch {
-      justify-content: stretch;
+
+      @include m(evenly) {
+        justify-content: space-evenly;
+      }
+
+      @include m(stretch) {
+        justify-content: stretch;
+      }
     }
   }
 }
