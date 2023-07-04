@@ -1,7 +1,7 @@
 import React, { FC, CSSProperties } from 'react'
 import classNames from 'classnames'
 import { BasicComponent } from '@/utils/typeing'
-import bem from '@/utils/bem'
+import { withNativeProps } from '@/utils/native-props'
 
 export interface ButtonProps extends BasicComponent {
   className: string
@@ -37,15 +37,15 @@ const defaultProps = {
   onClick: (e: MouseEvent) => {},
 } as ButtonProps
 
-const b = bem('button')
+const classPrefix = 'ashe-button'
 
 export const Button: FC<Partial<ButtonProps>> = (props) => {
   const { children, onClick, disabled, style, color, className, ...rest } = {
     ...defaultProps,
     ...props,
   }
+  const cls = classNames(classPrefix, disabled && `${classPrefix}--disabled`)
 
-  const cls = classNames(b(), className, disabled && `${b()}--disabled`)
   const btnStyle = { color }
   const handleClick = (e: any) => {
     if (!disabled && onClick) {
@@ -53,10 +53,11 @@ export const Button: FC<Partial<ButtonProps>> = (props) => {
     }
   }
 
-  return (
+  return withNativeProps(
+    props,
     <div
       className={cls}
-      style={{ ...btnStyle, ...style }}
+      style={btnStyle}
       onClick={(e) => handleClick(e)}
       {...rest}
     >

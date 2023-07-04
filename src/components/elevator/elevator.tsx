@@ -66,7 +66,8 @@ export const Elevator: FunctionComponent<
   })
   const setListGroup = () => {
     if (listview.current) {
-      const els = listview.current.querySelectorAll('.ashe-elevator_list_item')
+      const els = listview.current.querySelectorAll('.ashe-elevator__list-item')
+
       els.forEach((el: Element) => {
         if (el != null && !state.current.listGroup.includes(el)) {
           state.current.listGroup.push(el)
@@ -112,23 +113,21 @@ export const Elevator: FunctionComponent<
     props,
     <div className="ashe-elevator">
       {sticky && scrollY > 0 ? (
-        <div className={`${classPrefix}_list_fixed`}>
-          <span className={`${classPrefix}_list_fixed_title`}>
+        <div className={`${classPrefix}__list--fixed`}>
+          <span className={`${classPrefix}__list__title`}>
             {list[currentIndex][floorKey]}
           </span>
         </div>
       ) : null}
       <div
-        className={`${classPrefix}_list`}
+        className={`${classPrefix}__list`}
         style={{ height: Number.isNaN(+height) ? height : `${height}px` }}
       >
-        <div className={`${classPrefix}_list_inner`} ref={listview}>
+        <div className={`${classPrefix}__inner`} ref={listview}>
           {list.map((item: any, idx: number) => {
             return (
-              <div className={`${classPrefix}_list_item`} key={idx}>
-                <div className={`${classPrefix}_list_item_code`}>
-                  {item.title}
-                </div>
+              <div className={`${classPrefix}__list-item`} key={idx}>
+                <div className={`${classPrefix}__code`}>{item.title}</div>
                 <>
                   {item.list.map((subitem: ElevatorData) => {
                     return (
@@ -144,9 +143,9 @@ export const Elevator: FunctionComponent<
         </div>
       </div>
       {showKeys && (
-        <div className={`${classPrefix}_bars`}>
+        <div className={`${classPrefix}__bars`}>
           <animated.div
-            className={`${classPrefix}_bars_inner`}
+            className={`${classPrefix}__bars__inner`}
             // {...bind()}
             style={{ touchAction: 'pan-y' }}
           >
@@ -154,8 +153,8 @@ export const Elevator: FunctionComponent<
               return (
                 <div
                   className={classNames({
-                    [`${classPrefix}_bars_inner_item`]: true,
-                    [`${classPrefix}_bars_inner_item--active`]:
+                    [`${classPrefix}__bars__inner__item`]: true,
+                    [`${classPrefix}__bars__inner__item--active`]:
                       item[floorKey] === list[currentIndex][floorKey],
                   })}
                   key={index}

@@ -33,10 +33,10 @@ export const Space: FunctionComponent<
   }
   const cls = className(
     classPrefix,
-    wrap && `${classPrefix}--wrap`,
-    direction && `${classPrefix}--${direction}`,
-    align && `${classPrefix}--align--${align}`,
-    justify && `${classPrefix}--justify--${justify}`
+    wrap && `${classPrefix}-wrap`,
+    direction && `${classPrefix}-${direction}`,
+    align && `${classPrefix}-align-${align}`,
+    justify && `${classPrefix}-justify-${justify}`
   )
   return withNativeProps(
     props,
@@ -45,7 +45,7 @@ export const Space: FunctionComponent<
         return (
           child !== null &&
           child !== undefined && (
-            <div className={`${classPrefix}__item`}>{child}</div>
+            <div className={`${classPrefix}-item`}>{child}</div>
           )
         )
       })}

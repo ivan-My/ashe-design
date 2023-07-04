@@ -13,8 +13,12 @@ $gray1: var(--ashe-gray-1, #1a1a1a) !default;
 $gray6: var(--ashe-gray-6, #ffffff) !default;
 
 //button
-
-$button-default-bg-color: var(--ashe-button-default-bg-color, $white) !default;
+$_button-padding: 7px, 12px;
+$button-font-size: var(--ashe-button-font-size, 16px) !default;
+$button-border-radius: var(--ashe-button-border-radius, 2px) !default;
+$button-text-color: var(--ashe-button-text-color, $gray1) !default;
+$button-bg-color: var(--ashe-button-bg-color, $gray6) !default;
+$button-padding: var(--ashe-button-padding, 7px 12px) !default;
 
 // toast
 $toast-title-font-size: 16px !default;
@@ -24,10 +28,11 @@ $toast-inner-padding: 24px 30px !default;
 $toast-inner-bg-color: rgba(0, 0, 0, 0.8) !default;
 $toast-inner-border-radius: 12px !default;
 $toast-cover-bg-color: rgba(0, 0, 0, 0) !default;
+
 // mask
-$mask-z-index: 999 !default;
-$mask-background-color: rgba($black, 0.7) !default;
-// form
+$mask-bg-color: var(--ashe-mask-bg-color, rgba(0, 0, 0, 0.7)) !default;
+$mask-color: var(--ashe-mask-color, $gray1) !default;
+$mask-z-index: var(--ashe-mask-z-index, 1000) !default;
 
 // space
 $space-gap: var(--ashe-space-gap, 8px) !default;

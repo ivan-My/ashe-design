@@ -1,31 +1,18 @@
-.ashe-elevator {
+@import '@/styles/bem/mixins';
+
+@include b(elevator) {
   width: 100%;
   display: block;
   position: relative;
   overflow: hidden;
 
-  &_list {
+  @include e(list) {
     display: block;
     position: relative;
     top: 1px;
     overflow: hidden;
-    &_inner {
-      height: 100%;
-      width: 100%;
-      display: block;
-      background-color: lightgray;
-      overflow: auto;
-    }
-    &_item {
-      display: block;
-      font-size: 16px;
-      color: black;
-      &_code {
-        display: flex;
-        position: relative;
-      }
-    }
-    &_fixed {
+
+    @include m(fixed) {
       width: 100%;
       position: absolute;
       top: 0;
@@ -35,14 +22,38 @@
     }
   }
 
-  &_bars {
+  @include e(inner) {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: lightgray;
+    overflow: auto;
+  }
+
+  @include e(list-item) {
+    display: block;
+    font-size: 16px;
+    color: black;
+
+    @include m(title) {
+      color: red;
+    }
+  }
+
+  @include e(code) {
+    display: flex;
+    position: relative;
+  }
+
+  @include e(bars) {
     position: absolute;
     right: 8px;
     top: 50%;
     transform: translateY(-50%);
     background-color: #eeeff2;
-    &_inner {
-      &_item {
+
+    &__inner {
+      &__item {
         display: block;
         font-size: 10px;
         &--active {

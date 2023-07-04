@@ -1,10 +1,5 @@
+@import '@/styles/bem/mixins';
 .ashe-button {
-  --font-size: 16px;
-  --border-radius: 2px;
-  --text-color: #{$gray1};
-  --background: #{$gray6};
-  --padding: 7px 12px;
-
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -12,11 +7,11 @@
   text-align: center;
   flex-shrink: 0;
   border: 1px solid black;
-  padding: var(--padding);
-  color: var(--text-color);
-  background: var(--background);
-  font-size: var(--font-size);
-  border-radius: var(--border-radius);
+  padding: $button-padding;
+  color: $button-text-color;
+  background: $button-bg-color;
+  font-size: $button-font-size;
+  border-radius: $button-border-radius;
 
   &--disabled {
     cursor: not-allowed;

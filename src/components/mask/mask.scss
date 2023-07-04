@@ -1,28 +1,20 @@
-@import '@/styles/bem/mixins';
-
 .ashe-overflow-hidden {
   overflow: hidden;
 }
 
-@include b(mask) {
-  --bg-color: rgba(0, 0, 0, 0.7);
-  --color: $gray1;
-  --z-index: 1000;
-
+.ashe-mask {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  color: var(--color);
-  background: var(--bg-color);
-  z-index: var(--z-index);
+  color: $mask-bg-color;
+  background: $mask-bg-color;
+  z-index: $mask-z-index;
 
-  @include m(hidden) {
+  &--hidden {
     display: none;
   }
-
-  //-mask-fade-enter-active
 
   &-fade-enter-active {
     animation: ashe-fade-in;

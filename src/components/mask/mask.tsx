@@ -34,13 +34,6 @@ export const Mask: FunctionComponent<Partial<MaskProps>> = (props) => {
   const intervalCloseRef = useRef(0)
   const intervalShowRef = useRef(0)
 
-  const cls = className(
-    visible && `${classPrefix}-fade-enter-active`,
-    !renderRef.current && !visible && `${classPrefix}-fade-leave-active`,
-    !visible && `${classPrefix}--hidden`,
-    classPrefix
-  )
-
   const lock = () => {
     if (disableBodyScroll && visible) {
       document.body.classList.add('ashe-overflow-hidden')
@@ -75,6 +68,12 @@ export const Mask: FunctionComponent<Partial<MaskProps>> = (props) => {
     }
   }
 
+  const cls = className(
+    visible && `${classPrefix}-fade-enter-active`,
+    !renderRef.current && !visible && `${classPrefix}-fade-leave-active`,
+    !visible && `${classPrefix}--hidden`,
+    classPrefix
+  )
   const styles = {
     animationDuration: `${duration}s`,
   }

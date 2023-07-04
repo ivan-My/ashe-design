@@ -68,7 +68,7 @@ const MaskDemo = () => {
     <>
       <div className="demo demo-Mask">
         <h4>基础用法</h4>
-        <>
+        <div className="first">
           <Button type="primary" onClick={handleToggleShow}>
             显示遮罩层
           </Button>
@@ -82,20 +82,14 @@ const MaskDemo = () => {
               console.log('afterClose')
             }}
           />
-        </>
+        </div>
 
         <h4>遮罩样式</h4>
         <>
           <Button type="primary" onClick={handleToggleShow2}>
             遮罩样式
           </Button>
-          <Mask
-            visible={visible2}
-            onClick={onClose2}
-            style={{
-              '--bg-color': 'rgba(0, 0, 0, .2)',
-            }}
-          />
+          <Mask visible={visible2} onClick={onClose2} />
         </>
 
         <h4>设置动画时间</h4>
