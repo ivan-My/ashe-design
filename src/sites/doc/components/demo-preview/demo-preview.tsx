@@ -6,13 +6,14 @@ import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
 const DemoPreview = () => {
   if (useCheckLocation()) return null
   const { pathname } = useLocation()
-  console.log(pathname.replace('/component', ''))
+  // console.log(pathname.replace('/component', ''))
+  const url = `/demo.html#${pathname.replace('/component', '')}`
   return (
     <div className="doc-demo-preview">
-      <iframe
-        src={`/demo.html#${pathname.replace('/component', '')}`}
-        frameBorder="0"
-      ></iframe>
+      <iframe src={url}></iframe>
+      <a href={url} target={'_blank'}>
+        跳转
+      </a>
     </div>
   )
 }
