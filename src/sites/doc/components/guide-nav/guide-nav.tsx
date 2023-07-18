@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { docs } from '@/config.json'
 import './guide-nav.scss'
 import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
 import { NavLink, useMatch } from 'react-router-dom'
+
 export const GuideNav = () => {
   if (!useCheckLocation()) {
-    return
+    return <></>
   }
   return (
     <div className="guide-nav">

@@ -1,13 +1,12 @@
 import React from 'react'
 import './app.scss'
 import ReactMarkdown from 'react-markdown'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import remarkGfm from 'remark-gfm'
 import remarkDirective from 'remark-directive'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { routers, raws } from './docs'
-
+import { raws, routers } from './docs'
 import Header from './components/header'
 import Nav from './components/nav'
 import DemoPreview from './components/demo-preview/demo-preview'
@@ -17,7 +16,6 @@ import { guideRoutes } from '@/sites/doc/router'
 const App = () => {
   return (
     <>
-      <div></div>
       <HashRouter>
         <Header />
         <Nav />

@@ -4,11 +4,11 @@ import { HashRouter } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div>
+    <>
       <HashRouter>
         <Routes />
       </HashRouter>
-    </div>
+    </>
   )
 }
 

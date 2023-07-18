@@ -3,13 +3,10 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 
 const path = require('path')
 const atImport = require('postcss-import')
-const config = require('./package.json')
 
 const { resolve } = path
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/react/',
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
   },
@@ -17,14 +14,13 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         charset: false,
-        // example : additionalData: `@import "./src/design/styles/variables";`
-        // dont need include file extend .scss
         additionalData: `@import "@/styles/variables.scss";@import "@/sites/assets/styles/variables.scss";`,
       },
     },
     postcss: {
       plugins: [
         atImport({ path: path.join(__dirname, 'src`') }),
+        // eslint-disable-next-line global-require
         require('autoprefixer')({
           overrideBrowserslist: [
             '> 0.5%',
@@ -44,15 +40,14 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
+        index: resolve(__dirname, 'index.html'),
         demo: resolve(__dirname, 'demo.html'),
       },
       output: {
-        entryFileNames: `demo-${config.version}/[name].js`,
-        chunkFileNames: `demo-${config.version}/[name].js`,
-        assetFileNames: `demo-${config.version}/[name].[ext]`,
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        entryFileNames: 'static/js/[name]-[hash].js',
+        assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
       },
     },
   },
 })
-
-console.log(resolve(__dirname, 'index.html'))
