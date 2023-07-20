@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { nav } from '@/config.json'
 import { NavLink, useMatch } from 'react-router-dom'
 import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
-import './nav.scss'
+import './menu.scss'
 
-const Nav = () => {
+const Menu = () => {
   if (useCheckLocation()) return null
   const [cNav] = useState<any>(nav)
   const [fixed, setFixed] = useState(false)
@@ -20,11 +20,11 @@ const Nav = () => {
     document.addEventListener('scroll', scrollNav)
   }, [])
   return (
-    <div className={`doc-nav ${fixed ? 'fixed' : ''}`}>
+    <div className={`doc-menu ${fixed ? 'fixed' : ''}`}>
       {cNav.map((cn: any, index: number) => {
         if (cn.packages.length === 0) return null
         return (
-          <ol key={index} className={'doc-nav-item'}>
+          <ol key={index} className={'doc-menu-item'}>
             <li>{cn.name}</li>
             <ul>
               {cn.packages.map((cp: any) => {
@@ -48,4 +48,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default Menu

@@ -12,7 +12,7 @@ export const GuideNav = () => {
     <div className="guide-nav">
       {docs.packages.map((item, key) => {
         return (
-          <div className={'guide-nav-item'} key={key}>
+          <div className={'guide-menu-item'} key={key}>
             <NavLink
               className={useMatch(`${item.name}`) ? 'selected' : ''}
               to={`/guide/${item.name}`}

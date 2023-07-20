@@ -1,3 +1,8 @@
+import React from 'react'
+import { createBrowserRouter } from 'react-router-dom'
+import App from './App'
+import Guide from '@/sites/doc/components/guide'
+
 const modulesPage = import.meta.globEager('./guide/*.md', { as: 'raw' })
 export const guideRoutes: any[] = []
 for (const path in modulesPage) {
@@ -11,3 +16,17 @@ for (const path in modulesPage) {
     name,
   })
 }
+
+// @ts-ignore
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: 'guide',
+        element: <Guide />,
+      },
+    ],
+  },
+])

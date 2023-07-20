@@ -20,7 +20,7 @@
     "scripts": {
         "add": "node scripts/create-component.js && pnpm run gen:file ",
         "rm": "node scripts/remove-component.js && pnpm run gen:file",
-        "dev": "pnpm run checked && vite --open --force",
+        "dev": "pnpm run checked && vite --.. --force",
         "gen:file": "node scripts/gen-ashe.js",
         "gen:themes": "node scripts/gen-themes.js",
         "checked": "pnpm run gen:file &&  tsc",

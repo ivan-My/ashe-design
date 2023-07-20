@@ -1,13 +1,22 @@
 .doc-header {
   $m-r: 50px;
 
-  height: 64px;
   color: rgb(77, 81, 100);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid #e6e6e6;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 99;
+  height: 60px;
+  padding: 0px 10px 0px 24px;
+  backdrop-filter: saturate(50%) blur(8px);
+  z-index: 99;
+  height: 60px;
+  box-sizing: border-box;
+  user-select: none;
 
   .header-logo {
     position: relative;
