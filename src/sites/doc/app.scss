@@ -2,29 +2,3 @@ html,
 body {
   background: rgb(246, 248, 252);
 }
-
-#doc {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.doc {
-  &-content {
-    width: 100%;
-    margin-left: 290px;
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-    top: 80px;
-    left: 0;
-    bottom: 0;
-
-    z-index: 2;
-    overflow-y: scroll;
-    box-sizing: border-box;
-    padding: 24px 30px;
-    border-radius: 24px;
-  }
-}

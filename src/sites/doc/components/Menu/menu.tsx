@@ -24,20 +24,21 @@ const Menu = () => {
       {cNav.map((cn: any, index: number) => {
         if (cn.packages.length === 0) return null
         return (
-          <ol key={index} className={'doc-menu-item'}>
+          <ol key={index} className={'doc-Menu-item'}>
             <li>{cn.name}</li>
             <ul>
               {cn.packages.map((cp: any) => {
                 if (!cp.show) return null
                 return (
-                  <li key={Math.random()}>
-                    <NavLink
-                      className={useMatch(`${cp.name}`) ? 'selected' : ''}
-                      to={`/component/${cp.name}`}
-                    >
+                  <NavLink
+                    key={Math.random()}
+                    className={useMatch(`${cp.name}`) ? 'selected' : ''}
+                    to={`/components/${cp.name}`}
+                  >
+                    <li>
                       {cp.name}&nbsp;&nbsp;<b>{cp.cName}</b>
-                    </NavLink>
-                  </li>
+                    </li>
+                  </NavLink>
                 )
               })}
             </ul>

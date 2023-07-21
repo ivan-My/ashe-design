@@ -82,7 +82,7 @@ fs.outputFile(
 let mdFileStr = `${importMarkdownStr}
 ${importOnlineEditScssStr}
 export const scssRaws = { ${onlineEditScss.map((r) => r + 'Scss').join(',')} }
-export const routers = [${mds.map((m) => `'${m}'`)}]
+export const componentRouters = [${mds.map((m) => `'${m}'`)}]
 export const raws = {${raws.join(',')}}
 `
 fs.outputFile(

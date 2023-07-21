@@ -1,7 +1,8 @@
 # Button 按钮
-### 介绍
+
+## 介绍
 按钮用于传递用户触摸时会触发的操作
-### 安装
+## 安装
 ```
 import { Button } from 'tard'
 ```
@@ -28,7 +29,7 @@ import { Button } from 'tard'
 <Button border type="danger">危险按钮</Button>
 ```
 ### 按钮形状
-设置 `round` 属性设置按钮形状 支持两种类型`rect`(矩形)、`circle`（圆形)两种规格，默认为倒角为16px的圆角
+设置 `default`、`primary`、`info`、`warning`、`danger` 属性设置按钮形状 支持两种类型 rect(矩形)、circle（圆形)两种规格，默认为倒角为16px的圆角
 ```js
 <Button  round='rect' type="primary">主要按钮</Button>
 <Button  type="info">信息按钮</Button>

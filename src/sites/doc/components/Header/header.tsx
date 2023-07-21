@@ -1,22 +1,28 @@
 import React from 'react'
 import './header.scss'
-import { NavLink, useMatch } from 'react-router-dom'
+import { Link, NavLink, useMatch } from 'react-router-dom'
 
 const navList = [
   {
     name: '指南',
-    path: '/guide/intro',
+    path: '/guide/installation',
   },
   {
     name: '组件',
-    path: '/component/button',
+    path: '/components/button',
+  },
+  {
+    name: 'hooks',
+    path: '/components/hook',
   },
 ]
 
 const Header = () => {
   return (
     <div className={'doc-header'}>
-      <div className="header-logo">Ashe design</div>
+      <div className="header-logo">
+        <Link to={'/'}>Ashe design</Link>
+      </div>
       <div className="header-nav">
         <ul>
           {navList.map((item, key) => {

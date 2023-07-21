@@ -30,7 +30,7 @@ export const scssRaws = {
   InfiniteloadingScss,
   LoadingScss,
 }
-export const routers = [
+export const componentRouters = [
   'Button',
   'Mask',
   'Input',

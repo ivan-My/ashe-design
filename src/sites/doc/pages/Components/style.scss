@@ -1,0 +1,21 @@
+.components-page {
+  .components-content {
+    position: relative;
+    min-width: 1200px;
+    margin: 60px auto 15px;
+    overflow: hidden;
+    margin-left: 260px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100vh;
+
+    .wrapper {
+      width: 56%;
+      border-radius: 24px;
+      background-color: #fff;
+      padding: 5px 20px;
+    }
+  }
+}

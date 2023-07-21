@@ -14,6 +14,7 @@ import VirtualList from '@/components/virtuallist/doc.md?raw'
 import Collapse from '@/components/collapse/doc.md?raw'
 
 import ButtonScss from '@/components/button/demo.scss?raw'
+import MaskScss from '@/components/mask/demo.scss?raw'
 import InputScss from '@/components/input/demo.scss?raw'
 import SpaceScss from '@/components/space/demo.scss?raw'
 import ToastScss from '@/components/toast/demo.scss?raw'
@@ -22,13 +23,14 @@ import LoadingScss from '@/components/loading/demo.scss?raw'
 
 export const scssRaws = {
   ButtonScss,
+  MaskScss,
   InputScss,
   SpaceScss,
   ToastScss,
   InfiniteloadingScss,
   LoadingScss,
 }
-export const routers = [
+export const componentRouters = [
   'Button',
   'Mask',
   'Input',

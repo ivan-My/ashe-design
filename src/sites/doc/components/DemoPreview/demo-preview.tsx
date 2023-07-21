@@ -6,8 +6,7 @@ import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
 const DemoPreview = () => {
   if (useCheckLocation()) return null
   const { pathname } = useLocation()
-  // console.log(pathname.replace('/component', ''))
-  const url = `/demo.html#${pathname.replace('/component', '')}`
+  const url = `/demo.html#${pathname.replace('/components', '')}`
   return (
     <div className="doc-demo-preview">
       <iframe src={url}></iframe>

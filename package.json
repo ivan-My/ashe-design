@@ -20,7 +20,7 @@
     "scripts": {
         "add": "node scripts/create-component.js && pnpm run gen:file ",
         "rm": "node scripts/remove-component.js && pnpm run gen:file",
-        "dev": "pnpm run checked && vite --.. --force",
+        "dev": "pnpm run checked && vite --open --force",
         "gen:file": "node scripts/gen-ashe.js",
         "gen:themes": "node scripts/gen-themes.js",
         "checked": "pnpm run gen:file &&  tsc",
@@ -122,6 +122,7 @@
         "@use-gesture/react": "^10.2.27",
         "async-validator": "^4.2.5",
         "classnames": "^2.3.2",
+        "markdown-navbar": "^1.4.3",
         "react-router-dom": "^6.4.2"
     },
     "repository": "https://github.com/ivan-My/ashe-design",
