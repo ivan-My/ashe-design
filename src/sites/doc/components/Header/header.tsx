@@ -9,11 +9,11 @@ const navList = [
   },
   {
     name: '组件',
-    path: '/components/button',
+    path: '/components/Button',
   },
   {
     name: 'hooks',
-    path: '/components/hook',
+    path: '/hooks/hook1',
   },
 ]
 

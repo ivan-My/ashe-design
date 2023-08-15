@@ -5,9 +5,6 @@ import remarkGfm from 'remark-gfm'
 import remarkDirective from 'remark-directive'
 // import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 // import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
-// @ts-ignore
-import MarkdownNavbar from 'markdown-navbar'
-import 'markdown-navbar/dist/navbar.css'
 
 // @ts-ignore
 // const CodeBlockRenderer = ({ node, ...props }: any) => (
@@ -33,9 +30,6 @@ const Markdown = ({ element }: any) => {
           components={components}
           children={element}
         />
-      </div>
-      <div className={'mark-wrapper'}>
-        <MarkdownNavbar source={element} declarative={true} ordered={false} />
       </div>
     </div>
   )

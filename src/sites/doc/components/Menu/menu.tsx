@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { nav } from '@/config.json'
-import { NavLink, useMatch } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
 import './menu.scss'
 
@@ -30,11 +30,7 @@ const Menu = () => {
               {cn.packages.map((cp: any) => {
                 if (!cp.show) return null
                 return (
-                  <NavLink
-                    key={Math.random()}
-                    className={useMatch(`${cp.name}`) ? 'selected' : ''}
-                    to={`/components/${cp.name}`}
-                  >
+                  <NavLink key={Math.random()} to={`/components/${cp.name}`}>
                     <li>
                       {cp.name}&nbsp;&nbsp;<b>{cp.cName}</b>
                     </li>

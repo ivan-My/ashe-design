@@ -38,3 +38,12 @@ $mask-z-index: var(--ashe-mask-z-index, 1000) !default;
 $space-gap: var(--ashe-space-gap, 8px) !default;
 $space-vertical: var(--ashe-space-vertical, $space-gap) !default;
 $space-horizontal: var(--ashe-space-horizontal, $space-gap) !default;
+
+//grid
+$grid-item-text-color: var(--ashe-grid-item-text-color, black) !default;
+$grid-item-text-font-size: var(--ashe-grid-item-text-font-size, 12px) !default;
+$grid-item-text-margin: var(--ashe-grid-item-text-margin, 8px) !default;
+$grid-item-content-padding: var(
+  --ashe-grid-item-content-padding,
+  16px 8px
+) !default;

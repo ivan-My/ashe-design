@@ -1,10 +1,9 @@
 .doc-wrapper {
-  flex: 1;
   .custom-p {
     color: #2f2f2f;
     font-size: 16px;
     line-height: 26px;
-    margin: 16px 0;
+
     div {
       display: inline;
       margin: 0 !important;
@@ -12,9 +11,6 @@
     }
   }
   pre,
-  code {
-    margin: 10px 0;
-  }
   .custom-p code {
     font-size: 16px;
     display: inline;
@@ -85,10 +81,4 @@
     font-style: normal;
     color: #ac9739;
   }
-}
-
-.mark-wrapper {
-  position: fixed;
-  right: 10px;
-  top: 60px;
 }

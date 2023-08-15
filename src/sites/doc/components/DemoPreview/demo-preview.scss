@@ -1,18 +1,25 @@
 .doc-demo-preview {
-  width: 22%;
-  height: 580px;
-  -webkit-box-shadow: #ebedf0 0 4px 12px;
-  box-shadow: #ebedf0 0 4px 12px;
-  border-radius: 12px;
-  overflow: hidden;
-  z-index: 2;
-  position: fixed;
-  right: 180px;
+  position: sticky;
   top: 60px;
+  margin-right: 20px;
+  text-align: center;
+  .doc-demo_wrapper {
+    width: 324px;
+    height: 620px;
+    background-size: cover;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
 
-  padding: 5px 0 5px;
   iframe {
     height: calc(100% - 40px);
     width: 100%;
+  }
+  .loading {
+    position: absolute;
+    top: 48%;
+    left: 45%;
   }
 }

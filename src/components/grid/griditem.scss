@@ -1,0 +1,31 @@
+.ashe-grid-item {
+  position: relative;
+  box-sizing: border-box;
+
+  &__text {
+    color: $grid-item-text-color;
+    font-size: $grid-item-text-font-size;
+    margin: $grid-item-text-margin;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding: $grid-item-content-padding;
+    background-color: #ffffff;
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--square {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+}

@@ -1,28 +1,26 @@
 .doc-header {
-  $m-r: 50px;
   color: rgb(77, 81, 100);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0px;
-  right: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: 99;
   height: 60px;
-  padding: 0px 10px 0px 24px;
+  padding: 0 10px 0 24px;
   backdrop-filter: saturate(50%) blur(8px);
-  z-index: 99;
-  height: 60px;
   box-sizing: border-box;
   user-select: none;
+  font-weight: bold;
 
   .header-logo {
     position: relative;
     display: inline-block;
     width: 240px;
     height: 64px;
-    margin-left: $m-r;
+    margin-left: 50px;
     font-size: 20px;
     color: #080e29;
     font-weight: 500;
@@ -33,7 +31,7 @@
     > ul {
       display: flex;
       font-size: 16px;
-      margin-right: $m-r;
+      margin-right: 50px;
 
       > li {
         padding: 0 20px;
@@ -41,7 +39,7 @@
           color: rgb(77, 81, 100);
         }
         .active {
-          color: red;
+          color: rgb(80, 80, 254);
         }
       }
     }

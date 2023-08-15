@@ -3,6 +3,7 @@ import Mask from '@/components/mask'
 import Input from '@/components/input'
 import ConfigProvider from '@/components/configprovider'
 import Space from '@/components/space'
+import Grid from '@/components/grid'
 import Elevator from '@/components/elevator'
 import Form from '@/components/form'
 import Toast from '@/components/toast'
@@ -18,6 +19,7 @@ import './mask/mask.scss'
 import './input/input.scss'
 import './configprovider/configprovider.scss'
 import './space/space.scss'
+import './grid/grid.scss'
 import './elevator/elevator.scss'
 import './form/form.scss'
 import './toast/toast.scss'
@@ -34,6 +36,7 @@ export {
   Input,
   ConfigProvider,
   Space,
+  Grid,
   Elevator,
   Form,
   Toast,

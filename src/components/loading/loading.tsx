@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import className from 'classnames'
+import classNames from 'classnames'
 import bem from '@/utils/bem'
 import { BasicComponent } from '@/utils/typeing'
 
@@ -44,6 +44,7 @@ export const Loading: FunctionComponent<
     fullScreenBgColor,
     custom,
     children,
+    className,
   } = {
     ...defaultProps,
     ...props,
@@ -130,7 +131,11 @@ export const Loading: FunctionComponent<
     <div className={`rotate rotate-${size}`} style={{ borderColor: color }} />
   )
   const cn = bem('loading')
-  const cls = className(cn(), fullScreen ? 'ashe-loading-fullScreen' : '')
+  const cls = classNames(
+    cn(),
+    className,
+    fullScreen ? 'ashe-loading-fullScreen' : ''
+  )
   return (
     <div
       className={cls}
