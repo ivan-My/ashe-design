@@ -1,0 +1,10 @@
+@import 'griditem';
+
+.ashe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  &__border {
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+}
