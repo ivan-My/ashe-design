@@ -2,6 +2,8 @@ import Button from '@/components/button/doc.md?raw'
 import Mask from '@/components/mask/doc.md?raw'
 import Input from '@/components/input/doc.md?raw'
 import ConfigProvider from '@/components/configprovider/doc.md?raw'
+import Cell from '@/components/cell/doc.md?raw'
+import Image from '@/components/image/doc.md?raw'
 import Space from '@/components/space/doc.md?raw'
 import Grid from '@/components/grid/doc.md?raw'
 import Elevator from '@/components/elevator/doc.md?raw'
@@ -13,6 +15,7 @@ import CountDown from '@/components/countdown/doc.md?raw'
 import Loading from '@/components/loading/doc.md?raw'
 import VirtualList from '@/components/virtuallist/doc.md?raw'
 import Collapse from '@/components/collapse/doc.md?raw'
+import Ellipsis from '@/components/ellipsis/doc.md?raw'
 
 import ButtonScss from '@/components/button/demo.scss?raw'
 import MaskScss from '@/components/mask/demo.scss?raw'
@@ -38,6 +41,8 @@ export const componentRouters = [
   'Mask',
   'Input',
   'ConfigProvider',
+  'Cell',
+  'Image',
   'Space',
   'Grid',
   'Elevator',
@@ -49,12 +54,15 @@ export const componentRouters = [
   'Loading',
   'VirtualList',
   'Collapse',
+  'Ellipsis',
 ]
 export const raws = {
   Button,
   Mask,
   Input,
   ConfigProvider,
+  Cell,
+  Image,
   Space,
   Grid,
   Elevator,
@@ -66,4 +74,5 @@ export const raws = {
   Loading,
   VirtualList,
   Collapse,
+  Ellipsis,
 }

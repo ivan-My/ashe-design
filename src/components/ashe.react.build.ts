@@ -2,6 +2,8 @@ import Button from '@/components/button'
 import Mask from '@/components/mask'
 import Input from '@/components/input'
 import ConfigProvider from '@/components/configprovider'
+import Cell from '@/components/cell'
+import Image from '@/components/image'
 import Space from '@/components/space'
 import Grid from '@/components/grid'
 import Elevator from '@/components/elevator'
@@ -13,12 +15,15 @@ import CountDown from '@/components/countdown'
 import Loading from '@/components/loading'
 import VirtualList from '@/components/virtuallist'
 import Collapse from '@/components/collapse'
+import Ellipsis from '@/components/ellipsis'
 
 export {
   Button,
   Mask,
   Input,
   ConfigProvider,
+  Cell,
+  Image,
   Space,
   Grid,
   Elevator,
@@ -30,4 +35,5 @@ export {
   Loading,
   VirtualList,
   Collapse,
+  Ellipsis,
 }

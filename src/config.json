@@ -72,6 +72,28 @@
           "show": true,
           "taro": true,
           "author": ""
+        },
+        {
+          "version": "1.0.0",
+          "name": "Cell",
+          "type": "component",
+          "cName": "单元格",
+          "desc": "",
+          "sort": 5,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Image",
+          "type": "component",
+          "cName": "图片",
+          "desc": "",
+          "sort": 6,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
         }
       ]
     },
@@ -220,6 +242,17 @@
           "cName": "折叠面板",
           "desc": "可以折叠/展开的内容区域。",
           "sort": 4,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Ellipsis",
+          "type": "component",
+          "cName": "文本省略",
+          "desc": "",
+          "sort": 5,
           "show": true,
           "taro": true,
           "author": "ivan"

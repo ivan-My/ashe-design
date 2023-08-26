@@ -36,7 +36,7 @@ export default defineConfig({
   plugins: [reactRefresh()],
   build: {
     target: 'es2015',
-    outDir: './dist/1x/',
+    outDir: './dist/html/',
     cssCodeSplit: true,
     rollupOptions: {
       input: {
