@@ -2,7 +2,6 @@ import React, { Suspense } from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import '../assets/styles/reset.scss'
-import '../assets/styles/md-style.scss'
 import App from './App'
 
 const rootElement = document.querySelector('#doc')

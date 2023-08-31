@@ -4,7 +4,7 @@ import { Link, NavLink, useMatch } from 'react-router-dom'
 
 const navList = [
   {
-    name: '指南',
+    name: '首页',
     path: '/guide/installation',
   },
   {

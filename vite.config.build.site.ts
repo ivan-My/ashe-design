@@ -44,8 +44,8 @@ export default defineConfig({
         demo: resolve(__dirname, 'demo.html'),
       },
       output: {
-        chunkFileNames: 'static/js/[name]-[hash].js',
-        entryFileNames: 'static/js/[name]-[hash].js',
+        chunkFileNames: 'static/[name]-[hash].js',
+        entryFileNames: 'static/[name]-[hash].js',
         assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
         experimentalMinChunkSize: 1000,
       },

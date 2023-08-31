@@ -256,6 +256,17 @@
           "show": true,
           "taro": true,
           "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Skeleton",
+          "type": "component",
+          "cName": "骨架屏",
+          "desc": "",
+          "sort": 6,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
         }
       ]
     }

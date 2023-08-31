@@ -40,7 +40,7 @@ const data = [
 const GridDemo = () => {
   return (
     <>
-      <div className="demo">
+      <div className="content">
         <h2>基础用法</h2>
         <Grid columns={3}>
           <Grid.Item text="测试">

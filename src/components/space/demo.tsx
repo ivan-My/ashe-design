@@ -1,12 +1,11 @@
 import React from 'react'
 import { Space } from './space'
 import Button from '../button'
-import './demo.scss'
 
 const SpaceDemo = () => {
   return (
     <>
-      <div className="demo">
+      <div className="content">
         <h2>基础用法</h2>
         <Space align="end" justify="around">
           <Button>按钮1</Button>

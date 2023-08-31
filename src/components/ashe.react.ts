@@ -16,6 +16,7 @@ import Loading from '@/components/loading'
 import VirtualList from '@/components/virtuallist'
 import Collapse from '@/components/collapse'
 import Ellipsis from '@/components/ellipsis'
+import Skeleton from '@/components/skeleton'
 
 import './button/button.scss'
 import './mask/mask.scss'
@@ -35,6 +36,7 @@ import './loading/loading.scss'
 import './virtuallist/virtuallist.scss'
 import './collapse/collapse.scss'
 import './ellipsis/ellipsis.scss'
+import './skeleton/skeleton.scss'
 
 export {
   Button,
@@ -55,4 +57,5 @@ export {
   VirtualList,
   Collapse,
   Ellipsis,
+  Skeleton,
 }

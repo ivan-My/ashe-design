@@ -1,5 +1,5 @@
 /*
- * 通过 dist 目录下的 style/index.js 构建每个组件的 css 文件
+ * 通过 dist 目录下的 style/index.prism 构建每个组件的 css 文件
  * 用于css按需加载
  * */
 
@@ -11,7 +11,7 @@ const atImport = require('postcss-import')
 
 function scannerFiles() {
   const prefix = './dist/esm/'
-  const list = glob.sync(prefix + '**/style/index.js')
+  const list = glob.sync(prefix + '**/style/index.prism')
   return list
 }
 
@@ -33,12 +33,12 @@ function viteConfig(file) {
     },
     build: {
       emptyOutDir: false,
-      outDir: file.replace('index.js', ''),
+      outDir: file.replace('index.prism', ''),
       rollupOptions: {
         output: [
           {
             format: 'es',
-            entryFileNames: 'css.js',
+            entryFileNames: 'css.prism',
           },
         ],
       },
@@ -55,7 +55,10 @@ function run() {
   Promise.all(files.map((file) => vite.build(viteConfig(file)))).then(() => {
     const fileList = glob.sync('./dist/esm/**/style.css')
     fileList.forEach((file) => {
-      fse.writeFile(file.replace('style.css', 'css.js'), `import './style.css'`)
+      fse.writeFile(
+        file.replace('style.css', 'css.prism'),
+        `import './style.css'`
+      )
     })
   })
 }

@@ -10,7 +10,7 @@ import { Form } from 'ashe-design'
 ```
 ### 基础用法
 
-:::demo
+
 ```tsx
 import  React from "react";
 import { Form, Input, TextArea } from 'ashe-design'
@@ -36,7 +36,7 @@ const App = () => {
 
 export default App;
 ```
-:::
+
 
 
 ## API

@@ -10,6 +10,9 @@ dependencies:
   '@react-spring/web':
     specifier: ^9.7.3
     version: 9.7.3(react-dom@18.2.0)(react@18.2.0)
+  '@stackblitz/sdk':
+    specifier: ^1.9.0
+    version: 1.9.0
   '@use-gesture/react':
     specifier: ^10.2.27
     version: 10.2.27(react@18.2.0)
@@ -22,6 +25,12 @@ dependencies:
   markdown-navbar:
     specifier: ^1.4.3
     version: 1.4.3
+  marked:
+    specifier: ^7.0.5
+    version: 7.0.5
+  prismjs:
+    specifier: ^1.23.0
+    version: 1.23.0
   react-router-dom:
     specifier: ^6.4.2
     version: registry.npmmirror.com/react-router-dom@6.4.2(react-dom@18.2.0)(react@18.2.0)
@@ -2639,6 +2648,10 @@ packages:
       '@sinonjs/commons': 1.8.3
     dev: true
 
+  /@stackblitz/sdk@1.9.0:
+    resolution: {integrity: sha512-3m6C7f8pnR5KXys/Hqx2x6ylnpqOak6HtnZI6T5keEO0yT+E4Spkw37VEbdwuC+2oxmjdgq6YZEgiKX7hM1GmQ==}
+    dev: false
+
   /@swc/core-darwin-arm64@1.3.23:
     resolution: {integrity: sha512-IGOEHmE4aBDX7gQWpanI3A0ni47UcvX7rmcy0H8kE6mm/y7mEMWskvNsYhYzJl4GVZgw38v1/lL/A7MRX6g71A==}
     engines: {node: '>=10'}
@@ -3926,6 +3939,16 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
+  /clipboard@2.0.11:
+    resolution: {integrity: sha512-C+0bbOqkezLIsmWSvlsXS0Q0bmkugu7jcfMIACB+RDEntIzQIkdr148we28AfSloQLRdZlYL/QYyrq05j/3Faw==}
+    requiresBuild: true
+    dependencies:
+      good-listener: 1.2.2
+      select: 1.1.2
+      tiny-emitter: 2.1.0
+    dev: false
+    optional: true
+
   /cliui@7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
     dependencies:
@@ -4313,6 +4336,11 @@ packages:
       browserslist: 4.21.4
     dev: true
 
+  /core-js-pure@3.32.1:
+    resolution: {integrity: sha512-f52QZwkFVDPf7UEQZGHKx6NYxsxmVGJe5DIvbzOdRMJlmT6yv0KDjR8rmy3ngr/t5wU54c7Sp/qIJH0ppbhVpQ==}
+    requiresBuild: true
+    dev: true
+
   /core-js@3.31.1:
     resolution: {integrity: sha512-2sKLtfq1eFST7l7v62zaqXacPc7uG8ZAya8ogijLhTtaKNcpzpB4TMoTw2Si+8GYKRwFPMMtUT0263QFWFfqyQ==}
     requiresBuild: true
@@ -4600,6 +4628,11 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
     dev: true
+
+  /delegate@3.2.0:
+    resolution: {integrity: sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==}
+    dev: false
+    optional: true
 
   /deprecation@2.3.1:
     resolution: {integrity: sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==}
@@ -5425,6 +5458,13 @@ packages:
       merge2: 1.4.1
       slash: 4.0.0
     dev: true
+
+  /good-listener@1.2.2:
+    resolution: {integrity: sha512-goW1b+d9q/HIwbVYZzZ6SsTr4IgE+WA44A0GmPIQstuOrgsFcT7VEJ48nmr9GaRtNu0XTKacFLGnBPAM6Afouw==}
+    dependencies:
+      delegate: 3.2.0
+    dev: false
+    optional: true
 
   /got@12.6.1:
     resolution: {integrity: sha512-mThBblvlAF1d4O5oqyvN+ZxLAYwIJK7bpMxgYqPD9okW0C3qm5FFn7k811QrcuEBwaogR3ngOFoCfs6mRv7teQ==}
@@ -7089,6 +7129,12 @@ packages:
       react: 16.14.0
     dev: false
 
+  /marked@7.0.5:
+    resolution: {integrity: sha512-lwNAFTfXgqpt/XvK17a/8wY9/q6fcSPZT1aP6QW0u74VwaJF/Z9KbRcX23sWE4tODM+AolJNcUtErTkgOeFP/Q==}
+    engines: {node: '>= 16'}
+    hasBin: true
+    dev: false
+
   /meow@8.1.2:
     resolution: {integrity: sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==}
     engines: {node: '>=10'}
@@ -7796,6 +7842,12 @@ packages:
       react-is: 18.2.0
     dev: true
 
+  /prismjs@1.23.0:
+    resolution: {integrity: sha512-c29LVsqOaLbBHuIbsTxaKENh1N2EQBOHaWv7gkHN4dgRbxSREqDnDbtFJYdpPauS4YCplMSNCABQ6Eeor69bAA==}
+    optionalDependencies:
+      clipboard: 2.0.11
+    dev: false
+
   /prismjs@1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
     engines: {node: '>=6'}
@@ -8380,6 +8432,11 @@ packages:
     dependencies:
       loose-envify: 1.4.0
 
+  /select@1.1.2:
+    resolution: {integrity: sha512-OwpTSOfy6xSs1+pwcNrv0RBMOzI39Lp3qQKUTPVVPRjCdNa5JH/oPRiqsesIskK8TVgmRiHwO4KXlV2Li9dANA==}
+    dev: false
+    optional: true
+
   /semver-diff@4.0.0:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
@@ -8804,6 +8861,11 @@ packages:
   /through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
     dev: true
+
+  /tiny-emitter@2.1.0:
+    resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
+    dev: false
+    optional: true
 
   /titleize@3.0.0:
     resolution: {integrity: sha512-KxVu8EYHDPBdUYdKZdKtU2aj2XfEx9AfjXxE/Aj0vT06w2icA09Vus1rh6eSu1y01akYg6BjIK/hxyLJINoMLQ==}
@@ -9617,7 +9679,7 @@ packages:
     version: 7.19.6
     engines: {node: '>=6.9.0'}
     dependencies:
-      core-js-pure: registry.npmmirror.com/core-js-pure@3.25.5
+      core-js-pure: 3.32.1
       regenerator-runtime: 0.13.10
     dev: true
 
@@ -9633,7 +9695,7 @@ packages:
       globals: registry.npmmirror.com/globals@13.17.0
       ignore: 4.0.6
       import-fresh: registry.npmmirror.com/import-fresh@3.3.0
-      js-yaml: registry.npmmirror.com/js-yaml@3.14.1
+      js-yaml: 3.14.1
       minimatch: 3.1.2
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
@@ -9800,7 +9862,7 @@ packages:
       fast-deep-equal: registry.npmmirror.com/fast-deep-equal@3.1.3
       fast-json-stable-stringify: registry.npmmirror.com/fast-json-stable-stringify@2.1.0
       json-schema-traverse: registry.npmmirror.com/json-schema-traverse@0.4.1
-      uri-js: registry.npmmirror.com/uri-js@4.4.1
+      uri-js: 4.4.1
     dev: true
 
   registry.npmmirror.com/ajv@8.11.0:
@@ -9826,14 +9888,6 @@ packages:
     name: ansi-regex
     version: 5.0.1
     engines: {node: '>=8'}
-    dev: true
-
-  registry.npmmirror.com/argparse@1.0.10:
-    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/argparse/-/argparse-1.0.10.tgz}
-    name: argparse
-    version: 1.0.10
-    dependencies:
-      sprintf-js: registry.npmmirror.com/sprintf-js@1.0.3
     dev: true
 
   registry.npmmirror.com/aria-query@4.2.2:
@@ -9968,13 +10022,6 @@ packages:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/convert-source-map/-/convert-source-map-1.9.0.tgz}
     name: convert-source-map
     version: 1.9.0
-    dev: true
-
-  registry.npmmirror.com/core-js-pure@3.25.5:
-    resolution: {integrity: sha512-oml3M22pHM+igfWHDfdLVq2ShWmjM2V4L+dQEBs0DWVIqEm9WHCwGAlZ6BmyBQGy5sFrJmcx+856D9lVKyGWYg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/core-js-pure/-/core-js-pure-3.25.5.tgz}
-    name: core-js-pure
-    version: 3.25.5
-    requiresBuild: true
     dev: true
 
   registry.npmmirror.com/core-util-is@1.0.3:
@@ -10472,7 +10519,7 @@ packages:
       import-fresh: registry.npmmirror.com/import-fresh@3.3.0
       imurmurhash: registry.npmmirror.com/imurmurhash@0.1.4
       is-glob: registry.npmmirror.com/is-glob@4.0.3
-      js-yaml: registry.npmmirror.com/js-yaml@3.14.1
+      js-yaml: 3.14.1
       json-stable-stringify-without-jsonify: registry.npmmirror.com/json-stable-stringify-without-jsonify@1.0.1
       levn: registry.npmmirror.com/levn@0.4.1
       lodash.merge: registry.npmmirror.com/lodash.merge@4.6.2
@@ -10500,14 +10547,6 @@ packages:
       acorn: registry.npmmirror.com/acorn@7.4.1
       acorn-jsx: registry.npmmirror.com/acorn-jsx@5.3.2(acorn@7.4.1)
       eslint-visitor-keys: 1.3.0
-    dev: true
-
-  registry.npmmirror.com/esprima@4.0.1:
-    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/esprima/-/esprima-4.0.1.tgz}
-    name: esprima
-    version: 4.0.1
-    engines: {node: '>=4'}
-    hasBin: true
     dev: true
 
   registry.npmmirror.com/esquery@1.4.0:
@@ -10929,16 +10968,6 @@ packages:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/isarray/-/isarray-1.0.0.tgz}
     name: isarray
     version: 1.0.0
-    dev: true
-
-  registry.npmmirror.com/js-yaml@3.14.1:
-    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/js-yaml/-/js-yaml-3.14.1.tgz}
-    name: js-yaml
-    version: 3.14.1
-    hasBin: true
-    dependencies:
-      argparse: registry.npmmirror.com/argparse@1.0.10
-      esprima: registry.npmmirror.com/esprima@4.0.1
     dev: true
 
   registry.npmmirror.com/json-schema-traverse@0.4.1:
@@ -11736,13 +11765,6 @@ packages:
     version: 6.1.1
     dev: true
 
-  registry.npmmirror.com/punycode@2.1.1:
-    resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/punycode/-/punycode-2.1.1.tgz}
-    name: punycode
-    version: 2.1.1
-    engines: {node: '>=6'}
-    dev: true
-
   registry.npmmirror.com/react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/react-is/-/react-is-18.2.0.tgz}
     name: react-is
@@ -11989,12 +12011,6 @@ packages:
     version: 2.0.1
     dev: true
 
-  registry.npmmirror.com/sprintf-js@1.0.3:
-    resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/sprintf-js/-/sprintf-js-1.0.3.tgz}
-    name: sprintf-js
-    version: 1.0.3
-    dev: true
-
   registry.npmmirror.com/string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz}
     name: string-width
@@ -12207,14 +12223,6 @@ packages:
     name: universalify
     version: 2.0.0
     engines: {node: '>= 10.0.0'}
-    dev: true
-
-  registry.npmmirror.com/uri-js@4.4.1:
-    resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/uri-js/-/uri-js-4.4.1.tgz}
-    name: uri-js
-    version: 4.4.1
-    dependencies:
-      punycode: registry.npmmirror.com/punycode@2.1.1
     dev: true
 
   registry.npmmirror.com/uvu@0.5.6:

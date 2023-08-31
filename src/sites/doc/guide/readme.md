@@ -1,6 +1,6 @@
 ## 快速上手
 
-```bash
+```javascript
 # npm
 $ npm install ashe-design --save
 
@@ -13,7 +13,7 @@ $ pnpm add ashe-design
 
 ## 使用
 
-```js
+```tsx
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import 'ashe-design/dist/style.css'
@@ -40,11 +40,11 @@ babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 
 
 使用 `babel-plugin-import` 自动加载 `css/scss` 文件
 
-```js
+```javascript
 npm install babel-plugin-import --save-dev
 ```
 在 .babelrc 或 babel.config.js 中添加配置：
-```js
+```javascript
 {
   // ...
   plugins: [

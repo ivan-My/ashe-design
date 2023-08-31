@@ -12,7 +12,7 @@ import { Infiniteloading } from './infiniteloading'
 
 ### 基础用法
 
-:::demo
+
 ```tsx
 import React, { useState, useEffect } from 'react'
 import { Infiniteloading } from './infiniteloading'

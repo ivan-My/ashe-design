@@ -16,11 +16,11 @@ import Loading from '@/components/loading/doc.md?raw'
 import VirtualList from '@/components/virtuallist/doc.md?raw'
 import Collapse from '@/components/collapse/doc.md?raw'
 import Ellipsis from '@/components/ellipsis/doc.md?raw'
+import Skeleton from '@/components/skeleton/doc.md?raw'
 
 import ButtonScss from '@/components/button/demo.scss?raw'
 import MaskScss from '@/components/mask/demo.scss?raw'
 import InputScss from '@/components/input/demo.scss?raw'
-import SpaceScss from '@/components/space/demo.scss?raw'
 import GridScss from '@/components/grid/demo.scss?raw'
 import ToastScss from '@/components/toast/demo.scss?raw'
 import InfiniteloadingScss from '@/components/infiniteloading/demo.scss?raw'
@@ -30,7 +30,6 @@ export const scssRaws = {
   ButtonScss,
   MaskScss,
   InputScss,
-  SpaceScss,
   GridScss,
   ToastScss,
   InfiniteloadingScss,
@@ -55,6 +54,7 @@ export const componentRouters = [
   'VirtualList',
   'Collapse',
   'Ellipsis',
+  'Skeleton',
 ]
 export const raws = {
   Button,
@@ -75,4 +75,5 @@ export const raws = {
   VirtualList,
   Collapse,
   Ellipsis,
+  Skeleton,
 }

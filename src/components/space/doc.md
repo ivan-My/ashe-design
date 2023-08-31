@@ -1,33 +1,26 @@
-#  Space组件
-
-### 介绍
-
+#  Space间距
 元素排列中保持相同的宽度。
 
-### 安装
+##  基础用法
 
-```
-import { Space } from 'ashe-design'
-```
-
-## 代码演示
-
-
-### 基础用法
-
-```javascript
-      <Space justify="center">
-          <Button>按钮1</Button>
-          <Button>按钮2</Button>
-          <Button>按钮3</Button>
-        </Space>
+```tsx
+import React from 'react'
+import { Space } from 'ashe-design';
+const App = () => {
+  return (
+    <Space >
+      <Button>按钮1</Button>
+      <Button>按钮2</Button>
+      <Button>按钮3</Button>
+    </Space>
+  )
+}
+export default App
 ```
 
 
 
-## API
-
-### Props
+## Props
 
 | 参数         | 说明                    | 类型                                                                                         | 默认值              |
 |--------------|-------------------------|--------------------------------------------------------------------------------------------|------------------|
@@ -37,7 +30,7 @@ import { Space } from 'ashe-design'
 | onClick          | 点击事件  | (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void | -                |
 | wrap          | 是否自动换行，仅在 horizontal 时有效  | boolean  / false                                                                           |                  |
 
-### CSS 变量
+## CSS 变量
 
 | 属性             | 说明               | 默认值      |
 | ---------------- | ------------------ | ----------- |

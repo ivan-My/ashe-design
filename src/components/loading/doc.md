@@ -1,23 +1,18 @@
 #  Loading组件
 
-### 介绍
-
+## 介绍
 Loading 加载中
 
-### 安装
-```
-import { Loading } from 'ashe-design'
-```
 
 ## 代码演示
-### 加载类型
+## 加载类型
 
-### 加载动画大小
+## 加载动画大小
 
 
 ## API
 
-### Props
+## Props
 
 | 参数           | 说明                         | 类型      | 可选值              | 默认值   |
 |--------------|----------------------------|---------|------------------|-------|
@@ -27,7 +22,7 @@ import { Loading } from 'ashe-design'
 | class-prefix | 类名前缀，用于使用自定义图标             | String  | 'nutui-iconfont' |       |
 | tag          | HTML 标签                    | String  | 'i'              |       |
 
-### Events
+## Events
 
 | 事件名 | 说明           | 回调参数     |
 |--------|----------------|--------------|

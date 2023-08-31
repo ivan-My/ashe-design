@@ -1,5 +1,5 @@
 .doc-header {
-  color: rgb(77, 81, 100);
+  color: #424e66;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +13,10 @@
   backdrop-filter: saturate(50%) blur(8px);
   box-sizing: border-box;
   user-select: none;
-  font-weight: bold;
+  font-weight: 500;
+  min-width: 1320px;
+  background: #fff;
+  border-bottom: 1px solid #e5e6e8;
 
   .header-logo {
     position: relative;
@@ -35,11 +38,24 @@
 
       > li {
         padding: 0 20px;
+
         > a {
           color: rgb(77, 81, 100);
         }
+
         .active {
           color: rgb(80, 80, 254);
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 2px;
+            right: 2px;
+            bottom: -18px;
+            height: 3px;
+            background-color: #165dff;
+          }
         }
       }
     }

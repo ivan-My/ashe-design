@@ -68,7 +68,7 @@ config.nav.map((item) => {
               }
             }
 
-            // 替换为 js 文件内容
+            // 替换为 prism 文件内容
             // @import './countup.scss';
             // require('../../../packages/animatingnumbers/countup.scss')
 

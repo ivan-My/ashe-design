@@ -16,6 +16,7 @@ import Loading from '@/components/loading'
 import VirtualList from '@/components/virtuallist'
 import Collapse from '@/components/collapse'
 import Ellipsis from '@/components/ellipsis'
+import Skeleton from '@/components/skeleton'
 
 export {
   Button,
@@ -36,4 +37,5 @@ export {
   VirtualList,
   Collapse,
   Ellipsis,
+  Skeleton,
 }

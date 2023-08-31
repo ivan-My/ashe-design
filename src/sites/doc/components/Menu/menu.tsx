@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { nav } from '@/config.json'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useCheckLocation } from '@/sites/doc/utils/use-check-location'
+import { nav } from '@/config.json'
 import './menu.scss'
 
 const Menu = () => {
-  if (useCheckLocation()) return null
-  const [cNav] = useState<any>(nav)
-  const [fixed, setFixed] = useState(false)
-  const scrollNav = () => {
-    let top = document.documentElement.scrollTop
-    if (top > 64) {
-      setFixed(true)
-    } else {
-      setFixed(false)
-    }
-  }
-  useEffect(() => {
-    document.addEventListener('scroll', scrollNav)
-  }, [])
   return (
-    <div className={`doc-menu ${fixed ? 'fixed' : ''}`}>
-      {cNav.map((cn: any, index: number) => {
+    <div className={'doc-menu'}>
+      <ol className={'doc-Menu-item'}>
+        <li>开发指南</li>
+        <ul>
+          <li>
+            <NavLink key={Math.random()} to={'/components/readme'}>
+              快速上手
+            </NavLink>
+          </li>
+        </ul>
+      </ol>
+      {nav.map((cn: any, index: number) => {
         if (cn.packages.length === 0) return null
         return (
           <ol key={index} className={'doc-Menu-item'}>
@@ -32,7 +27,7 @@ const Menu = () => {
                 return (
                   <NavLink key={Math.random()} to={`/components/${cp.name}`}>
                     <li>
-                      {cp.name}&nbsp;&nbsp;<b>{cp.cName}</b>
+                      {cp.name}&nbsp;&nbsp;{cp.cName}
                     </li>
                   </NavLink>
                 )

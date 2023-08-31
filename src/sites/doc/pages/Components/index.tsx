@@ -1,52 +1,17 @@
 import React from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
-// @ts-ignore
-import MarkdownNavbar from 'markdown-navbar'
-import 'markdown-navbar/dist/navbar.css'
+import { Route, Routes } from 'react-router-dom'
 import Header from '@/sites/doc/components/Header'
 import Menu from '@/sites/doc/components/Menu'
-import GuideNav from '@/sites/doc/components/GuideNav'
-import Markdown from '@/sites/doc/components/Markdown'
+import Markdown from '@/sites/doc/components/Markdown/Markdown'
 import DemoPreview from '@/sites/doc/components/DemoPreview/demo-preview'
 import { componentRouters, raws } from '@/sites/doc/guide'
+import Readme from '@/sites/doc/guide/readme.md?raw'
 import './style.scss'
-
-const getGuideRoutes = () => {
-  const modulesPage = import.meta.globEager('../../guide/*.md', { as: 'raw' })
-  const guideRoutes: any[] = []
-  for (const path in modulesPage) {
-    const regex = /\/(\w+)\.md$/
-    // @ts-ignore
-    const name = path.match(regex)[1]
-    const module: any = modulesPage[path]
-    guideRoutes.push({
-      path: '/' + name,
-      element: modulesPage[path],
-      name,
-    })
-  }
-  return guideRoutes
-}
-
-const GuideRoutes = () => {
-  return (
-    <Routes>
-      {getGuideRoutes().map((item, key) => {
-        return (
-          <Route
-            key={key}
-            path={`/${item.path}`}
-            element={<Markdown element={item.element} />}
-          />
-        )
-      })}
-    </Routes>
-  )
-}
 
 const ComponentRouters = () => {
   return (
     <Routes>
+      <Route path={'/readme'} element={<Markdown element={Readme} />} />
       {componentRouters.map((ru, index) => {
         return (
           <Route
@@ -62,31 +27,15 @@ const ComponentRouters = () => {
 }
 
 const Page = () => {
-  const { pathname } = useLocation()
-  const isComponentsPage = pathname.indexOf('components')
-  let element
-  if (pathname.indexOf('components') == 1) {
-    const name = pathname.replace('/components/', '')
-    // @ts-ignore
-    element = raws[name]
-  } else if (pathname.indexOf('guide') == 1) {
-    const name = pathname.replace('/guide/', '')
-    const s = getGuideRoutes().filter((item) => item.name == name)
-    element = s[0].element
-  }
   return (
     <div className="components-page">
       <Header />
-      {isComponentsPage == 1 ? <Menu /> : <GuideNav />}
+      <Menu />
       <div className="components-container">
         <div className="components-markdown">
-          <GuideRoutes />
           <ComponentRouters />
         </div>
-        {isComponentsPage == 1 ? <DemoPreview /> : null}
-        <div className={'markdown-bar'}>
-          <MarkdownNavbar source={element} declarative={true} ordered={false} />
-        </div>
+        <DemoPreview />
       </div>
     </div>
   )

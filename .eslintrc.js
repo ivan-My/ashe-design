@@ -37,7 +37,7 @@ module.exports = {
       files: [
         'src/packages/**/*.md/*.ts',
         'src/packages/**/*.md/*.tsx',
-        'src/packages/**/*.md/*.js',
+        'src/packages/**/*.md/*.prism',
         'src/packages/**/*.md/*.jsx',
       ],
       rules: {

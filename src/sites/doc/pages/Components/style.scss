@@ -2,18 +2,17 @@
   .components-container {
     position: relative;
     box-sizing: border-box;
-    padding-top: 80px;
+    padding-top: 60px;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
     padding-left: 240px;
-
     .components-markdown {
+      max-width: 750px;
       border-radius: 24px;
       background-color: #fff;
       flex: 1;
       margin: 0 20px 20px;
-
       .doc-wrapper {
         width: 100%;
         height: 100%;
@@ -23,20 +22,6 @@
         position: relative;
         word-break: break-all;
       }
-    }
-
-    .markdown-bar {
-      display: flex;
-      position: sticky;
-      top: 60px;
-      flex-direction: column;
-      max-width: 150px;
-      flex: 1 0 120px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      font-size: 13px;
-      box-sizing: border-box;
-      padding: 0 1px 20px 0;
     }
   }
 }

@@ -14,7 +14,7 @@ import { Mask } from 'ashe-design';
 
 ### 基础用法
 
-:::demo
+
 
 ```tsx
 import React, { useState } from "react";
@@ -47,11 +47,11 @@ const App = () => {
 export default App;
 ```
 
-:::
+
 
 ### 遮罩样式
 
-:::demo
+
 
 ```tsx
 import React, { useState } from "react";
@@ -84,11 +84,11 @@ const App = () => {
 export default App;
 ```
 
-:::
+
 
 ### 设置动画时间
 
-:::demo
+
 
 ```tsx
 import React, { useState } from "react";
@@ -124,11 +124,11 @@ const App = () => {
 export default App;
 ```
 
-:::
+
 
 ### 不锁定背景滚动
 
-:::demo
+
 
 ```tsx
 import React, { useState } from "react";
@@ -154,11 +154,11 @@ const App = () => {
 export default App;
 ```
 
-:::
+
 
 ### 嵌套内容
 
-:::demo
+
 
 ```tsx
 import React, { useState } from "react";
@@ -204,11 +204,11 @@ const App = () => {
 export default App;
 ```
 
-:::
+
 
 ### 点击遮罩不关闭
 
-:::demo
+
 
 ```tsx
 import React, { useState } from "react";
@@ -238,7 +238,7 @@ const App = () => {
 export default App;
 ```
 
-:::
+
 
 ## Mask
 

@@ -11,9 +11,8 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/guide/installation" replace />}
+          element={<Navigate to="/components/button" replace />}
         />
-        <Route path={'/guide/*'} element={<Page />} />
         <Route path={'/components/*'} element={<Page />} />
         <Route path={'/hook/*'} element={<Hooks />} />
       </Routes>
