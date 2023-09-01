@@ -1,34 +1,32 @@
-# Skeleton 骨架屏组件
+# Skeleton 骨架屏
 
 在页面上待加载区域填充灰色的占位图，本质上是界面加载过程中的过渡效果。
-
-
 
 ## 基础用法
 
 ```tsx
 import React from "react";
 import { Skeleton } from 'ashe-design';
-const App = () => {
+
+export default () => {
   return (
     <Skeleton animated />
   )
 }
-export default App;
-```
 
+```
 
 ## 传入多行
 
 ```tsx
 import React from "react";
 import { Skeleton } from 'ashe-design';
-const App = () => {
+
+export default () => {
   return (
-    <Skeleton  rows={3} title animated />
+    <Skeleton rows={3} title animated />
   )
 }
-export default App;
 
 ```
 
@@ -37,21 +35,22 @@ export default App;
 ```tsx
 import React from "react";
 import { Skeleton } from 'ashe-design';
-const App = () => {
+
+export default () => {
   return (
-    <Skeleton  rows={3} title animated avatar avatarSize="100px" />
+    <Skeleton rows={3} title animated avatar avatarSize="100px" />
   )
 }
-export default App;
-```
 
+```
 
 ## 标题段落圆角风格
 
 ```tsx
 import React from "react";
 import { Skeleton, ConfigProvider } from 'ashe-design';
-const App = () => {
+
+export default () => {
   return (
     <ConfigProvider
       theme={{
@@ -62,16 +61,16 @@ const App = () => {
     </ConfigProvider>
   )
 }
-export default App;
+
 ```
 
-
-
 ## 显示子组件
+
 ```tsx
 import React, { useState } from 'react'
 import { Skeleton, Switch, Avatar } from 'ashe-design';
-const App = () => {
+
+export default () => {
   const [checked, setChecked] = useState(false)
   const changeStatus = (value: boolean, event: React.MouseEvent<Element, MouseEvent>) => {
     console.log(`触发了change事件，开关状态：${value}`)
@@ -80,7 +79,7 @@ const App = () => {
   return (
     <div className="content">
       <Switch size="15px" change={(value, event) => changeStatus(value, event)} />
-      <Skeleton  title animated avatar rows={3} visible={checked}>
+      <Skeleton title animated avatar rows={3} visible={checked}>
         <div className="container">
           <Avatar
             size="50"
@@ -97,29 +96,29 @@ const App = () => {
     </div>
   )
 }
-export default App;
+
 ```
 
 ## Props
 
-| 属性 | 说明                             | 类型                           | 默认值  |
-| --- |--------------------------------|------------------------------|------|
-| visible | 是否显示骨架屏(true不显示骨架屏，false显示骨架屏) | boolean                      | true |
-| animated | 是否开启骨架屏动画                      | boolean                      | false |
-| avatar | 是否显示头像                         | boolean                      | false |
-| avatarShape | 头像形状：正方形/圆形                    | string                       | round |
-| avatarSize | 头像大小                           | string                       | 50px |
-| rows | 设置段落行数                         | string                       | 3    |
-| rowWidth | 段落占位图宽度，可传数组来设置每一行的宽度          | number \| string \|  (number \| string)[] | 100% |
-| rowHeight | 段落占位图高度，可传数组来设置每一行的高度          | number \| string \|  (number \| string)[] | 15px |
-| title | 是否显示段落标题                       | boolean                      | true |
+| 属性          | 说明                             | 类型                                        | 默认值   |
+|-------------|--------------------------------|-------------------------------------------|-------|
+| visible     | 是否显示骨架屏(true不显示骨架屏，false显示骨架屏) | boolean                                   | true  |
+| animated    | 是否开启骨架屏动画                      | boolean                                   | false |
+| avatar      | 是否显示头像                         | boolean                                   | false |
+| avatarShape | 头像形状：正方形/圆形                    | string                                    | round |
+| avatarSize  | 头像大小                           | string                                    | 50px  |
+| rows        | 设置段落行数                         | string                                    | 3     |
+| rowWidth    | 段落占位图宽度，可传数组来设置每一行的宽度          | number \| string \|  (number \| string)[] | 100%  |
+| rowHeight   | 段落占位图高度，可传数组来设置每一行的高度          | number \| string \|  (number \| string)[] | 15px  |
+| title       | 是否显示段落标题                       | boolean                                   | true  |
 
 ## 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/component/configprovider)。
 
-| 名称 | 说明 | 默认值 |
-| --- | --- | --- |
-| \--ashe-skeleton-background | 背景 | rgb(239, 239, 239) |
-| \--ashe-skeleton-line-height | 线条高度 | 15px |
-| \--ashe-skeleton-line-border-radius | 线条边框圆角 | 0 |
+| 名称                                  | 说明     | 默认值                |
+|-------------------------------------|--------|--------------------|
+| \--ashe-skeleton-background         | 背景     | rgb(239, 239, 239) |
+| \--ashe-skeleton-line-height        | 线条高度   | 15px               |
+| \--ashe-skeleton-line-border-radius | 线条边框圆角 | 0                  |

@@ -1,19 +1,12 @@
 # Form 表单
-
-### 介绍
-
 用于数据录入、校验，支持输入框、单选框、复选框等类型。
 
-### 安装
-```javascript
-import { Form } from 'ashe-design'
-```
-### 基础用法
+## 基础用法
 
 
 ```tsx
 import  React from "react";
-import { Form, Input, TextArea } from 'ashe-design'
+import { Form, Input } from 'ashe-design'
 
 const App = () => {
   return (
@@ -27,7 +20,7 @@ const App = () => {
           />
         </Form.Item>
         <Form.Item label='备注' name="remark">
-          <TextArea placeholder='请输入备注' />
+          <Input />
         </Form.Item>
       </Form>
     </>
@@ -39,8 +32,7 @@ export default App;
 
 
 
-## API
-### Form Props
+## Form Props
 
 | 参数           | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
@@ -50,7 +42,7 @@ export default App;
 | class-prefix | 类名前缀，用于使用自定义图标     | String | 'nutui-iconfont' |
 | tag          | HTML 标签                        | String | 'i'              |
 
-### Form Events
+## Form Events
 
 | 事件名 | 说明           | 回调参数     |
 |--------|----------------|--------------|
@@ -58,7 +50,7 @@ export default App;
 | onFinishFailed  | 任一表单项被校验失败后触发 | 被校验的表单项 prop 值，校验是否通过，错误消息（如果存在） |
 
 
-### Form.Item Props
+## Form.Item Props
 
 | 参数               | 说明                         | 类型             | 默认值  |
 |--------------------|--------------------------------|------------------|---------|
@@ -68,7 +60,7 @@ export default App;
 | errorMessageAlign | 错误提示文案对齐方式，可选值为 `center` `right`                  | string           | `left`  |
 | initialValue | 设置子元素默认值                  | string           | -  |
 
-### Form.Item Rule 数据结构
+## Form.Item Rule 数据结构
 
 使用 Form.Item 的`rules`属性可以定义校验规则，可选属性如下:
 
@@ -77,7 +69,7 @@ export default App;
 | required  | 是否为必选字段       | boolean |
 | message   | 错误提示文案           | string |
 
-### Form 实例 Methods
+## Form 实例 Methods
 
 Form.useForm()创建 Form 实例，用于管理所有数据状态。
 

@@ -5,7 +5,7 @@
 
 ```tsx
 import React from 'react'
-import { Space } from 'ashe-design';
+import { Space,Button } from 'ashe-design';
 const App = () => {
   return (
     <Space >
@@ -30,7 +30,7 @@ export default App
 | onClick          | 点击事件  | (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void | -                |
 | wrap          | 是否自动换行，仅在 horizontal 时有效  | boolean  / false                                                                           |                  |
 
-## CSS 变量
+## 样式变量
 
 | 属性             | 说明               | 默认值      |
 | ---------------- | ------------------ | ----------- |

@@ -1,12 +1,12 @@
 import Button from '@/components/button'
 import Mask from '@/components/mask'
-import Input from '@/components/input'
 import ConfigProvider from '@/components/configprovider'
 import Cell from '@/components/cell'
 import Image from '@/components/image'
 import Space from '@/components/space'
 import Grid from '@/components/grid'
 import Elevator from '@/components/elevator'
+import Input from '@/components/input'
 import Form from '@/components/form'
 import Toast from '@/components/toast'
 import Infiniteloading from '@/components/infiniteloading'
@@ -20,13 +20,13 @@ import Skeleton from '@/components/skeleton'
 
 import './button/button.scss'
 import './mask/mask.scss'
-import './input/input.scss'
 import './configprovider/configprovider.scss'
 import './cell/cell.scss'
 import './image/image.scss'
 import './space/space.scss'
 import './grid/grid.scss'
 import './elevator/elevator.scss'
+import './input/input.scss'
 import './form/form.scss'
 import './toast/toast.scss'
 import './infiniteloading/infiniteloading.scss'
@@ -41,13 +41,13 @@ import './skeleton/skeleton.scss'
 export {
   Button,
   Mask,
-  Input,
   ConfigProvider,
   Cell,
   Image,
   Space,
   Grid,
   Elevator,
+  Input,
   Form,
   Toast,
   Infiniteloading,

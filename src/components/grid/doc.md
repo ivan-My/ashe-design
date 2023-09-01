@@ -10,9 +10,9 @@ import { Grid } from 'ashe-design'
 export default () => {
   return (
     <Grid>
-      <Grid.Item text="文字"><Dongdong /></Grid.Item>
-      <Grid.Item text="文字"><Dongdong /></Grid.Item>
-      <Grid.Item text="文字"><Dongdong /></Grid.Item>
+      <Grid.Item text="文字" />
+      <Grid.Item text="文字" />
+      <Grid.Item text="文字" />
     </Grid>
   )
 }

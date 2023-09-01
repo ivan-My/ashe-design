@@ -8,6 +8,7 @@
     border-radius: 2px;
     background: #f7f8fa;
     padding: 10px;
+
     pre {
       margin: 0;
     }
@@ -26,6 +27,7 @@
     box-sizing: border-box;
     white-space: pre-wrap;
   }
+
   .demo-doc-name {
     font-size: 36px;
     font-weight: 500;
@@ -36,7 +38,7 @@
     color: #424e66;
     line-height: 20px;
     font-size: 14px;
-    margin: 20px 0 50px;
+    margin: 20px 0 20px;
   }
 
   .demo-code-title {
@@ -70,7 +72,7 @@
 
     td,
     th {
-      padding: 11px 24px;
+      padding: 11px 10px;
       max-width: 300px;
     }
 
@@ -80,17 +82,44 @@
   }
 }
 
-.demo-code-content:hover {
-  .demo-code-bar {
-    display: block;
-  }
-}
 .demo-code-bar {
   position: absolute;
   right: 10px;
   bottom: 10px;
   z-index: 1;
   display: none;
+
+  button {
+    background: #fff;
+    border: 1px solid #e5e6e8;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  svg {
+    width: 0.8em;
+    height: 0.8em;
+    vertical-align: -1px;
+    stroke: none;
+    fill: currentColor;
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+  }
+}
+
+.demo-code-content:hover {
+  .demo-code-bar {
+    display: block;
+  }
+}
+
+.rorate {
+  transform: rotate(180deg);
 }
 
 .show-all {
@@ -101,9 +130,3 @@
 .status {
   color: green;
 }
-//  .demo-code-operations {
-//    .demo-code-operations-spread svg {
-//      transform: rotate(180deg);
-//    }
-//  }
-//}

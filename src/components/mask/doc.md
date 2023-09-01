@@ -1,26 +1,16 @@
 # Mask 遮罩层
 
-## 介绍
-
 创建一个遮罩层，通常用于阻止用户进行其他操作
 
-## 安装
 
-```tsx
-import { Mask } from 'ashe-design';
-```
 
-## 代码演示
-
-### 基础用法
-
+## 基础用法
 
 
 ```tsx
 import React, { useState } from "react";
 import { Button, Mask } from 'ashe-design';
-
-const App = () => {
+export default () => {
   const [visible, setVisible] = useState(false)
   const handleToggleShow = () => {
     setVisible(true)
@@ -44,20 +34,18 @@ const App = () => {
     </>
   )
 }
-export default App;
+
 ```
 
 
 
-### 遮罩样式
-
-
+## 遮罩样式
 
 ```tsx
 import React, { useState } from "react";
 import { Button, Mask } from 'ashe-design';
 
-const App = () => {
+export default () => {
   const [visible, setVisible] = useState(false)
   const handleToggleShow = () => {
     setVisible(true)
@@ -81,20 +69,17 @@ const App = () => {
     </>
   )
 }
-export default App;
+
 ```
 
 
-
-### 设置动画时间
-
+## 设置动画时间
 
 
 ```tsx
 import React, { useState } from "react";
 import { Button, Mask } from 'ashe-design';
-
-const App = () => {
+export default () => {
   const [visible, setVisible] = useState(false)
   const handleToggleShow = () => {
     setVisible(true)
@@ -121,20 +106,16 @@ const App = () => {
     </>
   )
 }
-export default App;
+
 ```
 
 
-
-### 不锁定背景滚动
-
-
+## 不锁定背景滚动
 
 ```tsx
 import React, { useState } from "react";
 import { Button, Mask } from 'ashe-design';
-
-const App = () => {
+export default () => {
   const [visible, setVisible] = useState(false)
   const handleToggleShow = () => {
     setVisible(true)
@@ -151,19 +132,16 @@ const App = () => {
     </>
   )
 }
-export default App;
+
 ```
 
 
 
-### 嵌套内容
-
-
+## 嵌套内容
 
 ```tsx
 import React, { useState } from "react";
 import { Button, Mask } from 'ashe-design';
-
 const WrapperStyle = {
   display: 'flex',
   height: '100%',
@@ -180,7 +158,7 @@ const ContentStyle = {
   justifyContent: 'center',
   color: 'red'
 }
-const App = () => {
+export default () => {
   const [visible, setVisible] = useState(false)
   const handleToggleShow2 = () => {
     setVisible(true)
@@ -201,20 +179,17 @@ const App = () => {
     </>
   )
 }
-export default App;
+
 ```
 
 
 
-### 点击遮罩不关闭
-
-
+## 点击遮罩不关闭
 
 ```tsx
 import React, { useState } from "react";
 import { Button, Mask } from 'ashe-design';
-
-const App = () => {
+export default () => {
   const [visible, setVisible] = useState(false)
   const handleToggleShow = () => {
     setVisible(true)
@@ -235,14 +210,14 @@ const App = () => {
     </>
   )
 }
-export default App;
+
 ```
 
 
 
 ## Mask
 
-### Props
+## Props
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -255,9 +230,8 @@ export default App;
 | afterClose | 完全关闭后触发 | `() => void` | `-` |
 | afterShow | 完全展示后触发 | `() => void` | `-` |
 
-## 主题定制
 
-### 样式变量
+## 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/component/configprovider)。
 
