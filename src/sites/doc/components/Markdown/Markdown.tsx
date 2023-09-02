@@ -25,7 +25,6 @@ const Markdown = ({ element }: any) => {
         Prism.languages[language],
         language
       )
-
       return `<div class='demo-code-content' >
               <div class='demo-code-bar'>
                 <button class='demo-copy' type='button' >
@@ -46,6 +45,8 @@ const Markdown = ({ element }: any) => {
     },
     table: (header: string, body: string) => {
       const headerMatch = header.match(/<th.*?>(.*?)<\/th>/g)
+      console.log(header)
+      console.log(headerMatch)
       const typeIndex = headerMatch
         ? headerMatch.findIndex((item) => item.indexOf('类型') >= 0)
         : -1

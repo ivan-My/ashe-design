@@ -48,7 +48,7 @@ const notice = (options: any) => {
   })
 }
 
-const errorMsg = (msg: any) => {
+const errorMsg = (msg: string | React.ReactNode) => {
   if (!msg) {
     console.warn('[Ashe Toast]: msg cannot be null')
   }

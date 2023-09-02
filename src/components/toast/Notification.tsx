@@ -91,7 +91,6 @@ export default class Notification extends React.PureComponent<ToastProps> {
             style={{
               bottom: center ? 'auto' : `${bottom}`,
               backgroundColor: cover ? coverColor : '',
-              ...style,
             }}
             onClick={() => {
               this.clickCover()
@@ -102,6 +101,7 @@ export default class Notification extends React.PureComponent<ToastProps> {
               style={{
                 textAlign: textAlignCenter ? 'center' : 'left',
                 backgroundColor: bgColor,
+                ...style,
               }}
             >
               {title ? <div className="ashe-toast-title">{title}</div> : null}

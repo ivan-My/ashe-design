@@ -1,7 +1,16 @@
 ## 快速上手
 
-```javascript
-# npm
+
+```tsx
+npm install ashe-design --save
+
+$ yarn add ashe-design
+
+# pnpm
+$ pnpm add ashe-design
+
+```
+```tsx
 $ npm install ashe-design --save
 
 # yarn
@@ -40,11 +49,13 @@ babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 
 
 使用 `babel-plugin-import` 自动加载 `css/scss` 文件
 
-```javascript
+```tsx
+
 npm install babel-plugin-import --save-dev
-```
+
+``` 
 在 .babelrc 或 babel.config.js 中添加配置：
-```javascript
+```tsx
 {
   // ...
   plugins: [
@@ -64,7 +75,7 @@ npm install babel-plugin-import --save-dev
 
 在 webpack 配置中配置 sass-loader ，将 nutui-react 样式变量导入全局。
 
-```javascript
+```tsx
 // 给 sass-loader 传递选项
 scss: {
     data: `@import "@nutui/nutui-react/dist/styles/variables.scss";`,
@@ -76,12 +87,12 @@ scss: {
 Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。由于 vite 本身已按需导入组件库，因此仅样式不是按需导入的，只需按需导入样式即可。
 
 ## 安装插件
-```javascript
+```tsx
 npm install vite-plugin-style-import --save-dev
 ```
 
 在 vite.config 中添加配置：
-```javascript
+```tsx
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import styleImport from "vite-plugin-style-import";

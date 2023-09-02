@@ -3,7 +3,6 @@
 创建一个遮罩层，通常用于阻止用户进行其他操作
 
 
-
 ## 基础用法
 
 
@@ -183,7 +182,6 @@ export default () => {
 ```
 
 
-
 ## 点击遮罩不关闭
 
 ```tsx
@@ -214,29 +212,32 @@ export default () => {
 ```
 
 
-
-## Mask
-
 ## Props
 
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| visible | 当前组件是否显示 | `boolean` | `false` |
-| zIndex | 遮罩层级 | `number` | `2000` |
-| duration | 动画时长，单位秒 | `number` | `0.3` |
-| disableBodyScroll | 背景是否锁定 | `boolean` | `true` |
-| closeOnMaskClick | 是否点击遮罩关闭 | `boolean` | `true` |
-| onClick | 点击时触发 | `event: Event` | `-` |
-| afterClose | 完全关闭后触发 | `() => void` | `-` |
-| afterShow | 完全展示后触发 | `() => void` | `-` |
+| visible | 当前组件是否显示 | boolean | false |
+| zIndex | 遮罩层级 | number | 2000 |
+| duration | 动画时长，单位秒 | number | 0.3 |
+| disableBodyScroll | 背景是否锁定 | boolean | true |
+| closeOnMaskClick | 是否点击遮罩关闭 | boolean | true |
+| onClick | 点击时触发 | event: Event | - |
+| afterClose | 完全关闭后触发 | () => void | - |
+| afterShow | 完全展示后触发 | () => void | - |
 
 
-## 样式变量
+[//]: # (## 样式变量)
 
-组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/component/configprovider)。
+[//]: # ()
+[//]: # (组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件]&#40;#/zh-CN/component/configprovider&#41;。)
 
-| 名称          | 说明          | 默认值               |
-|-------------|-------------|-------------------|
-| \--bg-color | 遮罩层背景颜色     | `rgba(0,0,0,0.7)` |
-| \--color    | 遮罩层嵌套内容背景颜色 | `$gray1`          |
-| \--z-index  | 遮罩层级        | `1000`            |
+[//]: # ()
+[//]: # (| 名称          | 说明          | 默认值               |)
+
+[//]: # (|-------------|-------------|-------------------|)
+
+[//]: # (| \--bg-color | 遮罩层背景颜色     | rgba&#40;0,0,0,0.7&#41; |)
+
+[//]: # (| \--color    | 遮罩层嵌套内容背景颜色 | $gray1          |)
+
+[//]: # (| \--z-index  | 遮罩层级        | 1000            |)
