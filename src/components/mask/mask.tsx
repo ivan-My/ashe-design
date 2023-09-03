@@ -60,6 +60,7 @@ export const Mask: FunctionComponent<Partial<MaskProps>> = (props) => {
   }, [])
   const handleClick = (e: any) => {
     if (closeOnOverlayClick) {
+      console.log(onClick)
       onClick && onClick(e)
       renderRef.current = false
       intervalCloseRef.current = window.setTimeout(() => {

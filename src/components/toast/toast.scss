@@ -1,93 +1,57 @@
-@keyframes rotation {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
+//
+//:root{
+//  --ashe-toast-text-font-size: $toast-text-font-size;
+//  --ashe-toast-inner-padding:10px;
+//  --ashe-toast-inner-bg-color:red;
+//  --ashe-toast-inner-font-color:blue;
+//  --ashe-toast-inner-border-radius:50%;
+//  --ashe-toast-inner-top:70%
+//}
 
 .ashe-toast {
-  position: fixed;
-  left: 0;
-  bottom: 150px;
   width: 100%;
+  height: 100%;
   text-align: center;
   pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
   z-index: 9999;
-  &-cover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: auto;
-    height: 100%;
-    background: $toast-cover-bg-color;
-  }
   &__inner {
-    display: inline-block;
-    font-size: $toast-text-font-size;
     min-width: 40%;
     max-width: 65%;
     text-align: center;
-    padding: $toast-inner-padding;
+    display: inline-block;
     word-break: break-all;
+    padding: $toast-inner-padding;
     background: $toast-inner-bg-color;
+    color: $toast-inner-font-color;
     border-radius: $toast-inner-border-radius;
-    color: $toast-font-color;
-  }
-  &-center {
-    top: 50%;
-    transform: translateY(-50%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  &-text {
+  &--top {
+    top: 30%;
+  }
+
+  &--center {
+    top: $toast-inner-top;
+  }
+
+  &--bottom {
+    top: 80%;
+  }
+
+  &__text {
     font-size: $toast-text-font-size;
-    &:empty {
-      margin-bottom: -8px;
-    }
   }
-  &-title {
-    font-size: $toast-title-font-size;
-    &:empty {
-      margin-bottom: -8px;
-    }
-  }
-  &-loading {
-    position: fixed;
+  &__icon-wrapper {
     width: 100%;
-    height: 100%;
-    z-index: 9999;
-    font-size: 14px;
-    text-align: center;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
     align-items: center;
-    left: 0;
-    top: 0;
-    -webkit-transform: translateZ(1px);
-    transform: translateZ(1px);
-  }
-
-  &-loadingText {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    padding: 15px 15px;
-    min-width: 60px;
-    color: #fff;
-    background-color: rgba(58, 58, 58, 0.9);
-    line-height: 1.5;
-  }
-  &-loadingIcon {
-    width: 36px;
-    height: 36px;
-    -webkit-animation: cirle-anim 1s linear infinite;
-    animation: cirle-anim 1s linear infinite;
-  }
-  &-loadingInfo {
-    margin-top: 6px;
+    justify-content: center;
+    padding: 25px;
   }
 }

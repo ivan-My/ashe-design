@@ -21,13 +21,16 @@ $button-bg-color: var(--ashe-button-bg-color, $gray6) !default;
 $button-padding: var(--ashe-button-padding, 7px 12px) !default;
 
 // toast
-$toast-title-font-size: 16px !default;
-$toast-text-font-size: 14px !default;
-$toast-font-color: $white !default;
-$toast-inner-padding: 24px 30px !default;
-$toast-inner-bg-color: rgba(0, 0, 0, 0.8) !default;
-$toast-inner-border-radius: 12px !default;
-$toast-cover-bg-color: rgba(0, 0, 0, 0) !default;
+
+$toast-text-font-size: var(--ashe-toast-text-font-size, 14px) !default;
+$toast-inner-padding: var(--ashe-toast-inner-padding, 12px 15px) !default;
+$toast-inner-bg-color: var(
+  --ashe-toast-inner-bg-color,
+  rgba(0, 0, 0, 0.8)
+) !default;
+$toast-inner-font-color: var(--ashe-toast-inner-font-color, #fff) !default;
+$toast-inner-border-radius: var(--ashe-toast-inner-border-radius, 6px) !default;
+$toast-inner-top: var(--ashe-toast-inner-top, 50%) !default;
 
 // mask
 $mask-bg-color: var(--ashe-mask-bg-color, rgba(0, 0, 0, 0.7)) !default;
