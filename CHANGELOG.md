@@ -1,5 +1,29 @@
 
 
+## [4.1.3](https://github.com/ivan-My/ashe-design/compare/v4.0.9...v4.1.3) (2023-09-03)
+
+
+### Bug Fixes
+
+* 111 ([6cc5c08](https://github.com/ivan-My/ashe-design/commit/6cc5c084af61128da92d10f6cf9c7dbade87c307))
+* 修复router之前备份 ([49a1521](https://github.com/ivan-My/ashe-design/commit/49a152178cc382f5b4fe96b260a5da5a28154b88))
+* 修改了elevator多余child问题 ([4748fc1](https://github.com/ivan-My/ashe-design/commit/4748fc1a5e742ce05d7ec05f48fcdad8b37d7221))
+* 暂时修复了一些bug ([71c7bcf](https://github.com/ivan-My/ashe-design/commit/71c7bcf7f930feda552b579806079e668e84455f))
+
+
+### Features
+
+* add copy ([551f89a](https://github.com/ivan-My/ashe-design/commit/551f89af53bc4bcbcf8d835bfbcd5c81f2704d9a))
+* add grid ([fa07651](https://github.com/ivan-My/ashe-design/commit/fa076513bfd4a34f5c9f76594b721248d1e7a4ad))
+* add grid ([ea3467f](https://github.com/ivan-My/ashe-design/commit/ea3467fdee13deab596ae379435a9bd2deccdf0a))
+* elevator基本功能已经实现 ([8398597](https://github.com/ivan-My/ashe-design/commit/839859765f93a63f3c97ebbf0213b14c0f78e081))
+* 增加了bem ([6ff252e](https://github.com/ivan-My/ashe-design/commit/6ff252ed25e6d9788d0d4659dbf0227704ec300e))
+* 更新了文档 ([c3dae9d](https://github.com/ivan-My/ashe-design/commit/c3dae9dd9cd88cb9984553cd50e9537f09d46bd8))
+* 添加了demo url跳转 ([65eec7f](https://github.com/ivan-My/ashe-design/commit/65eec7f27a5721bdcd4dfbc7f89e58ae1ae4a8bd))
+* 添加了mask ([3997321](https://github.com/ivan-My/ashe-design/commit/3997321eaf3026e29ac5bb3f8b6d132fa6d6856a))
+* 添加了复制代码功能 ([9341161](https://github.com/ivan-My/ashe-design/commit/93411611073eee268cf905f756a14c75de1d209d))
+* 重构了toast ([edf85d6](https://github.com/ivan-My/ashe-design/commit/edf85d6e4540813c10bf88df3fc489a7300e9dc9))
+
 ## [4.0.9](https://github.com/ivan-My/ashe-design/compare/v4.0.8...v4.0.9) (2023-06-29)
 
 
