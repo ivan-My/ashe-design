@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import sdk from '@stackblitz/sdk'
 import { getProject } from '@/sites/doc/components/Markdown/template'
 import './index.scss'
@@ -8,9 +8,20 @@ export const Codeblock = (props: any) => {
   const [status, setStatus] = useState(false)
   const codeRef = useRef<any>(null)
   const copyCode = () => {
-    navigator.clipboard.writeText(props.text).then(() => {
-      Toast.text('复制成功')
-    })
+    navigator.clipboard
+      .writeText(props.text)
+      .then(() => {
+        Toast.show({
+          content: '复制成功',
+          contentStyle: {
+            top: '10%',
+            minWidth: '8%',
+          },
+        })
+      })
+      .catch((e) => {
+        console.log(e)
+      })
   }
   const showCode = (e: any) => {
     setStatus(!status)

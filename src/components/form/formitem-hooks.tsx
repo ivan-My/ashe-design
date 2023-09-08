@@ -6,8 +6,8 @@ import React, {
   useMemo,
 } from 'react'
 import { BasicComponent } from '@/utils/typeing'
-import { BaseFormField } from './types'
 import { FormItemContext } from './formitemcontext'
+import { FromItemProps } from '@/components/form/interface'
 
 const pxCheck = (value: string | number): string => {
   return Number.isNaN(Number(value)) ? String(value) : `${value}px`
@@ -21,13 +21,15 @@ type TextAlign =
   | 'center'
   | 'justify'
   | 'match-parent'
-export interface FormItemProps extends BasicComponent, BaseFormField {
+
+export interface FormItemProps extends BasicComponent, FromItemProps {
   labelWidth: string | number
   errorMessageAlign: TextAlign
   showErrorLine: boolean
   showErrorMessage: boolean
   initialValue: string
 }
+
 const defaultProps = {
   name: '',
   label: '',
@@ -39,9 +41,10 @@ const defaultProps = {
   showErrorLine: true,
   showErrorMessage: true,
   initialValue: '',
+  shouldUpdate: false,
 } as FormItemProps
 
-export type FieldProps = FormItemProps & BaseFormField
+export type FieldProps = FormItemProps & FromItemProps
 
 export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
   const {
@@ -51,6 +54,7 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
     initialValue,
     labelWidth,
     errorMessageAlign,
+    shouldUpdate,
     rules = [{ required: false, message: '' }],
     className = '',
   } = {
@@ -64,78 +68,98 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
 
   const onStoreChange = useMemo(() => {
     /* 管理层改变 => 通知表单项 */
-    const onStoreChange = {
-      changeValue() {
-        forceUpdate({})
-      },
-    }
+    const onStoreChange = () => forceUpdate({})
     return onStoreChange
   }, [context])
 
+  const onValueChange = (preStore: any, curStore: any) => {
+    if (typeof shouldUpdate === 'function') {
+      shouldUpdate(preStore, curStore) && forceUpdate({})
+    }
+    forceUpdate({})
+  }
+
   const getControlled = (children: React.ReactElement) => {
     const { getFieldValue, setFieldsValue } = context
-    const type = (children as any).type
-    const defaultvalue = initialValue || (children as any).props?.defaultValue
-    if (defaultvalue && !isInitialValue) {
-      setFieldsValue({ [name]: defaultvalue })
+    const type = children.type
+    const defaultValue = initialValue || children.props?.defaultValue
+    if (defaultValue && !isInitialValue) {
+      setFieldsValue({ [name]: defaultValue })
       isInitialValue = true
     }
     return {
       defaultValue: getFieldValue(name),
       onChange: (
-        event: React.ChangeEvent<HTMLInputElement> | number | string | string[]
+        event:
+          | React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+          | number
+          | string
+          | string[]
       ) => {
-        const originOnChange = (children as any).props.onChange
-        if (originOnChange) {
-          originOnChange(event)
-        }
+        const originOnChange = children.props.onChange
+        originOnChange && originOnChange(event)
         let newValue = event
         switch (type) {
           case 'checkbox':
             newValue = (event as React.ChangeEvent<HTMLInputElement>).target
               .value
             break
+          case 'select':
+            newValue = (event as React.ChangeEvent<HTMLSelectElement>)
+              .currentTarget.value
+            break
           default:
         }
-
         setFieldsValue({ [name]: newValue })
       },
     }
   }
-  const renderLayout = (childNode: React.ReactNode) => {
+
+  useEffect(() => {
+    cancelRegister = context.registerField({
+      onStoreChange,
+      onValueChange,
+      ...props,
+    })
+    return () => {
+      cancelRegister && cancelRegister()
+    }
+  }, [onStoreChange])
+
+  const renderLayout = (childNode: React.ReactElement) => {
     const item =
       context.errList.length > 0 &&
       context.errList?.filter((item: any) => {
         return item.field === name
       })
-    const { starPositon } = context
+    const { starPosition } = context
     const renderStar = rules.length > 0 && rules[0].required && (
       <i className="required" />
     )
+
     const renderLabel =
-      starPositon === 'Right' ? (
+      starPosition === 'right' ? (
         <>
-          {label}
+          <span> {label}</span>
           {renderStar}
         </>
       ) : (
         <>
           {renderStar}
-          {label}
+          <span> {label}</span>
         </>
       )
     return (
       <div className={`ashe-form-item ${className}`}>
         {label ? (
           <div
-            className="ashe-cell__title ashe-form-item__label"
-            style={{
-              width: pxCheck(labelWidth),
-            }}
+            className="ashe-form-item__label"
+            style={{ width: pxCheck(labelWidth) }}
           >
             {renderLabel}
           </div>
         ) : null}
+
         <div className="ashe-cell__value ashe-form-item__body">
           <div className="ashe-form-item__body__slots">{childNode}</div>
           {item.length > 0 && (
@@ -151,29 +175,20 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
     )
   }
 
-  const c = Array.isArray(children) ? children[0] : children
-  let restCNode = c as React.ReactElement
+  let child = Array.isArray(children) ? children[0] : children
+  if (typeof child === 'function') {
+    child = child(context.getFieldsValue())
+  }
+
   if (initialValue) {
-    restCNode = React.cloneElement(c as React.ReactElement, {
+    child = React.cloneElement(child as React.ReactElement, {
       defaultValue: initialValue,
     })
   }
   const returnChildNode = React.cloneElement(
-    restCNode,
-    getControlled(restCNode as React.ReactElement)
+    child,
+    getControlled(child as React.ReactElement)
   )
-
-  useEffect(() => {
-    // 注册组件实例到FormStore
-    cancelRegister = context.registerField({
-      onStoreChange,
-      props: { ...props },
-    })
-    return () => {
-      cancelRegister && cancelRegister()
-    }
-  }, [onStoreChange])
-
   return renderLayout(returnChildNode)
 }
 

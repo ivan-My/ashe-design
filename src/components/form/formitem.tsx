@@ -1,7 +1,7 @@
 import React from 'react'
 import { BasicComponent } from '@/utils/typeing'
-import { BaseFormField } from './types'
 import { FormItemContext } from './formitemcontext'
+import { FromItemProps } from '@/components/form/interface'
 
 type TextAlign =
   | 'start'
@@ -11,7 +11,7 @@ type TextAlign =
   | 'center'
   | 'justify'
   | 'match-parent'
-export interface FormItemProps extends BasicComponent, BaseFormField {
+export interface FormItemProps extends BasicComponent, FromItemProps {
   labelWidth: string | number
   errorMessageAlign: TextAlign
   showErrorLine: boolean
@@ -31,7 +31,7 @@ const defaultProps = {
   initialValue: '',
 } as FormItemProps
 
-export type FieldProps = typeof defaultProps & Partial<BaseFormField>
+export type FieldProps = typeof defaultProps & Partial<FromItemProps>
 
 class FormItem extends React.Component<FieldProps> {
   static defaultProps = defaultProps

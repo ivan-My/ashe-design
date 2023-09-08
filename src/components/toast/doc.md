@@ -116,7 +116,7 @@ export default () => {
 | 属性 | 说明 | 类型                                                             | 默认值             |
 | --- | --- |----------------------------------------------------------------|-----------------|
 | content | Toast文本内容 | string | React.ReactNode | - |
-| duration | 展示时长（秒）<br>值为 0 时，toast 不会自动消失 | number                                                       | 1.5             |
+| duration | 展示时长（秒）值为 0 时，toast 不会自动消失 | number                                                       | 1.5             |
 | position | toast展示位置 | top \| center \| bottom                                  | center          |
 | icon | 自定义标 | React.ReactNode | -               |
 | contentStyle | 自定义内容区样式 | React.CSSProperties                                          | -               |
@@ -125,9 +125,12 @@ export default () => {
 
 ## Events
 
-| 方法名    | 说明              | 参数 |
-|--------|-----------------| --- |
+| 方法名    | 说明        | 参数  |
+|--------|-----------|-----|
+| show   | 显示`Toast` | `props` |
 | hiade  | 主动关闭显示中的`Toast` | `-` |
+| config | Toast全局配置 | props    |
+
 
 
 ### 样式变量
@@ -136,10 +139,10 @@ export default () => {
 
 | 名称 | 说明                 | 默认值       |
 | --- |--------------------|-----------|
-| \--nutui-toast-text-font-size | toast内容文字大小      | 14px      |
-| \--nutui-toast-font-color | toast文字颜色        | #fff      |
-| \--nutui-toast-inner-padding | toast内容区padding值 | 12px 15px |
-| \--nutui-toast-inner-bg-color | toast内容区背景色      | rgba(0, 0, 0, 0.8)    |
-| \--nutui-toast-inner-border-radius | toast内容区圆角值      | 6px       |
-| \ --ashe-toast-inner-top | toast所在位置        | 50%       |
+| --ashe-toast-text-font-size | toast内容文字大小      | 14px      |
+| --ashe-toast-font-color | toast文字颜色        | #fff      |
+| --ashe-toast-inner-padding | toast内容区padding值 | 12px 15px |
+| --ashe-toast-inner-bg-color | toast内容区背景色      | rgba(0, 0, 0, 0.8)    |
+| --ashe-toast-inner-border-radius | toast内容区圆角值      | 6px       |
+|  --ashe-toast-inner-top | toast所在位置        | 50%       |
 

@@ -29,7 +29,6 @@ const ComponentRouters = () => {
 const Page = () => {
   return (
     <div className="components-page">
-      <Header />
       <Menu />
       <div className="components-container">
         <div className="components-markdown">

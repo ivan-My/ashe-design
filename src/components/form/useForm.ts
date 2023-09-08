@@ -1,10 +1,6 @@
 import { useRef } from 'react'
 import Schema from 'async-validator'
-import { Store, Callbacks, FormInstance, FieldEntity } from './types'
-
-interface initValueType {
-  name: string
-}
+import { Store, Callbacks, FormInstance, FieldEntity } from './interface'
 /**
  * 用于存储表单的数据
  */
@@ -18,22 +14,23 @@ class FormStore {
 
   private errList: any[] = []
 
+  private map = new Map()
+
+  // 收集所有需要批量更新的
+  private shouldList: FieldEntity[] = []
+
   constructor() {
     this.callbacks = {
-      onFinish: (value: any) => {},
+      onFinish: () => {},
       onFinishFailed: () => {},
     }
   }
 
-  /**
-   * 注册组件实例
-   * @param field
-   */
-  registerField = (field: any) => {
-    this.fieldEntities.push(field)
-    return () => {
-      this.fieldEntities = this.fieldEntities.filter((item) => item != field)
-      delete this.store[field.props.name]
+  registerField = (field: FieldEntity) => {
+    if (field.shouldUpdate) {
+      this.shouldList.push(field)
+    } else {
+      this.fieldEntities.push(field)
     }
   }
 
@@ -41,43 +38,83 @@ class FormStore {
     return this.store[name]
   }
 
-  /**
-   * 存储组件数据
-   * @param newStore { [name]: newValue }
-   */
   setFieldsValue = (newStore: any) => {
+    const prevStore = this.store
     this.store = {
       ...this.store,
       ...newStore,
     }
     this.fieldEntities.forEach((enetity: FieldEntity) => {
-      const { name } = enetity.props
+      const { name, dependencies } = enetity
       Object.keys(newStore).forEach((key) => {
         if (key === name) {
-          enetity.onStoreChange.changeValue()
+          if (dependencies) {
+            ;(dependencies || []).forEach((dependency) => {
+              this.map.set(dependency, name)
+            })
+          }
+          this.shouldUpdate(prevStore)
+          this.validateKey(key)
+          enetity.onStoreChange()
         }
       })
     })
   }
 
-  /**
-   * 表单校验
-   * rules: { required: true, message: '' }
-   * descriptor: {
-   *    username: {
-   *      type: 'string',
-   *      required: true,
-   *      validator: (rule, value) => {
-   *        return /^[a-zA-Z0-9]+$/.test(value)
-   *      },
-   *    },
-   *  }
-   */
+  shouldUpdate = (prevStore: Store) => {
+    this.shouldList.forEach((should) => {
+      if (should.shouldUpdate && typeof should.shouldUpdate !== 'boolean') {
+        const fx = should.shouldUpdate(prevStore, this.store)
+        if (fx) {
+          should.onStoreChange()
+        }
+      } else {
+        should.onStoreChange()
+      }
+    })
+  }
+
+  validateKey = (key: string) => {
+    let is = ''
+    if (this.map.has(key)) {
+      is = this.map.get(key)
+    }
+    const err: any = []
+    this.errList.length = 0
+    this.fieldEntities.forEach((entity: FieldEntity) => {
+      if (entity.name === key || entity.name === is) {
+        const { name, rules = [] } = entity
+        const descriptor: any = {}
+        if (rules.length) {
+          // 多条校验规则
+          if (rules.length > 1) {
+            descriptor[name] = []
+            rules.map((v: any) => {
+              descriptor[name].push(v)
+            })
+          } else {
+            descriptor[name] = rules[0]
+          }
+        }
+        const validator = new Schema(descriptor)
+        validator.validate({ [name]: this.store[name] }, (errors) => {
+          if (errors) {
+            err.push(...errors)
+            this.errList.push(...errors)
+            // 表单项更新
+          }
+          entity.onStoreChange()
+        })
+      }
+    })
+    return err
+  }
+
   validate = () => {
     const err: any = []
     this.errList.length = 0
     this.fieldEntities.forEach((entity: FieldEntity) => {
-      const { name, rules = [] } = entity.props
+      const { name, rules = [] } = entity
       const descriptor: any = {}
       if (rules.length) {
         // 多条校验规则
@@ -97,7 +134,7 @@ class FormStore {
           this.errList.push(...errors)
           // 表单项更新
         }
-        entity.onStoreChange.changeValue()
+        entity.onStoreChange()
       })
     })
     return err
@@ -125,8 +162,13 @@ class FormStore {
     })
   }
 
+  // 设置初始化store值
   innerSetInitialValues = (values: any) => {
     this.store = values
+  }
+
+  getFieldValues = () => {
+    return this.store
   }
 
   getForm = () => {
@@ -134,6 +176,7 @@ class FormStore {
       setCallback: this.setCallback,
       registerField: this.registerField,
       getFieldValue: this.getFieldValue,
+      getFieldsValue: this.getFieldValues,
       setFieldsValue: this.setFieldsValue,
       resetFields: this.resetFields,
       submit: this.submit,

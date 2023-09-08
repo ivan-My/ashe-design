@@ -1,6 +1,7 @@
 import React from 'react'
 import { Space } from './space'
 import Button from '../button'
+import { ConfigProvider } from '@/components/ashe.react'
 
 const SpaceDemo = () => {
   return (
@@ -12,7 +13,7 @@ const SpaceDemo = () => {
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
-        <p>换行</p>
+        <h2>换行</h2>
         <Space wrap>
           <Button>按钮1</Button>
           <Button>按钮2</Button>
@@ -26,12 +27,25 @@ const SpaceDemo = () => {
           <Button>按钮10</Button>
           <Button>按钮11</Button>
         </Space>
-        <p>垂直方向的间距</p>
+        <h2>垂直方向的间距</h2>
         <Space direction="vertical">
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
         </Space>
+
+        <h2>间距大小</h2>
+        <ConfigProvider
+          theme={{
+            asheSpaceGap: '20px',
+          }}
+        >
+          <Space direction="vertical">
+            <Button>按钮1</Button>
+            <Button>按钮2</Button>
+            <Button>按钮3</Button>
+          </Space>
+        </ConfigProvider>
       </div>
     </>
   )

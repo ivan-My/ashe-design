@@ -3,9 +3,6 @@ import Toast from './index'
 import './demo.scss'
 import Loading from '../loading'
 
-const darkTheme = {
-  asheToastTextFontSize: '20px',
-}
 const ToastDemo = () => {
   return (
     <>
@@ -15,7 +12,6 @@ const ToastDemo = () => {
           onClick={() =>
             Toast.show({
               content: '提示内容',
-              duration: 0,
             })
           }
         >

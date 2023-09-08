@@ -34,6 +34,20 @@ const errorMsg = (msg: string | React.ReactNode) => {
   }
 }
 
+function config(
+  config: Partial<Pick<ToastProps, 'duration' | 'position' | 'lockScroll'>>
+) {
+  if (config.duration !== undefined) {
+    defaultProps.duration = config.duration
+  }
+  if (config.position !== undefined) {
+    defaultProps.position = config.position
+  }
+  if (config.lockScroll !== undefined) {
+    defaultProps.lockScroll = config.lockScroll
+  }
+}
+
 export default {
   show(options: string | Partial<ToastProps>) {
     if (typeof options === 'string') {
@@ -49,4 +63,5 @@ export default {
       messageInstance = null
     }
   },
+  config,
 }

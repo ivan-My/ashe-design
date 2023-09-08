@@ -1,19 +1,16 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import { nav } from '@/config.json'
-import './menu.scss'
+import './index.scss'
+import { NavLink } from 'react-router-dom'
 
-const Menu = () => {
+const components = nav.reduce(
+  (acc, item) => [...acc, ...item.packages],
+  [] as any[]
+)
+
+const Index = () => {
   return (
-    <div className={'doc-menu'}>
-      <ol className={'doc-Menu-item'}>
-        <li>开发指南</li>
-        <ul>
-          <NavLink key={Math.random()} to={'/components/readme'}>
-            <li>快速上手</li>
-          </NavLink>
-        </ul>
-      </ol>
+    <div className="demo-index">
       {nav.map((cn: any, index: number) => {
         if (cn.packages.length === 0) return null
         return (
@@ -23,7 +20,7 @@ const Menu = () => {
               {cn.packages.map((cp: any) => {
                 if (!cp.show) return null
                 return (
-                  <NavLink key={Math.random()} to={`/components/${cp.name}`}>
+                  <NavLink key={Math.random()} to={`/${cp.name}`}>
                     <li>
                       {cp.name}&nbsp;&nbsp;{cp.cName}
                     </li>
@@ -38,4 +35,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default Index

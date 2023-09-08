@@ -2,9 +2,11 @@ html,
 body {
   background-color: #f7f8fa;
 }
+
 .demo-wrapper {
   height: 100%;
   width: 100%;
+
   .status-bar {
     height: 20px;
     width: 100%;
@@ -31,6 +33,7 @@ body {
     position: relative;
     border-width: 0;
   }
+
   .content {
     h2 {
       padding: 32px 16px 8px;

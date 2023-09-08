@@ -2,10 +2,10 @@ import React, { FunctionComponent } from 'react'
 import { useForm } from '@/components/form/useForm'
 import { FormItemContext } from '@/components/form/formitemcontext'
 import FormItem from '@/components/form/formitem-hooks'
-import { BaseForm } from '@/components/form/types'
+import { FromProps } from '@/components/form/interface'
 import { BasicComponent } from '@/utils/typeing'
 
-type FormProps = BaseForm & BasicComponent //
+type FormProps = FromProps & BasicComponent //
 
 const defaultProps = {
   initialValues: {},
@@ -17,7 +17,7 @@ const defaultProps = {
   onFinish: (obj) => {},
   onFinishFailed: (value) => {},
   onRest: () => {},
-  starPositon: 'Left',
+  starPosition: 'left',
 } as FormProps
 
 const PositionInfo: any = {
@@ -35,7 +35,7 @@ export const Form: FunctionComponent<
     onFinish,
     onFinishFailed,
     labelPosition,
-    starPositon,
+    starPosition,
     form,
     ...rest
   } = { ...defaultProps, ...props }
@@ -48,7 +48,7 @@ export const Form: FunctionComponent<
     ;[formInstance] = useForm(formInstance)
   }
 
-  formInstance.starPositon = starPositon
+  formInstance.starPosition = starPosition
   const { setCallback, submit, resetFields, innerSetInitialValues } =
     formInstance
   innerSetInitialValues(initialValues)

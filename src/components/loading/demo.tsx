@@ -7,7 +7,7 @@ const LoadingDemo = () => {
   return (
     <>
       {!fullScreen && (
-        <div className="content">
+        <div className="loading-content">
           <h2>基础用法</h2>
           <div>
             <Loading show type="flash" />

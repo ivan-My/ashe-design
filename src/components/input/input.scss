@@ -3,12 +3,15 @@
   width: 100%;
   display: flex;
   box-sizing: border-box;
+
   &.center {
     align-items: center;
   }
+
   &.ashe-input-border {
     border-bottom: 1px solid $input-border-bottom;
   }
+
   input {
     width: 230px;
     flex: 1;
@@ -18,8 +21,10 @@
     border: 0;
     text-decoration: none;
   }
+
   &-disabled {
     color: $input-disabled-color !important;
+
     input:disabled {
       background: none;
       color: $input-disabled-color;

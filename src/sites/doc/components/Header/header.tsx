@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.scss'
-import { Link, NavLink, useMatch } from 'react-router-dom'
+import { Link, NavLink, useLocation, useMatch } from 'react-router-dom'
 
 const navList = [
   {
@@ -9,7 +9,7 @@ const navList = [
   },
   {
     name: '组件',
-    path: '/components/Button',
+    path: '/components/readme',
   },
   {
     name: 'hooks',
@@ -18,6 +18,7 @@ const navList = [
 ]
 
 const Header = () => {
+  const match = useMatch('/components/*')
   return (
     <div className={'doc-header'}>
       <div className="header-logo">
@@ -26,12 +27,13 @@ const Header = () => {
       <div className="header-nav">
         <ul>
           {navList.map((item, key) => {
+            let status = false
+            if (item.name === '组件' && match) {
+              status = true
+            }
             return (
               <li key={key}>
-                <NavLink
-                  to={item.path}
-                  className={useMatch(`${item.name}`) ? 'selected' : ''}
-                >
+                <NavLink to={item.path} className={status ? 'active' : ''}>
                   {item.name}
                 </NavLink>
               </li>

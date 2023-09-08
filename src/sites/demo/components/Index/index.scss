@@ -1,0 +1,45 @@
+.demo-index {
+  margin-top: 50px;
+  overflow: auto;
+  z-index: 2;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  color: #1a2234;
+
+  .doc-Menu-item {
+    margin: 0 20px;
+  }
+
+  > ol {
+    list-style: none;
+
+    li {
+      height: 24px;
+      line-height: 24px;
+      font-size: 14px;
+      position: relative;
+      color: #7a8499;
+
+      margin: 20px 0;
+    }
+
+    > ul li {
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      line-height: 15px;
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 1px 7px #edeef1;
+      font-size: 14px;
+      color: #1a1a1a;
+      margin: 10px 0;
+      box-sizing: border-box;
+      padding: 15px;
+
+      > a {
+        color: #1a2234ff;
+      }
+    }
+  }
+}

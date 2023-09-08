@@ -5,6 +5,11 @@ const INDEX_HTML = `
   <html>
     <head>
       <title>基础用法</title>
+      <style>
+      *{
+        box-sizing: border-box;
+      }
+</style>
     </head>
     <body>
       <div id='root'></div>
@@ -29,7 +34,7 @@ const packageJson = `
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-   "ashe-design": "4.1.2",
+   "ashe-design": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "@babel/runtime": "7.22.11"
@@ -58,7 +63,7 @@ export function getProject(code: string): Project {
       'package.json': packageJson,
     },
     dependencies: {
-      'ashe-design': '4.1.2',
+      'ashe-design': 'latest',
       react: '18.2.0',
       'react-dom': '18.2.0',
       '@babel/runtime': '7.22.11',

@@ -1,39 +1,119 @@
-#  Space间距
+# Space 间距
 元素排列中保持相同的宽度。
 
-##  基础用法
+
+
+## 基础用法
+
 
 ```tsx
-import React from 'react'
-import { Space,Button } from 'ashe-design';
-const App = () => {
+
+import React from 'react';
+import { Space, Button } from 'ashe-design';
+
+ const App = () => {
   return (
-    <Space >
+    <Space>
       <Button>按钮1</Button>
       <Button>按钮2</Button>
       <Button>按钮3</Button>
     </Space>
-  )
-}
-export default App
+  );
+};
+export default App;
+
+```
+
+
+## 换行
+
+
+
+```tsx
+import React from 'react';
+import { Space, Button } from 'ashe-design';
+
+const App = () => {
+  return (
+    <Space wrap>
+      <Button>按钮1</Button>
+      <Button>按钮2</Button>
+      <Button>按钮3</Button>
+      <Button>按钮4</Button>
+      <Button>按钮5</Button>
+      <Button>按钮6</Button>
+    </Space>
+  );
+};
+export default App;
+
+```
+
+## 垂直
+
+
+
+```tsx
+import React from 'react';
+import { Space, Button } from 'ashe-design';
+
+const App = () => {
+  return (
+    <Space direction="vertical">
+      <Button>按钮1</Button>
+      <Button>按钮2</Button>
+      <Button>按钮3</Button>
+    </Space>
+  );
+};
+export default App;
+
+```
+
+## 间距大小
+
+
+
+```tsx
+import React from 'react';
+import { Space, Button,ConfigProvider } from 'ashe-design';
+
+const App = () => {
+  return (
+    <ConfigProvider
+      theme={{
+        asheSpaceGap: '20px',
+      }}
+    >
+      <Space direction="vertical">
+        <Button>按钮1</Button>
+        <Button>按钮2</Button>
+        <Button>按钮3</Button>
+      </Space>
+    </ConfigProvider>
+  );
+};
+export default App;
+
 ```
 
 
 
 ## Props
 
-| 参数         | 说明                    | 类型                                                                                         | 默认值              |
-|--------------|-------------------------|--------------------------------------------------------------------------------------------|------------------|
-| direction    | 间距方向  | vertical｜ horizontal |horizontal |
-| align        |交叉轴对齐方式| start｜end｜center｜baseline | -                
-| justify | 主轴对齐方式 | start ｜ end ｜ center ｜ between ｜ around ｜ evenly ｜ stretch ｜ nutui-iconfont | 
-| onClick          | 点击事件  | (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void | -                |
-| wrap          | 是否自动换行，仅在 horizontal 时有效  | boolean  / false                                                                           |                  |
+| 属性 | 说明                       | 类型                                                                  | 默认值                            |
+| --- |--------------------------|---------------------------------------------------------------------|--------------------------------|
+| direction | 间距方向                     | ` vertical \|   horizontal`                                         | horizontal |
+| align | 交叉轴对齐方式                  | `start \| end \|center \| baseline`                                 | `-`                            |
+| justify | 主轴对齐方式                   | `start  \| end \| center \| between \| around \| evenly \| stretch` | `-`                            |
+| wrap | 是否自动换行，仅在 horizontal 时有效 | `boolean / false`                                                   | `-`                            |
+
+
 
 ## 样式变量
 
-| 属性                     | 说明        | 默认值 |
-|------------------------|-----------|-----|
-| --ashe-space-gap       | 间距大小      | 8px |
-|--ashe-space-horizontal | 水平方向的间距大小 | 8px |
-| --ashe-space-vertical  | 垂直方向的间距大小 | 8px |
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/components/config-provider)。
+
+| 名称                | 默认值 | 描述 |
+|-------------------| --- | --- |
+| \--ashe-space-gap | `8px` | 间距大小 |

@@ -1,9 +1,15 @@
 import React, { lazy, Suspense } from 'react'
 import { useRoutes } from 'react-router-dom'
+
 // @ts-ignore
 const modulesPage = import.meta.glob('/src/components/**/demo.tsx')
 
-const routes: any = []
+const routes: any = [
+  {
+    path: '/',
+    element: lazy(() => import('./components/Index')),
+  },
+]
 
 for (const path in modulesPage) {
   let name = (/components\/(.*)\/demo.tsx/.exec(path) as any[])[1]

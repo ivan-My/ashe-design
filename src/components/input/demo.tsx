@@ -3,27 +3,28 @@ import { Input } from './input'
 import './demo.scss'
 
 const InputDemo = () => {
-  const [value, setValue] = useState('111')
   const myRef = useRef<any>(null)
 
   useEffect(() => {
-    //  console.log(myRef.current)
+    console.log(myRef.current)
   })
 
-  const element = (
+  return (
     <>
       <>
         <div className="demo">
           <h2>基础用法</h2>
-          <Input />
-          <div onClick={() => myRef.current.focus()}>获取焦点</div>
-          <div onClick={() => myRef.current.blur()}>失去焦点</div>
-          <div onClick={() => myRef.current.clear()}> 清空value</div>
+          <Input
+            ref={myRef}
+            name="username"
+            onChange={(e) => {
+              console.log(e)
+            }}
+          />
         </div>
       </>
     </>
   )
-  return element
 }
 
 export default InputDemo

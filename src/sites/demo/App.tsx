@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="demo-wrapper">
-      <div className="status-bar"></div>
+      <div className="status-bar" />
       <div className={'demo-header'}>
         {state?.name} {state?.cName}
       </div>

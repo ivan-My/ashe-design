@@ -9,12 +9,19 @@
     display: inline-block !important;
     word-wrap: break-word;
     text-align: left;
+    position: relative;
     .required {
+      position: absolute;
+
       &::before {
         content: '*';
         color: red;
         margin-right: 4px;
       }
+    }
+    & > span {
+      position: absolute;
+      left: 15px;
     }
   }
 }

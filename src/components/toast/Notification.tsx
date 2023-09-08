@@ -56,7 +56,6 @@ export const newInstance = (properties: ToastProps, callback: any) => {
   const element = document.createElement('div')
   document.body.appendChild(element)
   let called = false
-
   function fn() {
     if (called) {
       return
