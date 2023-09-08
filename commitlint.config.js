@@ -17,6 +17,7 @@ module.exports = {
         'test',
         'chore',
         'release',
+        'build',
       ],
     ],
   },
