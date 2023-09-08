@@ -2,25 +2,17 @@
 
 
 ```tsx
-npm install ashe-design --save
+ npm install ashe-design --save
 
-$ yarn add ashe-design
+ yarn add ashe-design
 
-# pnpm
-$ pnpm add ashe-design
+pnpm add ashe-design
 
 ```
-```tsx
-$ npm install ashe-design --save
 
-# yarn
-$ yarn add ashe-design
-
-# pnpm
-$ pnpm add ashe-design
-```
 
 ## 使用
+
 
 ```tsx
 import * as React from "react";
@@ -40,7 +32,7 @@ ReactDOM.render(
 
 ## 按需引入
 
-NutUI-React 默认支持基于 ES modules 的 tree shaking，对于 JS 部分，直接引入 import { Button } from '@nutui/nutui-react' 就会有按需加载的效果。仅样式不是按需导入的，因此只需按需导入样式即可。
+ashe-design 默认支持基于 ES modules 的 tree shaking，对于 JS 部分，直接引入 import { Button } from '@nutui/ashe-design' 就会有按需加载的效果。仅样式不是按需导入的，因此只需按需导入样式即可。
 
 ## WebPack
 babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
@@ -57,7 +49,6 @@ npm install babel-plugin-import --save-dev
 在 .babelrc 或 babel.config.js 中添加配置：
 ```tsx
 {
-  // ...
   plugins: [
     [
       "import",
@@ -67,58 +58,42 @@ npm install babel-plugin-import --save-dev
         "style": true,
         "camel2DashComponentName": false
       },
-      'nutui-react'
+      'ashe-design'
     ]
   ]
 }
 ```
 
-在 webpack 配置中配置 sass-loader ，将 nutui-react 样式变量导入全局。
-
-```tsx
-// 给 sass-loader 传递选项
-scss: {
-    data: `@import "@nutui/nutui-react/dist/styles/variables.scss";`,
-}
-```
 
 ## Vite 
 
-Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。由于 vite 本身已按需导入组件库，因此仅样式不是按需导入的，只需按需导入样式即可。
+Vite 构建工具，使用 vite-plugin-imp 实现按需引入。由于 vite 本身已按需导入组件库，因此仅样式不是按需导入的，只需按需导入样式即可。
 
 ## 安装插件
 ```tsx
-npm install vite-plugin-style-import --save-dev
+npm install vite-plugin-imp --save-dev
 ```
 
 在 vite.config 中添加配置：
 ```tsx
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import styleImport from "vite-plugin-style-import";
-// https://vitejs.dev/config/
+import vitePluginImp from "vite-plugin-imp";
 export default defineConfig({
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // 配置 nutui 全局 scss 变量
-        additionalData: `@import "@nutui/nutui-react/dist/styles/variables.scss";`,
-      },
-    },
-  },
   plugins: [
     react(),
-    styleImport({
-      libs: [
+   vitePluginImp({
+      libList: [
         {
-          libraryName: "@nutui/nutui-react",
-          libraryNameChangeCase: "pascalCase",
-          resolveStyle: (name) => {
-            return `@nutui/nutui-react/dist/esm/${name}/style`
+          libName: 'ashe-design',
+          style: (name) => {
+            return `ashe-design/dist/esm/${name}/style/css`
           },
-        },
-      ],
-    }),
+          replaceOldImport: false,
+          camel2DashComponentName: false,
+        }
+      ]
+    })
   ],
 });
 
