@@ -65,6 +65,7 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
   let isInitialValue = false
   const context = useContext(FormItemContext)
   const [, forceUpdate] = useState({})
+  const [eChild, setChild] = useState(null)
 
   const onStoreChange = useMemo(() => {
     /* 管理层改变 => 通知表单项 */
@@ -72,7 +73,8 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
     return onStoreChange
   }, [context])
 
-  const onValueChange = (preStore: any, curStore: any) => {
+  const onValueChange = (preStore?: any, curStore?: any) => {
+    preStore && setChild(preStore)
     if (typeof shouldUpdate === 'function') {
       shouldUpdate(preStore, curStore) && forceUpdate({})
     }
@@ -177,7 +179,12 @@ export const FormItem: FunctionComponent<Partial<FieldProps>> = (props) => {
 
   let child = Array.isArray(children) ? children[0] : children
   if (typeof child === 'function') {
-    child = child(context.getFieldsValue())
+    if (eChild == null) {
+      return null
+    }
+    child = eChild
+    // return null
+    // child = child(context.getFieldsValue())
   }
 
   if (initialValue) {

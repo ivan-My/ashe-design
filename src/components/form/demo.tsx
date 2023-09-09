@@ -43,28 +43,6 @@ const FormDemo = () => {
             />
           </Form.Item>
 
-          <Form.Item
-            shouldUpdate={(prev: any, next: any) => {
-              return prev.username !== next.username
-            }}
-          >
-            {(val: any) => {
-              const name = val.username
-              // console.log('username执行了/....')
-              if (name === '22') {
-                return <div> username22220000</div>
-              }
-              return <div>username440000</div>
-            }}
-            {(val: any) => {
-              const name = val.username
-              // console.log('username执行了/....')
-              if (name === '22') {
-                return <div> username 22220000</div>
-              }
-              return <div>username440000</div>
-            }}
-          </Form.Item>
           <Form.Item shouldUpdate>
             {(val: any) => {
               // console.log('age执行了/....')
@@ -75,6 +53,40 @@ const FormDemo = () => {
               return <div>age执行了440000</div>
             }}
           </Form.Item>
+
+          {/*<Form.Item*/}
+          {/*  label="姓名"*/}
+          {/*  name="username"*/}
+          {/*  rules={[{ required: true, message: '请输入姓名' }]}*/}
+          {/*>*/}
+          {/*  <Input*/}
+          {/*    className="nut-input-text"*/}
+          {/*    placeholder="请输入姓名"*/}
+          {/*    type="text"*/}
+          {/*  />*/}
+          {/*</Form.Item>*/}
+          {/*<Form.Item*/}
+          {/*  shouldUpdate={(prev: any, next: any) => {*/}
+          {/*    return prev.username !== next.username*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  {(val: any) => {*/}
+          {/*    const name = val.username*/}
+          {/*    // console.log('username执行了/....')*/}
+          {/*    if (name === '22') {*/}
+          {/*      return <div> username22220000</div>*/}
+          {/*    }*/}
+          {/*    return <div>username440000</div>*/}
+          {/*  }}*/}
+          {/*  {(val: any) => {*/}
+          {/*    const name = val.username*/}
+          {/*    // console.log('username执行了/....')*/}
+          {/*    if (name === '22') {*/}
+          {/*      return <div> username 22220000</div>*/}
+          {/*    }*/}
+          {/*    return <div>username440000</div>*/}
+          {/*  }}*/}
+          {/*</Form.Item>*/}
 
           <input type="submit" value="提交" />
         </Form>

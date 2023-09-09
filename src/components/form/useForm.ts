@@ -53,8 +53,10 @@ class FormStore {
               this.map.set(dependency, name)
             })
           }
+
           this.shouldUpdate(prevStore)
           this.validateKey(key)
+
           enetity.onStoreChange()
         }
       })
@@ -65,12 +67,18 @@ class FormStore {
     this.shouldList.forEach((should) => {
       if (should.shouldUpdate && typeof should.shouldUpdate !== 'boolean') {
         const fx = should.shouldUpdate(prevStore, this.store)
+        // const d = should.children.map((item) => {
+        //   console.log(item)
+        // })
         if (fx) {
           should.onStoreChange()
         }
       } else {
+        const e = should.children(this.store)
         should.onStoreChange()
+        should.onValueChange(e)
       }
+      // typeof should.children === 'function' && should.children(this.store)
     })
   }
 
