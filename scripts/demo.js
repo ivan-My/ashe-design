@@ -1,7 +1,6 @@
-var nameLc = 'test'
 var demoModel = function (name) {
-  var temp = {
-    demo: `import React from 'react'
+    var temp = {
+        demo: `import React from 'react'
 import { ${name} } from './${name.toLowerCase()}'
 
 const ${name}Demo = () => {
@@ -18,22 +17,23 @@ const ${name}Demo = () => {
 export default ${name}Demo
 `,
 
-    index: `import {${name}} from './${name.toLowerCase()}'
+        index: `import {${name}} from './${name.toLowerCase()}'
 export default ${name}
 `,
 
-    taroindex: `import {${name}} from './${name.toLowerCase()}.taro'
+        taroindex: `import {${name}} from './${name.toLowerCase()}.taro'
 export default ${name}
 `,
-    react: `import React, { FunctionComponent } from 'react'
+        react: `import React, { FC } from 'react'
 
 
 
+const classPrefix = 'ashe-${name}'
 export interface ${name}Props {
 
 }
 const defaultProps = {} as ${name}Props
-export const ${name}: FunctionComponent<Partial<${name}Props> & React.HTMLAttributes<HTMLDivElement>> = (props) => {
+export const ${name}: FC<Partial<${name}Props> & React.HTMLAttributes<HTMLDivElement>> = (props) => {
   const { children } = { ...defaultProps, ...props }
   return <div className="ashe-${name.toLowerCase()}">${name}</div>
 }
@@ -41,7 +41,7 @@ export const ${name}: FunctionComponent<Partial<${name}Props> & React.HTMLAttrib
 ${name}.defaultProps = defaultProps
 ${name}.displayName = 'Ashe${name}'
 `,
-    doc: `#  ${name}组件
+        doc: `#  ${name}组件
 
 ### 介绍
 
@@ -75,8 +75,8 @@ ${''}
 |--------|----------------|--------------|
 | click  | 点击图标时触发 | event: Event |
 `,
-  }
+    }
 
-  return temp
+    return temp
 }
 module.exports = demoModel

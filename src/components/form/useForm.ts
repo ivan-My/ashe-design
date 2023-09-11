@@ -98,7 +98,6 @@ class FormStore {
         if (this.dependenciesMap.has(key)) {
             depValue = this.dependenciesMap.get(key)
         }
-        const err: any = []
         this.errList.length = 0
         this.fieldEntities.forEach((entity: FieldEntity) => {
             if (entity.name === key || entity.name === depValue) {
@@ -118,14 +117,12 @@ class FormStore {
                 const validator = new Schema(descriptor)
                 validator.validate({ [name]: this.store[name] }, (errors) => {
                     if (errors) {
-                        err.push(...errors)
                         this.errList.push(...errors)
                     }
                     entity.onStoreChange()
                 })
             }
         })
-        //   return err
     }
 
     validate = () => {
@@ -172,16 +169,13 @@ class FormStore {
         })
     }
 
-    // 设置初始化store值
-    innerSetInitialValues = (values: any) => {
-        this.store = {
-            ...this.store,
-            ...values,
-        }
+    dispatch = ({ name }: { name: string }) => {
+        this.validateKey(name)
     }
 
     getForm = () => {
         return {
+            dispatch: this.dispatch,
             setCallback: this.setCallback,
             registerField: this.registerField,
             setFieldValue: this.setFieldValue,
@@ -192,13 +186,12 @@ class FormStore {
             submit: this.submit,
             errList: this.errList,
             fieldEntities: this.fieldEntities,
-            innerSetInitialValues: this.innerSetInitialValues,
         }
     }
 }
 
 export const useForm = (form?: FormInstance) => {
-    const formRef = useRef<any>()
+    const formRef = useRef<any>(null)
     if (!formRef.current) {
         if (form) {
             formRef.current = form

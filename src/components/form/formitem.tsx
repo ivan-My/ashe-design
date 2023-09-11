@@ -20,6 +20,7 @@ const defaultProps = {
     initialValue: '',
     shouldUpdate: false,
     noStyle: false,
+    trigger: 'onChange',
     validateTrigger: 'onChange',
 } as FormItemProps
 
@@ -52,31 +53,60 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
     }, [context])
 
     const renderChildren = (): React.ReactElement => {
-        const { setFieldsValue, getFieldsValue, getFieldValue, setFieldValue } =
-            context
+        const {
+            setFieldsValue,
+            getFieldsValue,
+            getFieldValue,
+            setFieldValue,
+            dispatch,
+        } = context
         const child =
             typeof children === 'function'
                 ? children(getFieldsValue())
                 : children
 
-        const { initialValue } = props
+        const { initialValue, validateTrigger, trigger, normalize } = props
         initialValue && setFieldValue({ [name]: initialValue })
 
         const childProps = {
             ...child.props,
             defaultValue: initialValue || getFieldValue(name),
-            onChange: (...args: any) => {
+            [trigger || 'onChange']: (...args: any) => {
+                const originOnChange = child.props[trigger || 'onChange']
+                if (originOnChange) {
+                    originOnChange(...args)
+                }
                 let [next] = args
-                const { onChange: originOnChange } = children.props
-                originOnChange && originOnChange(...args)
                 switch (child.type) {
                     case 'select':
                         next = next.currentTarget.value
                         break
                     default:
                 }
+                if (normalize) {
+                    next = normalize(next)
+                }
                 setFieldsValue({ [name]: next })
             },
+        }
+
+        let validateTriggers: string[] = [props.trigger || 'onChange']
+        if (validateTrigger) {
+            validateTriggers =
+                typeof validateTrigger === 'string'
+                    ? [...validateTriggers, validateTrigger]
+                    : [...validateTriggers, ...validateTrigger]
+            validateTriggers.forEach((trigger) => {
+                const originTrigger = childProps[trigger]
+                childProps[trigger] = (...args: any) => {
+                    if (originTrigger) {
+                        originTrigger(...args)
+                    }
+                    if (rules && rules.length) {
+                        dispatch({ name })
+                    }
+                }
+            })
         }
         return React.cloneElement(child, childProps)
     }

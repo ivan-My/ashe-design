@@ -8,6 +8,7 @@ import Grid from '@/components/grid'
 import Elevator from '@/components/elevator'
 import Input from '@/components/input'
 import Form from '@/components/form'
+import Uploader from '@/components/uploader'
 import Toast from '@/components/toast'
 import Infiniteloading from '@/components/infiniteloading'
 import Dialog from '@/components/dialog'
@@ -29,6 +30,7 @@ export {
     Elevator,
     Input,
     Form,
+    Uploader,
     Toast,
     Infiniteloading,
     Dialog,

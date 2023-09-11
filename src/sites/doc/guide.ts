@@ -8,6 +8,7 @@ import Grid from '@/components/grid/doc.md?raw'
 import Elevator from '@/components/elevator/doc.md?raw'
 import Input from '@/components/input/doc.md?raw'
 import Form from '@/components/form/doc.md?raw'
+import Uploader from '@/components/uploader/doc.md?raw'
 import Toast from '@/components/toast/doc.md?raw'
 import Infiniteloading from '@/components/infiniteloading/doc.md?raw'
 import Dialog from '@/components/dialog/doc.md?raw'
@@ -46,6 +47,7 @@ export const componentRouters = [
     'Elevator',
     'Input',
     'Form',
+    'Uploader',
     'Toast',
     'Infiniteloading',
     'Dialog',
@@ -67,6 +69,7 @@ export const raws = {
     Elevator,
     Input,
     Form,
+    Uploader,
     Toast,
     Infiniteloading,
     Dialog,

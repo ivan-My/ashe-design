@@ -61,8 +61,14 @@ export interface FormItemProps extends BasicComponent {
         | boolean
         | ((preStore: FieldItem, curStore: FieldItem) => boolean)
 
+    // 字段收集时机
+    trigger: string
+
     // 字段校验的时机，默认值onchange
     validateTrigger: string | string[]
+
+    //  组件获取值再进行转换
+    normalize: (value: FieldItem) => any
 
     labelWidth: string | number
     errorMessageAlign: TextAlign

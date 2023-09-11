@@ -41,10 +41,8 @@ export const Form: FunctionComponent<
         /* eslint-disable react-hooks/rules-of-hooks */
         ;[formInstance] = useForm(formInstance)
     }
-    const { setCallback, submit, resetFields, innerSetInitialValues } =
-        formInstance
-
-    innerSetInitialValues(initialValues)
+    const { setCallback, submit, resetFields, setFieldValue } = formInstance
+    setFieldValue(initialValues)
     setCallback({
         onFinish,
         onFinishFailed,

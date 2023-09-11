@@ -151,6 +151,17 @@
           "show": true,
           "taro": true,
           "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Uploader",
+          "type": "component",
+          "cName": "上传",
+          "desc": "",
+          "sort": 3,
+          "show": true,
+          "taro": true,
+          "author": "ivan"
         }
       ]
     },
