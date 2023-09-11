@@ -25,8 +25,8 @@ $button-padding: var(--ashe-button-padding, 7px 12px) !default;
 $toast-text-font-size: var(--ashe-toast-text-font-size, 14px) !default;
 $toast-inner-padding: var(--ashe-toast-inner-padding, 12px 15px) !default;
 $toast-inner-bg-color: var(
-  --ashe-toast-inner-bg-color,
-  rgba(0, 0, 0, 0.8)
+    --ashe-toast-inner-bg-color,
+    rgba(0, 0, 0, 0.8)
 ) !default;
 $toast-inner-font-color: var(--ashe-toast-inner-font-color, #fff) !default;
 $toast-inner-border-radius: var(--ashe-toast-inner-border-radius, 6px) !default;
@@ -47,16 +47,16 @@ $grid-item-text-color: var(--ashe-grid-item-text-color, black) !default;
 $grid-item-text-font-size: var(--ashe-grid-item-text-font-size, 12px) !default;
 $grid-item-text-margin: var(--ashe-grid-item-text-margin, 8px) !default;
 $grid-item-content-padding: var(
-  --ashe-grid-item-content-padding,
-  16px 8px
+    --ashe-grid-item-content-padding,
+    16px 8px
 ) !default;
 
 // skeleton
 $skeleton-background: var(
-  --ashe-skeleton-background,
-  rgb(239, 239, 239)
+    --ashe-skeleton-background,
+    rgb(239, 239, 239)
 ) !default;
 $skeleton-line-border-radius: var(
-  --ashe-skeleton-line-border-radius,
-  0
+    --ashe-skeleton-line-border-radius,
+    0
 ) !default;

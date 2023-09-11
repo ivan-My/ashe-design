@@ -1,24 +1,16 @@
 #  CountDown组件
-
-### 介绍
-
 用于实时展示倒计时数值，支持毫秒精度。
 
-### 安装
-```tsx
-import { CountDown } from 'ashe-design'
-```
 
-## 代码演示
 
-### 基础用法
+## 基础用法
 
 ```tsx
 import { CountDown } from 'ashe-design';
 <CountDown endTime={Date.now() + 30 * 60 * 60 * 1000} />
 ```
 
-### 毫秒级渲染
+## 毫秒级渲染
 
 ```tsx
 import  React, {useRef }from "react";
@@ -33,13 +25,65 @@ const App = () => {
   );
 };
 export default App;
+
 ```
 
+## 自定义格式
+```tsx
+import  React, {useRef }from "react";
+import { CountDown } from 'ashe-design';
 
+const App = () => {
+  return  <CountDown
+      endTime={Date.now() + 60 * 1000 * 60 * 60}
+      format="DD 天 HH 时 mm 分 ss 秒"
+  />
+
+}
+export  default App;
+
+```
+
+## 自定义样式
+
+```tsx
+import  React, {useRef }from "react";
+import { CountDown } from 'ashe-design';
+
+const App = () => {
+    const [timeData, setResetTime] = useState<any>({
+        d: '1',
+        h: '00',
+        m: '00',
+        s: '00',
+    })
+    const onChange = (v: any) => {
+        setResetTime(v)
+    }
+  return (
+      <CountDown
+          endTime={Date.now() + 60 * 1000 * 60}
+          onChange={onChange}
+      >
+          <div
+              className="countdown-part-box"
+              style={{ display: 'flex', alignItems: 'center' }}
+          >
+              <span className="block">{timeData.hours}</span>
+              <span className="colon">:</span>
+              <span className="block">{timeData.minutes}</span>
+              <span className="colon">:</span>
+              <span className="block">{timeData.seconds}</span>
+          </div>
+      </CountDown>
+  );
+};
+export default App;
+```
 
 ## API
 
-### Props
+## Props
 
 | 参数         | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
@@ -49,7 +93,7 @@ export default App;
 | class-prefix | 类名前缀，用于使用自定义图标     | String | 'nutui-iconfont' |
 | tag          | HTML 标签                        | String | 'i'              |
 
-### Events
+## Events
 
 | 事件名 | 说明           | 回调参数     |
 |--------|----------------|--------------|
