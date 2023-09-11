@@ -31,6 +31,148 @@ export default App;
 ```
 
 
+## dependencies
+```tsx
+
+import * as React from 'react'
+import { Input, Form } from 'ashe-design'
+
+const App = () => {
+  const [form] = Form.useForm()
+  return (
+    <>
+      <div className="demo">
+
+        <Form
+          onFinish={(obj: object) => {
+            console.log(obj)
+          }}
+          form={form}
+        >
+          <Form.Item label="密码" name="pass1">
+            <Input
+              className="nut-input-text"
+              placeholder="请输入密码"
+              type="text"
+            />
+          </Form.Item>
+          <Form.Item
+            label="在此密码"
+            name="pass2"
+            dependencies={['pass1']}
+            rules={[
+              {
+                required: true,
+                message: '请输入密码22',
+              },
+              {
+                validator: (rule: any, value: string) => {
+                  return form.getFieldValue('pass1') === value
+                },
+                message: '两次输入密码不一致',
+              },
+            ]}
+          >
+            <Input
+              className="nut-input-text"
+              placeholder="请再次输入密码"
+              type="text"
+            />
+          </Form.Item>
+          <input type="submit" value="提交" />
+        </Form>
+      </div>
+    </>
+  )
+}
+
+export default App
+
+```
+
+## shouldUpdate
+```tsx
+
+import * as React from 'react'
+import { Input, Form } from 'ashe-design'
+
+const App = () => {
+  const [form] = Form.useForm()
+  return (
+    <>
+      <div className="demo">
+
+        <Form
+          onFinish={(obj: object) => {
+            console.log(obj)
+          }}
+          form={form}
+        >
+          <Form.Item label="姓名" name="text" >
+            <Input
+              placeholder="test"
+              type="text"
+              onChange={(e) => {
+                console.log(e)
+              }}
+            />
+          </Form.Item>
+          <Form.Item
+            label="年龄"
+            name="age"
+            rules={[{ required: true, message: '请输年龄' }]}
+            noStyle
+          >
+            <Input
+              placeholder="请输年龄"
+              type="text"
+            />
+          </Form.Item>
+
+          <Form.Item shouldUpdate noStyle>
+            {(val: any) => {
+              const age = val.age
+              if (age === '18') {
+                return <div>age执行了 18</div>
+              }
+              return <div>age执行了440000</div>
+            }}
+          </Form.Item>
+
+          <Form.Item
+            label="姓名"
+            name="username"
+            rules={[{ required: true, message: '请输入姓名' }]}
+          >
+            <Input
+              placeholder="请输入姓名"
+              type="text"
+            />
+          </Form.Item>
+          <Form.Item
+            noStyle
+            shouldUpdate={(prev: any, next: any) => {
+              return prev.username !== next.username
+            }}
+          >
+            {(val: any) => {
+              const name = val.username
+              if (name === '22') {
+                return <div> username22220000</div>
+              }
+              return <div>username440000</div>
+            }}
+          </Form.Item>
+          <input type="submit" value="提交" />
+        </Form>
+      </div>
+    </>
+  )
+}
+
+export default App
+
+```
 
 ## Form Props
 

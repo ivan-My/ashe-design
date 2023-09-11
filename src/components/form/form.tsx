@@ -1,79 +1,73 @@
 import React, { FunctionComponent } from 'react'
 import { useForm } from '@/components/form/useForm'
 import { FormItemContext } from '@/components/form/formitemcontext'
-import FormItem from '@/components/form/formitem-hooks'
-import { FromProps } from '@/components/form/interface'
-import { BasicComponent } from '@/utils/typeing'
-
-type FormProps = FromProps & BasicComponent //
+import FormItem from '@/components/form/formitem'
+import { FormProps } from '@/components/form/interface'
 
 const defaultProps = {
-  initialValues: {},
-  className: '',
-  style: undefined,
-  form: {},
-  labelPosition: 'Right',
-  formGroupTitle: '',
-  onFinish: (obj) => {},
-  onFinishFailed: (value) => {},
-  onRest: () => {},
-  starPosition: 'left',
+    initialValues: {},
+    form: {},
+    labelPosition: 'Right',
+    formGroupTitle: '',
+    onFinish: (obj) => {},
+    onFinishFailed: (value) => {},
+    onRest: () => {},
 } as FormProps
 
-const PositionInfo: any = {
-  Top: 'form-layout-top',
-  Left: 'form-layout-left',
-  Right: 'form-layout-right',
+const PositionInfo: Record<string, string> = {
+    Top: 'form-layout-top',
+    Left: 'form-layout-left',
+    Right: 'form-layout-right',
 }
 
 export const Form: FunctionComponent<
-  Partial<FormProps> & React.HTMLAttributes<HTMLFormElement>
+    Partial<FormProps> & React.HTMLAttributes<HTMLFormElement>
 > & { Item: typeof FormItem } & { useForm: typeof useForm } = (props) => {
-  const {
-    initialValues,
-    children,
-    onFinish,
-    onFinishFailed,
-    labelPosition,
-    starPosition,
-    form,
-    ...rest
-  } = { ...defaultProps, ...props }
+    const {
+        initialValues,
+        children,
+        onFinish,
+        onFinishFailed,
+        onValuesChange,
+        labelPosition,
+        form,
+        ...rest
+    } = { ...defaultProps, ...props }
 
-  let formInstance: any = {}
-  if (Object.keys(form).length !== 0) {
-    formInstance = form
-  } else {
-    /* eslint-disable react-hooks/rules-of-hooks */
-    ;[formInstance] = useForm(formInstance)
-  }
+    let formInstance: any = {}
+    if (Object.keys(form).length !== 0) {
+        formInstance = form
+    } else {
+        /* eslint-disable react-hooks/rules-of-hooks */
+        ;[formInstance] = useForm(formInstance)
+    }
+    const { setCallback, submit, resetFields, innerSetInitialValues } =
+        formInstance
 
-  formInstance.starPosition = starPosition
-  const { setCallback, submit, resetFields, innerSetInitialValues } =
-    formInstance
-  innerSetInitialValues(initialValues)
-  setCallback({
-    onFinish,
-    onFinishFailed,
-  })
+    innerSetInitialValues(initialValues)
+    setCallback({
+        onFinish,
+        onFinishFailed,
+        onValuesChange,
+    })
 
-  return (
-    <form
-      className={`ashe-form ${PositionInfo[labelPosition]} ${props.className}`}
-      style={props.style}
-      onSubmit={(e) => {
-        e.preventDefault()
-        submit()
-      }}
-      onReset={() => {
-        resetFields()
-      }}
-    >
-      <FormItemContext.Provider value={formInstance}>
-        {children}
-      </FormItemContext.Provider>
-    </form>
-  )
+    return (
+        <form
+            className={`ashe-form ${PositionInfo[labelPosition]} ${props.className}`}
+            style={props.style}
+            onSubmit={(e) => {
+                e.preventDefault()
+                submit()
+            }}
+            onReset={() => {
+                resetFields()
+            }}
+        >
+            <FormItemContext.Provider value={formInstance}>
+                {children}
+            </FormItemContext.Provider>
+        </form>
+    )
 }
 
 Form.defaultProps = defaultProps
