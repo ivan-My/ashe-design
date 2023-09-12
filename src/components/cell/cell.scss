@@ -1,2 +1,23 @@
 .ashe-cell {
+    width: 100%;
+    line-height: 20px;
+    display: flex;
+    background: #ffffff;
+    padding: 13px 16px;
+    margin: 10px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    &__left {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    &__desc {
+        font-size: 12px;
+        color: #757575;
+    }
+
+    &__extra {
+    }
 }

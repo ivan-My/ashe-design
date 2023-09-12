@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { CountDown } from './countdown'
+import { Cell } from '@/components/ashe.react'
 
 interface countdownRefState {
     start: () => void
@@ -58,7 +59,6 @@ const CountDownDemo = () => {
                     endTime={Date.now() + 30 * 60 * 60 * 1000}
                     format="DD:HH:mm:ss:SS"
                 />
-
                 <div>毫秒级渲染</div>
                 <CountDown
                     endTime={Date.now() + 60 * 1000}
@@ -74,13 +74,15 @@ const CountDownDemo = () => {
 
                 <div>自定义样式</div>
                 <CountDown
-                    endTime={Date.now() + 60 * 1000 * 60}
+                    endTime={Date.now() + 60 * 1000 * 60 * 60}
                     onChange={onChange}
                 >
                     <div
                         className="countdown-part-box"
                         style={{ display: 'flex', alignItems: 'center' }}
                     >
+                        <span className="block">{timeData.days}</span>
+                        <span className="colon">:</span>
                         <span className="block">{timeData.hours}</span>
                         <span className="colon">:</span>
                         <span className="block">{timeData.minutes}</span>
