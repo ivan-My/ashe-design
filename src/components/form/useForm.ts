@@ -1,22 +1,25 @@
 import { useRef } from 'react'
 import Schema from 'async-validator'
-import { FieldItem, Callbacks, FormInstance, FieldEntity } from './interface'
-/**
- * 用于存储表单的数据
- */
+import {
+    FieldItem,
+    Callbacks,
+    FormInstance,
+    FieldEntity,
+    ErrorField,
+    FormItemRuleWithoutValidator,
+} from './interface'
+
 class FormStore {
     private store: FieldItem = {} // 存放表单中所有的数据 eg. {password: "ddd",username: "123"}
 
     private fieldEntities: FieldEntity[] = [] // 所有的组件实例
 
-    // 成功和失败的回调
-    private callbacks: Callbacks<any> = {}
+    private callbacks: Callbacks<FieldItem> = {}
 
-    private errList: any[] = []
+    private errList: ErrorField[] = []
 
     private dependenciesMap = new Map()
 
-    // 收集所有需要批量更新的
     private shouldList: FieldEntity[] = []
 
     setCallback = (callback: Callbacks) => {
@@ -57,7 +60,6 @@ class FormStore {
         const prevStore = this.store
         this.setFieldValue(newStore)
         this.execShouldUpdate(prevStore)
-
         const { onValuesChange } = this.callbacks
         onValuesChange && onValuesChange(newStore, this.store)
         this.fieldEntities.forEach((enetity: FieldEntity) => {
@@ -107,7 +109,7 @@ class FormStore {
                     // 多条校验规则
                     if (rules.length > 1) {
                         descriptor[name] = []
-                        rules.forEach((v: any) => {
+                        rules.forEach((v: ErrorField) => {
                             descriptor[name].push(v)
                         })
                     } else {
@@ -126,16 +128,17 @@ class FormStore {
     }
 
     validate = () => {
-        const err: any = []
+        const err: ErrorField[] = []
         this.errList.length = 0
         this.fieldEntities.forEach((entity: FieldEntity) => {
             const { name, rules = [] } = entity
-            const descriptor: any = {}
+            const descriptor: {
+                [key: string]: FormItemRuleWithoutValidator
+            } = {}
             if (rules.length) {
-                // 多条校验规则
                 if (rules.length > 1) {
                     descriptor[name] = []
-                    rules.forEach((v: any) => {
+                    rules.forEach((v: FormItemRuleWithoutValidator) => {
                         descriptor[name].push(v)
                     })
                 } else {

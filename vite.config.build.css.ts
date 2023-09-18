@@ -1,3 +1,6 @@
+/**
+ * 生成总的style.css
+ * */
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import * as path from 'path'
@@ -10,35 +13,34 @@ const banner = `/*!
 * Released under the MIT License.
 */`
 
-const { resolve } = path
 export default defineConfig({
-  resolve: {
-    alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        charset: false,
-        additionalData: `@import "@/styles/variables.scss";`,
-      },
-      postcss: {
-        plugins: [atImport({ path: path.join(__dirname, 'src`') })],
-      },
+    resolve: {
+        alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }],
     },
-  },
-  plugins: [reactRefresh()],
-  build: {
-    emptyOutDir: false,
-    rollupOptions: {
-      output: {
-        banner,
-      },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                charset: false,
+                additionalData: `@import "@/styles/variables.scss";`,
+            },
+            postcss: {
+                plugins: [atImport({ path: path.join(__dirname, 'src`') })],
+            },
+        },
     },
-    lib: {
-      entry: './dist/styles/themes/default.scss',
-      formats: ['es'],
-      name: 'style',
-      fileName: 'style',
+    plugins: [reactRefresh()],
+    build: {
+        emptyOutDir: false,
+        rollupOptions: {
+            output: {
+                banner,
+            },
+        },
+        lib: {
+            entry: './dist/styles/themes/default.scss',
+            formats: ['es'],
+            name: 'style',
+            fileName: 'style',
+        },
     },
-  },
 })

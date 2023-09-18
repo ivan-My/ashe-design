@@ -12,10 +12,11 @@ const InputDemo = () => {
     return (
         <>
             <>
-                <div className="demo">
-                    <h2>基础用法</h2>
+                <div className="content">
+                    <div className="title">基础用法</div>
                     <Input
                         ref={myRef}
+                        disabled
                         name="username"
                         onChange={(e) => {
                             console.log(e)

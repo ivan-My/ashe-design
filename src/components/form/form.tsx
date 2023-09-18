@@ -31,16 +31,16 @@ export const Form: FunctionComponent<
         onValuesChange,
         labelPosition,
         form,
-        ...rest
     } = { ...defaultProps, ...props }
-
-    let formInstance: any = {}
+    let formInstance: any
     if (Object.keys(form).length !== 0) {
         formInstance = form
     } else {
         /* eslint-disable react-hooks/rules-of-hooks */
         ;[formInstance] = useForm(formInstance)
     }
+
+    console.log(formInstance)
     const { setCallback, submit, resetFields, setFieldValue } = formInstance
     setFieldValue(initialValues)
     setCallback({

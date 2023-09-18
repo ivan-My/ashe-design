@@ -48,7 +48,7 @@ const InfiniteScrollDemo = () => {
 
   return (
     <>
-      <div className="demo">
+      <div className="content">
         <ul className="infiniteUl" id="scroll">
           <Infiniteloading
             containerId="scroll"

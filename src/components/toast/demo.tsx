@@ -8,7 +8,7 @@ const ToastDemo = () => {
     return (
         <>
             <div className="content">
-                <h2>基础用法</h2>
+                <div className="title">基础用法</div>
                 <Cell
                     title="文字提示"
                     onClick={() =>
@@ -27,7 +27,7 @@ const ToastDemo = () => {
                     }
                 />
 
-                <h2>自定义位置</h2>
+                <div className="title">自定义位置</div>
 
                 <Cell
                     title="顶部展示"
@@ -39,7 +39,7 @@ const ToastDemo = () => {
                     }
                 />
 
-                <h2> 自定义高度</h2>
+                <div className="title"> 自定义高度</div>
 
                 <Cell
                     title="自定义高度"
@@ -53,7 +53,7 @@ const ToastDemo = () => {
                     }
                 />
 
-                <h2> 背景不滚动</h2>
+                <div className="title"> 背景不滚动</div>
                 <Cell
                     title="自定义高度"
                     onClick={() =>

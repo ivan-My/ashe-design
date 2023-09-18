@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Mask } from './mask'
-import Button from '@/components/button'
+
+import { Cell } from '@/components/ashe.react'
 import './demo.scss'
 
 const WrapperStyle = {
@@ -66,12 +67,11 @@ const MaskDemo = () => {
     }
     return (
         <>
-            <div className="demo demo-Mask">
-                <h4>基础用法</h4>
+            <div className="content">
+                <div className="title">基础用法</div>
                 <div className="first">
-                    <Button type="primary" onClick={handleToggleShow}>
-                        显示遮罩层
-                    </Button>
+                    <Cell title="显示遮罩层" onClick={handleToggleShow} />
+
                     <Mask
                         visible={visible}
                         onClick={onClose}
@@ -84,19 +84,13 @@ const MaskDemo = () => {
                     />
                 </div>
 
-                <h4>遮罩样式</h4>
                 <>
-                    <Button type="primary" onClick={handleToggleShow2}>
-                        遮罩样式
-                    </Button>
+                    <Cell title="遮罩样式" onClick={handleToggleShow2} />
                     <Mask visible={visible2} onClick={onClose2} />
                 </>
 
-                <h4>设置动画时间</h4>
                 <>
-                    <Button type="primary" onClick={handleToggleShow3}>
-                        设置动画时间
-                    </Button>
+                    <Cell title="设置动画时间" onClick={handleToggleShow3} />
                     <Mask
                         visible={visible3}
                         onClick={onClose3}
@@ -110,11 +104,8 @@ const MaskDemo = () => {
                     />
                 </>
 
-                <h4>不锁定背景滚动</h4>
                 <>
-                    <Button type="primary" onClick={handleToggleShow4}>
-                        不锁定背景滚动
-                    </Button>
+                    <Cell title="不锁定背景滚动" onClick={handleToggleShow4} />
                     <Mask
                         visible={visible4}
                         onClick={onClose4}
@@ -122,11 +113,9 @@ const MaskDemo = () => {
                     />
                 </>
 
-                <h4>嵌套内容</h4>
                 <>
-                    <Button type="success" onClick={handleToggleShow5}>
-                        嵌套内容
-                    </Button>
+                    <Cell title="嵌套内容" onClick={handleToggleShow5} />
+
                     <Mask visible={visible5} onClick={onClose5}>
                         <div className="wrapper" style={WrapperStyle}>
                             <div className="content" style={ContentStyle}>

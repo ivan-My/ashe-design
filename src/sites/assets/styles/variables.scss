@@ -1,11 +1,11 @@
 // doc
 $doc-default-color: #fa2c19;
 $doc-default-primary-bg: linear-gradient(
-  135deg,
-  rgba(250, 25, 44, 1) 0%,
-  rgba(250, 39, 40, 1) 45%,
-  rgba(250, 56, 31, 1) 83%,
-  rgba(250, 63, 25, 1) 100%
+    135deg,
+    rgba(250, 25, 44, 1) 0%,
+    rgba(250, 39, 40, 1) 45%,
+    rgba(250, 56, 31, 1) 83%,
+    rgba(250, 63, 25, 1) 100%
 );
 $white: #fff;
 // 标题常规文字
@@ -28,11 +28,11 @@ $theme-red-footer-word4: #808080;
 $theme-red-footer-bg: #fff;
 $theme-red-footer-border: #eaf0fb;
 $theme-red-gradient: linear-gradient(
-  135deg,
-  rgba(250, 44, 25, 1) 0%,
-  rgba(250, 63, 25, 1) 45%,
-  rgba(250, 89, 25, 1) 83%,
-  rgba(250, 100, 25, 1) 100%
+    135deg,
+    rgba(250, 44, 25, 1) 0%,
+    rgba(250, 63, 25, 1) 45%,
+    rgba(250, 89, 25, 1) 83%,
+    rgba(250, 100, 25, 1) 100%
 );
 // 白色
 $theme-white: #fff;
@@ -74,7 +74,7 @@ $theme-black-footer-bg: #1d1d21;
 $theme-black-footer-border: transparent;
 $theme-black-theme-border: #666;
 $theme-black-circle: #1a1a1a;
-// Header
+// PageHeader
 $doc-default-header-color: $white;
 $doc-header-height: 64px;
 $doc-header-bg: url('../../assets/images/header-bg.png') no-repeat;
@@ -82,7 +82,7 @@ $doc-header-bg: url('../../assets/images/header-bg.png') no-repeat;
 $doc-default-nav-bg: $white;
 $doc-default-nav-color: $title-color;
 // footer
-// $doc-default-Header-color: $white;
+// $doc-default-PageHeader-color: $white;
 // $doc-footer-height: 73px;
 // home
 $theme-black-content-bg: #060506;
@@ -102,7 +102,7 @@ $nutui-doc-border-color: #f1f4f8;
 $nutui-doc-code-color: #58727e;
 $nutui-doc-code-background-color: #f1f4f8;
 $nutui-doc-code-font-family: 'Source Code Pro', 'Monaco', 'Inconsolata',
-  monospace;
+    monospace;
 $nutui-doc-padding: 24px;
 $nutui-doc-row-max-width: 1680px;
 $nutui-doc-nav-width: 220px;

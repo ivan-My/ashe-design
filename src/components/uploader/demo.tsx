@@ -4,9 +4,9 @@ import { Uploader } from './uploader'
 const UploaderDemo = () => {
     return (
         <>
-            <div className="demo">
-                <h2>基础用法</h2>
-                <Uploader></Uploader>
+            <div className="content">
+                <div className="title">基础用法</div>
+                <Uploader maxFileSize={40} />
             </div>
         </>
     )

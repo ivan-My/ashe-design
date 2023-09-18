@@ -19,9 +19,6 @@ const App = () => {
             type="text"
           />
         </Form.Item>
-        <Form.Item label='备注' name="remark">
-          <Input />
-        </Form.Item>
       </Form>
     </>
   )
@@ -41,7 +38,7 @@ const App = () => {
   const [form] = Form.useForm()
   return (
     <>
-      <div className="demo">
+      <div className="content">
 
         <Form
           onFinish={(obj: object) => {
@@ -100,7 +97,7 @@ const App = () => {
   const [form] = Form.useForm()
   return (
     <>
-      <div className="demo">
+      <div className="content">
 
         <Form
           onFinish={(obj: object) => {

@@ -69,6 +69,8 @@ export interface FormItemProps extends BasicComponent {
 
     //  组件获取值再进行转换
     normalize: (value: FieldItem) => any
+    // 设置如何将 event 的值转换成字段值
+    getValueFromEvent: (...args: any) => FieldItem
 
     labelWidth: string | number
     errorMessageAlign: TextAlign
@@ -94,11 +96,17 @@ export interface FormItemRuleWithoutValidator {
 }
 
 export interface FormInstance<Values = any> {
-    registerField: () => () => void
+    registerField: () => void
 }
 
 export interface Callbacks<Values = FieldItem> {
     onValuesChange?: (changedValues: Values, values: Values) => void
     onFinish?: (values: Values) => void
     onFinishFailed?: (Values: Values) => void
+}
+
+export interface ErrorField {
+    field?: string
+    fieldValue?: any
+    message?: string
 }

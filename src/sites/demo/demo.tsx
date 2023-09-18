@@ -8,6 +8,6 @@ import './App.scss'
 const rootElement = document.querySelector('#demo')
 
 if (rootElement != null) {
-  const root = ReactDOM.createRoot(rootElement)
-  root.render(<App />)
+    const root = ReactDOM.createRoot(rootElement)
+    root.render(<App />)
 }

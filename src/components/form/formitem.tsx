@@ -40,7 +40,7 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
     }
     const context = useContext(FormItemContext)
     const cancelRegister = useRef<any>(null)
-    const [, forceUpdate] = useState({})
+    const [_, forceUpdate] = useState({})
 
     useEffect(() => {
         cancelRegister.current = context.registerField({
@@ -52,7 +52,7 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
         }
     }, [context])
 
-    const renderChildren = (): React.ReactElement => {
+    const renderChildren = () => {
         const {
             setFieldsValue,
             getFieldsValue,
@@ -65,7 +65,13 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
                 ? children(getFieldsValue())
                 : children
 
-        const { initialValue, validateTrigger, trigger, normalize } = props
+        const {
+            initialValue,
+            validateTrigger,
+            trigger,
+            normalize,
+            getValueFromEvent,
+        } = props
         initialValue && setFieldValue({ [name]: initialValue })
 
         const childProps = {
@@ -77,11 +83,8 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
                     originOnChange(...args)
                 }
                 let [next] = args
-                switch (child.type) {
-                    case 'select':
-                        next = next.currentTarget.value
-                        break
-                    default:
+                if (getValueFromEvent) {
+                    next = getValueFromEvent(...args)
                 }
                 if (normalize) {
                     next = normalize(next)
@@ -89,7 +92,7 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
                 setFieldsValue({ [name]: next })
             },
         }
-
+        // 收集验证时机
         let validateTriggers: string[] = [props.trigger || 'onChange']
         if (validateTrigger) {
             validateTriggers =

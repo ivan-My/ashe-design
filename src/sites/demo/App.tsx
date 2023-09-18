@@ -27,6 +27,7 @@ const App = () => {
         <div className="demo-wrapper">
             <div className="status-bar" />
             <div className={'demo-header'}>
+                {/*<div onClick={() => history.back()}>上一步</div>*/}
                 {state?.name} {state?.cName}
             </div>
             <HashRouter>

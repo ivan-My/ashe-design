@@ -53,8 +53,8 @@ const CountDownDemo = () => {
     }
     return (
         <>
-            <div className="demo">
-                <h2>基础用法</h2>
+            <div className="content">
+                <div className="title">基础用法</div>
                 <CountDown
                     endTime={Date.now() + 30 * 60 * 60 * 1000}
                     format="DD:HH:mm:ss:SS"

@@ -1,10 +1,10 @@
 ## 快速上手
 
 
-```tsx
- npm install ashe-design --save
+```tsx !!
+npm install ashe-design --save
 
- yarn add ashe-design
+yarn add ashe-design
 
 pnpm add ashe-design
 
@@ -41,7 +41,7 @@ babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 
 
 使用 `babel-plugin-import` 自动加载 `css/scss` 文件
 
-```tsx
+```tsx !!
 
 npm install babel-plugin-import --save-dev
 
@@ -70,7 +70,7 @@ npm install babel-plugin-import --save-dev
 Vite 构建工具，使用 vite-plugin-imp 实现按需引入。由于 vite 本身已按需导入组件库，因此仅样式不是按需导入的，只需按需导入样式即可。
 
 ## 安装插件
-```tsx
+```tsx !!
 npm install vite-plugin-imp --save-dev
 ```
 

@@ -10,54 +10,66 @@ const fse = require('fs-extra')
 const atImport = require('postcss-import')
 
 function scannerFiles() {
-  const prefix = './dist/esm/'
-  const list = glob.sync(prefix + '**/style/index.js')
-  return list
+    const prefix = './dist/esm/'
+    const list = glob.sync(prefix + '**/style/index.js')
+    return list
 }
 
 function viteConfig(file) {
-  return {
-    resolve: {
-      alias: [{ find: '@', replacement: path.resolve(process.cwd(), './src') }],
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          charset: false,
-          additionalData: `@import "@/styles/variables.scss";`,
+    return {
+        resolve: {
+            alias: [
+                {
+                    find: '@',
+                    replacement: path.resolve(process.cwd(), './src'),
+                },
+            ],
         },
-        postcss: {
-          plugins: [atImport({ path: path.join(__dirname, 'src`') })],
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    charset: false,
+                    additionalData: `@import "@/styles/variables.scss";`,
+                },
+                postcss: {
+                    plugins: [atImport({ path: path.join(__dirname, 'src`') })],
+                },
+            },
         },
-      },
-    },
-    build: {
-      emptyOutDir: false,
-      outDir: file.replace('index.js', ''),
-      rollupOptions: {
-        output: [
-          {
-            format: 'es',
-            entryFileNames: 'css.js',
-          },
-        ],
-      },
-      lib: {
-        entry: file,
-        formats: ['es'],
-      },
-    },
-  }
+        build: {
+            emptyOutDir: false,
+            outDir: file.replace('index.js', ''),
+            rollupOptions: {
+                output: [
+                    {
+                        format: 'es',
+                        entryFileNames: 'css.js',
+                    },
+                ],
+            },
+            lib: {
+                entry: file,
+                formats: ['es'],
+            },
+        },
+    }
 }
 
 function run() {
-  const files = scannerFiles()
-  Promise.all(files.map((file) => vite.build(viteConfig(file)))).then(() => {
-    const fileList = glob.sync('./dist/esm/**/style.css')
-    fileList.forEach((file) => {
-      fse.writeFile(file.replace('style.css', 'css.js'), `import './style.css'`)
-    })
-  })
+    const files = scannerFiles()
+    Promise.all(files.map((file) => vite.build(viteConfig(file))))
+        .then(() => {
+            const fileList = glob.sync('./dist/esm/**/style.css')
+            fileList.forEach((file) => {
+                fse.writeFile(
+                    file.replace('style.css', 'css.js'),
+                    `import './style.css'`
+                )
+            })
+        })
+        .then((_) => {
+            console.log('打包完成!')
+        })
 }
 
 run()
