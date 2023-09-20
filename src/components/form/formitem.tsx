@@ -44,7 +44,7 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
 
     useEffect(() => {
         cancelRegister.current = context.registerField({
-            onStoreChange: () => forceUpdate({}),
+            onForceUpdate: () => forceUpdate({}),
             ...props,
         })
         return () => {
@@ -111,6 +111,7 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
                 }
             })
         }
+
         return React.cloneElement(child, childProps)
     }
 

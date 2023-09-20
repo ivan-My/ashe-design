@@ -11,7 +11,7 @@ const defaultProps = {
 export const Cell: FunctionComponent<
     Partial<CellProps> & Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>
 > = (props) => {
-    const { title, desc, extra, onClick, children } = {
+    const { title, desc, extra, onClick, style, children } = {
         ...defaultProps,
         ...props,
     }
@@ -19,10 +19,14 @@ export const Cell: FunctionComponent<
     const handleClick = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
-        onClick(event)
+        onClick && onClick(event)
     }
     return (
-        <div className={classPrefix} onClick={(event) => handleClick(event)}>
+        <div
+            className={classPrefix}
+            style={style}
+            onClick={(event) => handleClick(event)}
+        >
             {title || desc ? (
                 <div className={`${classPrefix}__left`}>
                     {title && (

@@ -73,7 +73,7 @@ class FormStore {
                 }
 
                 this.validateKey(key)
-                enetity.onStoreChange()
+                enetity.onForceUpdate()
             }
         })
     }
@@ -87,10 +87,10 @@ class FormStore {
             if (typeof should.shouldUpdate === 'function') {
                 const fx = should.shouldUpdate(prevStore, this.store)
                 if (fx) {
-                    should.onStoreChange()
+                    should.onForceUpdate()
                 }
             } else {
-                should.onStoreChange()
+                should.onForceUpdate()
             }
         })
     }
@@ -121,7 +121,7 @@ class FormStore {
                     if (errors) {
                         this.errList.push(...errors)
                     }
-                    entity.onStoreChange()
+                    entity.onForceUpdate()
                 })
             }
         })
@@ -151,7 +151,7 @@ class FormStore {
                     err.push(...errors)
                     this.errList.push(...errors)
                 }
-                entity.onStoreChange()
+                entity.onForceUpdate()
             })
         })
         return err

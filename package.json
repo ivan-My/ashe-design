@@ -125,6 +125,7 @@
         "compressorjs": "^1.2.1",
         "marked": "^7.0.5",
         "react-router-dom": "^6.4.2",
+        "react-string-replace": "^1.1.1",
         "react-syntax-highlighter": "13.5.2"
     },
     "repository": "https://github.com/ivan-My/ashe-design",

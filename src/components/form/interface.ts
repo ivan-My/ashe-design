@@ -41,6 +41,9 @@ export interface FormItemProps extends BasicComponent {
     // 字段名
     name: string
 
+    // 初始值
+    initialValue: string
+
     // label 标签的文本
     label: string
 
@@ -69,16 +72,16 @@ export interface FormItemProps extends BasicComponent {
 
     //  组件获取值再进行转换
     normalize: (value: FieldItem) => any
+
     // 设置如何将 event 的值转换成字段值
     getValueFromEvent: (...args: any) => FieldItem
 
     labelWidth: string | number
     errorMessageAlign: TextAlign
-    initialValue: string
 }
 
 export interface FieldEntity extends FormItemProps {
-    onStoreChange: () => void
+    onForceUpdate: () => void
 }
 
 export interface FormItemRule extends FormItemRuleWithoutValidator {
