@@ -1,16 +1,63 @@
-#  Loading组件
+# Loading组件
 
 ## 介绍
+
 Loading 加载中
 
+## 基础用法
 
-## 代码演示
-## 加载类型
+```tsx
+import * as React from 'react'
+import { Button, Cell, Loading } from 'ashe-design'
 
-## 加载动画大小
+const App = () => {
+    return <div>
+        <Cell
+            title={
+                <div>
+                    <Loading type="flash" size="mini" />
+                    <Loading type="circle" />
+                    <Loading type="rotate" />
+                    <Loading type="change" />
+                </div>
+            }
+        />
+    </div>
+}
+export default App
 
+```
 
-## API
+## 与Mask遮罩结合使用
+
+```tsx
+import * as React from 'react'
+import { Button, Loading } from 'ashe-design'
+
+const App = () => {
+    const [show, setShow] = React.useState(false)
+    const WrapperStyle = {
+        display: 'flex',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+    return <div>
+        <Button onClick={() => setShow(true)}>全屏显示</Button>
+        <Mask visible={show} onClick={() => setShow(false)}>
+            <div className="wrapper" style={WrapperStyle}>
+                <Loading type="rotate" color="white" size={25}>
+                            <span style={{ color: 'white', fontSize: '14px' }}>
+                                加载中...
+                            </span>
+                </Loading>
+            </div>
+        </Mask>
+    </div>
+}
+export default App
+
+```
 
 ## Props
 
@@ -24,6 +71,6 @@ Loading 加载中
 
 ## Events
 
-| 事件名 | 说明           | 回调参数     |
-|--------|----------------|--------------|
-| click  | 点击图标时触发 | event: Event |
+| 事件名   | 说明      | 回调参数         |
+|-------|---------|--------------|
+| click | 点击图标时触发 | event: Event |

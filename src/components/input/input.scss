@@ -12,14 +12,13 @@
         border-bottom: 1px solid $input-border-bottom;
     }
 
-    input {
-        width: 230px;
+    & > input {
+        width: 100%;
         flex: 1;
-        padding: 0 10px;
-        padding-right: 35px;
+        padding: $input-padding;
         outline: 0 none;
-        border: 0;
         text-decoration: none;
+        border: 1px solid #e5e6eb;
     }
 
     &-disabled {

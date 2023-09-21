@@ -16,8 +16,8 @@ const InputDemo = () => {
                     <div className="title">基础用法</div>
                     <Input
                         ref={myRef}
-                        disabled
                         name="username"
+                        placeholder="请输入用户名"
                         onChange={(e) => {
                             console.log(e)
                         }}

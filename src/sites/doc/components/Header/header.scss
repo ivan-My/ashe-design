@@ -27,16 +27,21 @@
         font-size: 22px;
         font-weight: 800;
         line-height: 64px;
+
         a {
             color: #000000;
         }
     }
+
     .search {
-        position: relative;
+        position: absolute;
         width: 300px;
         height: 40px;
-        border: 1px solid #e5e6e8;
+
+        background: #e5e6e8;
         display: flex;
+
+        left: 225px;
 
         .search-panel {
             width: 400px;
@@ -47,6 +52,17 @@
             top: 48px;
             left: 0;
             border: 1px solid #e5e6e8;
+
+            .ashe-cell {
+                &:hover {
+                    background: #f2f3f5;
+                    border-radius: 0;
+                }
+            }
+
+            .ashe-cell:first-child:hover {
+                background: #f2f3f5;
+            }
 
             .ashe-cell:first-child {
                 font-size: 12px;
@@ -72,6 +88,7 @@
                 .active {
                     color: rgb(80, 80, 254);
                     position: relative;
+
                     &:after {
                         content: '';
                         position: absolute;

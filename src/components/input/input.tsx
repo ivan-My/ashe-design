@@ -1,6 +1,7 @@
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react'
 import className from 'classnames'
-import { InputProps, InputInstance } from './interface'
+import { InputInstance, InputProps } from './interface'
+import { withNativeProps } from '@/utils/native-props'
 
 const defaultProps = {
     name: '',
@@ -41,7 +42,8 @@ export const Input = React.forwardRef<InputInstance, Partial<InputProps>>(
             },
         }))
 
-        return (
+        return withNativeProps(
+            props,
             <div className={cls}>
                 <input
                     type="text"

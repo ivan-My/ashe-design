@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Menu from '@/sites/doc/components/Menu'
 import Markdown from '@/sites/doc/components/Markdown'

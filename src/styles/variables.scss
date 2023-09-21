@@ -2,11 +2,9 @@ $brand-color: var(--ashe-brand-color, #fa2c19) !default;
 // 主色调
 $primary-color: $brand-color !default;
 $primary-color-end: #fa6419 !default;
-$input-disabled-color: gray;
-$input-border-bottom: lightgray;
+
 $white: #fff;
 $black: #000;
-
 // 主要内容用色，常用语常规标题内容、细文浏览、常规按钮文字以及图表引导。
 $gray1: var(--ashe-gray-1, #1a1a1a) !default;
 // 卡片背景色
@@ -60,3 +58,8 @@ $skeleton-line-border-radius: var(
     --ashe-skeleton-line-border-radius,
     0
 ) !default;
+
+// input
+$input-padding: var(--ashe-input-padding, 10px 25px) !default;
+$input-disabled-color: var(--ashe-input-disabled-color, #e5e6eb) !default;
+$input-border-bottom: lightgray;

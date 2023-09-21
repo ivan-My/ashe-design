@@ -93,6 +93,7 @@ export interface FormItemRule extends FormItemRuleWithoutValidator {
 
 export interface FormItemRuleWithoutValidator {
     [key: string]: any
+
     regex?: RegExp
     required?: boolean
     message?: string

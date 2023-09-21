@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
-import './header.scss'
-import { Link, NavLink, useMatch, useNavigate } from 'react-router-dom'
-import { Input, Cell } from '@/components/ashe.react'
-import { nav } from '@/config.json'
+import React, { useState } from 'react'
 import replace from 'react-string-replace'
+import { Link, NavLink, useMatch, useNavigate } from 'react-router-dom'
+import { Cell, Input } from '@/components/ashe.react'
+import { nav } from '@/config.json'
+import './header.scss'
 
 const navList = [
     {
@@ -67,6 +67,7 @@ const Header = ({ searchValue, setSearchValue }: any) => {
         if (!searchValue) {
             return null
         }
+
         return (
             <div className={'search-panel'}>
                 <Cell title={`搜索到${searchValue.length}个结果`} style={{}} />
@@ -81,6 +82,22 @@ const Header = ({ searchValue, setSearchValue }: any) => {
                 })}
             </div>
         )
+    }
+
+    const renderNav = () => {
+        return navList.map((item, key) => {
+            let status = false
+            if (item.name === '组件' && match) {
+                status = true
+            }
+            return (
+                <li key={key}>
+                    <NavLink to={item.path} className={status ? 'active' : ''}>
+                        {item.name}
+                    </NavLink>
+                </li>
+            )
+        })
     }
     return (
         <div className={'doc-header'}>
@@ -97,28 +114,13 @@ const Header = ({ searchValue, setSearchValue }: any) => {
             </div>
             <div className="header-nav">
                 <ul>
-                    {navList.map((item, key) => {
-                        let status = false
-                        if (item.name === '组件' && match) {
-                            status = true
-                        }
-                        return (
-                            <li key={key}>
-                                <NavLink
-                                    to={item.path}
-                                    className={status ? 'active' : ''}
-                                >
-                                    {item.name}
-                                </NavLink>
-                            </li>
-                        )
-                    })}
+                    {renderNav()}
                     <li>
                         <a
                             href="https://github.com/ivan-My/ashe-design"
                             target="_blank"
-                            rel="noopener noreferrer"
                         >
+                            {' '}
                             github
                         </a>
                     </li>
