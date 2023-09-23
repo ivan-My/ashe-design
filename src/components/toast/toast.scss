@@ -9,49 +9,52 @@
 //}
 
 .ashe-toast {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  pointer-events: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 9999;
-  &__inner {
-    min-width: 40%;
-    max-width: 65%;
-    text-align: center;
-    display: inline-block;
-    word-break: break-all;
-    padding: $toast-inner-padding;
-    background: $toast-inner-bg-color;
-    color: $toast-inner-font-color;
-    border-radius: $toast-inner-border-radius;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &--top {
-    top: 30%;
-  }
-
-  &--center {
-    top: $toast-inner-top;
-  }
-
-  &--bottom {
-    top: 80%;
-  }
-
-  &__text {
-    font-size: $toast-text-font-size;
-  }
-  &__icon-wrapper {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-  }
+    height: 100%;
+    text-align: center;
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+
+    &__inner {
+        min-width: 40%;
+        max-width: 65%;
+        text-align: center;
+        display: inline-block;
+        word-break: break-all;
+        padding: $toast-inner-padding;
+        background: $toast-inner-bg-color;
+        color: $toast-inner-font-color;
+        border-radius: $toast-inner-border-radius;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--top {
+        top: 30%;
+    }
+
+    &--center {
+        top: $toast-inner-top;
+    }
+
+    &--bottom {
+        top: 80%;
+    }
+
+    &__text {
+        font-size: $toast-text-font-size;
+    }
+
+    &__icon-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        flex-direction: column;
+    }
 }

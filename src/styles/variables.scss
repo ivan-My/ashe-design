@@ -49,6 +49,11 @@ $grid-item-content-padding: var(
     16px 8px
 ) !default;
 
+$grid-item-content-bg-color: var(
+    --ashe-grid-item-content-bg-color,
+    #ffffff
+) !default;
+
 // skeleton
 $skeleton-background: var(
     --ashe-skeleton-background,

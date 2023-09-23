@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { render, unmount } from '@/utils/render'
-import { ToastProps, CallbackFunction } from './interface'
+import { CallbackFunction, ToastProps } from './interface'
 
 const classPrefix = 'ashe-toast'
 
@@ -47,9 +47,19 @@ const Notification = (props: ToastProps & CallbackFunction) => {
                 style={contentStyle}
             >
                 {icon && (
-                    <div className={`${classPrefix}__icon-wrapper`}>{icon}</div>
+                    <div className={`${classPrefix}__icon-wrapper`}>
+                        {icon}
+                        <span
+                            className={`${classPrefix}__text`}
+                            style={{ marginTop: '5px' }}
+                        >
+                            {content}
+                        </span>
+                    </div>
                 )}
-                <span className={`${classPrefix}__text`}>{content}</span>
+                {!icon && (
+                    <span className={`${classPrefix}__text`}>{content}</span>
+                )}
             </div>
         </div>
     )
@@ -59,6 +69,7 @@ export const newInstance = (properties: ToastProps, callback: any) => {
     const element = document.createElement('div')
     document.body.appendChild(element)
     let called = false
+
     function fn() {
         if (called) {
             return

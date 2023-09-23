@@ -117,6 +117,7 @@
     "dependencies": {
         "@babel/runtime": "^7.19.4",
         "@bem-react/classname": "^1.5.12",
+        "@nutui/icons-react": "^0.0.1",
         "@react-spring/web": "^9.7.3",
         "@stackblitz/sdk": "^1.9.0",
         "@use-gesture/react": "^10.2.27",

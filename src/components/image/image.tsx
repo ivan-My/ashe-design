@@ -6,11 +6,10 @@ import React, {
     useState,
 } from 'react'
 import className from 'classnames'
+import { Image as ImageIcon, ImageError } from '@nutui/icons-react'
 import { ImageProps } from './interface'
 import { withNativeProps } from '@/utils/native-props'
 import { pxCheck } from '@/utils/px-check'
-
-import Compressor from 'compressorjs'
 
 const classPrefix = 'ashe-image'
 const defaultProps = {
@@ -19,9 +18,10 @@ const defaultProps = {
     fit: 'fill',
     width: 'center',
     height: '',
+    radius: 0,
     loading: true,
     error: true,
-    lazy: true,
+    lazy: false,
 } as ImageProps
 export const Image: FunctionComponent<
     Partial<ImageProps> & React.HTMLAttributes<HTMLDivElement>
@@ -33,11 +33,12 @@ export const Image: FunctionComponent<
         width,
         height,
         loading,
+        radius,
         onLoad,
         error,
         onError,
         lazy,
-        children,
+        ...ret
     } = {
         ...defaultProps,
         ...props,
@@ -49,6 +50,9 @@ export const Image: FunctionComponent<
     const containerStyle = {
         width: width ? pxCheck(width) : '',
         height: height ? pxCheck(height) : '',
+        overflow: radius !== undefined && radius !== null ? 'hidden' : '',
+        borderRadius:
+            radius !== undefined && radius !== null ? pxCheck(radius) : '',
     }
     const imgStyle: any = {
         objectFit: fit,
@@ -57,20 +61,28 @@ export const Image: FunctionComponent<
     const renderLoading = useCallback(() => {
         if (!loading) return null
         if (typeof loading === 'boolean' && loading && innerLoading) {
-            return <div className="ashe-img-loading">loading...</div>
+            return (
+                <div className="ashe-img--loading">
+                    <ImageIcon />
+                </div>
+            )
         }
         if (React.isValidElement(loading) && innerLoading) {
-            return <div className="ashe-img-loading">{loading}</div>
+            return <div className="ashe-img--loading">{loading}</div>
         }
         return null
     }, [loading, innerLoading])
     const renderError = useCallback(() => {
         if (!isError) return null
         if (typeof error === 'boolean' && error && !innerLoading) {
-            return <div className="ashe-img-error">加载失败</div>
+            return (
+                <div className="ashe-img--error">
+                    <ImageError />
+                </div>
+            )
         }
         if (React.isValidElement(error) && !innerLoading) {
-            return <div className="nut-img-error">{error}</div>
+            return <div className="ashe-img--error">{error}</div>
         }
         return null
     }, [isError, innerLoading])
@@ -119,29 +131,22 @@ export const Image: FunctionComponent<
 
     useEffect(() => {
         lazy && initObserver()
-
-        // new Compressor(imgRef.current, {
-        //     quality: '0.6',
-        // })
-
-        console.log(imgRef.current)
         return () => {
             lazy && resetObserver()
         }
     }, [lazy])
+
     return withNativeProps(
         props,
-        <div className={cls} style={containerStyle}>
+        <div className={cls} style={containerStyle} {...ret}>
             <img
                 ref={imgRef}
                 className={`${classPrefix}--img`}
                 style={imgStyle}
-                src={src}
                 alt={alt}
-                width={width}
-                height={height}
                 onLoad={handleLoad}
                 onError={handleError}
+                {...(lazy ? { 'data-src': src, loading: 'lazy' } : { src })}
             />
             {renderLoading()}
             {renderError()}

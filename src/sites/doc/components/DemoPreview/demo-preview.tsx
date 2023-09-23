@@ -22,14 +22,7 @@ const DemoPreview = () => {
     return (
         <div className="doc-demo-preview">
             <div className="doc-demo_wrapper">
-                {state ? (
-                    <Loading
-                        show
-                        type="circle"
-                        size="large"
-                        className="loading"
-                    />
-                ) : null}
+                {state ? <Loading size="large" className="loading" /> : null}
                 <iframe src={url} ref={iframeRef} />
                 <a href={url} target={'_blank'} className={'href'}>
                     跳转
