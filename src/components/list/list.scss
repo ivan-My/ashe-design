@@ -1,0 +1,32 @@
+.ashe-list {
+    display: block;
+    width: 100%;
+
+    .ashe-list__refresh {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+
+        .top-box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .top-text {
+                font-size: 10px;
+                color: red;
+            }
+        }
+    }
+
+    .ashe-list__loadmore {
+        text-align: center;
+        font-size: 10px;
+        color: #939aa3;
+        padding-bottom: 5px;
+    }
+}
