@@ -8,12 +8,13 @@ const defaultProps = {
     type: 'rotate',
     size: '',
     color: '',
+    vertical: false,
 } as LoadingProps
 
 export const Loading: FunctionComponent<
     Partial<LoadingProps> & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
-    const { type, size, color, children, className, icon } = {
+    const { type, size, color, vertical, children, className, icon } = {
         ...defaultProps,
         ...props,
     }
@@ -43,9 +44,16 @@ export const Loading: FunctionComponent<
         children && `${classPrefix}__spinner`
     )
 
+    const spinnerStyle: React.CSSProperties = {
+        flexDirection: vertical ? 'column' : 'initial',
+    }
+    const textStyle = {
+        marginTop: vertical ? '5px' : '',
+        marginLeft: !vertical ? '5px' : '',
+    }
     return (
         <div className={cls}>
-            <div className={spinnerCls}>
+            <div className={spinnerCls} style={spinnerStyle}>
                 {icon && <>{icon}</>}
                 {type === 'rotate' && !icon && (
                     <div
@@ -54,7 +62,9 @@ export const Loading: FunctionComponent<
                     />
                 )}
                 {type === 'change' && !icon && changeElement}
-                {children}
+                <span className="ashe-loading__text" style={textStyle}>
+                    {children}
+                </span>
             </div>
         </div>
     )

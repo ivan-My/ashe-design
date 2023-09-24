@@ -62,13 +62,12 @@ const LoadingDemo = () => {
                 <Button onClick={() => setFullScreen(true)}>全屏显示</Button>
                 <Mask visible={fullScreen} onClick={() => setFullScreen(false)}>
                     <div className="wrapper" style={WrapperStyle}>
-                        <Loading type="rotate" color="white" size={25}>
-                            <span style={{ color: 'white', fontSize: '14px' }}>
-                                加载中...
-                            </span>
+                        <Loading type="rotate" color="white" size={25} vertical>
+                            加载中...
                         </Loading>
                     </div>
                 </Mask>
+                <Loading>加载中</Loading>
             </div>
         </>
     )

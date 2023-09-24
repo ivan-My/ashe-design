@@ -106,6 +106,17 @@
           "show": true,
           "taro": true,
           "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Sticky",
+          "type": "component",
+          "cName": "粘性布局",
+          "desc": "",
+          "sort": 3,
+          "show": true,
+          "taro": true,
+          "author": ""
         }
       ]
     },
@@ -176,17 +187,6 @@
           "cName": "轻提示",
           "desc": "",
           "sort": 1,
-          "show": true,
-          "taro": true,
-          "author": "ivan"
-        },
-        {
-          "version": "1.0.0",
-          "name": "Infiniteloading",
-          "type": "component",
-          "cName": "滚动加载",
-          "desc": "",
-          "sort": 2,
           "show": true,
           "taro": true,
           "author": "ivan"
@@ -273,6 +273,17 @@
           "show": true,
           "taro": true,
           "author": "ivan"
+        },
+        {
+          "version": "1.0.0",
+          "name": "List",
+          "type": "component",
+          "cName": "列表",
+          "desc": "",
+          "sort": 7,
+          "show": true,
+          "taro": true,
+          "author": ""
         }
       ]
     }

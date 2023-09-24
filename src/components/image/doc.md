@@ -42,7 +42,7 @@ const App = () => {
 export default App;
 ```
 
-## 加载中
+## 自定义加载中
 
 Image 组件提供了默认的加载中提示，支持通过 loading 自定义内容。
 
