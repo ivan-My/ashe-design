@@ -11,7 +11,7 @@ const defaultProps = {
 export const Cell: FunctionComponent<
     Partial<CellProps> & Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>
 > = (props) => {
-    const { title, desc, extra, onClick, style, children } = {
+    const { title, desc, extra, onClick, style } = {
         ...defaultProps,
         ...props,
     }

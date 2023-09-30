@@ -9,9 +9,8 @@ const classPrefix = 'ashe-list'
 const defaultProps = {
     hasMore: true,
     threshold: 200,
-    containerId: '',
-    useWindow: true,
     useCapture: false,
+    target: '',
     isOpenRefresh: false,
     pullTxt: '松开刷新',
     loadTxt: '加载中···',
@@ -25,8 +24,7 @@ export const List: FunctionComponent<
         children,
         hasMore,
         threshold,
-        containerId,
-        useWindow,
+        target,
         useCapture,
         isOpenRefresh,
         pullTxt,
@@ -54,19 +52,17 @@ export const List: FunctionComponent<
     const classes = classNames(className, classPrefix)
 
     useEffect(() => {
-        onLoadMore &&
-            onLoadMore(() => {
-                infiniteDone()
-            })
+        onLoadMore && onLoadMore(() => infiniteDone())
     }, [])
-
     useEffect(() => {
-        const parentElement = getParentElement(
-            scroller.current as HTMLDivElement
-        ) as Node & ParentNode
-        scrollEl.current = useWindow ? window : parentElement
+        if (target && document.getElementById(target)) {
+            scrollEl.current = document.getElementById(target) as
+                | HTMLElement
+                | Window
+        } else {
+            scrollEl.current = window
+        }
         scrollEl.current.addEventListener('scroll', handleScroll, useCapture)
-
         return () => {
             scrollEl.current.removeEventListener(
                 'scroll',
@@ -75,11 +71,9 @@ export const List: FunctionComponent<
             )
         }
     }, [hasMore, isInfiniting])
-
     useEffect(() => {
         const element = scroller.current as HTMLDivElement
         element.addEventListener('touchmove', touchMove, { passive: false })
-
         return () => {
             element.removeEventListener('touchmove', touchMove, {
                 passive: false,
@@ -94,12 +88,6 @@ export const List: FunctionComponent<
                 ? `height 0s cubic-bezier(0.25,0.1,0.25,1)`
                 : `height 0.2s cubic-bezier(0.25,0.1,0.25,1)`,
         }
-    }
-
-    const getParentElement = (el: HTMLElement) => {
-        return containerId
-            ? document.querySelector(`#${containerId}`)
-            : el && el.parentNode
     }
 
     const handleScroll = () => {
@@ -207,7 +195,7 @@ export const List: FunctionComponent<
         let resScrollTop = 0
         let direction = 'down'
         const windowScrollTop = getWindowScrollTop()
-        if (useWindow) {
+        if (!target || !document.getElementById(target)) {
             if (scroller.current) {
                 offsetDistance =
                     calculateTopPosition(scroller.current) +

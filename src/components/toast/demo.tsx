@@ -21,8 +21,12 @@ const ToastDemo = () => {
                     title="自定义图标"
                     onClick={() =>
                         Toast.show({
-                            content: '加载中...',
-                            icon: <Loading type="rotate" color="white" />,
+                            content: '',
+                            icon: (
+                                <Loading type="rotate" color="white" vertical>
+                                    加载中
+                                </Loading>
+                            ),
                         })
                     }
                 />

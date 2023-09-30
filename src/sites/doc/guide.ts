@@ -19,6 +19,7 @@ import Collapse from '@/components/collapse/doc.md?raw'
 import Ellipsis from '@/components/ellipsis/doc.md?raw'
 import Skeleton from '@/components/skeleton/doc.md?raw'
 import List from '@/components/list/doc.md?raw'
+import Tag from '@/components/tag/doc.md?raw'
 
 import ButtonScss from '@/components/button/demo.scss?raw'
 import MaskScss from '@/components/mask/demo.scss?raw'
@@ -59,6 +60,7 @@ export const componentRouters = [
     'Ellipsis',
     'Skeleton',
     'List',
+    'Tag',
 ]
 export const raws = {
     Button,
@@ -82,4 +84,5 @@ export const raws = {
     Ellipsis,
     Skeleton,
     List,
+    Tag,
 }

@@ -12,7 +12,6 @@ const App = () => {
             for (let i = curLen; i < curLen + 15; i++) {
                 list.push(`${i}`)
             }
-
             if (list.length >= 100) {
                 setHasMore(false)
             } else {
@@ -23,28 +22,18 @@ const App = () => {
     }
 
     return (
-        <>
-            <div className="content">
-                <div className="title">上拉加载更多</div>
-                <List
-                    hasMore={hasMore}
-                    onLoadMore={loadMore}
-                    loadTxt={<Loading>加载中</Loading>}
-                    loadMoreTxt="没有数据了"
-                    threshold={50}
-                >
-                    {list.map((item, index) => {
-                        return (
-                            <Cell
-                                className="infiniteLi"
-                                key={index}
-                                title={item}
-                            />
-                        )
-                    })}
-                </List>
-            </div>
-        </>
+        <div className="content">
+            <div className="title">上拉加载更多</div>
+            <List
+                hasMore={hasMore}
+                onLoadMore={loadMore}
+                loadTxt={<Loading>加载中</Loading>}
+            >
+                {list.map((item, index) => {
+                    return <Cell key={index} title={item} />
+                })}
+            </List>
+        </div>
     )
 }
 

@@ -284,6 +284,17 @@
           "show": true,
           "taro": true,
           "author": ""
+        },
+        {
+          "version": "1.0.0",
+          "name": "Tag",
+          "type": "component",
+          "cName": "标签",
+          "desc": "",
+          "sort": 8,
+          "show": true,
+          "taro": true,
+          "author": ""
         }
       ]
     }

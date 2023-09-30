@@ -62,9 +62,11 @@ export const Loading: FunctionComponent<
                     />
                 )}
                 {type === 'change' && !icon && changeElement}
-                <span className="ashe-loading__text" style={textStyle}>
-                    {children}
-                </span>
+                {children && (
+                    <span className="ashe-loading__text" style={textStyle}>
+                        {children}
+                    </span>
+                )}
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { UploaderProps, FileItem } from './interface'
+import { FileItem, UploaderProps } from './interface'
 
 const classPrefix = 'ashe-uploader'
 const defaultProps = {
@@ -27,7 +27,6 @@ export const Uploader: FunctionComponent<
         if (oversizes.length) {
             onOversize && onOversize(oversizes)
         }
-
         return filterFile
     }
 

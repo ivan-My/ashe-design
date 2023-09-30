@@ -7,7 +7,7 @@ body {
     height: 100%;
     width: 100%;
 
-    .status-bar {
+    .demo-bar {
         height: 20px;
         width: 100%;
         position: fixed;
@@ -32,11 +32,6 @@ body {
         line-height: 44px;
         position: relative;
         border-width: 0;
-        & > div {
-            position: absolute;
-            left: 15px;
-            font-size: 12px;
-        }
     }
 
     .content {

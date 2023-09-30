@@ -4,8 +4,9 @@ import { BasicComponent } from '@/utils/typeing'
 export interface ListProps extends BasicComponent {
     hasMore: boolean
     threshold: number
-    containerId: string
-    useWindow: boolean
+
+    target: string
+
     useCapture: boolean
     isOpenRefresh: boolean
     pullTxt: string | React.ReactNode

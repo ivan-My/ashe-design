@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { nav } from '@/config.json'
 import './index.scss'
-import { NavLink } from 'react-router-dom'
-
-const components = nav.reduce(
-    (acc, item) => [...acc, ...item.packages],
-    [] as any[]
-)
+import { useNavigate } from 'react-router-dom'
 
 const Index = () => {
+    const navs = useNavigate()
     return (
         <div className="demo-index">
             {nav.map((cn: any, index: number) => {
@@ -20,14 +16,15 @@ const Index = () => {
                             {cn.packages.map((cp: any) => {
                                 if (!cp.show) return null
                                 return (
-                                    <NavLink
+                                    <li
                                         key={Math.random()}
-                                        to={`/${cp.name}`}
+                                        onClick={() => {
+                                            navs(`/${cp.name}`)
+                                            window.scroll({ top: 0 })
+                                        }}
                                     >
-                                        <li>
-                                            {cp.name}&nbsp;&nbsp;{cp.cName}
-                                        </li>
-                                    </NavLink>
+                                        {cp.name}&nbsp;&nbsp;{cp.cName}
+                                    </li>
                                 )
                             })}
                         </ul>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Routes from './router'
-import { HashRouter, useLocation } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { nav } from '@/config.json'
 import './App.scss'
 
@@ -25,7 +25,7 @@ const App = () => {
 
     return (
         <div className="demo-wrapper">
-            <div className="status-bar" />
+            <div className="demo-bar" />
             <div className={'demo-header'}>
                 {/*<div onClick={() => history.back()}>上一步</div>*/}
                 {state?.name} {state?.cName}

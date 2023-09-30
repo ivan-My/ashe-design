@@ -1,19 +1,18 @@
 import React from 'react'
-import { useTouch } from '@/utils/use-touch'
+import { Button, Dialog } from '@/components/ashe.react'
 
 const DialogDemo = () => {
-    const d = useTouch()
-    console.log(d)
     return (
         <>
             <div className="content">
-                <div
-                    style={{
-                        height: '2000px',
+                基础用法
+                <Button
+                    onClick={() => {
+                        Dialog.show()
                     }}
                 >
-                    基础用法
-                </div>
+                    点击
+                </Button>
             </div>
         </>
     )

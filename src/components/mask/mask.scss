@@ -1,56 +1,56 @@
 .ashe-overflow-hidden {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .ashe-mask {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  color: $mask-bg-color;
-  background: $mask-bg-color;
-  z-index: $mask-z-index;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: $mask-bg-color;
+    background: $mask-bg-color;
+    z-index: $mask-z-index;
 
-  &--hidden {
-    display: none;
-  }
+    &--hidden {
+        display: none;
+    }
 
-  &-fade-enter-active {
-    animation: ashe-fade-in;
-  }
-  &-fade-leave-active {
-    animation: ashe-fade-out;
-  }
+    &-fade-enter-active {
+        animation: ashe-fade-in;
+    }
+    &-fade-leave-active {
+        animation: ashe-fade-out;
+    }
 }
 
 @keyframes ashe-fade-in {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  1% {
-    opacity: 0;
-  }
+    1% {
+        opacity: 0;
+    }
 
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes ashe-fade-out {
-  0% {
-    opacity: 1;
-    display: block;
-  }
+    0% {
+        opacity: 1;
+        display: block;
+    }
 
-  1% {
-    opacity: 1;
-    display: block;
-  }
+    1% {
+        opacity: 1;
+        display: block;
+    }
 
-  100% {
-    opacity: 0;
-    display: none;
-  }
+    100% {
+        opacity: 0;
+        display: none;
+    }
 }

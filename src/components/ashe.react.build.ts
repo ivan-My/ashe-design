@@ -19,6 +19,7 @@ import Collapse from '@/components/collapse'
 import Ellipsis from '@/components/ellipsis'
 import Skeleton from '@/components/skeleton'
 import List from '@/components/list'
+import Tag from '@/components/tag'
 
 export {
     Button,
@@ -42,4 +43,5 @@ export {
     Ellipsis,
     Skeleton,
     List,
+    Tag,
 }
