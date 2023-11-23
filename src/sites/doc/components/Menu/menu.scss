@@ -1,4 +1,5 @@
 .doc-menu {
+    width: 230px;
     border-right: 1px solid #e5e6eb;
     overflow: auto;
     position: fixed;
@@ -10,14 +11,14 @@
     box-sizing: border-box;
     margin-bottom: 16px;
     color: #1a2234;
+    background: var(--bg-color);
 
     > ol {
         list-style: none;
         margin: 4px 12px;
 
         li {
-            height: 48px;
-            line-height: 48px;
+            line-height: 40px;
             font-size: 14px;
             position: relative;
             padding: 0 10px;

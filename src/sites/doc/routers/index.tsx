@@ -22,12 +22,14 @@ export const rootRouter: RouteObject[] = [
         ],
     },
     {
-        path: '/hooks',
+        path: '/resource',
         element: <LayoutIndex />,
         children: [
             {
                 path: '*',
-                element: lazyLoad(React.lazy(() => import('../pages/hooks'))),
+                element: lazyLoad(
+                    React.lazy(() => import('../pages/resource'))
+                ),
             },
         ],
     },

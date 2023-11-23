@@ -6,11 +6,12 @@
         min-height: 100vh;
         display: flex;
         align-items: flex-start;
-        padding-left: 240px;
+        padding-left: 230px;
+        background: var(--bg-color);
         .components-markdown {
-            //max-width: 750px;
+            min-width: 750px;
             border-radius: 24px;
-            background-color: #fff;
+            background: var(--bg-color, #fff);
             flex: 1;
             margin: 0 20px 20px;
             .doc-wrapper {

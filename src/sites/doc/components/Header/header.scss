@@ -15,7 +15,7 @@
     user-select: none;
     font-weight: 500;
     min-width: 1320px;
-    background: #fff;
+    background: var(--bg-color, #fff);
     border-bottom: 1px solid #e5e6e8;
 
     .header-logo {
@@ -35,13 +35,14 @@
 
     .search {
         position: absolute;
-        width: 300px;
-        height: 40px;
-
-        background: #e5e6e8;
+        width: 288px;
+        height: 32px;
         display: flex;
+        left: 258px;
 
-        left: 225px;
+        .ashe-input > input {
+            background-color: rgb(242, 243, 245);
+        }
 
         .search-panel {
             width: 400px;
@@ -75,6 +76,7 @@
     .header-nav {
         > ul {
             display: flex;
+            align-items: center;
             font-size: 16px;
             margin-right: 50px;
 
@@ -108,4 +110,14 @@
     color: rgb(80, 80, 254);
     font-size: 16px;
     font-weight: bold;
+}
+
+.ashe-icon-sun-fill,
+.ashe-icon-moon-fill {
+    font-size: 22px;
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+    fill: none;
+    vertical-align: -6px;
 }

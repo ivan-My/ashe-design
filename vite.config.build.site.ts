@@ -7,7 +7,7 @@ const atImport = require('postcss-import')
 const { resolve } = path
 
 export default defineConfig({
-    // base: './',
+    base: '/',
     resolve: {
         alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
     },
@@ -36,7 +36,7 @@ export default defineConfig({
     },
     plugins: [reactRefresh()],
     build: {
-        sourcemap: true,
+        // sourcemap: true,
         target: 'es2015',
         outDir: './html/',
         minify: false,

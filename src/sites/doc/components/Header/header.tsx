@@ -4,19 +4,33 @@ import { Link, NavLink, useMatch, useNavigate } from 'react-router-dom'
 import { Cell, Input } from '@/components/ashe.react'
 import { nav } from '@/config.json'
 import './header.scss'
+import { black, white, github } from './svg'
 
 const navList = [
     {
         name: '首页',
         path: '/',
+        key: 'home',
     },
     {
         name: '组件',
         path: '/components/readme',
+        key: 'components',
     },
     {
-        name: 'hooks',
-        path: '/hooks/hook1',
+        name: '工具函数',
+        path: '/resource/',
+        key: 'resource',
+    },
+    {
+        name: 'github',
+        path: '',
+        key: 'github',
+    },
+    {
+        name: '主题',
+        path: '',
+        key: 'theme',
     },
 ]
 
@@ -35,16 +49,18 @@ const Header = () => {
     const match = useMatch('/components/*')
     const navigate = useNavigate()
     const [val, setValue] = useState('')
-    const [searchValue, setSearchValue] = useState<any>('')
+    const [searchValue, setSearchValue] = useState([])
+    const [theme, setTheme] = useState(false)
 
     const onChange = (e: string) => {
-        const data = matchElementsWithA(e)
+        const data: any = matchElementsWithA(e)
         setValue(e)
         setSearchValue(data)
     }
     const onCell = (item: any) => {
         navigate(`/components/${item.name}`)
         setSearchValue([])
+        setValue('')
         window.scroll({ top: 0 })
     }
 
@@ -65,7 +81,7 @@ const Header = () => {
     }
 
     const renderSearchValue = () => {
-        if (!searchValue) {
+        if (searchValue.length == 0) {
             return null
         }
         return (
@@ -84,25 +100,59 @@ const Header = () => {
         )
     }
 
-    const renderNav = () => {
-        return navList.map((item, key) => {
-            let status = false
-            if (item.name === '组件' && match) {
-                status = true
-            }
-            return (
-                <li key={key}>
-                    <NavLink
-                        to={item.path}
-                        end
-                        className={status ? 'active' : ''}
-                    >
-                        {item.name}
-                    </NavLink>
-                </li>
-            )
-        })
+    const onSwitch = () => {
+        setTheme(!theme)
+        if (theme) {
+            document.body.removeAttribute('ashe-theme')
+        } else {
+            document.body.setAttribute('ashe-theme', 'dark')
+        }
     }
+    const renderNav = () => {
+        return (
+            <ul>
+                {navList.map((item, key) => {
+                    let status = false
+                    if (item.name === '组件' && match) {
+                        status = true
+                    }
+                    if (item.key == 'theme') {
+                        return (
+                            <li onClick={() => onSwitch()} key={item.key}>
+                                {theme ? black() : white()}
+                            </li>
+                        )
+                    }
+                    if (item.key == 'github') {
+                        return (
+                            <li key={item.key}>
+                                <a
+                                    href="https://github.com/ivan-My/ashe-design"
+                                    target="_blank"
+                                >
+                                    {/*github*/}
+                                    {github()}
+                                </a>
+                            </li>
+                        )
+                    }
+
+                    return (
+                        <li key={item.key}>
+                            <NavLink
+                                to={item.path}
+                                end
+                                className={status ? 'active' : ''}
+                            >
+                                {item.name}
+                            </NavLink>
+                        </li>
+                    )
+                })}
+            </ul>
+        )
+    }
+
     return (
         <div className={'doc-header'}>
             <div className="header-logo">
@@ -116,19 +166,7 @@ const Header = () => {
                 />
                 {renderSearchValue()}
             </div>
-            <div className="header-nav">
-                <ul>
-                    {renderNav()}
-                    <li>
-                        <a
-                            href="https://github.com/ivan-My/ashe-design"
-                            target="_blank"
-                        >
-                            github
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <div className="header-nav">{renderNav()}</div>
         </div>
     )
 }
