@@ -1,0 +1,36 @@
+.ashe-tabs {
+    &__wrap {
+        display: flex;
+        position: relative;
+        box-sizing: content-box;
+        user-select: none;
+        overflow: scroll;
+    }
+
+    &__tab {
+        position: relative;
+        display: flex;
+        flex: 1;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 4px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+
+    &__line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: unset;
+        content: ' ';
+        width: 40px;
+        height: 3px;
+        background: red;
+        transition-duration: 300ms;
+    }
+
+    &--active {
+        color: red;
+    }
+}
