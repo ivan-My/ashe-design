@@ -25,7 +25,7 @@ const ComponentRouters = () => {
     )
 }
 
-const Page = () => {
+const Components = () => {
     return (
         <div className="components-page">
             <Menu />
@@ -39,4 +39,4 @@ const Page = () => {
     )
 }
 
-export default React.memo(Page)
+export default React.memo(Components)

@@ -31,10 +31,11 @@ function matchElementsWithA(input: string) {
     })
 }
 
-const Header = ({ searchValue, setSearchValue }: any) => {
+const Header = () => {
     const match = useMatch('/components/*')
     const navigate = useNavigate()
     const [val, setValue] = useState('')
+    const [searchValue, setSearchValue] = useState<any>('')
 
     const onChange = (e: string) => {
         const data = matchElementsWithA(e)
@@ -91,7 +92,11 @@ const Header = ({ searchValue, setSearchValue }: any) => {
             }
             return (
                 <li key={key}>
-                    <NavLink to={item.path} className={status ? 'active' : ''}>
+                    <NavLink
+                        to={item.path}
+                        end
+                        className={status ? 'active' : ''}
+                    >
                         {item.name}
                     </NavLink>
                 </li>

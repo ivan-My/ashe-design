@@ -1,7 +1,15 @@
 import React from 'react'
 
 const Hooks = () => {
-    return <div>Hooks</div>
+    return (
+        <div
+            style={{
+                marginTop: '100px',
+            }}
+        >
+            Hooks
+        </div>
+    )
 }
 
 export default Hooks
