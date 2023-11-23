@@ -22,6 +22,7 @@ const ToastDemo = () => {
                     onClick={() =>
                         Toast.show({
                             content: '',
+                            duration: 0,
                             icon: (
                                 <Loading type="rotate" color="white" vertical>
                                     加载中

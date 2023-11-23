@@ -26,6 +26,7 @@ const defaultProps = {
 export const Image: FunctionComponent<
     Partial<ImageProps> & React.HTMLAttributes<HTMLDivElement>
 > = (props) => {
+    console.log(props)
     const {
         src,
         alt,

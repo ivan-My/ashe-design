@@ -8,7 +8,7 @@ import './header.scss'
 const navList = [
     {
         name: '首页',
-        path: '/guide/installation',
+        path: '/',
     },
     {
         name: '组件',
@@ -67,7 +67,6 @@ const Header = ({ searchValue, setSearchValue }: any) => {
         if (!searchValue) {
             return null
         }
-
         return (
             <div className={'search-panel'}>
                 <Cell title={`搜索到${searchValue.length}个结果`} style={{}} />
@@ -120,7 +119,6 @@ const Header = ({ searchValue, setSearchValue }: any) => {
                             href="https://github.com/ivan-My/ashe-design"
                             target="_blank"
                         >
-                            {' '}
                             github
                         </a>
                     </li>

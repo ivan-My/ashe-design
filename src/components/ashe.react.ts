@@ -7,6 +7,7 @@ import Space from '@/components/space'
 import Grid from '@/components/grid'
 import Sticky from '@/components/sticky'
 import Elevator from '@/components/elevator'
+import Tabs from '@/components/tabs'
 import Input from '@/components/input'
 import Form from '@/components/form'
 import Uploader from '@/components/uploader'
@@ -30,6 +31,7 @@ import './space/space.scss'
 import './grid/grid.scss'
 import './sticky/sticky.scss'
 import './elevator/elevator.scss'
+import './tabs/tabs.scss'
 import './input/input.scss'
 import './form/form.scss'
 import './uploader/uploader.scss'
@@ -54,6 +56,7 @@ export {
     Grid,
     Sticky,
     Elevator,
+    Tabs,
     Input,
     Form,
     Uploader,

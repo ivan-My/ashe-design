@@ -7,6 +7,7 @@ import Space from '@/components/space/doc.md?raw'
 import Grid from '@/components/grid/doc.md?raw'
 import Sticky from '@/components/sticky/doc.md?raw'
 import Elevator from '@/components/elevator/doc.md?raw'
+import Tabs from '@/components/tabs/doc.md?raw'
 import Input from '@/components/input/doc.md?raw'
 import Form from '@/components/form/doc.md?raw'
 import Uploader from '@/components/uploader/doc.md?raw'
@@ -28,6 +29,7 @@ import StickyScss from '@/components/sticky/demo.scss?raw'
 import InputScss from '@/components/input/demo.scss?raw'
 import ToastScss from '@/components/toast/demo.scss?raw'
 import LoadingScss from '@/components/loading/demo.scss?raw'
+import TagScss from '@/components/tag/demo.scss?raw'
 
 export const scssRaws = {
     ButtonScss,
@@ -37,6 +39,7 @@ export const scssRaws = {
     InputScss,
     ToastScss,
     LoadingScss,
+    TagScss,
 }
 export const componentRouters = [
     'Button',
@@ -48,6 +51,7 @@ export const componentRouters = [
     'Grid',
     'Sticky',
     'Elevator',
+    'Tabs',
     'Input',
     'Form',
     'Uploader',
@@ -72,6 +76,7 @@ export const raws = {
     Grid,
     Sticky,
     Elevator,
+    Tabs,
     Input,
     Form,
     Uploader,

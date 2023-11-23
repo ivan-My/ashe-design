@@ -1,48 +1,50 @@
 .doc-menu {
-  border-right: 1px solid #e5e6eb;
-  overflow: auto;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-  overflow-y: scroll;
-  box-sizing: border-box;
-  margin-bottom: 16px;
-  color: #1a2234;
+    border-right: 1px solid #e5e6eb;
+    overflow: auto;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    color: #1a2234;
 
-  > ol {
-    list-style: none;
-    margin: 4px 12px;
+    > ol {
+        list-style: none;
+        margin: 4px 12px;
 
-    li {
-      height: 48px;
-      line-height: 48px;
-      font-size: 14px;
-      position: relative;
-      padding: 0 10px;
-      color: #7a8499;
+        li {
+            height: 48px;
+            line-height: 48px;
+            font-size: 14px;
+            position: relative;
+            padding: 0 10px;
+            color: #7a8499;
+        }
+
+        > ul li {
+            cursor: pointer;
+            height: 100%;
+            margin: 5px 0 5px 20px;
+
+            &:hover {
+                background: #f7f8fa;
+            }
+
+            > a {
+                color: #1a2234ff;
+            }
+
+            > span {
+                margin-right: 10px;
+            }
+        }
+
+        .active li {
+            background: #f2f3f5;
+            color: #165dff;
+        }
     }
-
-    > ul li {
-      cursor: pointer;
-      height: 100%;
-      margin: 5px 0;
-      margin-left: 20px;
-      color: #1a2234;
-
-      &:hover {
-        background: #f7f8fa;
-      }
-
-      > a {
-        color: #1a2234ff;
-      }
-    }
-
-    .active li {
-      background: #f2f3f5;
-      color: #165dff;
-    }
-  }
 }

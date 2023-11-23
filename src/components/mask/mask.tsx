@@ -9,7 +9,7 @@ export const defaultMaskProps = {
     visible: false,
     disableBodyScroll: true,
     closeOnOverlayClick: true,
-    onClick: (event: any) => {},
+    onClick: () => {},
     afterClose: () => {},
     afterShow: () => {},
 } as MaskProps

@@ -10,12 +10,10 @@ const rootElement = document.querySelector('#doc')
 if (rootElement != null) {
     const root = ReactDOM.createRoot(rootElement)
     root.render(
-        <StrictMode>
-            <BrowserRouter>
-                <Suspense fallback={<div>loading</div>}>
-                    <App />
-                </Suspense>
-            </BrowserRouter>
-        </StrictMode>
+        <BrowserRouter>
+            <Suspense fallback={<div>loading</div>}>
+                <App />
+            </Suspense>
+        </BrowserRouter>
     )
 }

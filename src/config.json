@@ -26,6 +26,7 @@
     ]
   },
   "nav": [
+
     {
       "name": "基础组件",
       "enName": "base",
@@ -131,6 +132,17 @@
           "cName": "电梯楼层",
           "desc": "",
           "sort": 1,
+          "show": true,
+          "taro": true,
+          "author": ""
+        },
+        {
+          "version": "1.0.0",
+          "name": "Tabs",
+          "type": "component",
+          "cName": "选项卡",
+          "desc": "",
+          "sort": 2,
           "show": true,
           "taro": true,
           "author": ""

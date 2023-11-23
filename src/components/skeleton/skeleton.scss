@@ -1,68 +1,94 @@
 .ashe-skeleton {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  vertical-align: middle;
-  width: 100%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 100%;
 
-  &__content {
-    display: flex;
+    &__content {
+        display: flex;
 
-    &__avatar {
-      background: $skeleton-background;
-      margin: 15px 15px 0 0;
-      flex-shrink: 0;
+        &__avatar {
+            background: $skeleton-background;
+            margin: 15px 15px 0 0;
+            flex-shrink: 0;
+        }
+
+        &-line {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .ashe-skeleton__title {
+                width: 30%;
+                height: 15px;
+                background: $skeleton-background;
+            }
+
+            .ashe-skeleton__block:last-child {
+                width: 70%;
+            }
+        }
     }
 
-    &-line {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
+    &-grid {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-icon {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            overflow: hidden;
+            background-color: $skeleton-background;
+        }
+        &-text {
+            position: relative;
+            width: 64px;
+            height: 16px;
+            overflow: hidden;
+            margin-top: 8px;
+            background-color: $skeleton-background;
+        }
+    }
 
-      .ashe-skeleton__title {
-        width: 30%;
+    &__block {
+        width: 100%;
         height: 15px;
+        margin-top: 10px;
         background: $skeleton-background;
-      }
-
-      .ashe-skeleton__block:last-child {
-        width: 70%;
-      }
-    }
-  }
-
-  &__block {
-    width: 100%;
-    height: 15px;
-    margin-top: 10px;
-    background: $skeleton-background;
-    border-radius: $skeleton-line-border-radius;
-  }
-
-  &__animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: linear-gradient(
-      90deg,
-      hsla(0, 0%, 100%, 0),
-      hsla(0, 0%, 100%, 0.5) 50%,
-      hsla(0, 0%, 100%, 0) 80%
-    );
-    background-repeat: no-repeat;
-    animation: ashe-skeleton 2s ease-in-out 0s infinite;
-  }
-
-  @keyframes ashe-skeleton {
-    0% {
-      background-position-x: -500px;
+        border-radius: $skeleton-line-border-radius;
     }
 
-    to {
-      background-position-x: calc(500px + 100%);
+    &__animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(
+            90deg,
+            hsla(0, 0%, 100%, 0),
+            hsla(0, 0%, 100%, 0.5) 50%,
+            hsla(0, 0%, 100%, 0) 80%
+        );
+        background-repeat: no-repeat;
+        animation: ashe-skeleton 2s ease-in-out 0s infinite;
     }
-  }
+
+    @keyframes ashe-skeleton {
+        0% {
+            background-position-x: -500px;
+        }
+
+        to {
+            background-position-x: calc(500px + 100%);
+        }
+    }
 }

@@ -6,7 +6,6 @@ import './demo-preview.scss'
 const DemoPreview = () => {
     const { pathname } = useLocation()
     const iframeRef = useRef<any>(null)
-
     let url = `/demo.html#${pathname.replace('/components', '')}`
     if (pathname === '/components/readme') {
         url = '/demo.html#/'

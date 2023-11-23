@@ -7,7 +7,9 @@ const StickyDemo = () => {
     return (
         <>
             <div className="content ">
-                <Tag>adf</Tag>
+                <Tag color={'red'} background={'green'} className={'tag'}>
+                    adf
+                </Tag>
             </div>
         </>
     )

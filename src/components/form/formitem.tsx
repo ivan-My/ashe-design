@@ -111,7 +111,6 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
                 }
             })
         }
-
         return React.cloneElement(child, childProps)
     }
 
@@ -151,7 +150,9 @@ export const FormItem: FunctionComponent<Partial<FormItemProps>> = (props) => {
             </div>
         )
     }
-    return renderLayout(renderChildren())
+
+    const childrenNode = renderChildren()
+    return renderLayout(childrenNode)
 }
 
 export default FormItem

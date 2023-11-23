@@ -13,8 +13,7 @@ pnpm add ashe-design
 
 ## 使用
 
-
-```tsx
+```tsx 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import 'ashe-design/dist/style.css'

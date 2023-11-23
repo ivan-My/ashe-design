@@ -1,132 +1,143 @@
 .doc-wrapper {
-  .demo-code-content {
-    position: relative;
-    overflow: hidden;
-    max-height: 240px;
-    border: 1px solid #e5e6e8;
-    margin-top: 24px;
-    border-radius: 2px;
-    background: #f7f8fa;
-    padding: 10px;
-
-    pre {
-      margin: 0;
-    }
-  }
-
-  .demo-code {
-    color: #4e5969;
-    width: 100%;
-    display: block;
-    word-break: normal;
-    padding: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    font-size: 14px;
-    line-height: 22px;
-    box-sizing: border-box;
-    white-space: pre-wrap;
-  }
-
-  .demo-doc-name {
-    font-size: 36px;
-    font-weight: 500;
-    color: #1a2234;
-  }
-
-  .demo-doc-desc {
-    color: #424e66;
-    line-height: 20px;
-    font-size: 14px;
-    margin: 20px 0 20px;
-  }
-
-  .demo-code-title {
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: 500;
-  }
-
-  table {
-    text-align: left;
-    width: 100%;
-    border-radius: 0 0 2px 2px;
-    border: 1px solid #e5e6e8;
-    color: #1a2234;
-    font-size: 13px;
-    margin-top: 24px;
-
-    thead {
-      background-color: #f2f3f5;
+    .demo-code-content {
+        position: relative;
+        overflow: hidden;
+        max-height: 240px;
+        border: 1px solid #e5e6e8;
+        margin-top: 24px;
+        border-radius: 2px;
+        background: #f7f8fa;
+        padding: 10px;
+        pre {
+            margin: 0;
+        }
     }
 
-    thead th {
-      font-weight: 500;
-      white-space: nowrap;
-      border-bottom: 1px solid #e5e6e8;
+    .demo-code {
+        color: #4e5969;
+        width: 100%;
+        display: block;
+        word-break: normal;
+        padding: 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        font-size: 13px;
+        line-height: 22px;
+        box-sizing: border-box;
+        white-space: pre-wrap;
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-weight: normal;
+            font-family: Menlo, Consolas, 'Andale Mono', 'Courier New',
+                monospace;
+        }
     }
 
-    tbody tr {
-      border-bottom: 1px solid #e5e6e8;
+    .demo-doc-name {
+        font-size: 36px;
+        font-weight: 500;
+        color: #1a2234;
+    }
+    .demo-doc-name + .demo-doc-desc {
+        margin-bottom: 60px;
     }
 
-    td,
-    th {
-      padding: 11px 10px;
-      max-width: 300px;
+    .demo-doc-desc {
+        color: #424e66;
+        line-height: 20px;
+        font-size: 14px;
+        margin: 20px 0 20px;
     }
 
-    .special {
-      color: #165dff;
+    .demo-code-title {
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: 500;
     }
-  }
+
+    table {
+        text-align: left;
+        width: 100%;
+        border-radius: 0 0 2px 2px;
+        border: 1px solid #e5e6e8;
+        color: #1a2234;
+        font-size: 13px;
+        margin-top: 24px;
+
+        thead {
+            background-color: #f2f3f5;
+        }
+
+        thead th {
+            font-weight: 500;
+            white-space: nowrap;
+            border-bottom: 1px solid #e5e6e8;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e5e6e8;
+        }
+
+        td,
+        th {
+            padding: 11px 10px;
+            max-width: 300px;
+        }
+
+        .special {
+            color: #165dff;
+        }
+    }
 }
 
 .demo-code-bar {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  z-index: 1;
-  //display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+    //display: none;
 
-  button {
-    background: #fff;
-    border: 1px solid #e5e6e8;
-    width: 24px;
-    height: 24px;
-    margin: 0 5px;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-  }
+    button {
+        background: #fff;
+        border: 1px solid #e5e6e8;
+        width: 24px;
+        height: 24px;
+        margin: 0 5px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 
-  svg {
-    width: 0.8em;
-    height: 0.8em;
-    vertical-align: -1px;
-    stroke: none;
-    fill: currentColor;
-    display: inline-block;
-    color: inherit;
-    font-style: normal;
-  }
+    svg {
+        width: 0.8em;
+        height: 0.8em;
+        vertical-align: -1px;
+        stroke: none;
+        fill: currentColor;
+        display: inline-block;
+        color: inherit;
+        font-style: normal;
+    }
 }
 
 .demo-code-content:hover {
-  .demo-code-bar {
-    display: block;
-  }
+    .demo-code-bar {
+        display: block;
+    }
 }
 
 .rorate {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .show-all {
-  max-height: none !important;
-  overflow: auto !important;
+    max-height: none !important;
+    overflow: auto !important;
 }
 
 .status {
-  color: green;
+    color: green;
 }

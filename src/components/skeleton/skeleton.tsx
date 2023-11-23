@@ -24,6 +24,7 @@ const defaultProps = {
     rowWidth: '100%',
     rowHeight: '',
     avatarShape: 'round',
+    grid: false,
 } as SkeletonProps
 export const Skeleton: FunctionComponent<Partial<SkeletonProps>> = (props) => {
     const {
@@ -37,6 +38,7 @@ export const Skeleton: FunctionComponent<Partial<SkeletonProps>> = (props) => {
         avatarSize,
         avatarShape,
         children,
+        grid,
     } = {
         ...defaultProps,
         ...props,
@@ -58,7 +60,6 @@ export const Skeleton: FunctionComponent<Partial<SkeletonProps>> = (props) => {
         if (Array.isArray(rowWidth)) {
             return rowWidth[index]
         }
-
         return rowWidth
     }
     const getRowHeight = (index: number) => {
@@ -83,6 +84,16 @@ export const Skeleton: FunctionComponent<Partial<SkeletonProps>> = (props) => {
         }
         return style
     }
+    const renderGrid = () => (
+        <div className={`${classPrefix}-grid`}>
+            {repeatLines(rows).map((_, idx) => (
+                <div key={idx} className={`${classPrefix}-grid-item`}>
+                    <div className={`${classPrefix}-grid-icon`} />
+                    <div className={`${classPrefix}-grid-text`} />
+                </div>
+            ))}
+        </div>
+    )
     return withNativeProps(
         props,
         <>
@@ -93,6 +104,7 @@ export const Skeleton: FunctionComponent<Partial<SkeletonProps>> = (props) => {
                     {animated && (
                         <div className={`${classPrefix}__animation`} />
                     )}
+
                     <div className={`${classPrefix}__content`}>
                         {avatar && (
                             <div
@@ -100,22 +112,25 @@ export const Skeleton: FunctionComponent<Partial<SkeletonProps>> = (props) => {
                                 style={getAvatarStyle()}
                             />
                         )}
-                        <div className={`${classPrefix}__content-line`}>
-                            {title && (
-                                <div className={`${classPrefix}__title`} />
-                            )}
-                            {repeatLines(rows).map((item, index) => {
-                                const width = addUnit(getRowWidth(index))
-                                const height = addUnit(getRowHeight(index))
-                                return (
-                                    <div
-                                        className={`${classPrefix}__block`}
-                                        key={index}
-                                        style={{ width, height }}
-                                    />
-                                )
-                            })}
-                        </div>
+                        {!grid && (
+                            <div className={`${classPrefix}__content-line`}>
+                                {title && (
+                                    <div className={`${classPrefix}__title`} />
+                                )}
+                                {repeatLines(rows).map((item, index) => {
+                                    const width = addUnit(getRowWidth(index))
+                                    const height = addUnit(getRowHeight(index))
+                                    return (
+                                        <div
+                                            className={`${classPrefix}__block`}
+                                            key={index}
+                                            style={{ width, height }}
+                                        />
+                                    )
+                                })}
+                            </div>
+                        )}
+                        {grid && renderGrid()}
                     </div>
                 </div>
             )}

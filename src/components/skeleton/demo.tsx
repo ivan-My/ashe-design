@@ -24,7 +24,8 @@ const SkeletonDemo = () => {
             <div className="content">
                 <div className="title">基础用法</div>
                 <div onClick={() => setChecked(!checked)}>切换</div>
-                <Skeleton title animated avatar />
+                <Skeleton title avatar />
+                <Skeleton grid rows={4} />
             </div>
         </ConfigProvider>
     )

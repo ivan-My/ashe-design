@@ -10,7 +10,7 @@ const StickyDemo = () => {
         <>
             <div className="content sticky-content">
                 <div className="title">基础用法</div>
-                <Sticky threshold={50}>
+                <Sticky threshold={60}>
                     <Button>点击</Button>
                 </Sticky>
 

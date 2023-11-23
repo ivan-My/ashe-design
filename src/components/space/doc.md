@@ -7,17 +7,17 @@
 
 
 ```tsx
-
-import React from 'react';
 import { Space, Button } from 'ashe-design';
 
  const App = () => {
   return (
-    <Space>
-      <Button>按钮1</Button>
-      <Button>按钮2</Button>
-      <Button>按钮3</Button>
-    </Space>
+      <>
+        <Space>
+          <Button>按钮1</Button>
+          <Button>按钮2</Button>
+          <Button>按钮3</Button>
+        </Space>
+      </>
   );
 };
 export default App;
@@ -30,7 +30,6 @@ export default App;
 
 
 ```tsx
-import React from 'react';
 import { Space, Button } from 'ashe-design';
 
 const App = () => {
@@ -54,7 +53,6 @@ export default App;
 
 
 ```tsx
-import React from 'react';
 import { Space, Button } from 'ashe-design';
 
 const App = () => {
@@ -75,7 +73,6 @@ export default App;
 
 
 ```tsx
-import React from 'react';
 import { Space, Button,ConfigProvider } from 'ashe-design';
 
 const App = () => {

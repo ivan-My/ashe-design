@@ -5,7 +5,6 @@
 ## 基础用法
 
 ```tsx
-import React from 'react'
 import { Toast } from 'ashe-design'
 
 export default () => {
@@ -26,7 +25,6 @@ export default () => {
 ## 自定义图标
 
 ```tsx
-import React from 'react'
 import { Toast, Loading } from 'ashe-design'
 
 export default () => {
@@ -48,7 +46,6 @@ export default () => {
 ## 自定义位置
 
 ```tsx
-import React from 'react'
 import { Toast } from 'ashe-design'
 
 export default () => {
@@ -70,7 +67,6 @@ export default () => {
 ## 自定义高度
 
 ```tsx
-import React from 'react'
 import { Toast } from 'ashe-design'
 
 export default () => {
@@ -94,7 +90,6 @@ export default () => {
 ## 背景不滚动
 
 ```tsx
-import React from 'react'
 import { Toast } from 'ashe-design'
 
 export default () => {

@@ -28,7 +28,8 @@ const Menu = () => {
                                         to={`/components/${cp.name}`}
                                     >
                                         <li>
-                                            {cp.name}&nbsp;&nbsp;{cp.cName}
+                                            <span>{cp.name}</span>
+                                            {cp.cName}
                                         </li>
                                     </NavLink>
                                 )
