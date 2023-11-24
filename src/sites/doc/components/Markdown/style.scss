@@ -81,6 +81,13 @@
             border-bottom: 1px solid #e5e6e8;
         }
 
+        tbody > tr > td:nth-child(3) {
+            color: rgb(80, 80, 254);
+        }
+        tbody > tr > td:nth-child(4) {
+            color: rgb(80, 80, 254);
+        }
+
         td,
         th {
             padding: 11px 10px;

@@ -1,21 +1,22 @@
 .demo-code-bar {
-  button {
-    position: relative;
-    .online-tips {
-      display: none;
-      border-radius: 5px;
-      position: absolute;
-      top: -35px;
-      left: -30%;
-      padding: 5px 8px;
-      background-color: #333;
-      color: #fff;
-      font-size: 12px;
+    display: none;
+    button {
+        position: relative;
+        .online-tips {
+            display: none;
+            border-radius: 5px;
+            position: absolute;
+            top: -35px;
+            left: -30%;
+            padding: 5px 8px;
+            background-color: #333;
+            color: #fff;
+            font-size: 12px;
+        }
     }
-  }
-  button:hover {
-    .online-tips {
-      display: block;
+    button:hover {
+        .online-tips {
+            display: block;
+        }
     }
-  }
 }

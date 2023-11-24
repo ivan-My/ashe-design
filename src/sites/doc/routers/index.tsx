@@ -2,12 +2,14 @@ import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
 import LayoutIndex from '../components/Layout/index'
-import lazyLoad from './lazyLoad'
+import Index from '../pages/index'
+import Components from '../pages/components'
+import Resource from '@/sites/doc/pages/resource'
 
 export const rootRouter: RouteObject[] = [
     {
         path: '/',
-        element: lazyLoad(React.lazy(() => import('../pages/index'))),
+        element: <Index />,
     },
     {
         path: '/components',
@@ -15,9 +17,7 @@ export const rootRouter: RouteObject[] = [
         children: [
             {
                 path: '*',
-                element: lazyLoad(
-                    React.lazy(() => import('../pages/components'))
-                ),
+                element: <Components />,
             },
         ],
     },
@@ -27,9 +27,7 @@ export const rootRouter: RouteObject[] = [
         children: [
             {
                 path: '*',
-                element: lazyLoad(
-                    React.lazy(() => import('../pages/resource'))
-                ),
+                element: <Resource />,
             },
         ],
     },
