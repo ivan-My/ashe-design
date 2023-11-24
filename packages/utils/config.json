@@ -1,0 +1,36 @@
+{
+    "nav": [
+        {
+            "name": "function",
+            "cName": "函数",
+            "packages": [
+                {
+                    "name": "is",
+                    "cName": "函数",
+                    "show": "true"
+                },
+                {
+                    "name": "browser",
+                    "cName": "浏览器",
+                    "show": "true"
+                }
+            ]
+        },
+        {
+            "name": "hooks",
+            "cName": "",
+            "packages": [
+                {
+                    "name": "useQuery",
+                    "cName": "查询",
+                    "show": "true"
+                },
+                {
+                    "name": "useFetch",
+                    "cName": "请求",
+                    "show": "true"
+                }
+            ]
+        }
+    ]
+}

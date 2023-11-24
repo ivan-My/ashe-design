@@ -27,7 +27,7 @@
     "lib": ["esnext", "dom"],
     // "outDir": "./tsc/test",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx",],

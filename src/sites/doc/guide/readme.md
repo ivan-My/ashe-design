@@ -45,7 +45,7 @@ babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 
 npm install babel-plugin-import --save-dev
 
 ``` 
-在 .babelrc 或 babel.config.js 中添加配置：
+在 .babelrc 或 babel.config.json 中添加配置：
 ```tsx
 {
   plugins: [

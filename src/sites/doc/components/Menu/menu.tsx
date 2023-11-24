@@ -1,31 +1,37 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { nav } from '@/config.json'
 import './menu.scss'
 
-const Menu = () => {
+type MenuType = {
+    data: any
+    path: string
+}
+
+export const Menu = ({ data, path }: MenuType) => {
     return (
         <div className={'doc-menu'}>
-            <ol className={'doc-Menu-item'}>
-                <li>开发指南</li>
-                <ul>
-                    <NavLink key={Math.random()} to={'/components/readme'}>
-                        <li>快速上手</li>
-                    </NavLink>
-                </ul>
-            </ol>
-            {nav.map((cn: any, index: number) => {
+            {path === 'components' && (
+                <ol className={'doc-Menu-item'}>
+                    <li>开发指南</li>
+                    <ul>
+                        <NavLink key={Math.random()} to={'/components/readme'}>
+                            <li>快速上手</li>
+                        </NavLink>
+                    </ul>
+                </ol>
+            )}
+            {data.map((cn: any, index: number) => {
                 if (cn.packages.length === 0) return null
                 return (
                     <ol key={index} className={'doc-Menu-item'}>
                         <li>{cn.name}</li>
                         <ul>
                             {cn.packages.map((cp: any) => {
-                                if (!cp.show) return null
+                                if (!cp?.show) return null
                                 return (
                                     <NavLink
                                         key={Math.random()}
-                                        to={`/components/${cp.name}`}
+                                        to={`/${path}/${cp.name}`}
                                     >
                                         <li>
                                             <span>{cp.name}</span>

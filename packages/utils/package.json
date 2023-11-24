@@ -1,0 +1,13 @@
+{
+    "name": "@ashe-design/utils",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "module": "esm/index.js",
+    "scripts": {
+        "build": "rimraf esm  && vite build --config vite.build.es.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

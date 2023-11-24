@@ -34,8 +34,6 @@ export const rootRouter: RouteObject[] = [
         ],
     },
 ]
-const Router = () => {
-    return useRoutes(rootRouter)
-}
+const Router = () => useRoutes(rootRouter)
 
 export default Router

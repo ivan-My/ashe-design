@@ -1,38 +1,11 @@
 import React, { useState } from 'react'
 import replace from 'react-string-replace'
-import { Link, NavLink, useMatch, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Cell, Input } from '@/components/ashe.react'
 import { nav } from '@/config.json'
-import './header.scss'
 import { black, white, github } from './svg'
-
-const navList = [
-    {
-        name: '首页',
-        path: '/',
-        key: 'home',
-    },
-    {
-        name: '组件',
-        path: '/components/readme',
-        key: 'components',
-    },
-    {
-        name: '工具函数',
-        path: '/resource/',
-        key: 'resource',
-    },
-    {
-        name: 'github',
-        path: '',
-        key: 'github',
-    },
-    {
-        name: '主题',
-        path: '',
-        key: 'theme',
-    },
-]
+import { navList } from './config'
+import './header.scss'
 
 const data = nav.flatMap((item) => item.packages.filter((item) => item.name))
 
@@ -46,8 +19,14 @@ function matchElementsWithA(input: string) {
 }
 
 const Header = () => {
-    const match = useMatch('/components/*')
     const navigate = useNavigate()
+    const { pathname } = useLocation()
+    const key = pathname.includes('resource')
+        ? 'resource'
+        : pathname.includes('components')
+        ? 'components'
+        : null
+
     const [val, setValue] = useState('')
     const [searchValue, setSearchValue] = useState([])
     const [theme, setTheme] = useState(false)
@@ -80,8 +59,57 @@ const Header = () => {
         )
     }
 
+    const onSwitch = () => {
+        setTheme(!theme)
+        if (theme) {
+            document.body.removeAttribute('ashe-theme')
+        } else {
+            document.body.setAttribute('ashe-theme', 'dark')
+        }
+    }
+
+    const renderNav = () => {
+        return (
+            <ul>
+                {navList.map((item) => {
+                    if (item.key == 'theme') {
+                        return (
+                            <li onClick={() => onSwitch()} key={item.key}>
+                                {theme ? black() : white()}
+                            </li>
+                        )
+                    }
+                    if (item.key == 'github') {
+                        return (
+                            <li key={item.key}>
+                                <a
+                                    href="https://github.com/ivan-My/ashe-design"
+                                    target="_blank"
+                                >
+                                    {github()}
+                                </a>
+                            </li>
+                        )
+                    }
+
+                    return (
+                        <li key={item.key}>
+                            <NavLink
+                                to={item.path}
+                                end
+                                className={key == item.key ? 'active' : ''}
+                            >
+                                {item.name}
+                            </NavLink>
+                        </li>
+                    )
+                })}
+            </ul>
+        )
+    }
+
     const renderSearchValue = () => {
-        if (searchValue.length == 0) {
+        if (!searchValue || searchValue.length === 0) {
             return null
         }
         return (
@@ -97,59 +125,6 @@ const Header = () => {
                     )
                 })}
             </div>
-        )
-    }
-
-    const onSwitch = () => {
-        setTheme(!theme)
-        if (theme) {
-            document.body.removeAttribute('ashe-theme')
-        } else {
-            document.body.setAttribute('ashe-theme', 'dark')
-        }
-    }
-    const renderNav = () => {
-        return (
-            <ul>
-                {navList.map((item, key) => {
-                    let status = false
-                    if (item.name === '组件' && match) {
-                        status = true
-                    }
-                    if (item.key == 'theme') {
-                        return (
-                            <li onClick={() => onSwitch()} key={item.key}>
-                                {theme ? black() : white()}
-                            </li>
-                        )
-                    }
-                    if (item.key == 'github') {
-                        return (
-                            <li key={item.key}>
-                                <a
-                                    href="https://github.com/ivan-My/ashe-design"
-                                    target="_blank"
-                                >
-                                    {/*github*/}
-                                    {github()}
-                                </a>
-                            </li>
-                        )
-                    }
-
-                    return (
-                        <li key={item.key}>
-                            <NavLink
-                                to={item.path}
-                                end
-                                className={status ? 'active' : ''}
-                            >
-                                {item.name}
-                            </NavLink>
-                        </li>
-                    )
-                })}
-            </ul>
         )
     }
 
