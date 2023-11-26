@@ -4,24 +4,39 @@ import { getProject } from '@/sites/doc/components/Markdown/template'
 import Toast from '@/components/toast/toast'
 import './index.scss'
 
-export const Codeblock = (props: any) => {
+export const Codeblock = (props: {
+    children: React.ReactElement
+    text: string
+}) => {
     const [status, setStatus] = useState(false)
     const codeRef = useRef<any>(null)
     const copyCode = () => {
-        navigator.clipboard
-            .writeText(props.text)
-            .then(() => {
-                Toast.show({
-                    content: '复制成功',
-                    contentStyle: {
-                        top: '10%',
-                        minWidth: '8%',
-                    },
+        if (navigator.clipboard) {
+            navigator.clipboard
+                .writeText(props.text)
+                .then(() => {})
+                .catch((e) => {
+                    console.log(e)
                 })
+        } else {
+            const textArea = document.createElement('textarea')
+            textArea.value = props.text
+            document.body.appendChild(textArea)
+            textArea.focus()
+            textArea.select()
+            return new Promise<void>((res, rej) => {
+                document.execCommand('copy') ? res() : rej()
+                textArea.remove()
             })
-            .catch((e) => {
-                console.log(e)
-            })
+        }
+
+        Toast.show({
+            content: '复制成功',
+            contentStyle: {
+                top: '10%',
+                minWidth: '8%',
+            },
+        })
     }
     const showCode = (e: any) => {
         setStatus(!status)

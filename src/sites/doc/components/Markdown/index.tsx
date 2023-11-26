@@ -64,7 +64,7 @@ const components: Components = {
     },
 }
 
-const Markdown = ({ element }: any) => {
+const Markdown = ({ element }: { element: string }) => {
     return (
         <div className="doc-wrapper">
             <ReactMarkdown
