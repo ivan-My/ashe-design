@@ -1,5 +1,5 @@
 import React, { forwardRef, ForwardRefRenderFunction, useState } from 'react'
-import { Mask } from '@/components/ashe.react'
+import Mask from '@/components/mask'
 import { render } from '@/utils/render'
 import { DialogComponent, DialogProps } from './interface'
 

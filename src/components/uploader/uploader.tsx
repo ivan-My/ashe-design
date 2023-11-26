@@ -18,7 +18,7 @@ export const Uploader: FunctionComponent<
     const filterFiles = (files: File[]) => {
         const oversizes = new Array<File>()
         const filterFile = files.filter((file) => {
-            if (file.size > maxFileSize) {
+            if (file.size > (maxFileSize as number)) {
                 oversizes.push(file)
                 return false
             }
