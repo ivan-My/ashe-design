@@ -45,9 +45,9 @@ jobs:
 #
               with:
                   # 服务器域名
-                  host: ${{ secrets.SERVER_HOST }}
+                  host: ${{ secrets.SERVER_SSH_HOST }}
                   # 服务器用户名
-                  username: ${{ secrets.SERVER_USERNAME }}
+                  username: ${{ secrets.SERVER_SSH_USER }}
                   # 服务器密码
                   password: ${{ secrets.SERVER_PASSWORD }}
                   # 服务器端口
