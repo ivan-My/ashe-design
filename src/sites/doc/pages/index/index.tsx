@@ -10,7 +10,7 @@ const Index = () => {
                 lineHeight: '300px',
             }}
         >
-            <Link to={'/components/readme'}>开始使用</Link>
+            <Link to={'/components/readme'}>开始使用ashe-design</Link>
         </div>
     )
 }
