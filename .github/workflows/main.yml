@@ -51,7 +51,7 @@ jobs:
                   # 服务器密码
                   password: ${{ secrets.SERVER_PASSWORD }}
                   # 服务器端口
-                  port: '21'
+                  port: '22'
                   # 指定上传的文件目录(项目配置的打包目录名称)
                   source: './html/*'
                   # 指定上传服务器目录
