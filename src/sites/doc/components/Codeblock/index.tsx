@@ -11,32 +11,20 @@ export const Codeblock = (props: {
     const [status, setStatus] = useState(false)
     const codeRef = useRef<any>(null)
     const copyCode = () => {
-        if (navigator.clipboard) {
-            navigator.clipboard
-                .writeText(props.text)
-                .then(() => {})
-                .catch((e) => {
-                    console.log(e)
+        navigator.clipboard
+            .writeText(props.text)
+            .then(() => {
+                Toast.show({
+                    content: '复制成功',
+                    contentStyle: {
+                        top: '10%',
+                        minWidth: '8%',
+                    },
                 })
-        } else {
-            const textArea = document.createElement('textarea')
-            textArea.value = props.text
-            document.body.appendChild(textArea)
-            textArea.focus()
-            textArea.select()
-            return new Promise<void>((res, rej) => {
-                document.execCommand('copy') ? res() : rej()
-                textArea.remove()
             })
-        }
-
-        Toast.show({
-            content: '复制成功',
-            contentStyle: {
-                top: '10%',
-                minWidth: '8%',
-            },
-        })
+            .catch((e) => {
+                console.log(e)
+            })
     }
     const showCode = (e: any) => {
         setStatus(!status)
