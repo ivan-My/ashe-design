@@ -1,29 +1,45 @@
-name: Publish Package to npmjs
+name: CI
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches:
+            - dev
+
+    pull_request:
+        branches:
+            - dev
+
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        # 设置 pnpm。指定版本7.0，不然会报错
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: ^7.0
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
 
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
+            - name: Install pnpm
+              run: corepack enable
 
-      - run: pnpm install --legacy-peer-deps
-      - run: pnpm run build
-      - run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '18'
+                  cache: 'pnpm'
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build ashe-design
+              run: npm run build
+
+            - name: Build ashe-design Demo
+              run: npm run build:site
+
+            - name: Upload files to server
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.SERVER_SSH_HOST }} # 服务器域名
+                  username: ${{ secrets.SERVER_SSH_USER }} # 腾讯云默认用户名为root
+                  key: ${{ secrets.SERVER_SSH_KEY }} # 本地.ssh文件下的私钥id_rsa，存在secrets中
+                  source: './html' # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
+                  target: ${{ secrets.SERVER_SSH_TARGET }} # 目标目录
+
