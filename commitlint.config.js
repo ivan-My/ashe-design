@@ -1,26 +1,27 @@
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
-  rules: {
-    'type-empty': [2, 'never'], // 类型不能为空
-    'type-case': [2, 'always', 'lower-case'],
-    'subject-empty': [2, 'never'], // 主题不能为空
-    'type-enum': [
-      2,
-      'always',
-      [
-        'feat',
-        'fix',
-        'docs',
-        'merge',
-        'style',
-        'refactor',
-        'test',
-        'chore',
-        'release',
-        'build',
-      ],
-    ],
-  },
+    extends: ['@commitlint/config-conventional'],
+    rules: {
+        'type-empty': [2, 'never'], // 类型不能为空
+        'type-case': [2, 'always', 'lower-case'],
+        'subject-empty': [2, 'never'], // 主题不能为空
+        'type-enum': [
+            2,
+            'always',
+            [
+                'feat',
+                'fix',
+                'docs',
+                'merge',
+                'style',
+                'refactor',
+                'test',
+                'chore',
+                'release',
+                'build',
+                'ci',
+            ],
+        ],
+    },
 }
 
 // git commit -m "yolo!" --no-verify // 绕过钩子
