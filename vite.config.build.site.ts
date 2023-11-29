@@ -7,7 +7,7 @@ const atImport = require('postcss-import')
 const { resolve } = path
 
 export default defineConfig({
-    base: '/',
+    base: '/react/',
     resolve: {
         alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
     },

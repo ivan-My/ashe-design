@@ -7,10 +7,10 @@ const Index = () => {
                 margin: '0 auto',
                 textAlign: 'center',
                 fontSize: '48px',
-                lineHeight: '300px',
+                lineHeight: '400px',
             }}
         >
-            <Link to={'/components/readme'}>开始使用ashe-design22</Link>
+            <Link to={'/components/readme'}>欢迎使用ashe-design</Link>
         </div>
     )
 }

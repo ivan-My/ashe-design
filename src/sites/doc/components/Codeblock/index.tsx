@@ -50,7 +50,6 @@ export const Codeblock = (props: {
                         width="1em"
                         height="1em"
                         fill="currentColor"
-                        className="arco-icon arco-icon-copy"
                     >
                         <path fill="none" d="M0 0h48v48H0z"></path>
                         <path d="M32 12c1.1 0 2 .9 2 2v28.2c0 1-.8 1.8-1.9 1.8H7.9c-1 0-1.9-.8-1.9-1.8V13.8c0-1 .8-1.8 1.9-1.8H32zm-2 4H10v24h20V16zM40 4c1.1 0 2 .9 2 2v25c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1V8H19c-.6 0-1-.4-1-1V5c0-.6.4-1 1-1h21z"></path>
@@ -80,7 +79,6 @@ export const Codeblock = (props: {
                         stroke="currentColor"
                         strokeWidth="4"
                         viewBox="0 0 48 48"
-                        className="arco-icon arco-icon-codepen"
                     >
                         <path
                             fill="currentColor"

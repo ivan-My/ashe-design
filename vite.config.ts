@@ -4,6 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
     mode: 'development',
+    base: '/react/',
     server: {
         port: 5174,
     },
