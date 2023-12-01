@@ -34,4 +34,19 @@ export const rootRouter: RouteObject[] = [
 ]
 const Router = () => useRoutes(rootRouter)
 
+const modulesPage = import.meta.glob('/src/components/**/doc.md', {
+    as: 'raw',
+    eager: true,
+})
+
+export const componentRouters: any[] = []
+for (const path in modulesPage) {
+    let name = (/components\/(.*)\/doc\.md/.exec(path) as any[])[1]
+    componentRouters.push({
+        path: '/' + name,
+        component: modulesPage[path],
+        name,
+    })
+}
+
 export default Router

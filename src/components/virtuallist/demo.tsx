@@ -6,7 +6,7 @@ const VirtualListDemo = () => {
         <>
             <div className="content">
                 <div className="title">基础用法</div>
-                <VirtualList></VirtualList>
+                <VirtualList itemHeight={66} list={new Array(10)}></VirtualList>
             </div>
         </>
     )

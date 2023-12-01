@@ -39,7 +39,7 @@ export default defineConfig({
         // sourcemap: true,
         target: 'es2015',
         outDir: './html/',
-        minify: false,
+        minify: true,
         cssCodeSplit: true,
         rollupOptions: {
             input: {

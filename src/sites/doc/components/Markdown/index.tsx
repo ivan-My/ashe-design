@@ -12,7 +12,6 @@ const Prisms = window.Prism
 
 const components: Components = {
     h1: (node: any) => {
-        // console.log(node.children)
         return <h1 className="demo-doc-name">{node.children[0]}</h1>
     },
     h2: (node: any) => {
