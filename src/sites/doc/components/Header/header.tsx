@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import replace from 'react-string-replace'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { Cell, Input } from '@/components/ashe.react'
+import { Cell } from '@/components/cell/cell'
+import { Input } from '@/components/input/input'
 import { nav } from '@/config.json'
 import { black, white, github } from './svg'
 import { navList } from './config'
@@ -67,7 +68,6 @@ const Header = () => {
             document.body.setAttribute('ashe-theme', 'dark')
         }
     }
-
     const renderNav = () => {
         return (
             <ul>
@@ -127,7 +127,6 @@ const Header = () => {
             </div>
         )
     }
-
     return (
         <div className={'doc-header'}>
             <div className="header-logo">

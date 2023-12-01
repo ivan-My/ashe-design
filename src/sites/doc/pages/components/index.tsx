@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Menu from '@/sites/doc/components/Menu/menu'
 import Markdown from '@/sites/doc/components/Markdown'
@@ -11,35 +11,19 @@ import './style.scss'
 // @ts-ignore
 const ComponentRouters = () => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-                <Route
-                    path={'/readme'}
-                    element={<Markdown element={Readme} />}
-                />
-                {componentRouters.map((ru, index) => {
-                    const LazyComponent = lazy(
-                        () => import('../../components/LoadCon')
-                    )
-
-                    const WrappedLazyComponent = () => (
+        <Routes>
+            <Route path={'/readme'} element={<Markdown loadData={Readme} />} />
+            {componentRouters.map((ru, index) => {
+                return (
+                    <Route
+                        key={index}
+                        path={ru.path}
                         // @ts-ignore
-                        <LazyComponent element={ru.component} />
-                    )
-                    // console.log(LazyComponent)
-                    return (
-                        <Route
-                            key={index}
-                            path={ru.path}
-                            // @ts-ignore
-                            // element={<Markdown element={ru.component} />}
-                            // element={<LazyComponent element={ru.component} />}
-                            element={<WrappedLazyComponent />}
-                        />
-                    )
-                })}
-            </Routes>
-        </Suspense>
+                        element={<Markdown loadData={ru.component} />}
+                    />
+                )
+            })}
+        </Routes>
     )
 }
 

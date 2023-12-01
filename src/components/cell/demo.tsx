@@ -1,6 +1,6 @@
 import React from 'react'
 import { Cell } from './cell'
-import { Loading } from '@/components/ashe.react'
+import Loading from '../loading'
 
 const CellDemo = () => {
     return (

@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Form, Input } from '@/components/ashe.react.build'
+import { Form } from './form'
+import { Input } from '../input/input'
 
 const FormDemo = () => {
     return (

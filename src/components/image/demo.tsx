@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image } from './image'
-import { Grid, Loading } from '@/components/ashe.react'
+import { Loading } from '../loading/loading'
+import Grid from '../grid'
 
 const src = 'https://img.yzcdn.cn/vant/cat.jpeg'
 const fits = ['contain', 'cover', 'fill', 'none', 'scale-down']

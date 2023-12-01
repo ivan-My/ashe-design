@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Mask } from './mask'
 
-import { Cell } from '@/components/ashe.react'
+import { Cell } from '../cell/cell'
 import './demo.scss'
 
 const WrapperStyle = {

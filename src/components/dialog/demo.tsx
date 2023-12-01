@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Dialog } from '@/components/ashe.react'
+import { Button } from '../button/button'
+import { Dialog } from '../dialog/dialog'
 
 const DialogDemo = () => {
     return (

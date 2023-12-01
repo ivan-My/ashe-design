@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import type { Components } from 'react-markdown'
 import ReactMarkdown from 'react-markdown'
 import { Codeblock } from '@/sites/doc/components/Codeblock'
@@ -63,13 +63,24 @@ const components: Components = {
     },
 }
 
-const Markdown = ({ element }: { element: string }) => {
+const Markdown = ({ loadData }: any) => {
+    const [data, setData] = useState<string>('loading....')
+    useEffect(() => {
+        if (typeof loadData === 'string') {
+            setData(loadData)
+            return
+        }
+        loadData().then((d: string) => {
+            setData(d)
+        })
+    }, [loadData])
+
     return (
         <div className="doc-wrapper">
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={components}
-                children={element}
+                children={data}
             />
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Sticky } from './sticky'
-import { Button } from '@/components/ashe.react'
+import { Button } from '../button/button'
 import './demo.scss'
 
 const StickyDemo = () => {

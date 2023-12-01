@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Cell, Loading } from '@/components/ashe.react'
+import { Cell } from '../cell/cell'
+import { Loading } from '../loading/loading'
 import { List } from './list'
 
 const App = () => {

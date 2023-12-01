@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import { CountDown } from './countdown'
-import { Cell } from '@/components/ashe.react'
 
 interface countdownRefState {
     start: () => void

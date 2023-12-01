@@ -35,8 +35,7 @@ const Resource = () => {
                                     <Route
                                         key={item.name}
                                         path={`/${item.name}`}
-                                        // @ts-ignore
-                                        element={<Markdown element={md} />}
+                                        element={<Markdown loadData={md} />}
                                     />
                                 )
                             })}

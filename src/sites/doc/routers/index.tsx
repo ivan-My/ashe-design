@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import { useRoutes } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
 import LayoutIndex from '../components/Layout/index'
@@ -36,7 +36,7 @@ const Router = () => useRoutes(rootRouter)
 
 const modulesPage = import.meta.glob('/src/components/**/doc.md', {
     as: 'raw',
-    eager: true,
+    // eager: true,
 })
 
 export const componentRouters: any[] = []

@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Loading } from './loading'
-import { Button, Cell, Mask } from '@/components/ashe.react'
+import { Button } from '../button/button'
+import { Cell } from '../cell/cell'
+import { Mask } from '../mask/mask'
 import './demo.scss'
 
 const Icon = () => (

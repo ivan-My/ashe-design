@@ -2,7 +2,7 @@ import React from 'react'
 import Toast from './index'
 import './demo.scss'
 import Loading from '../loading'
-import { Cell } from '@/components/ashe.react'
+import { Cell } from '@/components/cell/cell'
 
 const ToastDemo = () => {
     return (

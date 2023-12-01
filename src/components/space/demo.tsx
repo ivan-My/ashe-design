@@ -1,7 +1,7 @@
 import React from 'react'
 import { Space } from './space'
 import Button from '../button'
-import { ConfigProvider } from '@/components/ashe.react'
+import { ConfigProvider } from '../configprovider/configprovider'
 
 const SpaceDemo = () => {
     return (
