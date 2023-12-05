@@ -1,5 +1,7 @@
-import { defineConfig } from 'vite'
+import { defineConfig, PluginOption } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
+import { visualizer } from 'rollup-plugin-visualizer'
+import { viteExternalsPlugin } from 'vite-plugin-externals'
 
 const path = require('path')
 const atImport = require('postcss-import')
@@ -7,7 +9,7 @@ const atImport = require('postcss-import')
 const { resolve } = path
 
 export default defineConfig({
-    base: '/react/',
+    // base: '/react/',
     resolve: {
         alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
     },
@@ -34,7 +36,17 @@ export default defineConfig({
             ],
         },
     },
-    plugins: [reactRefresh()],
+    plugins: [
+        reactRefresh(),
+        viteExternalsPlugin({
+            react: 'React',
+            'react-dom': 'ReactDOM',
+        }),
+        visualizer({
+            emitFile: false,
+            open: true,
+        }) as PluginOption,
+    ],
     build: {
         // sourcemap: true,
         target: 'es2015',

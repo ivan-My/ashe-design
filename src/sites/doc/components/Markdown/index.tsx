@@ -1,10 +1,9 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react'
 import type { Components } from 'react-markdown'
 import ReactMarkdown from 'react-markdown'
 import { Codeblock } from '@/sites/doc/components/Codeblock'
 import './style.scss'
 import remarkGfm from 'remark-gfm'
-
 import '@/sites/assets/prism/prism.js'
 import '@/sites/assets/prism/prism.css'
 // @ts-ignore
@@ -65,6 +64,19 @@ const components: Components = {
 
 const Markdown = ({ loadData }: any) => {
     const [data, setData] = useState<string>('loading....')
+    // async function loadScript() {
+    //     try {
+    //         // @ts-ignore
+    //         await import('../../../assets/prism/prism.js')
+    //         await import('../../../assets/prism/prism.css')
+    //     } catch (e) {
+    //         console.error('Prism加载出错:', e)
+    //     }
+    // }
+    // useEffect(() => {
+    //     loadScript().then((r) => r)
+    // }, [])
+
     useEffect(() => {
         if (typeof loadData === 'string') {
             setData(loadData)

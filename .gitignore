@@ -31,4 +31,5 @@ pnpm-debug.log*
 node_modules
 ./package.json
 ./scripts/rele.js
+stats.html
 

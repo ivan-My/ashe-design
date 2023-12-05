@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import './menu.scss'
 
@@ -8,8 +8,14 @@ type MenuType = {
 }
 
 export const Menu = ({ data, path }: MenuType) => {
+    const menuRef = useRef(null)
+    useEffect(() => {
+        const el: any = document.querySelector('.Collapse')
+        // @ts-ignore
+        //  menuRef.current.scroll({ top: el.offsetTop })
+    })
     return (
-        <div className={'doc-menu'}>
+        <div className={'doc-menu'} ref={menuRef}>
             {path === 'components' && (
                 <ol className={'doc-Menu-item'}>
                     <li>开发指南</li>
@@ -27,14 +33,13 @@ export const Menu = ({ data, path }: MenuType) => {
                         <li>{cn.name}</li>
                         <ul>
                             {cn.packages.map((cp: any) => {
-                                console.log(cp.name)
                                 if (!cp?.show) return null
                                 return (
                                     <NavLink
                                         key={Math.random()}
                                         to={`/${path}/${cp.name.toLocaleLowerCase()}`}
                                     >
-                                        <li>
+                                        <li className={cp.name}>
                                             <span>{cp.name}</span>
                                             {cp.cName}
                                         </li>

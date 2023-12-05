@@ -19,6 +19,7 @@ for (const path in modulesPage) {
         element: lazy(modulesPage[path]),
     })
 }
+
 const SetRouter = (list: any[]) => {
     let mRouteTable: any = []
     list.forEach((route) => {

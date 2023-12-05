@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { RollupOptions } from 'rollup'
 import reactRefresh from '@vitejs/plugin-react'
 import path from 'path'
 import commonjs from '@rollup/plugin-commonjs'
@@ -50,9 +51,7 @@ export default defineConfig({
                 /^classnames/.test(id) ||
                 /^@use-gesture/.test(id) ||
                 /^@react-spring/.test(id) ||
-                /^@bem-react/.test(id) ||
-                /^@nutui\/icons-react/.test(id) ||
-                (/^@\/packages\/\w+$/.test(id) && !!parent),
+                /^@nutui\/icons-react/.test(id),
             output: {
                 paths: (id) => {
                     return /@\/components/.test(id)
@@ -78,6 +77,6 @@ export default defineConfig({
                     ],
                 }),
             ],
-        },
+        } as RollupOptions,
     },
 })

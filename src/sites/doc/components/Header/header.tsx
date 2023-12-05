@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, Profiler } from 'react'
 import replace from 'react-string-replace'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Cell } from '@/components/cell/cell'
@@ -22,6 +22,7 @@ function matchElementsWithA(input: string) {
 const Header = () => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
+
     const key = pathname.includes('resource')
         ? 'resource'
         : pathname.includes('components')
@@ -43,7 +44,6 @@ const Header = () => {
         setValue('')
         window.scroll({ top: 0 })
     }
-
     const HighlightedText = (item: any, highlight: string) => {
         const highlightedText = replace(
             item.name,

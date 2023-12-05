@@ -11,7 +11,6 @@ const DemoPreview = () => {
         url = '/react/demo.html#/'
     }
     const [state, setState] = useState(true)
-
     useEffect(() => {
         iframeRef.current.onload = function () {
             setState(false)
