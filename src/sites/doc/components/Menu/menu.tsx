@@ -8,12 +8,12 @@ type MenuType = {
 }
 
 export const Menu = ({ data, path }: MenuType) => {
-    const menuRef = useRef(null)
+    const menuRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         const el: any = document.querySelector('.Collapse')
         // @ts-ignore
         //  menuRef.current.scroll({ top: el.offsetTop })
-    })
+    }, [])
     return (
         <div className={'doc-menu'} ref={menuRef}>
             {path === 'components' && (
@@ -36,7 +36,7 @@ export const Menu = ({ data, path }: MenuType) => {
                                 if (!cp?.show) return null
                                 return (
                                     <NavLink
-                                        key={Math.random()}
+                                        key={cp.name}
                                         to={`/${path}/${cp.name.toLocaleLowerCase()}`}
                                     >
                                         <li className={cp.name}>

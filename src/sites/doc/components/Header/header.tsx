@@ -1,10 +1,10 @@
-import React, { useState, Profiler } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import replace from 'react-string-replace'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Cell } from '@/components/cell/cell'
 import { Input } from '@/components/input/input'
 import { nav } from '@/config.json'
-import { black, white, github } from './svg'
+import { black, github, white } from './svg'
 import { navList } from './config'
 import './header.scss'
 
@@ -22,12 +22,13 @@ function matchElementsWithA(input: string) {
 const Header = () => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
-
-    const key = pathname.includes('resource')
-        ? 'resource'
-        : pathname.includes('components')
-        ? 'components'
-        : null
+    const locationKey = useMemo(() => {
+        return pathname.includes('resource')
+            ? 'resource'
+            : pathname.includes('components')
+            ? 'components'
+            : null
+    }, [pathname])
 
     const [val, setValue] = useState('')
     const [searchValue, setSearchValue] = useState([])
@@ -72,6 +73,7 @@ const Header = () => {
         return (
             <ul>
                 {navList.map((item) => {
+                    const isActive = locationKey === item.key
                     if (item.key == 'theme') {
                         return (
                             <li onClick={() => onSwitch()} key={item.key}>
@@ -94,13 +96,16 @@ const Header = () => {
 
                     return (
                         <li key={item.key}>
-                            <NavLink
-                                to={item.path}
-                                end
-                                className={key == item.key ? 'active' : ''}
+                            <div
+                                onClick={() => {
+                                    if (!isActive) {
+                                        navigate(item.path)
+                                    }
+                                }}
+                                className={isActive ? 'active' : ''}
                             >
                                 {item.name}
-                            </NavLink>
+                            </div>
                         </li>
                     )
                 })}

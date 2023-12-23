@@ -9,7 +9,7 @@ const atImport = require('postcss-import')
 const { resolve } = path
 
 export default defineConfig({
-    // base: '/react/',
+    base: '/react/',
     resolve: {
         alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
     },
@@ -62,6 +62,7 @@ export default defineConfig({
                 chunkFileNames: 'static/[name]-[hash].js',
                 entryFileNames: 'static/[name]-[hash].js',
                 assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+                experimentalMinChunkSize: 1000,
             },
         },
     },

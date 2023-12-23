@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import type { Components } from 'react-markdown'
 import ReactMarkdown from 'react-markdown'
 import { Codeblock } from '@/sites/doc/components/Codeblock'

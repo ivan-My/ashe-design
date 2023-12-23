@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import { RollupOptions } from 'rollup'
 import reactRefresh from '@vitejs/plugin-react'
 import path from 'path'
 import commonjs from '@rollup/plugin-commonjs'
@@ -76,7 +75,7 @@ export default defineConfig({
                         '@babel/plugin-syntax-dynamic-import',
                     ],
                 }),
-            ],
-        } as RollupOptions,
+            ] as never,
+        },
     },
 })
