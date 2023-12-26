@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './menu.scss'
 
@@ -8,14 +8,8 @@ type MenuType = {
 }
 
 export const Menu = ({ data, path }: MenuType) => {
-    const menuRef = useRef<HTMLDivElement>(null)
-    useEffect(() => {
-        const el: any = document.querySelector('.Collapse')
-        // @ts-ignore
-        //  menuRef.current.scroll({ top: el.offsetTop })
-    }, [])
     return (
-        <div className={'doc-menu'} ref={menuRef}>
+        <div className={'doc-menu'}>
             {path === 'components' && (
                 <ol className={'doc-Menu-item'}>
                     <li>开发指南</li>

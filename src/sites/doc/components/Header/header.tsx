@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import replace from 'react-string-replace'
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Cell } from '@/components/cell/cell'
 import { Input } from '@/components/input/input'
 import { nav } from '@/config.json'
@@ -40,7 +40,7 @@ const Header = () => {
         setSearchValue(data)
     }
     const onCell = (item: any) => {
-        navigate(`/components/${item.name}`)
+        navigate(`/components/${item.name.toLocaleLowerCase()}`)
         setSearchValue([])
         setValue('')
         window.scroll({ top: 0 })
@@ -132,6 +132,7 @@ const Header = () => {
             </div>
         )
     }
+
     return (
         <div className={'doc-header'}>
             <div className="header-logo">
@@ -140,7 +141,7 @@ const Header = () => {
             <div className={'search'}>
                 <Input
                     defaultValue={val}
-                    placeholder={'搜索组件'}
+                    placeholder={'在 Ashe中搜索'}
                     onChange={(e) => onChange(e)}
                 />
                 {renderSearchValue()}

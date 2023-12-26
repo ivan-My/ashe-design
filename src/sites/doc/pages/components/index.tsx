@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Menu from '@/sites/doc/components/Menu/menu'
 import Markdown from '@/sites/doc/components/Markdown'
 import DemoPreview from '@/sites/doc/components/DemoPreview/demo-preview'
 import { componentRouters } from '../../routers/index'
-import Readme from '@/sites/doc/guide/readme.md?raw'
 import { nav } from '@/config.json'
 import './style.scss'
 
@@ -12,7 +11,18 @@ import './style.scss'
 const ComponentRouters = () => {
     return (
         <Routes>
-            <Route path={'/readme'} element={<Markdown loadData={Readme} />} />
+            <Route
+                path={'/readme'}
+                element={
+                    <Markdown
+                        loadData={() =>
+                            import('@/sites/doc/guide/readme.md?raw').then(
+                                (m) => m['default']
+                            )
+                        }
+                    />
+                }
+            />
             {componentRouters.map((ru, index) => {
                 return (
                     <Route

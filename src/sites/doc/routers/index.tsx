@@ -1,6 +1,6 @@
-import React, { lazy, Suspense, useEffect } from 'react'
-import { useRoutes } from 'react-router-dom'
+import React from 'react'
 import type { RouteObject } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import LayoutIndex from '../components/Layout/index'
 import Index from '../pages/index'
 import Components from '../pages/components'

@@ -122,7 +122,8 @@
         "async-validator": "^4.2.5",
         "classnames": "^2.3.2",
         "react-router-dom": "^6.4.2",
-        "react-string-replace": "^1.1.1"
+        "react-string-replace": "^1.1.1",
+        "zustand": "^4.4.7"
     },
     "repository": "https://github.com/ivan-My/ashe-design",
     "lint-staged": {

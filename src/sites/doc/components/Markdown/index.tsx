@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import type { Components } from 'react-markdown'
 import ReactMarkdown from 'react-markdown'
 import { Codeblock } from '@/sites/doc/components/Codeblock'
-import './style.scss'
 import remarkGfm from 'remark-gfm'
 import '@/sites/assets/prism/prism.js'
 import '@/sites/assets/prism/prism.css'
+import { useLocation } from 'react-router-dom'
+import { findComponentName } from '@/sites/doc/utils/util'
+import './style.scss'
+
 // @ts-ignore
 const Prisms = window.Prism
 
@@ -63,32 +66,27 @@ const components: Components = {
 }
 
 const Markdown = ({ loadData }: any) => {
+    const { pathname } = useLocation()
     const [data, setData] = useState<string>('loading....')
-    // async function loadScript() {
-    //     try {
-    //         // @ts-ignore
-    //         await import('../../../assets/prism/prism.js')
-    //         await import('../../../assets/prism/prism.css')
-    //     } catch (e) {
-    //         console.error('Prism加载出错:', e)
-    //     }
-    // }
-    // useEffect(() => {
-    //     loadScript().then((r) => r)
-    // }, [])
+    const cName = useMemo(() => {
+        return findComponentName(pathname.replace('/components/', ''))
+    }, [pathname])
 
     useEffect(() => {
-        if (typeof loadData === 'string') {
-            setData(loadData)
-            return
-        }
-        loadData().then((d: string) => {
-            setData(d)
+        loadData().then((text: string) => {
+            setData(text)
+            window.scroll({ top: 0 })
         })
     }, [loadData])
 
     return (
         <div className="doc-wrapper">
+            {data.length > 50 && pathname != '/components/readme' && (
+                <div className={'doc-nav'}>
+                    <span>组件</span> <span className={'separator'}> / </span>
+                    <strong>{cName}</strong>
+                </div>
+            )}
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={components}

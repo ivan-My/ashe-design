@@ -35,7 +35,13 @@ const Resource = () => {
                                     <Route
                                         key={item.name}
                                         path={`/${item.name}`}
-                                        element={<Markdown loadData={md} />}
+                                        element={
+                                            <Markdown
+                                                loadData={() =>
+                                                    Promise.resolve(md)
+                                                }
+                                            />
+                                        }
                                     />
                                 )
                             })}

@@ -1,4 +1,17 @@
 .doc-wrapper {
+    .doc-nav {
+        font-size: 14px;
+        margin-bottom: 20px;
+        span {
+            color: #7a8499;
+        }
+        .separator {
+            padding: 0 5px;
+        }
+        strong {
+            font-weight: 600;
+        }
+    }
     .demo-code-content {
         position: relative;
         overflow: hidden;
