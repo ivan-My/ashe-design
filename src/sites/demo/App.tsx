@@ -14,7 +14,6 @@ const App = () => {
         window.scroll({ top: 0 })
         setName(currentComponent)
     }
-
     useEffect(() => {
         handelComponent()
         window.addEventListener('hashchange', handelComponent)

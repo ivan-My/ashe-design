@@ -3,19 +3,22 @@ import { useLocation } from 'react-router-dom'
 import Loading from '@/components/loading'
 import './demo-preview.scss'
 
+const BASE_URL = '/react/demo.html#'
+
 const DemoPreview = () => {
     const { pathname } = useLocation()
-    const iframeRef = useRef<any>(null)
-    let url = `/react/demo.html#${pathname.replace('/components', '')}`
-    if (pathname === '/components/readme') {
-        url = '/react/demo.html#/'
-    }
     const [state, setState] = useState(true)
+    const iframeRef = useRef<HTMLIFrameElement>(null)
+    const url =
+        pathname === '/components/readme'
+            ? BASE_URL
+            : `${BASE_URL + pathname.replace('/components', '')}`
+
     useEffect(() => {
-        iframeRef.current.onload = function () {
+        iframeRef.current!.onload = function () {
             setState(false)
         }
-    }, [state])
+    })
 
     return (
         <div className="doc-demo-preview">
