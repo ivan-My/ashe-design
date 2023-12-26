@@ -5,35 +5,16 @@
     border: 1px solid #e5e6eb;
     border-radius: 50%;
     position: fixed;
-    top: 247px;
+    top: 400px;
     z-index: 3;
     text-align: center;
     cursor: pointer;
 }
 .menu-collapse-btn {
-    left: 250px;
+    left: 220px;
     transition: left 0.1s ease-in-out;
 }
 .menu-collapse-btn-close {
-    left: 20px;
+    left: 5px;
     transition: left 0.1s ease-in-out;
-}
-
-.menuLeft {
-    left: 0 !important;
-}
-.menuRight {
-    left: 220px !important;
-}
-
-.components-container {
-    transition: padding-left 0.1s ease-in-out;
-}
-
-.containerLeft {
-    padding-left: 0 !important;
-}
-
-.containerRight {
-    padding-left: 230px !important;
 }

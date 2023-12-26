@@ -2,26 +2,9 @@ import React, { useRef, useState } from 'react'
 import Header from '../Header'
 import { Outlet } from 'react-router-dom'
 import './index.scss'
+import { useGlobalStore } from '@/sites/doc/store/store'
 const Layout = () => {
-    const [menuCollapse, setMenuCollapse] = useState(true)
-    const onChange = () => {
-        const ele: any = document.querySelector('.components-container')
-        if (menuCollapse) {
-            setMenuCollapse(false)
-            // @ts-ignore
-            document.querySelector('.doc-menu').style.width = '0'
-            ele.classList.add('containerLeft')
-            ele.classList.remove('containerRight')
-        } else {
-            setMenuCollapse(true)
-            ele.classList.add('containerRight')
-            ele.classList.remove('containerLeft')
-            setTimeout(() => {
-                // @ts-ignore
-                document.querySelector('.doc-menu').style.width = '230px'
-            }, 200)
-        }
-    }
+    const { menuCollapse, setMenuCollapse } = useGlobalStore()
     return (
         <>
             <div
@@ -30,7 +13,7 @@ const Layout = () => {
                         ? 'menu-collapse menu-collapse-btn menuRight '
                         : 'menu-collapse menu-collapse-btn-close menuLeft'
                 }
-                onClick={onChange}
+                onClick={() => setMenuCollapse(!menuCollapse)}
             >
                 <svg width="13" height="12">
                     <g fill="none" fillRule="evenodd">

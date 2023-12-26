@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './menu.scss'
+import { useGlobalStore } from '@/sites/doc/store/store'
 
 type MenuProps = {
     data: any
@@ -8,8 +9,12 @@ type MenuProps = {
 }
 
 export const Menu = ({ data, path }: MenuProps) => {
+    const { menuCollapse } = useGlobalStore()
     return (
-        <div className={'doc-menu'}>
+        <div
+            className={'doc-menu'}
+            style={{ width: menuCollapse ? '230px' : '0' }}
+        >
             {path === 'components' && (
                 <ol className={'doc-Menu-item'}>
                     <li>开发指南</li>

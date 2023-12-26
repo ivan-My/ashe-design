@@ -1,5 +1,4 @@
 .doc-menu {
-    width: 230px;
     border-right: 1px solid #e5e6eb;
     overflow: auto;
     position: fixed;
@@ -13,6 +12,7 @@
     color: #1a2234;
     background: var(--bg-color);
     scrollbar-width: none;
+    transition: width 0.1s ease-in-out;
 
     > ol {
         list-style: none;

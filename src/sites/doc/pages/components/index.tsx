@@ -6,6 +6,8 @@ import DemoPreview from '@/sites/doc/components/DemoPreview/demo-preview'
 import { componentRouters } from '../../routers/index'
 import { nav } from '@/config.json'
 import './style.scss'
+import { useGlobalStore } from '@/sites/doc/store/store'
+import className from 'classnames'
 
 // @ts-ignore
 const ComponentRouters = () => {
@@ -38,10 +40,15 @@ const ComponentRouters = () => {
 }
 
 const Components = () => {
+    const { menuCollapse } = useGlobalStore()
+    const cls = className(
+        'components-container',
+        menuCollapse ? 'containerRight' : 'containerLeft'
+    )
     return (
         <div className="components-page">
             <Menu data={nav} path={'components'} />
-            <div className="components-container">
+            <div className={cls}>
                 <div className="components-markdown">
                     <ComponentRouters />
                 </div>
