@@ -10,7 +10,7 @@ const raws = import.meta.globEager('../../../../../packages/utils/docs/*.md', {
 })
 
 const getRaw = (name: string) => {
-    let result
+    let result = ''
     for (const raw in raws) {
         if (raw.includes(name)) {
             result = raws[raw]
@@ -30,15 +30,16 @@ const Resource = () => {
                             .map((item: any) => item.packages)
                             .flat()
                             .map((item) => {
-                                const md = getRaw(item.name)
                                 return (
                                     <Route
                                         key={item.name}
                                         path={`/${item.name}`}
                                         element={
                                             <Markdown
-                                                loadData={() =>
-                                                    Promise.resolve(md)
+                                                loadText={() =>
+                                                    Promise.resolve(
+                                                        getRaw(item.name)
+                                                    )
                                                 }
                                             />
                                         }

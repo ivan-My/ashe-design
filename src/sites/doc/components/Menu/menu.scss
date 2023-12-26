@@ -12,6 +12,7 @@
     margin-bottom: 16px;
     color: #1a2234;
     background: var(--bg-color);
+    scrollbar-width: none;
 
     > ol {
         list-style: none;
@@ -23,6 +24,7 @@
             position: relative;
             padding: 0 10px;
             color: #7a8499;
+            white-space: nowrap;
         }
 
         > ul li {
@@ -49,4 +51,8 @@
             color: #165dff;
         }
     }
+}
+
+.doc-menu:hover {
+    scrollbar-width: auto;
 }

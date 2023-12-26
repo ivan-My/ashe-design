@@ -2,12 +2,12 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './menu.scss'
 
-type MenuType = {
+type MenuProps = {
     data: any
     path: string
 }
 
-export const Menu = ({ data, path }: MenuType) => {
+export const Menu = ({ data, path }: MenuProps) => {
     return (
         <div className={'doc-menu'}>
             {path === 'components' && (

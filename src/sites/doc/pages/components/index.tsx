@@ -15,7 +15,7 @@ const ComponentRouters = () => {
                 path={'/readme'}
                 element={
                     <Markdown
-                        loadData={() =>
+                        loadText={() =>
                             import('@/sites/doc/guide/readme.md?raw').then(
                                 (m) => m['default']
                             )
@@ -29,7 +29,7 @@ const ComponentRouters = () => {
                         key={index}
                         path={ru.path}
                         // @ts-ignore
-                        element={<Markdown loadData={ru.component} />}
+                        element={<Markdown loadText={ru.component} />}
                     />
                 )
             })}

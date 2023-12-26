@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import type { Components } from 'react-markdown'
+import { useLocation } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
-import { Codeblock } from '@/sites/doc/components/Codeblock'
 import remarkGfm from 'remark-gfm'
+import { Codeblock } from '@/sites/doc/components/Codeblock'
+import { findComponentName } from '@/sites/doc/utils/util'
 import '@/sites/assets/prism/prism.js'
 import '@/sites/assets/prism/prism.css'
-import { useLocation } from 'react-router-dom'
-import { findComponentName } from '@/sites/doc/utils/util'
 import './style.scss'
 
 // @ts-ignore
@@ -65,23 +65,26 @@ const components: Components = {
     },
 }
 
-const Markdown = ({ loadData }: any) => {
+type MarkdownProps = {
+    loadText: () => Promise<string>
+}
+const Markdown = ({ loadText }: MarkdownProps) => {
     const { pathname } = useLocation()
-    const [data, setData] = useState<string>('loading....')
+    const [data, setData] = useState<string>('loading......')
     const cName = useMemo(() => {
         return findComponentName(pathname.replace('/components/', ''))
     }, [pathname])
 
     useEffect(() => {
-        loadData().then((text: string) => {
+        loadText().then((text: string) => {
             setData(text)
             window.scroll({ top: 0 })
         })
-    }, [loadData])
+    }, [loadText])
 
     return (
         <div className="doc-wrapper">
-            {data.length > 50 && pathname != '/components/readme' && (
+            {data?.length > 50 && pathname != '/components/readme' && (
                 <div className={'doc-nav'}>
                     <span>组件</span> <span className={'separator'}> / </span>
                     <strong>{cName}</strong>
