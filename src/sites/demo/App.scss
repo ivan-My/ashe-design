@@ -3,6 +3,9 @@ body {
     background-color: #f7f8fa;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
 .demo-wrapper {
     height: 100%;
     width: 100%;
