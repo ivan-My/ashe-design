@@ -8,6 +8,7 @@ import { black, github, white } from './svg'
 import { navList } from './config'
 import './header.scss'
 
+// @ts-ignore
 const data = nav.flatMap((item) => item.packages.filter((item) => item.name))
 
 function matchElementsWithA(input: string) {
@@ -22,6 +23,9 @@ function matchElementsWithA(input: string) {
 const Header = () => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
+    const [val, setValue] = useState('')
+    const [searchValue, setSearchValue] = useState([])
+    const [theme, setTheme] = useState(false)
     const locationKey = useMemo(() => {
         return pathname.includes('resource')
             ? 'resource'
@@ -29,10 +33,6 @@ const Header = () => {
             ? 'components'
             : null
     }, [pathname])
-
-    const [val, setValue] = useState('')
-    const [searchValue, setSearchValue] = useState([])
-    const [theme, setTheme] = useState(false)
 
     const onChange = (e: string) => {
         const data: any = matchElementsWithA(e)
@@ -43,7 +43,6 @@ const Header = () => {
         navigate(`/components/${item.name.toLocaleLowerCase()}`)
         setSearchValue([])
         setValue('')
-        window.scroll({ top: 0 })
     }
     const HighlightedText = (item: any, highlight: string) => {
         const highlightedText = replace(
@@ -118,7 +117,7 @@ const Header = () => {
             return null
         }
         return (
-            <div className={'search-panel'}>
+            <div className={'ashe-search-panel'}>
                 <Cell title={`搜索到${searchValue.length}个结果`} style={{}} />
                 {searchValue.map((item: any, index: number) => {
                     return (
@@ -134,11 +133,11 @@ const Header = () => {
     }
 
     return (
-        <div className={'doc-header'}>
-            <div className="header-logo">
+        <div className={'ashe-header'}>
+            <div className="ashe-header-logo">
                 <Link to={'/'}>Ashe design</Link>
             </div>
-            <div className={'search'}>
+            <div className={'ashe-search'}>
                 <Input
                     defaultValue={val}
                     placeholder={'在 Ashe中搜索'}
@@ -146,7 +145,7 @@ const Header = () => {
                 />
                 {renderSearchValue()}
             </div>
-            <div className="header-nav">{renderNav()}</div>
+            <div className="ashe-header-nav">{renderNav()}</div>
         </div>
     )
 }

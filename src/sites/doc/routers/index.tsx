@@ -36,13 +36,20 @@ const Router = () => useRoutes(rootRouter)
 
 const modulesPage = import.meta.glob('/src/components/**/doc.md', {
     as: 'raw',
-    // eager: true,
+    //eager: true,
 })
 
-export const componentRouters: any[] = []
+export const routers: any[] = [
+    {
+        name: 'readme',
+        path: '/readme',
+        component: () =>
+            import('@/sites/doc/guide/readme.md?raw').then((m) => m['default']),
+    },
+]
 for (const path in modulesPage) {
     let name = (/components\/(.*)\/doc\.md/.exec(path) as any[])[1]
-    componentRouters.push({
+    routers.push({
         path: '/' + name,
         component: modulesPage[path],
         name,

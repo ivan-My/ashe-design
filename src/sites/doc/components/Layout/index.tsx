@@ -1,17 +1,19 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import Header from '../Header'
 import { Outlet } from 'react-router-dom'
-import './index.scss'
 import { useGlobalStore } from '@/sites/doc/store/store'
-const Layout = () => {
+import './index.scss'
+
+const MenuHolder = () => {
     const { menuCollapse, setMenuCollapse } = useGlobalStore()
     return (
         <>
+            {!menuCollapse && <div className="ashe-menu-holder" />}
             <div
                 className={
                     menuCollapse
-                        ? 'menu-collapse menu-collapse-btn menuRight '
-                        : 'menu-collapse menu-collapse-btn-close menuLeft'
+                        ? 'ashe-menu-collapse ashe-menu-collapse-btn '
+                        : 'ashe-menu-collapse ashe-menu-collapse-btn-close'
                 }
                 onClick={() => setMenuCollapse(!menuCollapse)}
             >
@@ -25,9 +27,17 @@ const Layout = () => {
                     </g>
                 </svg>
             </div>
-            <Header />
-            <Outlet />
         </>
+    )
+}
+
+const Layout = () => {
+    return (
+        <div className={'ashe-layout'}>
+            <Header />
+            <MenuHolder />
+            <Outlet />
+        </div>
     )
 }
 

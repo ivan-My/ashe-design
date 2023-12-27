@@ -8,7 +8,9 @@ const App = () => {
     const [state, setName] = useState<any>()
     const handelComponent = () => {
         const pathname = location.hash.replace('#/', '').trim()
+
         const currentComponent = nav.flatMap((item) =>
+            // @ts-ignore
             item.packages.filter((e) => e.name == pathname)
         )[0]
         window.scroll({ top: 0 })

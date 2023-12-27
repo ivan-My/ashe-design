@@ -1,61 +1,61 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import className from 'classnames'
 import Menu from '@/sites/doc/components/Menu/menu'
 import Markdown from '@/sites/doc/components/Markdown'
-import DemoPreview from '@/sites/doc/components/DemoPreview/demo-preview'
-import { componentRouters } from '../../routers/index'
+import { routers } from '../../routers/index'
+import { useGlobalStore } from '@/sites/doc/store/store'
+import Loading from '@/components/loading'
 import { nav } from '@/config.json'
 import './style.scss'
-import { useGlobalStore } from '@/sites/doc/store/store'
-import className from 'classnames'
 
-// @ts-ignore
-const ComponentRouters = () => {
+const BASE_URL = '/react/demo.html#'
+
+const renderMobile = () => {
+    const { pathname } = useLocation()
+    const [state, setState] = useState(true)
+    const iframeRef = useRef<HTMLIFrameElement>(null)
+    const url =
+        pathname === '/components/readme'
+            ? BASE_URL
+            : `${BASE_URL + pathname.replace('/components', '')}`
+
+    useEffect(() => {
+        iframeRef.current!.onload = function () {
+            setState(false)
+        }
+    })
     return (
-        <Routes>
-            <Route
-                path={'/readme'}
-                element={
-                    <Markdown
-                        loadText={() =>
-                            import('@/sites/doc/guide/readme.md?raw').then(
-                                (m) => m['default']
-                            )
-                        }
-                    />
-                }
-            />
-            {componentRouters.map((ru, index) => {
-                return (
-                    <Route
-                        key={index}
-                        path={ru.path}
-                        // @ts-ignore
-                        element={<Markdown loadText={ru.component} />}
-                    />
-                )
-            })}
-        </Routes>
+        <div className="ashe-mobile">
+            {state ? <Loading size="large" className="loading" /> : null}
+            <iframe src={url} ref={iframeRef} />
+            <a href={url} target={'_blank'} className={'href'}>
+                跳转
+            </a>
+        </div>
     )
 }
 
-const Components = () => {
+const Content = () => {
     const { menuCollapse } = useGlobalStore()
-    const cls = className(
-        'components-container',
-        menuCollapse ? 'containerRight' : 'containerLeft'
-    )
+    const cls = className('ashe-content', !menuCollapse && 'collapse')
     return (
-        <div className="components-page">
+        <div className="ashe-content-wrap">
             <Menu data={nav} path={'components'} />
             <div className={cls}>
-                <div className="components-markdown">
-                    <ComponentRouters />
-                </div>
-                <DemoPreview />
+                <Routes>
+                    {routers.map((ru, index) => (
+                        <Route
+                            key={index}
+                            path={ru.path}
+                            element={<Markdown loadText={ru.component} />}
+                        />
+                    ))}
+                </Routes>
+                {renderMobile()}
             </div>
         </div>
     )
 }
 
-export default React.memo(Components)
+export default React.memo(Content)

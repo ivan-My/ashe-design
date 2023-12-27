@@ -1,20 +1,38 @@
-.menu-collapse {
-    width: 24px;
-    height: 24px;
-    background: #ffffff;
-    border: 1px solid #e5e6eb;
-    border-radius: 50%;
-    position: fixed;
-    top: 400px;
-    z-index: 3;
-    text-align: center;
-    cursor: pointer;
-}
-.menu-collapse-btn {
-    left: 220px;
-    transition: left 0.1s ease-in-out;
-}
-.menu-collapse-btn-close {
-    left: 5px;
-    transition: left 0.1s ease-in-out;
+.ashe-layout {
+    .ashe-menu-holder {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 100vh;
+        background-color: #f7f8fa;
+        border-right: 1px solid;
+        border-right-color: #e5e6eb;
+        z-index: 1;
+    }
+
+    .ashe-menu-collapse {
+        width: 24px;
+        height: 24px;
+        background: #ffffff;
+        border: 1px solid #e5e6eb;
+        border-radius: 50%;
+        position: fixed;
+        top: 200px;
+        z-index: 3;
+        text-align: center;
+        cursor: pointer;
+    }
+    .ashe-menu-collapse-btn {
+        left: 220px;
+        transition: left 0.1s ease-in-out;
+    }
+    .ashe-menu-collapse-btn-close {
+        left: 0;
+        transition: left 0.1s ease-in-out;
+        & > svg {
+            z-index: 2;
+            transform: rotate(180deg);
+        }
+    }
 }

@@ -1,5 +1,16 @@
-.doc-wrapper {
-    .doc-nav {
+.ashe-content-site {
+    border-radius: 24px;
+    background: var(--bg-color, #fff);
+    flex: 1;
+    margin: 0 20px 20px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    word-break: break-all;
+
+    .ashe-content-site-nav {
         font-size: 14px;
         margin-bottom: 20px;
         span {
@@ -12,11 +23,12 @@
             font-weight: 600;
         }
     }
-    .demo-code-content {
+
+    .ashe-content-site-pre {
         position: relative;
         overflow: hidden;
         max-height: 240px;
-        border: 1px solid #e5e6e8;
+        //border: 1px solid #e5e6e8;
         margin-top: 24px;
         border-radius: 2px;
         background-color: var(--bg-color, #f7f8fa);
@@ -26,11 +38,11 @@
         }
     }
 
-    .demo-code {
+    .ashe-content-site-demo-code {
         color: #4e5969;
         width: 100%;
         display: block;
-        word-break: normal;
+        //word-break: normal;
         padding: 10px;
         overflow-x: auto;
         overflow-y: hidden;
@@ -49,25 +61,25 @@
         }
     }
 
-    .demo-doc-name {
+    .ashe-content-site-name {
         font-size: 36px;
         font-weight: 500;
         color: #1a2234;
     }
-    .demo-doc-name + .demo-doc-desc {
+    .ashe-content-site-name + .ashe-content-site-desc {
         margin-bottom: 60px;
     }
 
-    .demo-doc-desc {
+    .ashe-content-site-desc {
         color: #424e66;
         line-height: 20px;
         font-size: 14px;
         margin: 20px 0 20px;
     }
 
-    .demo-code-title {
+    .ashe-content-site-title {
         font-size: 20px;
-        margin-top: 20px;
+        margin-top: 30px;
         font-weight: 500;
     }
 
@@ -113,13 +125,12 @@
     }
 }
 
-.demo-code-bar {
+.ashe-content-site-bar {
     position: absolute;
     right: 10px;
     bottom: 10px;
     z-index: 1;
     //display: none;
-
     button {
         background: #fff;
         border: 1px solid #e5e6e8;
@@ -143,8 +154,8 @@
     }
 }
 
-.demo-code-content:hover {
-    .demo-code-bar {
+.ashe-content-site-pre:hover {
+    .ashe-content-site-bar {
         display: block;
     }
 }

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import './menu.scss'
+import scrollIntoView from 'scroll-into-view-if-needed'
 import { useGlobalStore } from '@/sites/doc/store/store'
+import { getComponentName } from '@/sites/doc/utils/util'
+import './menu.scss'
 
 type MenuProps = {
     data: any
@@ -10,25 +12,27 @@ type MenuProps = {
 
 export const Menu = ({ data, path }: MenuProps) => {
     const { menuCollapse } = useGlobalStore()
+    useEffect(() => {
+        const name = getComponentName()
+        const targetEle = document.querySelector(`.${name}`) as Element
+        setTimeout(() => {
+            scrollIntoView(targetEle, {
+                behavior: 'smooth',
+                block: 'start',
+                scrollMode: 'if-needed',
+                boundary: document.body,
+            })
+        }, 500)
+    }, [])
     return (
         <div
-            className={'doc-menu'}
+            className={'ashe-menu'}
             style={{ width: menuCollapse ? '230px' : '0' }}
         >
-            {path === 'components' && (
-                <ol className={'doc-Menu-item'}>
-                    <li>开发指南</li>
-                    <ul>
-                        <NavLink key={Math.random()} to={'/components/readme'}>
-                            <li>快速上手</li>
-                        </NavLink>
-                    </ul>
-                </ol>
-            )}
             {data.map((cn: any, index: number) => {
                 if (cn.packages.length === 0) return null
                 return (
-                    <ol key={index} className={'doc-Menu-item'}>
+                    <ol key={index}>
                         <li>{cn.name}</li>
                         <ul>
                             {cn.packages.map((cp: any) => {
@@ -38,8 +42,12 @@ export const Menu = ({ data, path }: MenuProps) => {
                                         key={cp.name}
                                         to={`/${path}/${cp.name.toLocaleLowerCase()}`}
                                     >
-                                        <li className={cp.name}>
-                                            <span>{cp.name}</span>
+                                        <li
+                                            className={cp.name.toLocaleLowerCase()}
+                                        >
+                                            <span>
+                                                {cp.type !== 'guide' && cp.name}
+                                            </span>
                                             {cp.cName}
                                         </li>
                                     </NavLink>

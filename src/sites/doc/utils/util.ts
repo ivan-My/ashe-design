@@ -20,8 +20,9 @@ export function copyCodeHtml(code: string, callback: any): void {
 export const findComponentName = (name: string): string => {
     let result = ''
     for (let item of nav) {
+        // @ts-ignore
         const foundItem = item.packages.find(
-            (i) => i.name.toLocaleLowerCase() === name
+            (i: any) => i.name.toLocaleLowerCase() === name
         )
         if (foundItem) {
             result = foundItem.cName
@@ -29,4 +30,13 @@ export const findComponentName = (name: string): string => {
         }
     }
     return result
+}
+
+/**
+ * @description 从地址栏提取组件名字
+ * @return {string}
+ */
+export const getComponentName = (): string => {
+    const match = location.href.match(/\/([^/]+)$/)
+    return match ? match[1] : ''
 }

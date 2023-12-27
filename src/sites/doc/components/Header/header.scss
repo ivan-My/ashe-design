@@ -1,4 +1,4 @@
-.doc-header {
+.ashe-header {
     color: #424e66;
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@
     background: var(--bg-color, #fff);
     border-bottom: 1px solid #e5e6e8;
 
-    .header-logo {
+    .ashe-header-logo {
         position: relative;
         display: inline-block;
         width: 240px;
@@ -27,13 +27,12 @@
         font-size: 22px;
         font-weight: 800;
         line-height: 64px;
-
         a {
             color: #000000;
         }
     }
 
-    .search {
+    .ashe-search {
         position: absolute;
         width: 288px;
         height: 32px;
@@ -44,7 +43,7 @@
             background-color: rgb(242, 243, 245);
         }
 
-        .search-panel {
+        .ashe-search-panel {
             width: 400px;
             max-height: 250px;
             overflow: scroll;
@@ -73,12 +72,14 @@
         }
     }
 
-    .header-nav {
+    .ashe-header-nav {
         > ul {
             display: flex;
             align-items: center;
-            font-size: 16px;
+            font-size: 14px;
             margin-right: 50px;
+            font-weight: 400;
+            color: #000000;
 
             > li {
                 padding: 0 20px;
