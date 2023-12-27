@@ -38,7 +38,10 @@ const renderMobile = () => {
 
 const Content = () => {
     const { menuCollapse } = useGlobalStore()
-    const cls = className('ashe-content', !menuCollapse && 'collapse')
+    const cls = className(
+        'ashe-content',
+        !menuCollapse && 'ashe-content-collapse'
+    )
     return (
         <div className="ashe-content-wrap">
             <Menu data={nav} path={'components'} />
