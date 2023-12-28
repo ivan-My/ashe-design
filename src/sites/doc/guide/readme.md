@@ -1,7 +1,7 @@
 ## 快速上手
 
 
-```tsx !!
+```tsx  !!
 npm install ashe-design --save
 
 yarn add ashe-design
@@ -9,6 +9,7 @@ yarn add ashe-design
 pnpm add ashe-design
 
 ```
+
 
 
 ## 使用

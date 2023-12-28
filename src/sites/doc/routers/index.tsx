@@ -39,14 +39,22 @@ const modulesPage = import.meta.glob('/src/components/**/doc.md', {
     //eager: true,
 })
 
-export const routers: any[] = [
-    {
-        name: 'readme',
-        path: '/readme',
-        component: () =>
-            import('@/sites/doc/guide/readme.md?raw').then((m) => m['default']),
-    },
-]
+const guidePage = import.meta.glob('/src/sites/doc/guide/**.md', {
+    as: 'raw',
+    //eager: true,
+})
+
+export const routers: any[] = []
+for (const path in guidePage) {
+    // @ts-ignore
+    let name = path.match(/\/([^/]+)\.md$/)[1]
+    routers.push({
+        path: '/' + name,
+        component: guidePage[path],
+        name,
+    })
+}
+
 for (const path in modulesPage) {
     let name = (/components\/(.*)\/doc\.md/.exec(path) as any[])[1]
     routers.push({

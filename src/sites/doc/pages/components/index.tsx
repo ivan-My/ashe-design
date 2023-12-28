@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import className from 'classnames'
 import Menu from '@/sites/doc/components/Menu/menu'
 import Markdown from '@/sites/doc/components/Markdown'
@@ -13,18 +13,30 @@ const BASE_URL = '/react/demo.html#'
 
 const renderMobile = () => {
     const { pathname } = useLocation()
+    const navigate = useNavigate()
     const [state, setState] = useState(true)
     const iframeRef = useRef<HTMLIFrameElement>(null)
-    const url =
+    let url =
         pathname === '/components/readme'
-            ? BASE_URL
+            ? '/react/demo.html#/index'
             : `${BASE_URL + pathname.replace('/components', '')}`
+
+    const handleMessage = (e: any) => {
+        if (e.data.hashChange) {
+            const { hash } = e.data
+            navigate(`/components/${hash.toLocaleLowerCase()}`)
+        }
+    }
 
     useEffect(() => {
         iframeRef.current!.onload = function () {
             setState(false)
         }
-    })
+        window.addEventListener('message', handleMessage)
+        return () => {
+            window.removeEventListener('message', handleMessage)
+        }
+    }, [])
     return (
         <div className="ashe-mobile">
             {state ? <Loading size="large" className="loading" /> : null}

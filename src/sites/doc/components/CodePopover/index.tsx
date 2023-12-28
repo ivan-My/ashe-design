@@ -7,8 +7,8 @@ import React, {
 } from 'react'
 import ReactDOM from 'react-dom'
 import { QRCodeCanvas } from 'qrcode.react'
-import './index.scss'
 import { getComponentName } from '@/sites/doc/utils/util'
+import './index.scss'
 
 export interface CodePopoverProps {
     text?: React.ReactNode
@@ -47,7 +47,11 @@ export default function CodePopover(
             visible ? (
                 <div
                     className={`home-code-popover ${popoverClass}`}
-                    style={{ left: position[0], top: position[1] }}
+                    style={{
+                        left: position[0],
+                        top: position[1],
+                        opacity: position[0] > 0 ? '1' : '0',
+                    }}
                 >
                     <div className="home-code-popover-content">
                         {text}

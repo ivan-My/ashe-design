@@ -9,6 +9,10 @@ const routes: any = [
         path: '/',
         element: lazy(() => import('./components/Index')),
     },
+    {
+        path: '/index',
+        element: lazy(() => import('./components/Index')),
+    },
 ]
 
 for (const path in modulesPage) {

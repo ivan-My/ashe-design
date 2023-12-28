@@ -1,10 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { nav } from '@/config.json'
 import './index.scss'
-import { useNavigate } from 'react-router-dom'
 
 const Index = () => {
-    const navs = useNavigate()
+    const navigate = useNavigate()
     return (
         <div className="demo-index">
             {nav.map((cn: any, index: number) => {
@@ -19,8 +19,14 @@ const Index = () => {
                                     <li
                                         key={Math.random()}
                                         onClick={() => {
-                                            navs(`/${cp.name}`)
-                                            window.scroll({ top: 0 })
+                                            navigate(`/${cp.name}`)
+                                            window.parent.postMessage(
+                                                {
+                                                    hashChange: true,
+                                                    hash: cp.name,
+                                                },
+                                                '*'
+                                            )
                                         }}
                                     >
                                         {cp.name}&nbsp;&nbsp;{cp.cName}

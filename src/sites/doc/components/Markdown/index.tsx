@@ -4,7 +4,6 @@ import type { Components } from 'react-markdown'
 import { useLocation } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-
 import { CodeBar } from '@/sites/doc/components/CodeBar'
 import { findComponentName, getComponentName } from '@/sites/doc/utils/util'
 import '@/sites/assets/prism/prism.js'
@@ -108,6 +107,11 @@ const Markdown = ({ loadText }: MarkdownProps) => {
                 <div className={'ashe-content-site-nav'}>
                     <span>组件</span> <span className={'separator'}> / </span>
                     <strong>{cName}</strong>
+                </div>
+            )}
+            {data?.length > 50 && pathname == '/components/readme' && (
+                <div className={'ashe-content-site-nav'}>
+                    <span>开发指南</span>
                 </div>
             )}
             <ReactMarkdown
