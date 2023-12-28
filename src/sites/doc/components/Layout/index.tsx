@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../Header'
+import BackTop from '@/sites/doc/components/BackTop'
 import { Outlet } from 'react-router-dom'
 import { useGlobalStore } from '@/sites/doc/store/store'
 import './index.scss'
@@ -37,6 +38,7 @@ const Layout = () => {
             <Header />
             <MenuHolder />
             <Outlet />
+            <BackTop />
         </div>
     )
 }

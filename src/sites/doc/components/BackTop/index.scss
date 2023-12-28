@@ -1,0 +1,22 @@
+.ashe-back-top {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 48px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.ashe-back-top.show {
+    opacity: 1;
+    display: block;
+}
